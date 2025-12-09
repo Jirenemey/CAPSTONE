@@ -1,0 +1,724 @@
+fileFormatVersion: 2
+guid: cfeffb8cd76958c479f533ed2325466d
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -6031849364819689308
+    second: PC _ Computer - Hollow Knight - Enemies - Folly_0
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: PC _ Computer - Hollow Knight - Enemies - Folly_0
+      rect:
+        serializedVersion: 2
+        x: 3
+        y: 710
+        width: 181
+        height: 186
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4a0c147f5f09a4ca0800000000000000
+      internalID: -6031849364819689308
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC _ Computer - Hollow Knight - Enemies - Folly_1
+      rect:
+        serializedVersion: 2
+        x: 188
+        y: 710
+        width: 182
+        height: 186
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3e3cea844117c214cb33851f81523ea4
+      internalID: -1480316918
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC _ Computer - Hollow Knight - Enemies - Folly_2
+      rect:
+        serializedVersion: 2
+        x: 373
+        y: 710
+        width: 182
+        height: 186
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3743b792877deec459c9e9b110bfad4d
+      internalID: 74617087
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC _ Computer - Hollow Knight - Enemies - Folly_3
+      rect:
+        serializedVersion: 2
+        x: 558
+        y: 710
+        width: 182
+        height: 186
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 08ab5f254ad4633498032e9de8491d8f
+      internalID: -821371721
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC _ Computer - Hollow Knight - Enemies - Folly_4
+      rect:
+        serializedVersion: 2
+        x: 743
+        y: 710
+        width: 182
+        height: 186
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6cbf585c2bd75f045ae71a239f9366f6
+      internalID: -2002104724
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC _ Computer - Hollow Knight - Enemies - Folly_5
+      rect:
+        serializedVersion: 2
+        x: 928
+        y: 710
+        width: 182
+        height: 186
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 91aa7b2b27ccd674e9df747c1f2f16cd
+      internalID: 814513952
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC _ Computer - Hollow Knight - Enemies - Folly_6
+      rect:
+        serializedVersion: 2
+        x: 1113
+        y: 710
+        width: 182
+        height: 186
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 26233bda3e8f2854a95bb1837c9c0632
+      internalID: 1402982548
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC _ Computer - Hollow Knight - Enemies - Folly_7
+      rect:
+        serializedVersion: 2
+        x: 1298
+        y: 709
+        width: 182
+        height: 187
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b463d624acdd0ea4cb72dcc9ca6f53d2
+      internalID: 761663733
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC _ Computer - Hollow Knight - Enemies - Folly_8
+      rect:
+        serializedVersion: 2
+        x: 3
+        y: 492
+        width: 180
+        height: 196
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 911c455d189195a469fd4c513c656fb9
+      internalID: 527971513
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC _ Computer - Hollow Knight - Enemies - Folly_9
+      rect:
+        serializedVersion: 2
+        x: 186
+        y: 492
+        width: 180
+        height: 196
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 64864883c572bad4e87295386a2f4582
+      internalID: -675224462
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC _ Computer - Hollow Knight - Enemies - Folly_10
+      rect:
+        serializedVersion: 2
+        x: 369
+        y: 492
+        width: 180
+        height: 196
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 222ebe692dc82294c89745e9bf572c80
+      internalID: 194223119
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC _ Computer - Hollow Knight - Enemies - Folly_11
+      rect:
+        serializedVersion: 2
+        x: 552
+        y: 492
+        width: 180
+        height: 196
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: afd11954d6b2e364a8ffdb9edb3d85a6
+      internalID: -535930184
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC _ Computer - Hollow Knight - Enemies - Folly_12
+      rect:
+        serializedVersion: 2
+        x: 735
+        y: 492
+        width: 180
+        height: 196
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6afe61aa32414c04194285fc822c63db
+      internalID: 535668144
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC _ Computer - Hollow Knight - Enemies - Folly_13
+      rect:
+        serializedVersion: 2
+        x: 918
+        y: 492
+        width: 180
+        height: 196
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ad7fad74c1287524893b760c09d09382
+      internalID: -744526906
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC _ Computer - Hollow Knight - Enemies - Folly_14
+      rect:
+        serializedVersion: 2
+        x: 1101
+        y: 492
+        width: 180
+        height: 196
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1217a2bcfb6f4b44d8e7fbcb36ff52db
+      internalID: -996990120
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC _ Computer - Hollow Knight - Enemies - Folly_15
+      rect:
+        serializedVersion: 2
+        x: 1284
+        y: 492
+        width: 180
+        height: 196
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 08a62f46c349ca744968f4255f28d9e1
+      internalID: -1976682291
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC _ Computer - Hollow Knight - Enemies - Folly_16
+      rect:
+        serializedVersion: 2
+        x: 3
+        y: 284
+        width: 164
+        height: 186
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1a55e264726e76943bbf5898cc5edc33
+      internalID: 1053065905
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC _ Computer - Hollow Knight - Enemies - Folly_17
+      rect:
+        serializedVersion: 2
+        x: 170
+        y: 284
+        width: 164
+        height: 186
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 719751708541259488670fb25d0e3768
+      internalID: -1829642874
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC _ Computer - Hollow Knight - Enemies - Folly_18
+      rect:
+        serializedVersion: 2
+        x: 369
+        y: 297
+        width: 184
+        height: 173
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 211380389f1d53c4b8fb92e8bdac374c
+      internalID: -138394345
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC _ Computer - Hollow Knight - Enemies - Folly_19
+      rect:
+        serializedVersion: 2
+        x: 556
+        y: 297
+        width: 184
+        height: 173
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d74055cbdf6e44447922b7655748a1ca
+      internalID: -505018478
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC _ Computer - Hollow Knight - Enemies - Folly_20
+      rect:
+        serializedVersion: 2
+        x: 743
+        y: 297
+        width: 184
+        height: 173
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 66c4a0ac17348c249918e69776708a73
+      internalID: 1837291813
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC _ Computer - Hollow Knight - Enemies - Folly_21
+      rect:
+        serializedVersion: 2
+        x: 930
+        y: 297
+        width: 184
+        height: 173
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9354631cd8ae50e4e80082ea214f3dc4
+      internalID: 7317148
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC _ Computer - Hollow Knight - Enemies - Folly_24
+      rect:
+        serializedVersion: 2
+        x: 3
+        y: 3
+        width: 253
+        height: 259
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d095a596419b16142900b4454a8cc453
+      internalID: -1730560085
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC _ Computer - Hollow Knight - Enemies - Folly_25
+      rect:
+        serializedVersion: 2
+        x: 258
+        y: 3
+        width: 252
+        height: 259
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9c7b557b7f7c8aa48a789c83d8bfc2a8
+      internalID: 1605938375
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC _ Computer - Hollow Knight - Enemies - Folly_26
+      rect:
+        serializedVersion: 2
+        x: 768
+        y: 3
+        width: 252
+        height: 259
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ee304f98084f98b4ba683c88044831ed
+      internalID: 1841678449
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC _ Computer - Hollow Knight - Enemies - Folly_27
+      rect:
+        serializedVersion: 2
+        x: 513
+        y: 3
+        width: 252
+        height: 259
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ea0f3f7d15092fb4ba3131940283c745
+      internalID: 1213419792
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 10a4e3d4ea70e7d4a8b14f3ee471c149
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      PC _ Computer - Hollow Knight - Enemies - Folly_0: -6031849364819689308
+      PC _ Computer - Hollow Knight - Enemies - Folly_1: -1480316918
+      PC _ Computer - Hollow Knight - Enemies - Folly_10: 194223119
+      PC _ Computer - Hollow Knight - Enemies - Folly_11: -535930184
+      PC _ Computer - Hollow Knight - Enemies - Folly_12: 535668144
+      PC _ Computer - Hollow Knight - Enemies - Folly_13: -744526906
+      PC _ Computer - Hollow Knight - Enemies - Folly_14: -996990120
+      PC _ Computer - Hollow Knight - Enemies - Folly_15: -1976682291
+      PC _ Computer - Hollow Knight - Enemies - Folly_16: 1053065905
+      PC _ Computer - Hollow Knight - Enemies - Folly_17: -1829642874
+      PC _ Computer - Hollow Knight - Enemies - Folly_18: -138394345
+      PC _ Computer - Hollow Knight - Enemies - Folly_19: -505018478
+      PC _ Computer - Hollow Knight - Enemies - Folly_2: 74617087
+      PC _ Computer - Hollow Knight - Enemies - Folly_20: 1837291813
+      PC _ Computer - Hollow Knight - Enemies - Folly_21: 7317148
+      PC _ Computer - Hollow Knight - Enemies - Folly_22: -1310287829
+      PC _ Computer - Hollow Knight - Enemies - Folly_23: -1648861563
+      PC _ Computer - Hollow Knight - Enemies - Folly_24: -1730560085
+      PC _ Computer - Hollow Knight - Enemies - Folly_25: 1605938375
+      PC _ Computer - Hollow Knight - Enemies - Folly_26: 1841678449
+      PC _ Computer - Hollow Knight - Enemies - Folly_27: 1213419792
+      PC _ Computer - Hollow Knight - Enemies - Folly_28: -755792267
+      PC _ Computer - Hollow Knight - Enemies - Folly_29: -1078782655
+      PC _ Computer - Hollow Knight - Enemies - Folly_3: -821371721
+      PC _ Computer - Hollow Knight - Enemies - Folly_30: 788373909
+      PC _ Computer - Hollow Knight - Enemies - Folly_31: -1769796744
+      PC _ Computer - Hollow Knight - Enemies - Folly_4: -2002104724
+      PC _ Computer - Hollow Knight - Enemies - Folly_5: 814513952
+      PC _ Computer - Hollow Knight - Enemies - Folly_6: 1402982548
+      PC _ Computer - Hollow Knight - Enemies - Folly_7: 761663733
+      PC _ Computer - Hollow Knight - Enemies - Folly_8: 527971513
+      PC _ Computer - Hollow Knight - Enemies - Folly_9: -675224462
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
