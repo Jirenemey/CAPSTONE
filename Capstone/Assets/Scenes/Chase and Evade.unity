@@ -917,7 +917,7 @@ MonoBehaviour:
   health: 100
   speed: 5
   range: 3
-  behaviour: 0
+  behaviour: 1
   chase: 0
   evade: 0
   waypoint1: {x: 5, y: -2.41}
@@ -994,7 +994,7 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 0
+  m_Constraints: 4
 --- !u!4 &1331839993
 Transform:
   m_ObjectHideFlags: 0
