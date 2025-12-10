@@ -1,0 +1,879 @@
+fileFormatVersion: 2
+guid: 1315c083f7ee8e344b54669c590e3d65
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 1155647138111365190
+    second: PC _ Computer - Hollow Knight - Enemies - Husk Miner_0
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Husk Miner Idle 1
+      rect:
+        serializedVersion: 2
+        x: 3
+        y: 1192
+        width: 128
+        height: 175
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 64023d003fea90010800000000000000
+      internalID: 1155647138111365190
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Husk Miner Idle 2
+      rect:
+        serializedVersion: 2
+        x: 134
+        y: 1192
+        width: 128
+        height: 175
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 92dca0b8a563e024eb253c893564b91b
+      internalID: -829591478
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Husk Miner Idle 3
+      rect:
+        serializedVersion: 2
+        x: 265
+        y: 1192
+        width: 128
+        height: 175
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7d9b737111d9b994ead6bf85725a3ce6
+      internalID: 1303707595
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Husk Miner Idle 4
+      rect:
+        serializedVersion: 2
+        x: 396
+        y: 1192
+        width: 128
+        height: 175
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a2eeeeefa58c6ee4f9bb2eb3ecc70051
+      internalID: 306983829
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Husk Miner Idle 5
+      rect:
+        serializedVersion: 2
+        x: 527
+        y: 1192
+        width: 128
+        height: 175
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f0fadcde4958d87449f8931e99ef911f
+      internalID: 1785327850
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Husk Miner Idle 6
+      rect:
+        serializedVersion: 2
+        x: 658
+        y: 1192
+        width: 128
+        height: 175
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 945e3f54ea704624d9d0ffdfb12a3926
+      internalID: -1658623295
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Husk Miner Idle 7
+      rect:
+        serializedVersion: 2
+        x: 789
+        y: 1192
+        width: 128
+        height: 175
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b877bd2a4cd7f8444b4415c48d3cae49
+      internalID: 899362791
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Husk Miner Idle 8
+      rect:
+        serializedVersion: 2
+        x: 920
+        y: 1192
+        width: 128
+        height: 175
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 034f3330f8c847341babdf598cf10b18
+      internalID: 1922990098
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Husk Miner Idle 9
+      rect:
+        serializedVersion: 2
+        x: 1051
+        y: 1192
+        width: 128
+        height: 175
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5904310a175f56a4cb2c2946e3447d4b
+      internalID: 372907666
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Husk Miner Run 1
+      rect:
+        serializedVersion: 2
+        x: 3
+        y: 994
+        width: 149
+        height: 175
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c977adc7eab00374d995e539ca673bec
+      internalID: -2102801865
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Husk Miner Run 2
+      rect:
+        serializedVersion: 2
+        x: 155
+        y: 994
+        width: 149
+        height: 175
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b06ec8a5679710a49bc0fb994938b9f7
+      internalID: -1656803336
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Husk Miner Run 3
+      rect:
+        serializedVersion: 2
+        x: 307
+        y: 994
+        width: 149
+        height: 175
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 858db23706c78d347a8975768ec7a883
+      internalID: -1671383173
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Husk Miner Run 4
+      rect:
+        serializedVersion: 2
+        x: 459
+        y: 994
+        width: 149
+        height: 175
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 207b145f212b75045bcf0ee443d5fcd8
+      internalID: 196736909
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Husk Miner Run 5
+      rect:
+        serializedVersion: 2
+        x: 611
+        y: 994
+        width: 149
+        height: 175
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0e111d37c8cae1949a9dfeacb48cc003
+      internalID: 1895744410
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Husk Miner Run 6
+      rect:
+        serializedVersion: 2
+        x: 763
+        y: 994
+        width: 149
+        height: 175
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 706f2eade047de84aba64de79873ee41
+      internalID: 1385795558
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Husk Miner Run 7
+      rect:
+        serializedVersion: 2
+        x: 915
+        y: 994
+        width: 149
+        height: 175
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 547348e9a8d3c9b4db6e25983b83a019
+      internalID: -774900423
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Husk Miner Run 8
+      rect:
+        serializedVersion: 2
+        x: 1067
+        y: 994
+        width: 149
+        height: 175
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 093eab074480c7a4f8d6307db4a022c2
+      internalID: 1658799556
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Husk Miner Slash Startup 1
+      rect:
+        serializedVersion: 2
+        x: 3
+        y: 586
+        width: 164
+        height: 181
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0c4f702f1e6fc0f4bbd03464670c1e59
+      internalID: 1608686568
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Husk Miner Slash Startup 2
+      rect:
+        serializedVersion: 2
+        x: 170
+        y: 586
+        width: 164
+        height: 181
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cdb003f2b769a2f40a2a5999a0001b24
+      internalID: -1851638203
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Husk Miner Slash Startup 3
+      rect:
+        serializedVersion: 2
+        x: 337
+        y: 586
+        width: 164
+        height: 181
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: efb08f372f2674f4bb39d85c24e3c1f8
+      internalID: 1265155185
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Husk Miner Slash Startup 4
+      rect:
+        serializedVersion: 2
+        x: 504
+        y: 586
+        width: 164
+        height: 181
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a66b3e2189d6fcd4a85434b285941f1e
+      internalID: 2142483584
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Husk Miner Slash Startup 5
+      rect:
+        serializedVersion: 2
+        x: 671
+        y: 586
+        width: 164
+        height: 181
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b336412b84b559f4191e167e85a12fda
+      internalID: 1072753482
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Husk Miner Slash
+      rect:
+        serializedVersion: 2
+        x: 3
+        y: 387
+        width: 391
+        height: 177
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0cfe6ce1ecdbbd746b91e36031143142
+      internalID: -395047405
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Husk Miner Slash Recover 1
+      rect:
+        serializedVersion: 2
+        x: 429
+        y: 391
+        width: 235
+        height: 173
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d25f2a47c18028d44a5d9e49847afe4a
+      internalID: -2146239559
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Husk Miner Slash Recover 2
+      rect:
+        serializedVersion: 2
+        x: 667
+        y: 391
+        width: 235
+        height: 173
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ad8f4db2f9fd3fc4994c371fef0ea694
+      internalID: 416394638
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Husk Miner Death(Air) 1
+      rect:
+        serializedVersion: 2
+        x: 3
+        y: 3
+        width: 175
+        height: 167
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3ba31be6d1dafe34695319495f016b1b
+      internalID: 2078563953
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Husk Miner Death(Air) 2
+      rect:
+        serializedVersion: 2
+        x: 181
+        y: 3
+        width: 175
+        height: 167
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4cfab81906ff65049895aa76468ae717
+      internalID: 96077
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Husk Miner Death(Air) 3
+      rect:
+        serializedVersion: 2
+        x: 359
+        y: 3
+        width: 175
+        height: 167
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e4c8595cf55582d4d93313f4a0e60912
+      internalID: 879811810
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Husk Miner Death(Land) 1
+      rect:
+        serializedVersion: 2
+        x: 569
+        y: 51
+        width: 158
+        height: 119
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 811fd749f2fba4e46b7434815fdd4983
+      internalID: -535702004
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Husk Miner Death(Land) 2
+      rect:
+        serializedVersion: 2
+        x: 730
+        y: 51
+        width: 158
+        height: 119
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 67723ddf608a0e3418313100c3d3f968
+      internalID: -1507444231
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Husk Miner Death(Land) 3
+      rect:
+        serializedVersion: 2
+        x: 891
+        y: 51
+        width: 158
+        height: 119
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0222ed9cd24694047a44bedb1f72b935
+      internalID: -1555186361
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Husk Miner Turn 1
+      rect:
+        serializedVersion: 2
+        x: 3
+        y: 794
+        width: 112
+        height: 178
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b73b091bd1ad7b44c805446c5ce0c4b2
+      internalID: 132726523
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Husk Miner Turn 2
+      rect:
+        serializedVersion: 2
+        x: 118
+        y: 794
+        width: 112
+        height: 178
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d531e31c4f916574398d1050157b5489
+      internalID: -64541853
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      Husk Miner Death(Air) 1: 2078563953
+      Husk Miner Death(Air) 2: 96077
+      Husk Miner Death(Air) 3: 879811810
+      Husk Miner Death(Land) 1: -535702004
+      Husk Miner Death(Land) 2: -1507444231
+      Husk Miner Death(Land) 3: -1555186361
+      Husk Miner Idle 1: 1155647138111365190
+      Husk Miner Idle 2: -829591478
+      Husk Miner Idle 3: 1303707595
+      Husk Miner Idle 4: 306983829
+      Husk Miner Idle 5: 1785327850
+      Husk Miner Idle 6: -1658623295
+      Husk Miner Idle 7: 899362791
+      Husk Miner Idle 8: 1922990098
+      Husk Miner Idle 9: 372907666
+      Husk Miner Run 1: -2102801865
+      Husk Miner Run 2: -1656803336
+      Husk Miner Run 3: -1671383173
+      Husk Miner Run 4: 196736909
+      Husk Miner Run 5: 1895744410
+      Husk Miner Run 6: 1385795558
+      Husk Miner Run 7: -774900423
+      Husk Miner Run 8: 1658799556
+      Husk Miner Slash: -395047405
+      Husk Miner Slash Recover 1: -2146239559
+      Husk Miner Slash Recover 2: 416394638
+      Husk Miner Slash Startup 1: 1608686568
+      Husk Miner Slash Startup 2: -1851638203
+      Husk Miner Slash Startup 3: 1265155185
+      Husk Miner Slash Startup 4: 2142483584
+      Husk Miner Slash Startup 5: 1072753482
+      Husk Miner Turn 1: 132726523
+      Husk Miner Turn 2: -64541853
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
