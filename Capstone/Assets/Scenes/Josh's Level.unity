@@ -343,7 +343,7 @@ Transform:
   m_GameObject: {fileID: 634945307}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 6.471268, y: -0.51, z: 0.020245755}
+  m_LocalPosition: {x: 6.471268, y: 0.19, z: 0.020245755}
   m_LocalScale: {x: 4, y: 0.25, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -642,7 +642,7 @@ Transform:
   m_GameObject: {fileID: 707170819}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -3.3787317, y: -0.5, z: 0.020245755}
+  m_LocalPosition: {x: -3.3787317, y: 0.15, z: 0.020245755}
   m_LocalScale: {x: 4, y: 0.25, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -789,6 +789,7 @@ GameObject:
   - component: {fileID: 841347629}
   - component: {fileID: 841347628}
   - component: {fileID: 841347627}
+  - component: {fileID: 841347632}
   m_Layer: 0
   m_Name: Husk Miner
   m_TagString: Untagged
@@ -890,7 +891,7 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 0
+  m_Constraints: 4
 --- !u!212 &841347630
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -961,6 +962,23 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &841347632
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 841347626}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 691732cb9a5fbf84bb9afde6c00a17c6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  health: 100
+  moveSpeed: 2
+  chaseRange: 8
+  attackRange: 1.4
+  player: {fileID: 0}
 --- !u!1001 &1051943153
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -975,11 +993,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7330531380822282525, guid: 33a4a1835edc44144b51368b2e222aa8, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0
+      value: -5.99
       objectReference: {fileID: 0}
     - target: {fileID: 7330531380822282525, guid: 33a4a1835edc44144b51368b2e222aa8, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -0.94
+      value: -2.07
       objectReference: {fileID: 0}
     - target: {fileID: 7330531380822282525, guid: 33a4a1835edc44144b51368b2e222aa8, type: 3}
       propertyPath: m_LocalPosition.z
