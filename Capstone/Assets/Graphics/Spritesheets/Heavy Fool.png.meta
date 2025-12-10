@@ -1,0 +1,704 @@
+fileFormatVersion: 2
+guid: 3402c49c741b2e04bbcfe3d42b9b87a1
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -4928743441320753055
+    second: Heavy Fool_0
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 4096
+    resizeAlgorithm: 0
+    textureFormat: 4
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Heavy Fool_0
+      rect:
+        serializedVersion: 2
+        x: 3
+        y: 3145
+        width: 262
+        height: 235
+      alignment: 1
+      pivot: {x: 0, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1684a0724f5999bb0800000000000000
+      internalID: -4928743441320753055
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Heavy Fool_1
+      rect:
+        serializedVersion: 2
+        x: 268
+        y: 3145
+        width: 262
+        height: 235
+      alignment: 1
+      pivot: {x: 0, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fa04dd3371a2c1d4290674fff06d1ee3
+      internalID: -642020111
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Heavy Fool_2
+      rect:
+        serializedVersion: 2
+        x: 533
+        y: 3145
+        width: 262
+        height: 235
+      alignment: 1
+      pivot: {x: 0, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9579d7ecac8f1034385d1fa98677c2cf
+      internalID: 127979240
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Heavy Fool_3
+      rect:
+        serializedVersion: 2
+        x: 798
+        y: 3145
+        width: 262
+        height: 235
+      alignment: 1
+      pivot: {x: 0, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5e4c6c9d35770bf46afaf7857e94bc71
+      internalID: 1766151067
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Heavy Fool_4
+      rect:
+        serializedVersion: 2
+        x: 3
+        y: 2893
+        width: 285
+        height: 230
+      alignment: 1
+      pivot: {x: 0, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f6b49f282408a2c4da7f91bea2af9bd0
+      internalID: -2141336916
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Heavy Fool_5
+      rect:
+        serializedVersion: 2
+        x: 291
+        y: 2893
+        width: 285
+        height: 230
+      alignment: 1
+      pivot: {x: 0, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a4266fc8ecf73df4891112e626373ecc
+      internalID: -969849057
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Heavy Fool_6
+      rect:
+        serializedVersion: 2
+        x: 579
+        y: 2893
+        width: 285
+        height: 230
+      alignment: 1
+      pivot: {x: 0, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 111408c2028c6d4409a69f33b8a8fb73
+      internalID: -1466297631
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Heavy Fool_7
+      rect:
+        serializedVersion: 2
+        x: 867
+        y: 2893
+        width: 285
+        height: 230
+      alignment: 1
+      pivot: {x: 0, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 323af9a75e623654ea5fb4b47ff3e06f
+      internalID: -1625939357
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Heavy Fool_8
+      rect:
+        serializedVersion: 2
+        x: 1155
+        y: 2893
+        width: 285
+        height: 230
+      alignment: 1
+      pivot: {x: 0, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 59a28bb68308b5c41bd873d25d0931ea
+      internalID: -2114131896
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Heavy Fool_9
+      rect:
+        serializedVersion: 2
+        x: 3
+        y: 2634
+        width: 248
+        height: 237
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 13fd641a7bc1839479a57a4c6b564aae
+      internalID: -367651675
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Heavy Fool_10
+      rect:
+        serializedVersion: 2
+        x: 254
+        y: 2634
+        width: 248
+        height: 237
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2e1213ce75607f5428081718d5bbc1f5
+      internalID: 790978253
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Heavy Fool_11
+      rect:
+        serializedVersion: 2
+        x: 3
+        y: 2336
+        width: 562
+        height: 276
+      alignment: 1
+      pivot: {x: 0, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3eb3ddd3ec61ad74a94106ae62e647bf
+      internalID: 724383925
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Heavy Fool_12
+      rect:
+        serializedVersion: 2
+        x: 568
+        y: 2336
+        width: 562
+        height: 276
+      alignment: 1
+      pivot: {x: 0, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bcfaf0c771e4680428e27a442df4b140
+      internalID: 1338486480
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Heavy Fool_13
+      rect:
+        serializedVersion: 2
+        x: 1133
+        y: 2336
+        width: 562
+        height: 276
+      alignment: 1
+      pivot: {x: 0, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 50f42249bd776ce41b31cbd2d830875c
+      internalID: -393022126
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Heavy Fool_14
+      rect:
+        serializedVersion: 2
+        x: 3
+        y: 2057
+        width: 562
+        height: 276
+      alignment: 1
+      pivot: {x: 0, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 58939d832807260439fd5bac5589131d
+      internalID: 1679553668
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Heavy Fool_15
+      rect:
+        serializedVersion: 2
+        x: 568
+        y: 2057
+        width: 562
+        height: 276
+      alignment: 1
+      pivot: {x: 0, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bc8cf702d3f7e2545ac27ec1accd561d
+      internalID: -106262058
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Heavy Fool_16
+      rect:
+        serializedVersion: 2
+        x: 1133
+        y: 2057
+        width: 562
+        height: 276
+      alignment: 1
+      pivot: {x: 0, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: dc8eeb9753a62e347bf759e3e3f5c30c
+      internalID: -958237323
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Heavy Fool_17
+      rect:
+        serializedVersion: 2
+        x: 3
+        y: 1778
+        width: 562
+        height: 276
+      alignment: 1
+      pivot: {x: 0, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4787eefddc851754088c3ecb4f35e824
+      internalID: -1412322829
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Heavy Fool_18
+      rect:
+        serializedVersion: 2
+        x: 568
+        y: 1778
+        width: 562
+        height: 276
+      alignment: 1
+      pivot: {x: 0, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 07497ba5a34ba7c46b1d6fc960f882ba
+      internalID: -299493353
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Heavy Fool_19
+      rect:
+        serializedVersion: 2
+        x: 1133
+        y: 1778
+        width: 562
+        height: 276
+      alignment: 1
+      pivot: {x: 0, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 19fea10a811103a4a89b025d53748462
+      internalID: 116540907
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Heavy Fool_20
+      rect:
+        serializedVersion: 2
+        x: 3
+        y: 1499
+        width: 562
+        height: 276
+      alignment: 1
+      pivot: {x: 0, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7f35b3e8fbe12c942aed4c2449b41c2c
+      internalID: 985281272
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Heavy Fool_21
+      rect:
+        serializedVersion: 2
+        x: 568
+        y: 1499
+        width: 562
+        height: 276
+      alignment: 1
+      pivot: {x: 0, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 67d94f62c12633446acf01d8ea7ccefd
+      internalID: -1794673604
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Heavy Fool_22
+      rect:
+        serializedVersion: 2
+        x: 1133
+        y: 1499
+        width: 562
+        height: 276
+      alignment: 1
+      pivot: {x: 0, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 54e6bd2b13480dc47863ca160b78ca78
+      internalID: -209751714
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: f20d797efa97f23468388442172e9d48
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      Heavy Fool_0: -4928743441320753055
+      Heavy Fool_1: -642020111
+      Heavy Fool_10: 790978253
+      Heavy Fool_11: 724383925
+      Heavy Fool_12: 1338486480
+      Heavy Fool_13: -393022126
+      Heavy Fool_14: 1679553668
+      Heavy Fool_15: -106262058
+      Heavy Fool_16: -958237323
+      Heavy Fool_17: -1412322829
+      Heavy Fool_18: -299493353
+      Heavy Fool_19: 116540907
+      Heavy Fool_2: 127979240
+      Heavy Fool_20: 985281272
+      Heavy Fool_21: -1794673604
+      Heavy Fool_22: -209751714
+      Heavy Fool_23: -930218850
+      Heavy Fool_24: 383679302
+      Heavy Fool_25: -547709357
+      Heavy Fool_26: 1921259514
+      Heavy Fool_27: -2099263514
+      Heavy Fool_28: 1855650601
+      Heavy Fool_29: 1901430691
+      Heavy Fool_3: 1766151067
+      Heavy Fool_30: -1077280304
+      Heavy Fool_31: -1278078405
+      Heavy Fool_32: -95820783
+      Heavy Fool_33: 2146852739
+      Heavy Fool_34: 1410462293
+      Heavy Fool_35: 1350962748
+      Heavy Fool_36: -865219518
+      Heavy Fool_37: -1478097069
+      Heavy Fool_38: 1874683718
+      Heavy Fool_39: -1452343139
+      Heavy Fool_4: -2141336916
+      Heavy Fool_40: -338273149
+      Heavy Fool_41: 584267121
+      Heavy Fool_42: -354900740
+      Heavy Fool_43: -1746021274
+      Heavy Fool_44: 269636751
+      Heavy Fool_45: 1549090395
+      Heavy Fool_46: -667648719
+      Heavy Fool_47: -1076698178
+      Heavy Fool_48: 1119419008
+      Heavy Fool_49: 1403303854
+      Heavy Fool_5: -969849057
+      Heavy Fool_50: -88665675
+      Heavy Fool_51: 1211852103
+      Heavy Fool_52: -1448311786
+      Heavy Fool_53: -1971426944
+      Heavy Fool_54: 766824105
+      Heavy Fool_55: -2012003114
+      Heavy Fool_56: 1964644587
+      Heavy Fool_57: -1775310711
+      Heavy Fool_58: 1207126966
+      Heavy Fool_59: -36274823
+      Heavy Fool_6: -1466297631
+      Heavy Fool_60: -1048594405
+      Heavy Fool_61: 510044418
+      Heavy Fool_62: 1569184497
+      Heavy Fool_63: -94221648
+      Heavy Fool_64: 804755716
+      Heavy Fool_65: 561730833
+      Heavy Fool_66: -1717262449
+      Heavy Fool_67: -1701287357
+      Heavy Fool_68: -1232063162
+      Heavy Fool_69: 1245415494
+      Heavy Fool_7: -1625939357
+      Heavy Fool_70: -12842
+      Heavy Fool_71: 771657657
+      Heavy Fool_72: -125089695
+      Heavy Fool_73: -856300109
+      Heavy Fool_74: 961889816
+      Heavy Fool_75: -791759538
+      Heavy Fool_76: 1768473667
+      Heavy Fool_77: -479619641
+      Heavy Fool_8: -2114131896
+      Heavy Fool_9: -367651675
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
