@@ -24,16 +24,21 @@ public class BT_Enemy : MonoBehaviour {
 
 	private Rigidbody2D rb;
 	private Animator animator; // Optional: for attack animation
-	private Transform player;
+	public Transform player;
 	private Vector2 patrolStartPos;
 	private Vector2 velocity;
 	private int direction = -1; // 1 = right, -1 = left
 	private BTNode rootNode;
 
+	private float reversePatrolCooldown = 0.0f;
+	public Transform rayOrigin;
+	private CircleCollider2D attackTrigger;
+
 	void Start() {
 		rb = GetComponent<Rigidbody2D>();
 		animator = GetComponent<Animator>();
-		player = GameObject.FindGameObjectWithTag("Player")?.transform;
+		attackTrigger = GetComponent<CircleCollider2D>();
+		//player = GameObject.FindGameObjectWithTag("Player")?.transform;
 
 		if (patrolStartPoint == null) {
 			patrolStartPos = transform.position;
@@ -60,6 +65,9 @@ public class BT_Enemy : MonoBehaviour {
 			rootNode.Run();
 		}
 		DrawDebugRays();
+		if(reversePatrolCooldown > 0.0f) {
+			reversePatrolCooldown -= Time.deltaTime;
+		}
 	}
 
 	#region Behavior Tree Tasks
@@ -102,6 +110,7 @@ public class BT_Enemy : MonoBehaviour {
 		if (animator != null) {
 			animator.SetTrigger("Attack");
 		}
+		print("Attack");
 
 		// Stop movement during attack
 		rb.linearVelocity = new Vector2(0, rb.linearVelocity.y);
@@ -133,6 +142,7 @@ public class BT_Enemy : MonoBehaviour {
 
 	private bool HasPlayerInSightImmediate() {
 		if (player == null) return false;
+
 
 		// Front detection ray
 		bool frontVisible = RaycastToPlayer(detectionRange);
@@ -168,15 +178,21 @@ public class BT_Enemy : MonoBehaviour {
 
 	//Patrol Boundary Detection
 	bool CheckPatrolBoundary() {
+		// add a delay check to prevent multiple triggers at once
+		if(reversePatrolCooldown > 0.0f) {
+			return false;
+		}
 		// Check patrol range
 		float distanceFromStart = Mathf.Abs(transform.position.x - patrolStartPos.x);
 		if (distanceFromStart > patrolRange) {
+			reversePatrolCooldown = 0.15f;
 			return true;
 		}
 
 		// Check wall ahead
 		RaycastHit2D wallHit = Physics2D.Raycast(transform.position, Vector2.right * direction, 0.5f, wallLayer);
 		if (wallHit.collider != null) {
+			reversePatrolCooldown = 0.15f;
 			return true;
 		}
 
@@ -196,8 +212,9 @@ public class BT_Enemy : MonoBehaviour {
 	bool RaycastToPlayer(float maxDistance) {
 		if (player == null) return false;
 
-		Vector2 directionToPlayer = (player.position - transform.position).normalized;
-		RaycastHit2D hit = Physics2D.Raycast(transform.position, directionToPlayer, maxDistance, obstacleLayer);
+		Vector2 rayStartPos = rayOrigin != null ? (Vector2)rayOrigin.position : (Vector2)transform.position;
+		Vector2 directionToPlayer = ((Vector2)player.position - rayStartPos).normalized;
+		RaycastHit2D hit = Physics2D.Raycast(rayStartPos, directionToPlayer, maxDistance, obstacleLayer);
 
 		return hit.collider != null && hit.collider.gameObject == player.gameObject;
 	}
@@ -205,10 +222,11 @@ public class BT_Enemy : MonoBehaviour {
 	bool RaycastToPlayerBehind(float maxDistance) {
 		if (player == null) return false;
 
+		Vector2 rayStartPos = rayOrigin != null ? (Vector2)rayOrigin.position : (Vector2)transform.position;
 		// Check behind regardless of facing direction
-		Vector2 directionToPlayer = (player.position - transform.position).normalized;
+		Vector2 directionToPlayer = ((Vector2)player.position - rayStartPos).normalized;
 		if (Mathf.Abs(directionToPlayer.x + transform.localScale.x) < 0.5f) { // Player roughly behind
-			RaycastHit2D hit = Physics2D.Raycast(transform.position, directionToPlayer, maxDistance, obstacleLayer);
+			RaycastHit2D hit = Physics2D.Raycast(rayStartPos, directionToPlayer, maxDistance, obstacleLayer);
 			return hit.collider != null && hit.collider.gameObject == player.gameObject;
 		}
 		return false;
@@ -224,19 +242,21 @@ public class BT_Enemy : MonoBehaviour {
 	void DrawDebugRays() {
 		if (!showDebugRays || !Application.isPlaying) return;
 
+		Vector2 rayStartPos = rayOrigin != null ? (Vector2)rayOrigin.position : (Vector2)transform.position;
+
 		if (player != null) {
 			// Front detection ray
 			Vector2 frontDir = Vector2.right * transform.localScale.x;
-			Debug.DrawRay(transform.position, frontDir * detectionRange, Color.yellow);
+			Debug.DrawRay(rayStartPos, frontDir * detectionRange, Color.yellow);
 
 			// Player direction ray
-			Vector2 playerDir = (player.position - transform.position).normalized;
-			Debug.DrawRay(transform.position, playerDir * detectionRange,
+			Vector2 playerDir = ((Vector2)player.position - rayStartPos).normalized;
+			Debug.DrawRay(rayStartPos, playerDir * detectionRange,
 				RaycastToPlayer(detectionRange) ? Color.green : Color.red);
 
 			// Attack range circle
-			Debug.DrawRay(transform.position + Vector3.up * 0.5f, Vector3.right * attackRange, Color.magenta);
-			Debug.DrawRay(transform.position + Vector3.down * 0.5f, Vector3.right * attackRange, Color.magenta);
+			Debug.DrawRay(rayStartPos + (Vector2)Vector3.up * 0.5f, Vector3.right * attackRange, Color.magenta);
+			Debug.DrawRay(rayStartPos + (Vector2)Vector3.down * 0.5f, Vector3.right * attackRange, Color.magenta);
 
 			// Patrol boundary
 			Debug.DrawLine(patrolStartPos + Vector2.left * patrolRange, patrolStartPos + Vector2.right * patrolRange, Color.blue);
