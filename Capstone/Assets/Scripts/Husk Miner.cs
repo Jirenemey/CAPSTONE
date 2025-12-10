@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using static UnityEngine.GraphicsBuffer;
 
 public class HuskMiner : MonoBehaviour
@@ -26,7 +27,10 @@ public class HuskMiner : MonoBehaviour
 
     void Update()
     {
-        if (health <= 0f)
+		if (Input.GetKeyDown(KeyCode.Escape)) {
+			SceneManager.LoadScene("LevelSelect");
+		}
+		if (health <= 0f)
         {
             rb.linearVelocity = Vector2.zero;
             anim.SetBool("IsDead", true);

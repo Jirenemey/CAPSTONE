@@ -1,6 +1,7 @@
 using System;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class BT_Enemy : MonoBehaviour {
 	[Header("Patrol Settings")]
@@ -61,6 +62,9 @@ public class BT_Enemy : MonoBehaviour {
 	}
 
 	void Update() {
+		if (Input.GetKeyDown(KeyCode.Escape)) {
+			SceneManager.LoadScene("LevelSelect");
+		}
 		if (rootNode != null) {
 			rootNode.Run();
 		}

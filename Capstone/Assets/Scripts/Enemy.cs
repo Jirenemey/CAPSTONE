@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 [RequireComponent(typeof(Rigidbody2D))]
 [RequireComponent(typeof(Collider2D))]
@@ -30,7 +31,10 @@ public class Enemy : MonoBehaviour
 
     // Update is called once per frame
     void Update() {
-        Vector3 pos = transform.position;
+		if (Input.GetKeyDown(KeyCode.Escape)) {
+			SceneManager.LoadScene("LevelSelect");
+		}
+		Vector3 pos = transform.position;
         Vector2 dir;
 
         if (walkRight) {
