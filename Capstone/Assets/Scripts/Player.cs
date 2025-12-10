@@ -20,8 +20,7 @@ public class Player : MonoBehaviour
     LayerMask groundLayer;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
-    {
+    void Start() {
         if(!rb) rb = GetComponent<Rigidbody2D>();
         if(!col) col = GetComponent<Collider2D>();
         if(!groundCheck) groundCheck = transform.Find("GroundCheck");
@@ -29,8 +28,7 @@ public class Player : MonoBehaviour
     }
 
     // Update is called once per frame
-    void Update()
-    {
+    void Update() {
         GetInputs();
     }
 
@@ -39,7 +37,7 @@ public class Player : MonoBehaviour
     }
 
     void PlayerPhysics() {
-        Vector2 movement = new Vector3(horizontalAxis * speed, rb.linearVelocity.y);
+        Vector2 movement = new Vector2(horizontalAxis * speed, rb.linearVelocity.y);
 
         rb.linearVelocity = movement;
 
