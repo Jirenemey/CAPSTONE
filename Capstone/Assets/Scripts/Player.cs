@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 [RequireComponent(typeof(Rigidbody2D))]
 [RequireComponent(typeof(Collider2D))]
@@ -7,7 +8,11 @@ public class Player : MonoBehaviour
     Rigidbody2D rb;
     Collider2D col;
 
-    [Header("Horizontal Movement Settings")]
+	[Header("Movement system refrences")]
+	[SerializeField] InputActionReference moveAction;
+	[SerializeField] InputActionReference jumpAction;
+
+	[Header("Horizontal Movement Settings")]
     public float walkSpeed = 5.0f;
 	private float horizontalAxis;
 
@@ -29,12 +34,15 @@ public class Player : MonoBehaviour
         rb.gravityScale = defaultGravity;
         if(!groundCheck) groundCheck = transform.Find("GroundCheck");
         groundLayer = LayerMask.GetMask("Ground");
-    }
 
-    // Update is called once per frame
-    void Update() {
+		jumpAction.action.started += OnJumpPress; // Press equivalent
+		jumpAction.action.canceled += OnJumpRelease; // Release equivalent
+		jumpAction.action.Enable();
+	}
+
+	// Update is called once per frame
+	void Update() {
         GetInputs();
-        Jump();
 	}
 
 	void FixedUpdate() {
@@ -47,8 +55,14 @@ public class Player : MonoBehaviour
             rb.gravityScale = defaultGravity;
         }
     }
+	void OnDestroy() {
+		jumpAction.action.started -= OnJumpPress;
+		jumpAction.action.canceled -= OnJumpRelease;
+		jumpAction.action.Disable();
+	}
 
-    private void Move() {
+
+	private void Move() {
         Vector2 movement = new Vector2(horizontalAxis * walkSpeed, rb.linearVelocity.y);
 
         rb.linearVelocity = movement;
@@ -57,23 +71,26 @@ public class Player : MonoBehaviour
             jumps = 0; // reset double jump
         }
     }
-    private void Jump() {
-        // cancle jump when player lets got of button
-        if(Input.GetButtonUp("Jump") && rb.linearVelocity.y > 0) {
-            rb.linearVelocity = new Vector2(rb.linearVelocity.x, rb.linearVelocity.x*0.1f);
-            rb.gravityScale = defaultGravity * fallingGravityMultiplier;
-        }
-		if (Input.GetButtonDown("Jump") && jumps < jumpCount - 1) { // -1 to account for the very next frame where it resets the double jump
-            rb.gravityScale = defaultGravity;
+
+    void GetInputs(){
+        //horizontalAxis = Input.GetAxis("Horizontal");
+        horizontalAxis = moveAction.action.ReadValue<Vector2>().x;
+	}
+	private void OnJumpPress(InputAction.CallbackContext context) {
+		if (jumps < jumpCount - 1) { // -1 to account for the very next frame where it resets the double jump
+			rb.gravityScale = defaultGravity;
 			Debug.Log("JUMPED");
-            //rb.AddForce(Vector2.up * jumpForce, ForceMode2D.Impulse);
-            rb.linearVelocity = new Vector2(rb.linearVelocity.x, jumpForce);
+			//rb.AddForce(Vector2.up * jumpForce, ForceMode2D.Impulse);
+			rb.linearVelocity = new Vector2(rb.linearVelocity.x, jumpForce);
 			jumps++;
 		}
 	}
+	private void OnJumpRelease(InputAction.CallbackContext context) {
+		if (rb.linearVelocity.y > 0) {
+			rb.linearVelocity = new Vector2(rb.linearVelocity.x, rb.linearVelocity.x * 0.1f);
+			rb.gravityScale = defaultGravity * fallingGravityMultiplier;
+		}
+	}
 
-    void GetInputs(){
-        horizontalAxis = Input.GetAxis("Horizontal");
-    }
 
 }
