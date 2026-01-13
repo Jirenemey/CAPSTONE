@@ -1,3 +1,4 @@
+using System.Collections;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
@@ -8,15 +9,25 @@ public class Player : MonoBehaviour
     Rigidbody2D rb;
     Collider2D col;
 
-	[Header("Movement system refrences")]
+	[Header("Input system refrences")]
 	[SerializeField] InputActionReference moveAction;
 	[SerializeField] InputActionReference jumpAction;
+	[SerializeField] InputActionReference dashAction;
 
-	[Header("Horizontal Movement Settings")]
-    public float walkSpeed = 5.0f;
+	[Header("Movement Settings")]
+    [SerializeField] private float walkSpeed = 5.0f;
 	private float horizontalAxis;
+	float playerDirection = 1.0f;
 
-    [Header("Jump Settings")]
+	[Header("Dash Settings")]
+	public float dashSpeed = 20f;
+	public float dashDuration = 0.2f;
+	public float dashCooldown = 0.1f;
+	//[SerializeField] private TrailRenderer trailRenderer;
+	private bool canDash = true;
+	private bool isDashing;
+
+	[Header("Jump Settings")]
     public float jumpForce = 2.0f;
 	private int jumpCount = 2; // double jump
     private int jumps = 0;
@@ -34,13 +45,25 @@ public class Player : MonoBehaviour
         rb.gravityScale = defaultGravity;
         if(!groundCheck) groundCheck = transform.Find("GroundCheck");
         groundLayer = LayerMask.GetMask("Ground");
-
-		jumpAction.action.started += OnJumpPress; // Press equivalent
-		jumpAction.action.canceled += OnJumpRelease; // Release equivalent
+	}
+	private void OnEnable() {
+		// Input system event binding
+		jumpAction.action.started += OnJumpPress; // ButtonDown equivalent
+		jumpAction.action.canceled += OnJumpRelease; // ButtonUp equivalent
 		jumpAction.action.Enable();
+
+		dashAction.action.started += OnDashPress;
+		dashAction.action.Enable();
+	}
+	void OnDisable() {
+		jumpAction.action.Disable();
+		jumpAction.action.started -= OnJumpPress;
+		jumpAction.action.canceled -= OnJumpRelease;
+
+		dashAction.action.Disable();
+		dashAction.action.started -= OnDashPress;
 	}
 
-	// Update is called once per frame
 	void Update() {
         GetInputs();
 	}
@@ -55,14 +78,10 @@ public class Player : MonoBehaviour
             rb.gravityScale = defaultGravity;
         }
     }
-	void OnDestroy() {
-		jumpAction.action.started -= OnJumpPress;
-		jumpAction.action.canceled -= OnJumpRelease;
-		jumpAction.action.Disable();
-	}
 
 
 	private void Move() {
+		if (isDashing) return;
         Vector2 movement = new Vector2(horizontalAxis * walkSpeed, rb.linearVelocity.y);
 
         rb.linearVelocity = movement;
@@ -73,8 +92,10 @@ public class Player : MonoBehaviour
     }
 
     void GetInputs(){
-        //horizontalAxis = Input.GetAxis("Horizontal");
-        horizontalAxis = moveAction.action.ReadValue<Vector2>().x;
+		//horizontalAxis = Input.GetAxis("Horizontal");
+		horizontalAxis = moveAction.action.ReadValue<Vector2>().x;
+		if		(horizontalAxis < 0) playerDirection = -1f;
+		else if (horizontalAxis > 0) playerDirection = 1f;
 	}
 	private void OnJumpPress(InputAction.CallbackContext context) {
 		if (jumps < jumpCount - 1) { // -1 to account for the very next frame where it resets the double jump
@@ -90,6 +111,40 @@ public class Player : MonoBehaviour
 			rb.linearVelocity = new Vector2(rb.linearVelocity.x, rb.linearVelocity.x * 0.1f);
 			rb.gravityScale = defaultGravity * fallingGravityMultiplier;
 		}
+	}
+	private void OnDashPress(InputAction.CallbackContext context) {
+		if (isDashing) return; // Prevent double dash
+		Debug.Log("Dash");
+		StartCoroutine(DashRoutine());
+	}
+
+	private System.Collections.IEnumerator DashRoutine() {
+		if (!canDash) yield break;
+
+		canDash = false;
+		isDashing = true;
+
+		float originalGravity = rb.gravityScale;
+		rb.gravityScale = 0f; // No gravity during dash (Hollow Knight style)
+
+		rb.linearVelocity = new Vector2(playerDirection * dashSpeed, 0f); // Zero Y velocity
+
+		// visuals
+		//if (trailRenderer) trailRenderer.emitting = true;
+
+		yield return new WaitForSeconds(dashDuration);
+
+		// reset
+		//if (trailRenderer) trailRenderer.emitting = false;
+		rb.gravityScale = originalGravity;
+		isDashing = false;
+
+		// Stop momentum (optional, prevents sliding after dash)
+		rb.linearVelocity = new Vector2(0f, rb.linearVelocity.y);
+
+		//cooldown
+		yield return new WaitForSeconds(dashCooldown);
+		canDash = true;
 	}
 
 
