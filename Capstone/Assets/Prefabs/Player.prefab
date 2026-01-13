@@ -122,9 +122,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b075625e7bb893e448adb66e5d974386, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 5
+  walkSpeed: 5
   jumpForce: 6
   groundCheckRadius: 0.3
+  groundCheck: {fileID: 0}
+  groundLayer:
+    serializedVersion: 2
+    m_Bits: 0
 --- !u!95 &-81321523107543937
 Animator:
   serializedVersion: 7
@@ -254,7 +258,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: -2002104724, guid: cfeffb8cd76958c479f533ed2325466d, type: 3}
+  m_Sprite: {fileID: 21300000, guid: a384f8ef2bac6914682502a58a33848d, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
