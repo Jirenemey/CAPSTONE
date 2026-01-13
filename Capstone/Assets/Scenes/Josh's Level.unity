@@ -1039,6 +1039,10 @@ PrefabInstance:
       value: Player
       objectReference: {fileID: 0}
     - target: {fileID: 1919163165415653956, guid: 33a4a1835edc44144b51368b2e222aa8, type: 3}
+      propertyPath: jumpForce
+      value: 8.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 1919163165415653956, guid: 33a4a1835edc44144b51368b2e222aa8, type: 3}
       propertyPath: dashAction
       value: 
       objectReference: {fileID: -7619157589409501069, guid: 2bcd2660ca9b64942af0de543d8d7100, type: 3}
