@@ -16,8 +16,16 @@ public class Player : MonoBehaviour
 
 	[Header("Movement Settings")]
     [SerializeField] private float walkSpeed = 5.0f;
+	float originalWalkSpeed;
 	private float horizontalAxis;
 	float playerDirection = 1.0f;
+
+	[Header("Sprint Settings")]
+	[SerializeField] float sprintMultiplier = 1.3f;
+	[SerializeField] float durationBeforeSprint = 2.0f;//sprint after 2 seconds of moving in the same direction
+	float oldDirection = 0f;
+	float walkHeldDuration = 0.0f;//this tracks how long the player has held the walk button down
+	bool isSprinting = false;
 
 	[Header("Dash Settings")]
 	public float dashSpeed = 20f;
@@ -45,6 +53,8 @@ public class Player : MonoBehaviour
         rb.gravityScale = defaultGravity;
         if(!groundCheck) groundCheck = transform.Find("GroundCheck");
         groundLayer = LayerMask.GetMask("Ground");
+		oldDirection = playerDirection;
+		originalWalkSpeed = walkSpeed;
 	}
 	private void OnEnable() {
 		// Input system event binding
@@ -66,11 +76,22 @@ public class Player : MonoBehaviour
 
 	void Update() {
         GetInputs();
+
+		if (Mathf.Abs(horizontalAxis) > 0.01f) {
+			walkHeldDuration += Time.deltaTime;
+		} else {
+			// Reset timer if we stop moving
+			ResetSprint();
+		}
+
+		if (walkHeldDuration >= durationBeforeSprint && !isSprinting) {
+			isSprinting = true;
+			walkSpeed = originalWalkSpeed * sprintMultiplier;
+		}
 	}
 
 	void FixedUpdate() {
         Move();
-
         // if player is falling, add gravity
         if(rb.linearVelocity.y < -0.4f) {
             rb.gravityScale = defaultGravity * fallingGravityMultiplier;
@@ -96,7 +117,13 @@ public class Player : MonoBehaviour
 		horizontalAxis = moveAction.action.ReadValue<Vector2>().x;
 		if		(horizontalAxis < 0) playerDirection = -1f;
 		else if (horizontalAxis > 0) playerDirection = 1f;
+
+		if (oldDirection != playerDirection) {
+			ResetSprint();
+			oldDirection = playerDirection;
+		}
 	}
+
 	private void OnJumpPress(InputAction.CallbackContext context) {
 		if (jumps < jumpCount - 1) { // -1 to account for the very next frame where it resets the double jump
 			rb.gravityScale = defaultGravity;
@@ -112,12 +139,12 @@ public class Player : MonoBehaviour
 			rb.gravityScale = defaultGravity * fallingGravityMultiplier;
 		}
 	}
+
 	private void OnDashPress(InputAction.CallbackContext context) {
 		if (isDashing) return; // Prevent double dash
 		Debug.Log("Dash");
 		StartCoroutine(DashRoutine());
 	}
-
 	private System.Collections.IEnumerator DashRoutine() {
 		if (!canDash) yield break;
 
@@ -147,5 +174,9 @@ public class Player : MonoBehaviour
 		canDash = true;
 	}
 
-
+	private void ResetSprint() {
+		walkHeldDuration = 0.0f;
+		isSprinting = false;
+		walkSpeed = originalWalkSpeed;
+	}
 }
