@@ -8,6 +8,7 @@ public class Player : MonoBehaviour
 {
     Rigidbody2D rb;
     Collider2D col;
+	Animator anim;
 
 	[Header("Input system refrences")]
 	[SerializeField] InputActionReference moveAction;
@@ -50,6 +51,7 @@ public class Player : MonoBehaviour
 	void Start() {
         if(!rb) rb = GetComponent<Rigidbody2D>();
         if(!col) col = GetComponent<Collider2D>();
+        if(!anim) anim = GetComponent<Animator>();
         rb.gravityScale = defaultGravity;
         if(!groundCheck) groundCheck = transform.Find("GroundCheck");
         groundLayer = LayerMask.GetMask("Ground");
@@ -79,9 +81,11 @@ public class Player : MonoBehaviour
 
 		if (Mathf.Abs(horizontalAxis) > 0.01f) {
 			walkHeldDuration += Time.deltaTime;
-		} else {
-			// Reset timer if we stop moving
-			ResetSprint();
+            anim.SetBool("isMoving", true);
+        } else {
+            // Reset timer if we stop moving
+            anim.SetBool("isMoving", false);
+            ResetSprint();
 		}
 
 		if (walkHeldDuration >= durationBeforeSprint && !isSprinting) {
@@ -109,7 +113,11 @@ public class Player : MonoBehaviour
 
         if(Physics2D.OverlapCircle(groundCheck.position, groundCheckRadius, groundLayer)){
             jumps = 0; // reset double jump
-        }
+			anim.SetBool("isGrounded", true);
+        } else
+		{
+			anim.SetBool("isGrounded", false);
+		}
     }
 
     void GetInputs(){
@@ -126,6 +134,7 @@ public class Player : MonoBehaviour
 
 	private void OnJumpPress(InputAction.CallbackContext context) {
 		if (jumps < jumpCount - 1) { // -1 to account for the very next frame where it resets the double jump
+			anim.SetTrigger("Jump");
 			rb.gravityScale = defaultGravity;
 			Debug.Log("JUMPED");
 			//rb.AddForce(Vector2.up * jumpForce, ForceMode2D.Impulse);
