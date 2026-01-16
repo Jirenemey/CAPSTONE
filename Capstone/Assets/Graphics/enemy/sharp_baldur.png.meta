@@ -1,0 +1,655 @@
+fileFormatVersion: 2
+guid: 810ef1aaeb2acfd4682b40a813306a4a
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 7350976530141290571
+    second: sharp_baldur_0
+  - first:
+      213: -3178005096417496867
+    second: sharp_baldur_1
+  - first:
+      213: 3029848037164096836
+    second: sharp_baldur_2
+  - first:
+      213: -5482910694089685367
+    second: sharp_baldur_3
+  - first:
+      213: 2647770328866392842
+    second: sharp_baldur_4
+  - first:
+      213: -6955667628684467354
+    second: sharp_baldur_5
+  - first:
+      213: 2385063914383223835
+    second: sharp_baldur_6
+  - first:
+      213: -844099097684670112
+    second: sharp_baldur_7
+  - first:
+      213: -6135589611135199986
+    second: sharp_baldur_8
+  - first:
+      213: -1195824264154528475
+    second: sharp_baldur_9
+  - first:
+      213: -7155800710452995883
+    second: sharp_baldur_10
+  - first:
+      213: 782479844701359441
+    second: sharp_baldur_11
+  - first:
+      213: 2367792472883504534
+    second: sharp_baldur_12
+  - first:
+      213: -6453851712437872309
+    second: sharp_baldur_13
+  - first:
+      213: 6660364313634081208
+    second: sharp_baldur_14
+  - first:
+      213: 1848838406917797496
+    second: sharp_baldur_15
+  - first:
+      213: 1936658421857948310
+    second: sharp_baldur_16
+  - first:
+      213: 776251786186772969
+    second: sharp_baldur_17
+  - first:
+      213: -3598344425944102073
+    second: sharp_baldur_18
+  - first:
+      213: 783300518677188786
+    second: sharp_baldur_19
+  - first:
+      213: -1259153379636124055
+    second: sharp_baldur_20
+  - first:
+      213: -6601210948848637190
+    second: sharp_baldur_21
+  - first:
+      213: 3429485297906398543
+    second: sharp_baldur_22
+  - first:
+      213: -252356716895442524
+    second: sharp_baldur_23
+  - first:
+      213: 5457181248772008527
+    second: sharp_baldur_24
+  - first:
+      213: -3510390711168763097
+    second: sharp_baldur_25
+  - first:
+      213: -6506528201259382540
+    second: sharp_baldur_26
+  - first:
+      213: 1716509456536218256
+    second: sharp_baldur_27
+  - first:
+      213: 1380486369891576785
+    second: sharp_baldur_28
+  - first:
+      213: -6486014885654641710
+    second: sharp_baldur_29
+  - first:
+      213: 9178486422952101491
+    second: sharp_baldur_30
+  - first:
+      213: -1527815306704358594
+    second: sharp_baldur_31
+  - first:
+      213: 6479658070831071336
+    second: sharp_baldur_32
+  - first:
+      213: 1667403125392753623
+    second: sharp_baldur_33
+  - first:
+      213: 3179780163831362459
+    second: sharp_baldur_34
+  - first:
+      213: 7879976936510828956
+    second: sharp_baldur_35
+  - first:
+      213: -5513435946744602041
+    second: sharp_baldur_36
+  - first:
+      213: 3674067075791015909
+    second: sharp_baldur_37
+  - first:
+      213: 2782701447171199912
+    second: sharp_baldur_38
+  - first:
+      213: -1542912805050617362
+    second: sharp_baldur_39
+  - first:
+      213: 6684386316633246313
+    second: sharp_baldur_40
+  - first:
+      213: 7499730416597104967
+    second: sharp_baldur_41
+  - first:
+      213: 5343198020218543721
+    second: sharp_baldur_42
+  - first:
+      213: -2171200264579285221
+    second: sharp_baldur_43
+  - first:
+      213: -1812774455120580047
+    second: sharp_baldur_44
+  - first:
+      213: 8377739945858518388
+    second: sharp_baldur_45
+  - first:
+      213: 848510339369057099
+    second: sharp_baldur_46
+  - first:
+      213: 3190030175267239364
+    second: sharp_baldur_47
+  - first:
+      213: 2980098854878266489
+    second: sharp_baldur_48
+  - first:
+      213: 5089072098571755057
+    second: sharp_baldur_49
+  - first:
+      213: 7673788139252811069
+    second: sharp_baldur_50
+  - first:
+      213: -2115053811438672548
+    second: sharp_baldur_51
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: sharp_baldur_2
+      rect:
+        serializedVersion: 2
+        x: 3
+        y: 584
+        width: 127
+        height: 103
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 44d949aacbe2c0a20800000000000000
+      internalID: 3029848037164096836
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sharp_baldur_3
+      rect:
+        serializedVersion: 2
+        x: 134
+        y: 584
+        width: 128
+        height: 102
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 986089ff5c9c8e3b0800000000000000
+      internalID: -5482910694089685367
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sharp_baldur_4
+      rect:
+        serializedVersion: 2
+        x: 267
+        y: 583
+        width: 127
+        height: 100
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a0b86eae515ceb420800000000000000
+      internalID: 2647770328866392842
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sharp_baldur_5
+      rect:
+        serializedVersion: 2
+        x: 398
+        y: 584
+        width: 130
+        height: 102
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6632498f421887f90800000000000000
+      internalID: -6955667628684467354
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sharp_baldur_10
+      rect:
+        serializedVersion: 2
+        x: 2
+        y: 445
+        width: 119
+        height: 116
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5d816f9ba2d71bc90800000000000000
+      internalID: -7155800710452995883
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sharp_baldur_11
+      rect:
+        serializedVersion: 2
+        x: 123
+        y: 446
+        width: 119
+        height: 116
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 15dc353e54debda00800000000000000
+      internalID: 782479844701359441
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sharp_baldur_12
+      rect:
+        serializedVersion: 2
+        x: 250
+        y: 429
+        width: 113
+        height: 112
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 695a01085b61cd020800000000000000
+      internalID: 2367792472883504534
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sharp_baldur_15
+      rect:
+        serializedVersion: 2
+        x: 6
+        y: 298
+        width: 108
+        height: 110
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8763f6b4cb468a910800000000000000
+      internalID: 1848838406917797496
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sharp_baldur_16
+      rect:
+        serializedVersion: 2
+        x: 119
+        y: 296
+        width: 108
+        height: 113
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6929c16e29460ea10800000000000000
+      internalID: 1936658421857948310
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sharp_baldur_17
+      rect:
+        serializedVersion: 2
+        x: 238
+        y: 295
+        width: 113
+        height: 112
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9e1dce303ecc5ca00800000000000000
+      internalID: 776251786186772969
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sharp_baldur_22
+      rect:
+        serializedVersion: 2
+        x: 19
+        y: 154
+        width: 120
+        height: 120
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f45b22055baf79f20800000000000000
+      internalID: 3429485297906398543
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sharp_baldur_23
+      rect:
+        serializedVersion: 2
+        x: 141
+        y: 153
+        width: 132
+        height: 93
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4a963cc27e27f7cf0800000000000000
+      internalID: -252356716895442524
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sharp_baldur_49
+      rect:
+        serializedVersion: 2
+        x: 2
+        y: 16
+        width: 119
+        height: 116
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 13e98bf4c1400a640800000000000000
+      internalID: 5089072098571755057
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sharp_baldur_50
+      rect:
+        serializedVersion: 2
+        x: 146
+        y: 8
+        width: 120
+        height: 120
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d3505c9b7a5ce7a60800000000000000
+      internalID: 7673788139252811069
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sharp_baldur_51
+      rect:
+        serializedVersion: 2
+        x: 276
+        y: 2
+        width: 108
+        height: 110
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c55ac58b3c1d5a2e0800000000000000
+      internalID: -2115053811438672548
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 7f7afd2b01d792140a365b248ef23711
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      sharp_baldur_0: 7350976530141290571
+      sharp_baldur_1: -3178005096417496867
+      sharp_baldur_10: -7155800710452995883
+      sharp_baldur_11: 782479844701359441
+      sharp_baldur_12: 2367792472883504534
+      sharp_baldur_13: -6453851712437872309
+      sharp_baldur_14: 6660364313634081208
+      sharp_baldur_15: 1848838406917797496
+      sharp_baldur_16: 1936658421857948310
+      sharp_baldur_17: 776251786186772969
+      sharp_baldur_18: -3598344425944102073
+      sharp_baldur_19: 783300518677188786
+      sharp_baldur_2: 3029848037164096836
+      sharp_baldur_20: -1259153379636124055
+      sharp_baldur_21: -6601210948848637190
+      sharp_baldur_22: 3429485297906398543
+      sharp_baldur_23: -252356716895442524
+      sharp_baldur_24: 5457181248772008527
+      sharp_baldur_25: -3510390711168763097
+      sharp_baldur_26: -6506528201259382540
+      sharp_baldur_27: 1716509456536218256
+      sharp_baldur_28: 1380486369891576785
+      sharp_baldur_29: -6486014885654641710
+      sharp_baldur_3: -5482910694089685367
+      sharp_baldur_30: 9178486422952101491
+      sharp_baldur_31: -1527815306704358594
+      sharp_baldur_32: 6479658070831071336
+      sharp_baldur_33: 1667403125392753623
+      sharp_baldur_34: 3179780163831362459
+      sharp_baldur_35: 7879976936510828956
+      sharp_baldur_36: -5513435946744602041
+      sharp_baldur_37: 3674067075791015909
+      sharp_baldur_38: 2782701447171199912
+      sharp_baldur_39: -1542912805050617362
+      sharp_baldur_4: 2647770328866392842
+      sharp_baldur_40: 6684386316633246313
+      sharp_baldur_41: 7499730416597104967
+      sharp_baldur_42: 5343198020218543721
+      sharp_baldur_43: -2171200264579285221
+      sharp_baldur_44: -1812774455120580047
+      sharp_baldur_45: 8377739945858518388
+      sharp_baldur_46: 848510339369057099
+      sharp_baldur_47: 3190030175267239364
+      sharp_baldur_48: 2980098854878266489
+      sharp_baldur_49: 5089072098571755057
+      sharp_baldur_5: -6955667628684467354
+      sharp_baldur_50: 7673788139252811069
+      sharp_baldur_51: -2115053811438672548
+      sharp_baldur_6: 2385063914383223835
+      sharp_baldur_7: -844099097684670112
+      sharp_baldur_8: -6135589611135199986
+      sharp_baldur_9: -1195824264154528475
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

@@ -1,0 +1,1691 @@
+fileFormatVersion: 2
+guid: b4fa902257c52ae4ba325e4f80788cc2
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -776581679557673011
+    second: gruz_mother_0
+  - first:
+      213: 1072621820837166800
+    second: gruz_mother_1
+  - first:
+      213: -7861090980266035957
+    second: gruz_mother_2
+  - first:
+      213: 5334710990901182059
+    second: gruz_mother_3
+  - first:
+      213: -3202458751467590146
+    second: gruz_mother_4
+  - first:
+      213: 3237310696105165904
+    second: gruz_mother_5
+  - first:
+      213: 2173335723729776350
+    second: gruz_mother_6
+  - first:
+      213: -5202800559166360738
+    second: gruz_mother_7
+  - first:
+      213: -1433440014037513338
+    second: gruz_mother_8
+  - first:
+      213: 5828588261670542966
+    second: gruz_mother_9
+  - first:
+      213: -620211044103872640
+    second: gruz_mother_10
+  - first:
+      213: 6215368055605175537
+    second: gruz_mother_11
+  - first:
+      213: 6149989078115585597
+    second: gruz_mother_12
+  - first:
+      213: -4549290720163455659
+    second: gruz_mother_13
+  - first:
+      213: -4183967957054864285
+    second: gruz_mother_14
+  - first:
+      213: -5269077214111864315
+    second: gruz_mother_15
+  - first:
+      213: -7246575361657962320
+    second: gruz_mother_16
+  - first:
+      213: -2050977905257224055
+    second: gruz_mother_17
+  - first:
+      213: -8386030339265087880
+    second: gruz_mother_18
+  - first:
+      213: 8552834921458893815
+    second: gruz_mother_19
+  - first:
+      213: 8085276762555698988
+    second: gruz_mother_20
+  - first:
+      213: 4133043993685654141
+    second: gruz_mother_21
+  - first:
+      213: 3212101057010953192
+    second: gruz_mother_22
+  - first:
+      213: -8689211949883885948
+    second: gruz_mother_23
+  - first:
+      213: 3027674115947490441
+    second: gruz_mother_24
+  - first:
+      213: -6593936879406699243
+    second: gruz_mother_25
+  - first:
+      213: -9178720237535306937
+    second: gruz_mother_26
+  - first:
+      213: -2588223734029390056
+    second: gruz_mother_27
+  - first:
+      213: -5632718187803187094
+    second: gruz_mother_28
+  - first:
+      213: 3268171406635489089
+    second: gruz_mother_29
+  - first:
+      213: 1091584839370665673
+    second: gruz_mother_30
+  - first:
+      213: 9018508999874555018
+    second: gruz_mother_31
+  - first:
+      213: -4388374545973811301
+    second: gruz_mother_32
+  - first:
+      213: -2509208772404907607
+    second: gruz_mother_33
+  - first:
+      213: -3788101974507283087
+    second: gruz_mother_34
+  - first:
+      213: -6841014111991203926
+    second: gruz_mother_35
+  - first:
+      213: 4588099747964414851
+    second: gruz_mother_36
+  - first:
+      213: -544017174150121528
+    second: gruz_mother_37
+  - first:
+      213: -2022609900070363264
+    second: gruz_mother_38
+  - first:
+      213: 8666277035096571966
+    second: gruz_mother_39
+  - first:
+      213: 1045368949092138507
+    second: gruz_mother_40
+  - first:
+      213: 3351109282880007421
+    second: gruz_mother_41
+  - first:
+      213: 9200710631306316725
+    second: gruz_mother_42
+  - first:
+      213: -1545856292777831331
+    second: gruz_mother_43
+  - first:
+      213: -1531962122627712529
+    second: gruz_mother_44
+  - first:
+      213: 5340652118011287348
+    second: gruz_mother_45
+  - first:
+      213: 3340367767295265194
+    second: gruz_mother_46
+  - first:
+      213: -497750644078030851
+    second: gruz_mother_47
+  - first:
+      213: -5302404747021890223
+    second: gruz_mother_48
+  - first:
+      213: -1362048275704370524
+    second: gruz_mother_49
+  - first:
+      213: -6169904697127730045
+    second: gruz_mother_50
+  - first:
+      213: 4375219970887941773
+    second: gruz_mother_51
+  - first:
+      213: -2399489763053640413
+    second: gruz_mother_52
+  - first:
+      213: -9030920912592853988
+    second: gruz_mother_53
+  - first:
+      213: 6349465168188780030
+    second: gruz_mother_54
+  - first:
+      213: 7206996326672330912
+    second: gruz_mother_55
+  - first:
+      213: -6745234190622479356
+    second: gruz_mother_56
+  - first:
+      213: 7033245760153686461
+    second: gruz_mother_57
+  - first:
+      213: -3085344911382360217
+    second: gruz_mother_58
+  - first:
+      213: -8973610998500186219
+    second: gruz_mother_59
+  - first:
+      213: 2787891362704115820
+    second: gruz_mother_60
+  - first:
+      213: 3971510240043939383
+    second: gruz_mother_61
+  - first:
+      213: 3266713012632126906
+    second: gruz_mother_62
+  - first:
+      213: 8942562593625961921
+    second: gruz_mother_63
+  - first:
+      213: -7217855631019173744
+    second: gruz_mother_64
+  - first:
+      213: 2008219481130518739
+    second: gruz_mother_65
+  - first:
+      213: 8987061691394763636
+    second: gruz_mother_66
+  - first:
+      213: -1029069451814535813
+    second: gruz_mother_67
+  - first:
+      213: -2733183177022710919
+    second: gruz_mother_68
+  - first:
+      213: 6498381795100061409
+    second: gruz_mother_69
+  - first:
+      213: -9130023920166836208
+    second: gruz_mother_70
+  - first:
+      213: 7216173056684099139
+    second: gruz_mother_71
+  - first:
+      213: -1575621820374433819
+    second: gruz_mother_72
+  - first:
+      213: -4745915145561449333
+    second: gruz_mother_73
+  - first:
+      213: -5074675567006766833
+    second: gruz_mother_74
+  - first:
+      213: 2718640747750692413
+    second: gruz_mother_75
+  - first:
+      213: 1499747158699870296
+    second: gruz_mother_76
+  - first:
+      213: 5540499845508247230
+    second: gruz_mother_77
+  - first:
+      213: 803130815421970288
+    second: gruz_mother_78
+  - first:
+      213: 4292378531518226055
+    second: gruz_mother_79
+  - first:
+      213: -5756599516582368380
+    second: gruz_mother_80
+  - first:
+      213: -2397503581364524279
+    second: gruz_mother_81
+  - first:
+      213: 7787044423716539421
+    second: gruz_mother_82
+  - first:
+      213: -4846174161881129716
+    second: gruz_mother_83
+  - first:
+      213: 6469488461328009418
+    second: gruz_mother_84
+  - first:
+      213: -8418205065005754668
+    second: gruz_mother_85
+  - first:
+      213: -945356256413472773
+    second: gruz_mother_86
+  - first:
+      213: -6867095695713994276
+    second: gruz_mother_87
+  - first:
+      213: 1250198134172988722
+    second: gruz_mother_88
+  - first:
+      213: 2511580181977502747
+    second: gruz_mother_89
+  - first:
+      213: 2985917312257533032
+    second: gruz_mother_90
+  - first:
+      213: -3846827759053954356
+    second: gruz_mother_91
+  - first:
+      213: 6668348971893143313
+    second: gruz_mother_92
+  - first:
+      213: -1668646412574218479
+    second: gruz_mother_93
+  - first:
+      213: -8475902703212454359
+    second: gruz_mother_94
+  - first:
+      213: -3353326903538360628
+    second: gruz_mother_95
+  - first:
+      213: 4759454136336241687
+    second: gruz_mother_96
+  - first:
+      213: 6954499189645997568
+    second: gruz_mother_97
+  - first:
+      213: -3383099533378115788
+    second: gruz_mother_98
+  - first:
+      213: 2230980962262649161
+    second: gruz_mother_99
+  - first:
+      213: 578364174086748918
+    second: gruz_mother_100
+  - first:
+      213: -25763836319387935
+    second: gruz_mother_101
+  - first:
+      213: 2655289133203380527
+    second: gruz_mother_102
+  - first:
+      213: 7262251838474314488
+    second: gruz_mother_103
+  - first:
+      213: 9123232186722428565
+    second: gruz_mother_104
+  - first:
+      213: 4639875240977479849
+    second: gruz_mother_105
+  - first:
+      213: 5722778281973032119
+    second: gruz_mother_106
+  - first:
+      213: 4480360137665749120
+    second: gruz_mother_107
+  - first:
+      213: 2788284461045159067
+    second: gruz_mother_108
+  - first:
+      213: -3233044164688445693
+    second: gruz_mother_109
+  - first:
+      213: 3527912924782308671
+    second: gruz_mother_110
+  - first:
+      213: 1162989982681344983
+    second: gruz_mother_111
+  - first:
+      213: -4114097975611570552
+    second: gruz_mother_112
+  - first:
+      213: 1112180426667219636
+    second: gruz_mother_113
+  - first:
+      213: 4728114033627869247
+    second: gruz_mother_114
+  - first:
+      213: -6672706260155150791
+    second: gruz_mother_115
+  - first:
+      213: -8158989203477332654
+    second: gruz_mother_116
+  - first:
+      213: -6629977588034151682
+    second: gruz_mother_117
+  - first:
+      213: 1783225080266654108
+    second: gruz_mother_118
+  - first:
+      213: 632793960018379496
+    second: gruz_mother_119
+  - first:
+      213: 1943461630657644425
+    second: gruz_mother_120
+  - first:
+      213: 6211410436354077446
+    second: gruz_mother_121
+  - first:
+      213: -2516134652970281363
+    second: gruz_mother_122
+  - first:
+      213: -7119158737490662999
+    second: gruz_mother_123
+  - first:
+      213: -8909937659884118465
+    second: gruz_mother_124
+  - first:
+      213: 7917643884150309452
+    second: gruz_mother_125
+  - first:
+      213: -6527755640750540552
+    second: gruz_mother_126
+  - first:
+      213: -6322585943208927669
+    second: gruz_mother_127
+  - first:
+      213: -2151262963470242012
+    second: gruz_mother_128
+  - first:
+      213: -2458661149492970442
+    second: gruz_mother_129
+  - first:
+      213: -7074793587285342911
+    second: gruz_mother_130
+  - first:
+      213: -1262943412105380354
+    second: gruz_mother_131
+  - first:
+      213: -3379737672746264619
+    second: gruz_mother_132
+  - first:
+      213: -7047057141038310083
+    second: gruz_mother_133
+  - first:
+      213: 5704395273849106659
+    second: gruz_mother_134
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: gruz_mother_4
+      rect:
+        serializedVersion: 2
+        x: 7
+        y: 3187
+        width: 307
+        height: 136
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: efdeeee9bb49e83d0800000000000000
+      internalID: -3202458751467590146
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: gruz_mother_5
+      rect:
+        serializedVersion: 2
+        x: 324
+        y: 3186
+        width: 305
+        height: 137
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 054cbe41dec3dec20800000000000000
+      internalID: 3237310696105165904
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: gruz_mother_6
+      rect:
+        serializedVersion: 2
+        x: 639
+        y: 3186
+        width: 306
+        height: 137
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ede649e635d392e10800000000000000
+      internalID: 2173335723729776350
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: gruz_mother_7
+      rect:
+        serializedVersion: 2
+        x: 968
+        y: 3186
+        width: 291
+        height: 140
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e537fa10570fbc7b0800000000000000
+      internalID: -5202800559166360738
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: gruz_mother_8
+      rect:
+        serializedVersion: 2
+        x: 1291
+        y: 3206
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 68b8674e6e56b1ce0800000000000000
+      internalID: -1433440014037513338
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: gruz_mother_9
+      rect:
+        serializedVersion: 2
+        x: 1296
+        y: 3185
+        width: 276
+        height: 140
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 67e52ee842e43e050800000000000000
+      internalID: 5828588261670542966
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: gruz_mother_10
+      rect:
+        serializedVersion: 2
+        x: 38
+        y: 3045
+        width: 275
+        height: 137
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 08f1a6667519467f0800000000000000
+      internalID: -620211044103872640
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: gruz_mother_11
+      rect:
+        serializedVersion: 2
+        x: 355
+        y: 3045
+        width: 272
+        height: 137
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1f428aee05c614650800000000000000
+      internalID: 6215368055605175537
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: gruz_mother_12
+      rect:
+        serializedVersion: 2
+        x: 664
+        y: 3045
+        width: 278
+        height: 138
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d3e8c958b76295550800000000000000
+      internalID: 6149989078115585597
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: gruz_mother_23
+      rect:
+        serializedVersion: 2
+        x: 12
+        y: 2806
+        width: 195
+        height: 196
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 486771dd4c7b96780800000000000000
+      internalID: -8689211949883885948
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: gruz_mother_24
+      rect:
+        serializedVersion: 2
+        x: 214
+        y: 2824
+        width: 195
+        height: 199
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 98ce1b03195740a20800000000000000
+      internalID: 3027674115947490441
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: gruz_mother_25
+      rect:
+        serializedVersion: 2
+        x: 446
+        y: 2783
+        width: 190
+        height: 225
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 51dad972851ad74a0800000000000000
+      internalID: -6593936879406699243
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: gruz_mother_26
+      rect:
+        serializedVersion: 2
+        x: 653
+        y: 2797
+        width: 195
+        height: 199
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 74bd40d2392ae9080800000000000000
+      internalID: -9178720237535306937
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: gruz_mother_29
+      rect:
+        serializedVersion: 2
+        x: 6
+        y: 2514
+        width: 184
+        height: 226
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 147d89d2490ea5d20800000000000000
+      internalID: 3268171406635489089
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: gruz_mother_30
+      rect:
+        serializedVersion: 2
+        x: 213
+        y: 2521
+        width: 181
+        height: 223
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9cee3e0c0a6162f00800000000000000
+      internalID: 1091584839370665673
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: gruz_mother_31
+      rect:
+        serializedVersion: 2
+        x: 436
+        y: 2534
+        width: 171
+        height: 228
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a8caf2d372e282d70800000000000000
+      internalID: 9018508999874555018
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: gruz_mother_32
+      rect:
+        serializedVersion: 2
+        x: 637
+        y: 2518
+        width: 186
+        height: 222
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b976dddd99c5913c0800000000000000
+      internalID: -4388374545973811301
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: gruz_mother_47
+      rect:
+        serializedVersion: 2
+        x: 2
+        y: 2264
+        width: 188
+        height: 225
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: dffc1092d62a719f0800000000000000
+      internalID: -497750644078030851
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: gruz_mother_48
+      rect:
+        serializedVersion: 2
+        x: 239
+        y: 2268
+        width: 210
+        height: 217
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 15d4a66d9f21a66b0800000000000000
+      internalID: -5302404747021890223
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: gruz_mother_49
+      rect:
+        serializedVersion: 2
+        x: 459
+        y: 2267
+        width: 201
+        height: 221
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4aa25b74f48091de0800000000000000
+      internalID: -1362048275704370524
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: gruz_mother_50
+      rect:
+        serializedVersion: 2
+        x: 702
+        y: 2265
+        width: 210
+        height: 227
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 38400b51e58106aa0800000000000000
+      internalID: -6169904697127730045
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: gruz_mother_57
+      rect:
+        serializedVersion: 2
+        x: 2
+        y: 2020
+        width: 231
+        height: 224
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: db19bff41cb1b9160800000000000000
+      internalID: 7033245760153686461
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: gruz_mother_69
+      rect:
+        serializedVersion: 2
+        x: 27
+        y: 1754
+        width: 167
+        height: 235
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1eeedcf00d3ee2a50800000000000000
+      internalID: 6498381795100061409
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: gruz_mother_70
+      rect:
+        serializedVersion: 2
+        x: 223
+        y: 1751
+        width: 179
+        height: 231
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 018e2a71e93ab4180800000000000000
+      internalID: -9130023920166836208
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: gruz_mother_78
+      rect:
+        serializedVersion: 2
+        x: 2
+        y: 1560
+        width: 289
+        height: 161
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0777561b83b452b00800000000000000
+      internalID: 803130815421970288
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: gruz_mother_84
+      rect:
+        serializedVersion: 2
+        x: 2
+        y: 1406
+        width: 286
+        height: 132
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ac8c1ff8a7d38c950800000000000000
+      internalID: 6469488461328009418
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: gruz_mother_93
+      rect:
+        serializedVersion: 2
+        x: 3
+        y: 1186
+        width: 195
+        height: 199
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 117a8cabde6c7d8e0800000000000000
+      internalID: -1668646412574218479
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: gruz_mother_96
+      rect:
+        serializedVersion: 2
+        x: 14
+        y: 971
+        width: 168
+        height: 184
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 714d511025afc0240800000000000000
+      internalID: 4759454136336241687
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: gruz_mother_97
+      rect:
+        serializedVersion: 2
+        x: 211
+        y: 961
+        width: 192
+        height: 204
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 006779d9a28538060800000000000000
+      internalID: 6954499189645997568
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: gruz_mother_102
+      rect:
+        serializedVersion: 2
+        x: 2
+        y: 777
+        width: 242
+        height: 150
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f29da88f56b79d420800000000000000
+      internalID: 2655289133203380527
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: gruz_mother_103
+      rect:
+        serializedVersion: 2
+        x: 257
+        y: 775
+        width: 233
+        height: 155
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8f260bde193b8c460800000000000000
+      internalID: 7262251838474314488
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: gruz_mother_104
+      rect:
+        serializedVersion: 2
+        x: 494
+        y: 775
+        width: 244
+        height: 150
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 596200d365b3c9e70800000000000000
+      internalID: 9123232186722428565
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: gruz_mother_113
+      rect:
+        serializedVersion: 2
+        x: 2
+        y: 613
+        width: 257
+        height: 142
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4ba54a994324f6f00800000000000000
+      internalID: 1112180426667219636
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: gruz_mother_114
+      rect:
+        serializedVersion: 2
+        x: 268
+        y: 613
+        width: 232
+        height: 137
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f30bde7b9a2ad9140800000000000000
+      internalID: 4728114033627869247
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: gruz_mother_115
+      rect:
+        serializedVersion: 2
+        x: 530
+        y: 612
+        width: 225
+        height: 138
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 93e4de88209c563a0800000000000000
+      internalID: -6672706260155150791
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: gruz_mother_120
+      rect:
+        serializedVersion: 2
+        x: 38
+        y: 596
+        width: 8
+        height: 9
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 98743f16e0098fa10800000000000000
+      internalID: 1943461630657644425
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: gruz_mother_121
+      rect:
+        serializedVersion: 2
+        x: 2
+        y: 447
+        width: 225
+        height: 141
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 603f905e1ec533650800000000000000
+      internalID: 6211410436354077446
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: gruz_mother_122
+      rect:
+        serializedVersion: 2
+        x: 228
+        y: 447
+        width: 225
+        height: 144
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d66d7aa3dd4e41dd0800000000000000
+      internalID: -2516134652970281363
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: gruz_mother_123
+      rect:
+        serializedVersion: 2
+        x: 454
+        y: 447
+        width: 225
+        height: 139
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9a92040e8daa33d90800000000000000
+      internalID: -7119158737490662999
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: gruz_mother_124
+      rect:
+        serializedVersion: 2
+        x: 680
+        y: 447
+        width: 225
+        height: 138
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f3e5bbbb7ea895480800000000000000
+      internalID: -8909937659884118465
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: gruz_mother_128
+      rect:
+        serializedVersion: 2
+        x: 39
+        y: 218
+        width: 225
+        height: 132
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 42fe6eb8bbd2522e0800000000000000
+      internalID: -2151262963470242012
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: gruz_mother_129
+      rect:
+        serializedVersion: 2
+        x: 359
+        y: 218
+        width: 235
+        height: 129
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 63cfa6906b411edd0800000000000000
+      internalID: -2458661149492970442
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: gruz_mother_130
+      rect:
+        serializedVersion: 2
+        x: 675
+        y: 216
+        width: 228
+        height: 210
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 14545aa57b841dd90800000000000000
+      internalID: -7074793587285342911
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: gruz_mother_131
+      rect:
+        serializedVersion: 2
+        x: 972
+        y: 215
+        width: 303
+        height: 173
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: efdf90678af197ee0800000000000000
+      internalID: -1262943412105380354
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: gruz_mother_132
+      rect:
+        serializedVersion: 2
+        x: 1282
+        y: 217
+        width: 318
+        height: 108
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5d714f54e72c811d0800000000000000
+      internalID: -3379737672746264619
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: gruz_mother_133
+      rect:
+        serializedVersion: 2
+        x: 2
+        y: 6
+        width: 317
+        height: 106
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d3d188cfdd2d33e90800000000000000
+      internalID: -7047057141038310083
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: gruz_mother_134
+      rect:
+        serializedVersion: 2
+        x: 322
+        y: 6
+        width: 316
+        height: 105
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3e0713447451a2f40800000000000000
+      internalID: 5704395273849106659
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: a404e75134f624646ab9983c1585534a
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      gruz_mother_0: -776581679557673011
+      gruz_mother_1: 1072621820837166800
+      gruz_mother_10: -620211044103872640
+      gruz_mother_100: 578364174086748918
+      gruz_mother_101: -25763836319387935
+      gruz_mother_102: 2655289133203380527
+      gruz_mother_103: 7262251838474314488
+      gruz_mother_104: 9123232186722428565
+      gruz_mother_105: 4639875240977479849
+      gruz_mother_106: 5722778281973032119
+      gruz_mother_107: 4480360137665749120
+      gruz_mother_108: 2788284461045159067
+      gruz_mother_109: -3233044164688445693
+      gruz_mother_11: 6215368055605175537
+      gruz_mother_110: 3527912924782308671
+      gruz_mother_111: 1162989982681344983
+      gruz_mother_112: -4114097975611570552
+      gruz_mother_113: 1112180426667219636
+      gruz_mother_114: 4728114033627869247
+      gruz_mother_115: -6672706260155150791
+      gruz_mother_116: -8158989203477332654
+      gruz_mother_117: -6629977588034151682
+      gruz_mother_118: 1783225080266654108
+      gruz_mother_119: 632793960018379496
+      gruz_mother_12: 6149989078115585597
+      gruz_mother_120: 1943461630657644425
+      gruz_mother_121: 6211410436354077446
+      gruz_mother_122: -2516134652970281363
+      gruz_mother_123: -7119158737490662999
+      gruz_mother_124: -8909937659884118465
+      gruz_mother_125: 7917643884150309452
+      gruz_mother_126: -6527755640750540552
+      gruz_mother_127: -6322585943208927669
+      gruz_mother_128: -2151262963470242012
+      gruz_mother_129: -2458661149492970442
+      gruz_mother_13: -4549290720163455659
+      gruz_mother_130: -7074793587285342911
+      gruz_mother_131: -1262943412105380354
+      gruz_mother_132: -3379737672746264619
+      gruz_mother_133: -7047057141038310083
+      gruz_mother_134: 5704395273849106659
+      gruz_mother_14: -4183967957054864285
+      gruz_mother_15: -5269077214111864315
+      gruz_mother_16: -7246575361657962320
+      gruz_mother_17: -2050977905257224055
+      gruz_mother_18: -8386030339265087880
+      gruz_mother_19: 8552834921458893815
+      gruz_mother_2: -7861090980266035957
+      gruz_mother_20: 8085276762555698988
+      gruz_mother_21: 4133043993685654141
+      gruz_mother_22: 3212101057010953192
+      gruz_mother_23: -8689211949883885948
+      gruz_mother_24: 3027674115947490441
+      gruz_mother_25: -6593936879406699243
+      gruz_mother_26: -9178720237535306937
+      gruz_mother_27: -2588223734029390056
+      gruz_mother_28: -5632718187803187094
+      gruz_mother_29: 3268171406635489089
+      gruz_mother_3: 5334710990901182059
+      gruz_mother_30: 1091584839370665673
+      gruz_mother_31: 9018508999874555018
+      gruz_mother_32: -4388374545973811301
+      gruz_mother_33: -2509208772404907607
+      gruz_mother_34: -3788101974507283087
+      gruz_mother_35: -6841014111991203926
+      gruz_mother_36: 4588099747964414851
+      gruz_mother_37: -544017174150121528
+      gruz_mother_38: -2022609900070363264
+      gruz_mother_39: 8666277035096571966
+      gruz_mother_4: -3202458751467590146
+      gruz_mother_40: 1045368949092138507
+      gruz_mother_41: 3351109282880007421
+      gruz_mother_42: 9200710631306316725
+      gruz_mother_43: -1545856292777831331
+      gruz_mother_44: -1531962122627712529
+      gruz_mother_45: 5340652118011287348
+      gruz_mother_46: 3340367767295265194
+      gruz_mother_47: -497750644078030851
+      gruz_mother_48: -5302404747021890223
+      gruz_mother_49: -1362048275704370524
+      gruz_mother_5: 3237310696105165904
+      gruz_mother_50: -6169904697127730045
+      gruz_mother_51: 4375219970887941773
+      gruz_mother_52: -2399489763053640413
+      gruz_mother_53: -9030920912592853988
+      gruz_mother_54: 6349465168188780030
+      gruz_mother_55: 7206996326672330912
+      gruz_mother_56: -6745234190622479356
+      gruz_mother_57: 7033245760153686461
+      gruz_mother_58: -3085344911382360217
+      gruz_mother_59: -8973610998500186219
+      gruz_mother_6: 2173335723729776350
+      gruz_mother_60: 2787891362704115820
+      gruz_mother_61: 3971510240043939383
+      gruz_mother_62: 3266713012632126906
+      gruz_mother_63: 8942562593625961921
+      gruz_mother_64: -7217855631019173744
+      gruz_mother_65: 2008219481130518739
+      gruz_mother_66: 8987061691394763636
+      gruz_mother_67: -1029069451814535813
+      gruz_mother_68: -2733183177022710919
+      gruz_mother_69: 6498381795100061409
+      gruz_mother_7: -5202800559166360738
+      gruz_mother_70: -9130023920166836208
+      gruz_mother_71: 7216173056684099139
+      gruz_mother_72: -1575621820374433819
+      gruz_mother_73: -4745915145561449333
+      gruz_mother_74: -5074675567006766833
+      gruz_mother_75: 2718640747750692413
+      gruz_mother_76: 1499747158699870296
+      gruz_mother_77: 5540499845508247230
+      gruz_mother_78: 803130815421970288
+      gruz_mother_79: 4292378531518226055
+      gruz_mother_8: -1433440014037513338
+      gruz_mother_80: -5756599516582368380
+      gruz_mother_81: -2397503581364524279
+      gruz_mother_82: 7787044423716539421
+      gruz_mother_83: -4846174161881129716
+      gruz_mother_84: 6469488461328009418
+      gruz_mother_85: -8418205065005754668
+      gruz_mother_86: -945356256413472773
+      gruz_mother_87: -6867095695713994276
+      gruz_mother_88: 1250198134172988722
+      gruz_mother_89: 2511580181977502747
+      gruz_mother_9: 5828588261670542966
+      gruz_mother_90: 2985917312257533032
+      gruz_mother_91: -3846827759053954356
+      gruz_mother_92: 6668348971893143313
+      gruz_mother_93: -1668646412574218479
+      gruz_mother_94: -8475902703212454359
+      gruz_mother_95: -3353326903538360628
+      gruz_mother_96: 4759454136336241687
+      gruz_mother_97: 6954499189645997568
+      gruz_mother_98: -3383099533378115788
+      gruz_mother_99: 2230980962262649161
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

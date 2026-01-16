@@ -1,0 +1,571 @@
+fileFormatVersion: 2
+guid: 76e9132a29d79a04381fab5055d9a06f
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 8139271816457978797
+    second: primal_aspid_0
+  - first:
+      213: -6950606614117594547
+    second: primal_aspid_1
+  - first:
+      213: -6109656825702210528
+    second: primal_aspid_2
+  - first:
+      213: 8735367021509008807
+    second: primal_aspid_3
+  - first:
+      213: -7958396853634437360
+    second: primal_aspid_4
+  - first:
+      213: 1887905204156233940
+    second: primal_aspid_5
+  - first:
+      213: -4770635116055651439
+    second: primal_aspid_6
+  - first:
+      213: -1688825770387907361
+    second: primal_aspid_7
+  - first:
+      213: -6307771079041826402
+    second: primal_aspid_8
+  - first:
+      213: -8417900291297581763
+    second: primal_aspid_9
+  - first:
+      213: -3281352000925531119
+    second: primal_aspid_10
+  - first:
+      213: 1146160548386289775
+    second: primal_aspid_11
+  - first:
+      213: 1847284949989875836
+    second: primal_aspid_12
+  - first:
+      213: -4901288042546529905
+    second: primal_aspid_13
+  - first:
+      213: -973926004985850240
+    second: primal_aspid_14
+  - first:
+      213: 4481122192166423671
+    second: primal_aspid_15
+  - first:
+      213: -8303491516048367086
+    second: primal_aspid_16
+  - first:
+      213: 8124210823398482447
+    second: primal_aspid_17
+  - first:
+      213: 386985740073358104
+    second: primal_aspid_18
+  - first:
+      213: 4377244298860033800
+    second: primal_aspid_19
+  - first:
+      213: -2863756606536967717
+    second: primal_aspid_20
+  - first:
+      213: 1317150699236836639
+    second: primal_aspid_21
+  - first:
+      213: -5867901428448708485
+    second: primal_aspid_22
+  - first:
+      213: -7501435195887796710
+    second: primal_aspid_23
+  - first:
+      213: 4859838389671068159
+    second: primal_aspid_24
+  - first:
+      213: 1361094655283521721
+    second: primal_aspid_25
+  - first:
+      213: -6701839337003998359
+    second: primal_aspid_26
+  - first:
+      213: -3208019267285525603
+    second: primal_aspid_27
+  - first:
+      213: -2758202793438887472
+    second: primal_aspid_28
+  - first:
+      213: -2236901075351470043
+    second: primal_aspid_29
+  - first:
+      213: -348220786179276349
+    second: primal_aspid_30
+  - first:
+      213: 280314696783432383
+    second: primal_aspid_31
+  - first:
+      213: -1923648421294404198
+    second: primal_aspid_32
+  - first:
+      213: 7330215446012043756
+    second: primal_aspid_33
+  - first:
+      213: 7365849956650366460
+    second: primal_aspid_34
+  - first:
+      213: -8660589265664101840
+    second: primal_aspid_35
+  - first:
+      213: 320145553625653977
+    second: primal_aspid_36
+  - first:
+      213: 1817456254799076909
+    second: primal_aspid_37
+  - first:
+      213: -6126523600897553082
+    second: primal_aspid_38
+  - first:
+      213: -6325107014085516944
+    second: primal_aspid_39
+  - first:
+      213: 1648443248259323800
+    second: primal_aspid_40
+  - first:
+      213: 1999012759622507050
+    second: primal_aspid_41
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: primal_aspid_2
+      rect:
+        serializedVersion: 2
+        x: 2
+        y: 472
+        width: 144
+        height: 108
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 024aa74cc73263ba0800000000000000
+      internalID: -6109656825702210528
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: primal_aspid_3
+      rect:
+        serializedVersion: 2
+        x: 149
+        y: 473
+        width: 134
+        height: 128
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7add4bb26024a3970800000000000000
+      internalID: 8735367021509008807
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: primal_aspid_4
+      rect:
+        serializedVersion: 2
+        x: 306
+        y: 466
+        width: 116
+        height: 135
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 01f688d1a381e8190800000000000000
+      internalID: -7958396853634437360
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: primal_aspid_5
+      rect:
+        serializedVersion: 2
+        x: 442
+        y: 473
+        width: 139
+        height: 114
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4d8f757d7cf233a10800000000000000
+      internalID: 1887905204156233940
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: primal_aspid_10
+      rect:
+        serializedVersion: 2
+        x: 7
+        y: 320
+        width: 137
+        height: 125
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 11401d19dbb4672d0800000000000000
+      internalID: -3281352000925531119
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: primal_aspid_11
+      rect:
+        serializedVersion: 2
+        x: 161
+        y: 322
+        width: 133
+        height: 100
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f68b12632faf7ef00800000000000000
+      internalID: 1146160548386289775
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: primal_aspid_25
+      rect:
+        serializedVersion: 2
+        x: 13
+        y: 157
+        width: 154
+        height: 121
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9b86bd9a06493e210800000000000000
+      internalID: 1361094655283521721
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: primal_aspid_26
+      rect:
+        serializedVersion: 2
+        x: 171
+        y: 162
+        width: 153
+        height: 102
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 963232081a84ef2a0800000000000000
+      internalID: -6701839337003998359
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: primal_aspid_27
+      rect:
+        serializedVersion: 2
+        x: 338
+        y: 169
+        width: 152
+        height: 117
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d9b56d42973da73d0800000000000000
+      internalID: -3208019267285525603
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: primal_aspid_28
+      rect:
+        serializedVersion: 2
+        x: 500
+        y: 164
+        width: 144
+        height: 125
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0d1c5964c25e8b9d0800000000000000
+      internalID: -2758202793438887472
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: primal_aspid_39
+      rect:
+        serializedVersion: 2
+        x: 2
+        y: 25
+        width: 169
+        height: 96
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 071e91bbea4b838a0800000000000000
+      internalID: -6325107014085516944
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: primal_aspid_40
+      rect:
+        serializedVersion: 2
+        x: 228
+        y: 2
+        width: 144
+        height: 134
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 89753e4866270e610800000000000000
+      internalID: 1648443248259323800
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: primal_aspid_41
+      rect:
+        serializedVersion: 2
+        x: 406
+        y: 21
+        width: 100
+        height: 116
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a2ad5ce738bedbb10800000000000000
+      internalID: 1999012759622507050
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 3935cf3fd1f0c4e44a21940790818e7f
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      primal_aspid_0: 8139271816457978797
+      primal_aspid_1: -6950606614117594547
+      primal_aspid_10: -3281352000925531119
+      primal_aspid_11: 1146160548386289775
+      primal_aspid_12: 1847284949989875836
+      primal_aspid_13: -4901288042546529905
+      primal_aspid_14: -973926004985850240
+      primal_aspid_15: 4481122192166423671
+      primal_aspid_16: -8303491516048367086
+      primal_aspid_17: 8124210823398482447
+      primal_aspid_18: 386985740073358104
+      primal_aspid_19: 4377244298860033800
+      primal_aspid_2: -6109656825702210528
+      primal_aspid_20: -2863756606536967717
+      primal_aspid_21: 1317150699236836639
+      primal_aspid_22: -5867901428448708485
+      primal_aspid_23: -7501435195887796710
+      primal_aspid_24: 4859838389671068159
+      primal_aspid_25: 1361094655283521721
+      primal_aspid_26: -6701839337003998359
+      primal_aspid_27: -3208019267285525603
+      primal_aspid_28: -2758202793438887472
+      primal_aspid_29: -2236901075351470043
+      primal_aspid_3: 8735367021509008807
+      primal_aspid_30: -348220786179276349
+      primal_aspid_31: 280314696783432383
+      primal_aspid_32: -1923648421294404198
+      primal_aspid_33: 7330215446012043756
+      primal_aspid_34: 7365849956650366460
+      primal_aspid_35: -8660589265664101840
+      primal_aspid_36: 320145553625653977
+      primal_aspid_37: 1817456254799076909
+      primal_aspid_38: -6126523600897553082
+      primal_aspid_39: -6325107014085516944
+      primal_aspid_4: -7958396853634437360
+      primal_aspid_40: 1648443248259323800
+      primal_aspid_41: 1999012759622507050
+      primal_aspid_5: 1887905204156233940
+      primal_aspid_6: -4770635116055651439
+      primal_aspid_7: -1688825770387907361
+      primal_aspid_8: -6307771079041826402
+      primal_aspid_9: -8417900291297581763
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

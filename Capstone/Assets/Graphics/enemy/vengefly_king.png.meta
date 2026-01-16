@@ -1,0 +1,1811 @@
+fileFormatVersion: 2
+guid: ce08c8bc503d61a40b6d6a51301793c9
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -57845740479572779
+    second: vengefly_king_0
+  - first:
+      213: -3506657176483985607
+    second: vengefly_king_1
+  - first:
+      213: 4001278399665659511
+    second: vengefly_king_2
+  - first:
+      213: 6867265513365910754
+    second: vengefly_king_3
+  - first:
+      213: -2314751945075423385
+    second: vengefly_king_4
+  - first:
+      213: -1860504480751169760
+    second: vengefly_king_5
+  - first:
+      213: 8252529180977758325
+    second: vengefly_king_6
+  - first:
+      213: 8310600169278890366
+    second: vengefly_king_7
+  - first:
+      213: 562898281344560587
+    second: vengefly_king_8
+  - first:
+      213: -178858455083528020
+    second: vengefly_king_9
+  - first:
+      213: 6855330387533756552
+    second: vengefly_king_10
+  - first:
+      213: -5546196199058879479
+    second: vengefly_king_11
+  - first:
+      213: 429099836009659054
+    second: vengefly_king_12
+  - first:
+      213: 1465913664918953574
+    second: vengefly_king_13
+  - first:
+      213: -5574163204368475964
+    second: vengefly_king_14
+  - first:
+      213: 908427145169700168
+    second: vengefly_king_15
+  - first:
+      213: 4669148219881596322
+    second: vengefly_king_16
+  - first:
+      213: -8446878318399963726
+    second: vengefly_king_17
+  - first:
+      213: -1574838745757697944
+    second: vengefly_king_18
+  - first:
+      213: -1493112353564369551
+    second: vengefly_king_19
+  - first:
+      213: -3381408153211062602
+    second: vengefly_king_20
+  - first:
+      213: 2768897434798742451
+    second: vengefly_king_21
+  - first:
+      213: 508802734852123814
+    second: vengefly_king_22
+  - first:
+      213: 3298340095180037659
+    second: vengefly_king_23
+  - first:
+      213: 4432278477952467716
+    second: vengefly_king_24
+  - first:
+      213: -1701551805538093624
+    second: vengefly_king_25
+  - first:
+      213: 5974964825811038613
+    second: vengefly_king_26
+  - first:
+      213: 8685135150096137902
+    second: vengefly_king_27
+  - first:
+      213: -4350601981275872554
+    second: vengefly_king_28
+  - first:
+      213: 5828167525971885084
+    second: vengefly_king_29
+  - first:
+      213: -6404490088769228040
+    second: vengefly_king_30
+  - first:
+      213: 2723573168334468005
+    second: vengefly_king_31
+  - first:
+      213: 5603846250488238761
+    second: vengefly_king_32
+  - first:
+      213: -2651110313430745964
+    second: vengefly_king_33
+  - first:
+      213: -2523895538908260167
+    second: vengefly_king_34
+  - first:
+      213: 181855273396810943
+    second: vengefly_king_35
+  - first:
+      213: 1509564586512392223
+    second: vengefly_king_36
+  - first:
+      213: -604975562212608196
+    second: vengefly_king_37
+  - first:
+      213: -2815881833441151321
+    second: vengefly_king_38
+  - first:
+      213: -1235846747533622328
+    second: vengefly_king_39
+  - first:
+      213: -3320585786496556811
+    second: vengefly_king_40
+  - first:
+      213: -1930783137512839876
+    second: vengefly_king_41
+  - first:
+      213: -3055726482269431183
+    second: vengefly_king_42
+  - first:
+      213: 7933438809861667868
+    second: vengefly_king_43
+  - first:
+      213: 908185780980374261
+    second: vengefly_king_44
+  - first:
+      213: -6992105993184292717
+    second: vengefly_king_45
+  - first:
+      213: -2749135441815121322
+    second: vengefly_king_46
+  - first:
+      213: 8898738115339839184
+    second: vengefly_king_47
+  - first:
+      213: 2935821254385208984
+    second: vengefly_king_48
+  - first:
+      213: 986349522879573562
+    second: vengefly_king_49
+  - first:
+      213: 1335240715048007440
+    second: vengefly_king_50
+  - first:
+      213: -5953082107888455694
+    second: vengefly_king_51
+  - first:
+      213: 6822734104188160358
+    second: vengefly_king_52
+  - first:
+      213: 3117839959125957974
+    second: vengefly_king_53
+  - first:
+      213: 1969881596450901602
+    second: vengefly_king_54
+  - first:
+      213: -6197112996912917791
+    second: vengefly_king_55
+  - first:
+      213: 1880262857057308447
+    second: vengefly_king_56
+  - first:
+      213: 3694728438803062821
+    second: vengefly_king_57
+  - first:
+      213: -3556232581205207373
+    second: vengefly_king_58
+  - first:
+      213: 5805334678013949428
+    second: vengefly_king_59
+  - first:
+      213: 3236405623576205063
+    second: vengefly_king_60
+  - first:
+      213: 2111909759134773725
+    second: vengefly_king_61
+  - first:
+      213: 2717305170214738626
+    second: vengefly_king_62
+  - first:
+      213: 7575970998577451552
+    second: vengefly_king_63
+  - first:
+      213: 1286789209356227802
+    second: vengefly_king_64
+  - first:
+      213: -303304087960101045
+    second: vengefly_king_65
+  - first:
+      213: 4961570649682975937
+    second: vengefly_king_66
+  - first:
+      213: -7159587486700757985
+    second: vengefly_king_67
+  - first:
+      213: -9213029683646555366
+    second: vengefly_king_68
+  - first:
+      213: -7295765924307257842
+    second: vengefly_king_69
+  - first:
+      213: 1014929128491773860
+    second: vengefly_king_70
+  - first:
+      213: -8920115197224643265
+    second: vengefly_king_71
+  - first:
+      213: 7292928043689285748
+    second: vengefly_king_72
+  - first:
+      213: 7478713186743235305
+    second: vengefly_king_73
+  - first:
+      213: -3006342593528251431
+    second: vengefly_king_74
+  - first:
+      213: 3835713388985101548
+    second: vengefly_king_75
+  - first:
+      213: 5211212429984895204
+    second: vengefly_king_76
+  - first:
+      213: -1035618567652282745
+    second: vengefly_king_77
+  - first:
+      213: -5595321964884339973
+    second: vengefly_king_78
+  - first:
+      213: 3596969767407493136
+    second: vengefly_king_79
+  - first:
+      213: -7924498690031766714
+    second: vengefly_king_80
+  - first:
+      213: -8179807580125818798
+    second: vengefly_king_81
+  - first:
+      213: -3124417030781157341
+    second: vengefly_king_82
+  - first:
+      213: -4050719508754141028
+    second: vengefly_king_83
+  - first:
+      213: 3962618656800058383
+    second: vengefly_king_84
+  - first:
+      213: 3567664789261239852
+    second: vengefly_king_85
+  - first:
+      213: 5840403871320022076
+    second: vengefly_king_86
+  - first:
+      213: 8254710460255800331
+    second: vengefly_king_87
+  - first:
+      213: -6458432847273485289
+    second: vengefly_king_88
+  - first:
+      213: 7002725559597932433
+    second: vengefly_king_89
+  - first:
+      213: -8677365387175078346
+    second: vengefly_king_90
+  - first:
+      213: -6428142849531344016
+    second: vengefly_king_91
+  - first:
+      213: 4232459573394441123
+    second: vengefly_king_92
+  - first:
+      213: -4504890497531811306
+    second: vengefly_king_93
+  - first:
+      213: -2271351749855563130
+    second: vengefly_king_94
+  - first:
+      213: -2952306681489625034
+    second: vengefly_king_95
+  - first:
+      213: -8092976680803107437
+    second: vengefly_king_96
+  - first:
+      213: 1727228990126824381
+    second: vengefly_king_97
+  - first:
+      213: 2945124749068389792
+    second: vengefly_king_98
+  - first:
+      213: 3076755079867983435
+    second: vengefly_king_99
+  - first:
+      213: -6433474366585205246
+    second: vengefly_king_100
+  - first:
+      213: -5357076709419834170
+    second: vengefly_king_101
+  - first:
+      213: -6105708318829072067
+    second: vengefly_king_102
+  - first:
+      213: -6766001809381007262
+    second: vengefly_king_103
+  - first:
+      213: -3825067246858566644
+    second: vengefly_king_104
+  - first:
+      213: -8467413915540086937
+    second: vengefly_king_105
+  - first:
+      213: 4639904345807455058
+    second: vengefly_king_106
+  - first:
+      213: 1569634504733146473
+    second: vengefly_king_107
+  - first:
+      213: 1708437275215230096
+    second: vengefly_king_108
+  - first:
+      213: 8813175336348428495
+    second: vengefly_king_109
+  - first:
+      213: -7636599589419076389
+    second: vengefly_king_110
+  - first:
+      213: -2133650742446763250
+    second: vengefly_king_111
+  - first:
+      213: -601877629297845615
+    second: vengefly_king_112
+  - first:
+      213: -3936967772446281067
+    second: vengefly_king_113
+  - first:
+      213: -8707147950456670923
+    second: vengefly_king_114
+  - first:
+      213: 5075132743069523026
+    second: vengefly_king_115
+  - first:
+      213: -532054679086764106
+    second: vengefly_king_116
+  - first:
+      213: -8373654313789170500
+    second: vengefly_king_117
+  - first:
+      213: -4963051723634398367
+    second: vengefly_king_118
+  - first:
+      213: -92921048928334648
+    second: vengefly_king_119
+  - first:
+      213: 3378424626692842617
+    second: vengefly_king_120
+  - first:
+      213: -8774461153012814104
+    second: vengefly_king_121
+  - first:
+      213: 643541590448244671
+    second: vengefly_king_122
+  - first:
+      213: 2036982846172726228
+    second: vengefly_king_123
+  - first:
+      213: -2427807745869651975
+    second: vengefly_king_124
+  - first:
+      213: 8387596165621756720
+    second: vengefly_king_125
+  - first:
+      213: -1847442252933006759
+    second: vengefly_king_126
+  - first:
+      213: -6205116950804157411
+    second: vengefly_king_127
+  - first:
+      213: -4611827513257612979
+    second: vengefly_king_128
+  - first:
+      213: 368370395527365321
+    second: vengefly_king_129
+  - first:
+      213: -3164846959761853415
+    second: vengefly_king_130
+  - first:
+      213: 8392306942753940616
+    second: vengefly_king_131
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: vengefly_king_4
+      rect:
+        serializedVersion: 2
+        x: 259
+        y: 3969
+        width: 214
+        height: 334
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 76782aabe5950efd0800000000000000
+      internalID: -2314751945075423385
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: vengefly_king_5
+      rect:
+        serializedVersion: 2
+        x: 509
+        y: 3967
+        width: 236
+        height: 334
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 02fcdc938092e26e0800000000000000
+      internalID: -1860504480751169760
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: vengefly_king_6
+      rect:
+        serializedVersion: 2
+        x: 766
+        y: 3979
+        width: 219
+        height: 323
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 57089baf09fd68270800000000000000
+      internalID: 8252529180977758325
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: vengefly_king_7
+      rect:
+        serializedVersion: 2
+        x: 1014
+        y: 3971
+        width: 210
+        height: 331
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e716b2092de255370800000000000000
+      internalID: 8310600169278890366
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: vengefly_king_13
+      rect:
+        serializedVersion: 2
+        x: 54
+        y: 3638
+        width: 229
+        height: 302
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 66e92e426b8f75410800000000000000
+      internalID: 1465913664918953574
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: vengefly_king_14
+      rect:
+        serializedVersion: 2
+        x: 354
+        y: 3607
+        width: 182
+        height: 339
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4c8509b491894a2b0800000000000000
+      internalID: -5574163204368475964
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: vengefly_king_15
+      rect:
+        serializedVersion: 2
+        x: 676
+        y: 3601
+        width: 207
+        height: 311
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 845892ceca16b9c00800000000000000
+      internalID: 908427145169700168
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: vengefly_king_16
+      rect:
+        serializedVersion: 2
+        x: 967
+        y: 3681
+        width: 215
+        height: 210
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2a5a0b951952cc040800000000000000
+      internalID: 4669148219881596322
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: vengefly_king_17
+      rect:
+        serializedVersion: 2
+        x: 1237
+        y: 3655
+        width: 249
+        height: 205
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2bd32d24ce8a6ca80800000000000000
+      internalID: -8446878318399963726
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: vengefly_king_18
+      rect:
+        serializedVersion: 2
+        x: 1537
+        y: 3614
+        width: 305
+        height: 259
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 868379c218c052ae0800000000000000
+      internalID: -1574838745757697944
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: vengefly_king_21
+      rect:
+        serializedVersion: 2
+        x: 2
+        y: 3278
+        width: 337
+        height: 296
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3bb5ba4fb891d6620800000000000000
+      internalID: 2768897434798742451
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: vengefly_king_22
+      rect:
+        serializedVersion: 2
+        x: 343
+        y: 3287
+        width: 334
+        height: 208
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6acab9f3461af0700800000000000000
+      internalID: 508802734852123814
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: vengefly_king_23
+      rect:
+        serializedVersion: 2
+        x: 690
+        y: 3301
+        width: 295
+        height: 181
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b1e52a957de06cd20800000000000000
+      internalID: 3298340095180037659
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: vengefly_king_24
+      rect:
+        serializedVersion: 2
+        x: 1020
+        y: 3290
+        width: 308
+        height: 229
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 40347ffdacd928d30800000000000000
+      internalID: 4432278477952467716
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: vengefly_king_25
+      rect:
+        serializedVersion: 2
+        x: 1383
+        y: 3294
+        width: 293
+        height: 286
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8c53af7e5afd268e0800000000000000
+      internalID: -1701551805538093624
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: vengefly_king_30
+      rect:
+        serializedVersion: 2
+        x: 2
+        y: 2943
+        width: 290
+        height: 293
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8f2766b523eae17a0800000000000000
+      internalID: -6404490088769228040
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: vengefly_king_31
+      rect:
+        serializedVersion: 2
+        x: 364
+        y: 2919
+        width: 226
+        height: 333
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5a37c52dd531cc520800000000000000
+      internalID: 2723573168334468005
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: vengefly_king_32
+      rect:
+        serializedVersion: 2
+        x: 689
+        y: 2937
+        width: 282
+        height: 320
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9a29140797cd4cd40800000000000000
+      internalID: 5603846250488238761
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: vengefly_king_56
+      rect:
+        serializedVersion: 2
+        x: 2
+        y: 2633
+        width: 381
+        height: 253
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f1f034f3b19081a10800000000000000
+      internalID: 1880262857057308447
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: vengefly_king_57
+      rect:
+        serializedVersion: 2
+        x: 421
+        y: 2607
+        width: 276
+        height: 233
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 520e36880ff464330800000000000000
+      internalID: 3694728438803062821
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: vengefly_king_58
+      rect:
+        serializedVersion: 2
+        x: 868
+        y: 2608
+        width: 281
+        height: 285
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3b6d7922f49b5aec0800000000000000
+      internalID: -3556232581205207373
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: vengefly_king_59
+      rect:
+        serializedVersion: 2
+        x: 1279
+        y: 2612
+        width: 296
+        height: 286
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4f53745b121b09050800000000000000
+      internalID: 5805334678013949428
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: vengefly_king_70
+      rect:
+        serializedVersion: 2
+        x: 2
+        y: 2217
+        width: 373
+        height: 331
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4afe2ff3aa0c51e00800000000000000
+      internalID: 1014929128491773860
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: vengefly_king_71
+      rect:
+        serializedVersion: 2
+        x: 464
+        y: 2212
+        width: 353
+        height: 356
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f359cd92d72653480800000000000000
+      internalID: -8920115197224643265
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: vengefly_king_72
+      rect:
+        serializedVersion: 2
+        x: 927
+        y: 2226
+        width: 352
+        height: 354
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 47895988a6fa53560800000000000000
+      internalID: 7292928043689285748
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: vengefly_king_73
+      rect:
+        serializedVersion: 2
+        x: 1375
+        y: 2217
+        width: 355
+        height: 363
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9e23cd8f40ab9c760800000000000000
+      internalID: 7478713186743235305
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: vengefly_king_74
+      rect:
+        serializedVersion: 2
+        x: 1832
+        y: 2212
+        width: 353
+        height: 356
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9db3f97e6535746d0800000000000000
+      internalID: -3006342593528251431
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: vengefly_king_75
+      rect:
+        serializedVersion: 2
+        x: 15
+        y: 1848
+        width: 352
+        height: 354
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: cecaaaa31013b3530800000000000000
+      internalID: 3835713388985101548
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: vengefly_king_76
+      rect:
+        serializedVersion: 2
+        x: 463
+        y: 1839
+        width: 355
+        height: 363
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4e0995a4812f15840800000000000000
+      internalID: 5211212429984895204
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: vengefly_king_77
+      rect:
+        serializedVersion: 2
+        x: 927
+        y: 1848
+        width: 352
+        height: 354
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 78e6940566eb0a1f0800000000000000
+      internalID: -1035618567652282745
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: vengefly_king_78
+      rect:
+        serializedVersion: 2
+        x: 1375
+        y: 1832
+        width: 346
+        height: 355
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bf2d027715c6952b0800000000000000
+      internalID: -5595321964884339973
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: vengefly_king_84
+      rect:
+        serializedVersion: 2
+        x: 48
+        y: 1447
+        width: 320
+        height: 348
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f0c27ea6cac0ef630800000000000000
+      internalID: 3962618656800058383
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: vengefly_king_85
+      rect:
+        serializedVersion: 2
+        x: 418
+        y: 1446
+        width: 341
+        height: 345
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c26c5993934e28130800000000000000
+      internalID: 3567664789261239852
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: vengefly_king_86
+      rect:
+        serializedVersion: 2
+        x: 808
+        y: 1446
+        width: 345
+        height: 336
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c3c98de80684d0150800000000000000
+      internalID: 5840403871320022076
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: vengefly_king_87
+      rect:
+        serializedVersion: 2
+        x: 1238
+        y: 1452
+        width: 316
+        height: 343
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b0c8f33ad6f9e8270800000000000000
+      internalID: 8254710460255800331
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: vengefly_king_88
+      rect:
+        serializedVersion: 2
+        x: 1578
+        y: 1460
+        width: 379
+        height: 323
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 71c9c8c2b890f56a0800000000000000
+      internalID: -6458432847273485289
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: vengefly_king_89
+      rect:
+        serializedVersion: 2
+        x: 1970
+        y: 1460
+        width: 379
+        height: 307
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 19f126f5bcdae2160800000000000000
+      internalID: 7002725559597932433
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: vengefly_king_90
+      rect:
+        serializedVersion: 2
+        x: 23
+        y: 1124
+        width: 357
+        height: 286
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 636d82fa72ec39780800000000000000
+      internalID: -8677365387175078346
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: vengefly_king_91
+      rect:
+        serializedVersion: 2
+        x: 399
+        y: 1093
+        width: 377
+        height: 323
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 07b8738d226aac6a0800000000000000
+      internalID: -6428142849531344016
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: vengefly_king_92
+      rect:
+        serializedVersion: 2
+        x: 788
+        y: 1098
+        width: 392
+        height: 295
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3a38066be87bcba30800000000000000
+      internalID: 4232459573394441123
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: vengefly_king_93
+      rect:
+        serializedVersion: 2
+        x: 1201
+        y: 1137
+        width: 372
+        height: 270
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 61a659ed5f96b71c0800000000000000
+      internalID: -4504890497531811306
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: vengefly_king_94
+      rect:
+        serializedVersion: 2
+        x: 1666
+        y: 1115
+        width: 286
+        height: 329
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 682b5ed1e998a70e0800000000000000
+      internalID: -2271351749855563130
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: vengefly_king_99
+      rect:
+        serializedVersion: 2
+        x: 2
+        y: 704
+        width: 331
+        height: 321
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b46e86c9174d2ba20800000000000000
+      internalID: 3076755079867983435
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: vengefly_king_114
+      rect:
+        serializedVersion: 2
+        x: 3
+        y: 337
+        width: 233
+        height: 347
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 535724e421ff92780800000000000000
+      internalID: -8707147950456670923
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: vengefly_king_123
+      rect:
+        serializedVersion: 2
+        x: 2
+        y: 56
+        width: 366
+        height: 228
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4d380bf2b11d44c10800000000000000
+      internalID: 2036982846172726228
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: vengefly_king_124
+      rect:
+        serializedVersion: 2
+        x: 464
+        y: 47
+        width: 191
+        height: 268
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9ff5f7cd7b1be4ed0800000000000000
+      internalID: -2427807745869651975
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: vengefly_king_125
+      rect:
+        serializedVersion: 2
+        x: 831
+        y: 22
+        width: 197
+        height: 201
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0333053f54ab66470800000000000000
+      internalID: 8387596165621756720
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: vengefly_king_126
+      rect:
+        serializedVersion: 2
+        x: 1235
+        y: 43
+        width: 63
+        height: 52
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 95a71e22f019c56e0800000000000000
+      internalID: -1847442252933006759
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: vengefly_king_127
+      rect:
+        serializedVersion: 2
+        x: 1284
+        y: 76
+        width: 80
+        height: 105
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d1c2095620ff2e9a0800000000000000
+      internalID: -6205116950804157411
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: vengefly_king_128
+      rect:
+        serializedVersion: 2
+        x: 1254
+        y: 15
+        width: 48
+        height: 37
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d4928eaaf4f7fffb0800000000000000
+      internalID: -4611827513257612979
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: vengefly_king_129
+      rect:
+        serializedVersion: 2
+        x: 1624
+        y: 25
+        width: 40
+        height: 44
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9c2cd2b4ce6bc1500800000000000000
+      internalID: 368370395527365321
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: vengefly_king_130
+      rect:
+        serializedVersion: 2
+        x: 1678
+        y: 15
+        width: 20
+        height: 27
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9147bea45743414d0800000000000000
+      internalID: -3164846959761853415
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: vengefly_king_131
+      rect:
+        serializedVersion: 2
+        x: 2008
+        y: 2
+        width: 27
+        height: 25
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 884a4e833b6777470800000000000000
+      internalID: 8392306942753940616
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 1279eab2ecf8ce04f97d5816a1961133
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      vengefly_king_0: -57845740479572779
+      vengefly_king_1: -3506657176483985607
+      vengefly_king_10: 6855330387533756552
+      vengefly_king_100: -6433474366585205246
+      vengefly_king_101: -5357076709419834170
+      vengefly_king_102: -6105708318829072067
+      vengefly_king_103: -6766001809381007262
+      vengefly_king_104: -3825067246858566644
+      vengefly_king_105: -8467413915540086937
+      vengefly_king_106: 4639904345807455058
+      vengefly_king_107: 1569634504733146473
+      vengefly_king_108: 1708437275215230096
+      vengefly_king_109: 8813175336348428495
+      vengefly_king_11: -5546196199058879479
+      vengefly_king_110: -7636599589419076389
+      vengefly_king_111: -2133650742446763250
+      vengefly_king_112: -601877629297845615
+      vengefly_king_113: -3936967772446281067
+      vengefly_king_114: -8707147950456670923
+      vengefly_king_115: 5075132743069523026
+      vengefly_king_116: -532054679086764106
+      vengefly_king_117: -8373654313789170500
+      vengefly_king_118: -4963051723634398367
+      vengefly_king_119: -92921048928334648
+      vengefly_king_12: 429099836009659054
+      vengefly_king_120: 3378424626692842617
+      vengefly_king_121: -8774461153012814104
+      vengefly_king_122: 643541590448244671
+      vengefly_king_123: 2036982846172726228
+      vengefly_king_124: -2427807745869651975
+      vengefly_king_125: 8387596165621756720
+      vengefly_king_126: -1847442252933006759
+      vengefly_king_127: -6205116950804157411
+      vengefly_king_128: -4611827513257612979
+      vengefly_king_129: 368370395527365321
+      vengefly_king_13: 1465913664918953574
+      vengefly_king_130: -3164846959761853415
+      vengefly_king_131: 8392306942753940616
+      vengefly_king_14: -5574163204368475964
+      vengefly_king_15: 908427145169700168
+      vengefly_king_16: 4669148219881596322
+      vengefly_king_17: -8446878318399963726
+      vengefly_king_18: -1574838745757697944
+      vengefly_king_19: -1493112353564369551
+      vengefly_king_2: 4001278399665659511
+      vengefly_king_20: -3381408153211062602
+      vengefly_king_21: 2768897434798742451
+      vengefly_king_22: 508802734852123814
+      vengefly_king_23: 3298340095180037659
+      vengefly_king_24: 4432278477952467716
+      vengefly_king_25: -1701551805538093624
+      vengefly_king_26: 5974964825811038613
+      vengefly_king_27: 8685135150096137902
+      vengefly_king_28: -4350601981275872554
+      vengefly_king_29: 5828167525971885084
+      vengefly_king_3: 6867265513365910754
+      vengefly_king_30: -6404490088769228040
+      vengefly_king_31: 2723573168334468005
+      vengefly_king_32: 5603846250488238761
+      vengefly_king_33: -2651110313430745964
+      vengefly_king_34: -2523895538908260167
+      vengefly_king_35: 181855273396810943
+      vengefly_king_36: 1509564586512392223
+      vengefly_king_37: -604975562212608196
+      vengefly_king_38: -2815881833441151321
+      vengefly_king_39: -1235846747533622328
+      vengefly_king_4: -2314751945075423385
+      vengefly_king_40: -3320585786496556811
+      vengefly_king_41: -1930783137512839876
+      vengefly_king_42: -3055726482269431183
+      vengefly_king_43: 7933438809861667868
+      vengefly_king_44: 908185780980374261
+      vengefly_king_45: -6992105993184292717
+      vengefly_king_46: -2749135441815121322
+      vengefly_king_47: 8898738115339839184
+      vengefly_king_48: 2935821254385208984
+      vengefly_king_49: 986349522879573562
+      vengefly_king_5: -1860504480751169760
+      vengefly_king_50: 1335240715048007440
+      vengefly_king_51: -5953082107888455694
+      vengefly_king_52: 6822734104188160358
+      vengefly_king_53: 3117839959125957974
+      vengefly_king_54: 1969881596450901602
+      vengefly_king_55: -6197112996912917791
+      vengefly_king_56: 1880262857057308447
+      vengefly_king_57: 3694728438803062821
+      vengefly_king_58: -3556232581205207373
+      vengefly_king_59: 5805334678013949428
+      vengefly_king_6: 8252529180977758325
+      vengefly_king_60: 3236405623576205063
+      vengefly_king_61: 2111909759134773725
+      vengefly_king_62: 2717305170214738626
+      vengefly_king_63: 7575970998577451552
+      vengefly_king_64: 1286789209356227802
+      vengefly_king_65: -303304087960101045
+      vengefly_king_66: 4961570649682975937
+      vengefly_king_67: -7159587486700757985
+      vengefly_king_68: -9213029683646555366
+      vengefly_king_69: -7295765924307257842
+      vengefly_king_7: 8310600169278890366
+      vengefly_king_70: 1014929128491773860
+      vengefly_king_71: -8920115197224643265
+      vengefly_king_72: 7292928043689285748
+      vengefly_king_73: 7478713186743235305
+      vengefly_king_74: -3006342593528251431
+      vengefly_king_75: 3835713388985101548
+      vengefly_king_76: 5211212429984895204
+      vengefly_king_77: -1035618567652282745
+      vengefly_king_78: -5595321964884339973
+      vengefly_king_79: 3596969767407493136
+      vengefly_king_8: 562898281344560587
+      vengefly_king_80: -7924498690031766714
+      vengefly_king_81: -8179807580125818798
+      vengefly_king_82: -3124417030781157341
+      vengefly_king_83: -4050719508754141028
+      vengefly_king_84: 3962618656800058383
+      vengefly_king_85: 3567664789261239852
+      vengefly_king_86: 5840403871320022076
+      vengefly_king_87: 8254710460255800331
+      vengefly_king_88: -6458432847273485289
+      vengefly_king_89: 7002725559597932433
+      vengefly_king_9: -178858455083528020
+      vengefly_king_90: -8677365387175078346
+      vengefly_king_91: -6428142849531344016
+      vengefly_king_92: 4232459573394441123
+      vengefly_king_93: -4504890497531811306
+      vengefly_king_94: -2271351749855563130
+      vengefly_king_95: -2952306681489625034
+      vengefly_king_96: -8092976680803107437
+      vengefly_king_97: 1727228990126824381
+      vengefly_king_98: 2945124749068389792
+      vengefly_king_99: 3076755079867983435
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
