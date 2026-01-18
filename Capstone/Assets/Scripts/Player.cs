@@ -50,13 +50,13 @@ public class Player : MonoBehaviour
     private Transform groundCheck;
     [SerializeField] private LayerMask groundLayer;
 
-	[Header("Look Settings")]
-	[SerializeField] Vector2 lookAxis;
-	[SerializeField] float lookDelay = 1.0f;
-	float currentLookTimer = 0.0f;// counts up while the look buttom is down
-	[SerializeField] Vector2 cameraLookOffset;
-	bool cameraMoved = false;
-	Vector3 oldCameraPos;
+	//[Header("Look Settings")]
+	////[SerializeField] Vector2 lookAxis;
+	//[SerializeField] float lookDelay = 1.0f;
+	//float currentLookTimer = 0.0f;// counts up while the look buttom is down
+	//[SerializeField] Vector2 cameraLookOffset;
+	//bool cameraMoved = false;
+	//Vector3 oldCameraPos;
 
 	void Start() {
         if(!rb) rb = GetComponent<Rigidbody2D>();
@@ -138,9 +138,9 @@ public class Player : MonoBehaviour
 		//horizontalAxis = Input.GetAxis("Horizontal");
 		horizontalAxis = moveAction.action.ReadValue<Vector2>().x;
 
-		lookAxis = lookAction.action.ReadValue<Vector2>();
+		//lookAxis = lookAction.action.ReadValue<Vector2>();
 
-		if (horizontalAxis < 0) playerDirection = -1f;
+		if		(horizontalAxis < 0) playerDirection = -1f;
 		else if (horizontalAxis > 0) playerDirection = 1f;
 
 		if (oldDirection != playerDirection) {
@@ -150,36 +150,36 @@ public class Player : MonoBehaviour
 		}
 	}
 	// Not working
-	private void Look(Vector2 lookAxis_) {
-		// make sure the look button has been held for long enouph
-		if (lookAxis_.magnitude > 0f) {
-			currentLookTimer += Time.deltaTime;
-			if (currentLookTimer >= lookDelay && !cameraMoved) {
-				// only look in one direction at a time
-				// find the dominant direction
-				lookAxis_ = lookAxis_.normalized; // Normalize to unit vector
-				Vector2 camerOffsetDirection;
-				if (Mathf.Abs(lookAxis_.x) > Mathf.Abs(lookAxis_.y))
-					camerOffsetDirection = new Vector2(Mathf.Sign(lookAxis_.x), 0);
-				else
-					camerOffsetDirection = new Vector2(0, Mathf.Sign(lookAxis_.y));
-				// Offset camera in the right direction
-				camerOffsetDirection.x *= cameraLookOffset.x;
-				camerOffsetDirection.y *= cameraLookOffset.y;
-				oldCameraPos = Camera.allCameras[0].transform.position;
-				Camera.allCameras[0].transform.position += new Vector3(camerOffsetDirection.x, camerOffsetDirection.y, 0.0f);
-				cameraMoved = true;
-			}
-		} else {
-			currentLookTimer = 0f;
-			// reset camera
-			ResetCamera();
-		}
-	}
-	void ResetCamera() {
-		Camera.allCameras[0].transform.position = oldCameraPos;
-		cameraMoved = false;
-	}
+	//private void Look(Vector2 lookAxis_) {
+	//	// make sure the look button has been held for long enouph
+	//	if (lookAxis_.magnitude > 0f) {
+	//		currentLookTimer += Time.deltaTime;
+	//		if (currentLookTimer >= lookDelay && !cameraMoved) {
+	//			// only look in one direction at a time
+	//			// find the dominant direction
+	//			lookAxis_ = lookAxis_.normalized; // Normalize to unit vector
+	//			Vector2 camerOffsetDirection;
+	//			if (Mathf.Abs(lookAxis_.x) > Mathf.Abs(lookAxis_.y))
+	//				camerOffsetDirection = new Vector2(Mathf.Sign(lookAxis_.x), 0);
+	//			else
+	//				camerOffsetDirection = new Vector2(0, Mathf.Sign(lookAxis_.y));
+	//			// Offset camera in the right direction
+	//			camerOffsetDirection.x *= cameraLookOffset.x;
+	//			camerOffsetDirection.y *= cameraLookOffset.y;
+	//			oldCameraPos = Camera.allCameras[0].transform.position;
+	//			Camera.allCameras[0].transform.position += new Vector3(camerOffsetDirection.x, camerOffsetDirection.y, 0.0f);
+	//			cameraMoved = true;
+	//		}
+	//	} else {
+	//		currentLookTimer = 0f;
+	//		// reset camera
+	//		ResetCamera();
+	//	}
+	//}
+	//void ResetCamera() {
+	//	Camera.allCameras[0].transform.position = oldCameraPos;
+	//	cameraMoved = false;
+	//}
 
 	private void OnJumpPress(InputAction.CallbackContext context) {
 		if (jumps < jumpCount - 1) { // -1 to account for the very next frame where it resets the double jump
@@ -224,7 +224,6 @@ public class Player : MonoBehaviour
 		yield return new WaitForSeconds(dashDuration);
 
 		// reset
-		anim.SetTrigger("Dash");
 		//if (trailRenderer) trailRenderer.emitting = false;
 		rb.gravityScale = originalGravity;
 		isDashing = false;
