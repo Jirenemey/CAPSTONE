@@ -223,13 +223,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: primal_aspid_2
+      name: primal_aspid_idle_1
       rect:
         serializedVersion: 2
         x: 2
-        y: 472
+        y: 466
         width: 144
-        height: 108
+        height: 135
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -245,13 +245,13 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: primal_aspid_3
+      name: primal_aspid_idle_2
       rect:
         serializedVersion: 2
         x: 149
-        y: 473
+        y: 466
         width: 134
-        height: 128
+        height: 135
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -267,7 +267,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: primal_aspid_4
+      name: primal_aspid_idle_3
       rect:
         serializedVersion: 2
         x: 306
@@ -289,13 +289,13 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: primal_aspid_5
+      name: primal_aspid_idle_4
       rect:
         serializedVersion: 2
         x: 442
-        y: 473
+        y: 466
         width: 139
-        height: 114
+        height: 135
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -311,7 +311,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: primal_aspid_10
+      name: primal_aspid_turn_2
       rect:
         serializedVersion: 2
         x: 7
@@ -333,13 +333,13 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: primal_aspid_11
+      name: primal_aspid_turn_1
       rect:
         serializedVersion: 2
         x: 161
-        y: 322
+        y: 320
         width: 133
-        height: 100
+        height: 125
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -355,7 +355,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: primal_aspid_25
+      name: primal_aspid_attack_start_1
       rect:
         serializedVersion: 2
         x: 13
@@ -377,7 +377,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: primal_aspid_26
+      name: primal_aspid_attack_start_2
       rect:
         serializedVersion: 2
         x: 171
@@ -399,11 +399,11 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: primal_aspid_27
+      name: primal_aspid_attack_start_3
       rect:
         serializedVersion: 2
         x: 338
-        y: 169
+        y: 170
         width: 152
         height: 117
       alignment: 0
@@ -421,7 +421,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: primal_aspid_28
+      name: primal_aspid_attack_start_4
       rect:
         serializedVersion: 2
         x: 500
@@ -443,7 +443,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: primal_aspid_39
+      name: primal_aspid_attack_1
       rect:
         serializedVersion: 2
         x: 2
@@ -465,7 +465,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: primal_aspid_40
+      name: primal_aspid_attack_2
       rect:
         serializedVersion: 2
         x: 228
@@ -487,7 +487,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: primal_aspid_41
+      name: primal_aspid_death
       rect:
         serializedVersion: 2
         x: 406
@@ -524,8 +524,6 @@ TextureImporter:
     nameFileIdTable:
       primal_aspid_0: 8139271816457978797
       primal_aspid_1: -6950606614117594547
-      primal_aspid_10: -3281352000925531119
-      primal_aspid_11: 1146160548386289775
       primal_aspid_12: 1847284949989875836
       primal_aspid_13: -4901288042546529905
       primal_aspid_14: -973926004985850240
@@ -534,18 +532,12 @@ TextureImporter:
       primal_aspid_17: 8124210823398482447
       primal_aspid_18: 386985740073358104
       primal_aspid_19: 4377244298860033800
-      primal_aspid_2: -6109656825702210528
       primal_aspid_20: -2863756606536967717
       primal_aspid_21: 1317150699236836639
       primal_aspid_22: -5867901428448708485
       primal_aspid_23: -7501435195887796710
       primal_aspid_24: 4859838389671068159
-      primal_aspid_25: 1361094655283521721
-      primal_aspid_26: -6701839337003998359
-      primal_aspid_27: -3208019267285525603
-      primal_aspid_28: -2758202793438887472
       primal_aspid_29: -2236901075351470043
-      primal_aspid_3: 8735367021509008807
       primal_aspid_30: -348220786179276349
       primal_aspid_31: 280314696783432383
       primal_aspid_32: -1923648421294404198
@@ -555,15 +547,23 @@ TextureImporter:
       primal_aspid_36: 320145553625653977
       primal_aspid_37: 1817456254799076909
       primal_aspid_38: -6126523600897553082
-      primal_aspid_39: -6325107014085516944
-      primal_aspid_4: -7958396853634437360
-      primal_aspid_40: 1648443248259323800
-      primal_aspid_41: 1999012759622507050
-      primal_aspid_5: 1887905204156233940
       primal_aspid_6: -4770635116055651439
       primal_aspid_7: -1688825770387907361
       primal_aspid_8: -6307771079041826402
       primal_aspid_9: -8417900291297581763
+      primal_aspid_attack_1: -6325107014085516944
+      primal_aspid_attack_2: 1648443248259323800
+      primal_aspid_attack_start_1: 1361094655283521721
+      primal_aspid_attack_start_2: -6701839337003998359
+      primal_aspid_attack_start_3: -3208019267285525603
+      primal_aspid_attack_start_4: -2758202793438887472
+      primal_aspid_death: 1999012759622507050
+      primal_aspid_idle_1: -6109656825702210528
+      primal_aspid_idle_2: 8735367021509008807
+      primal_aspid_idle_3: -7958396853634437360
+      primal_aspid_idle_4: 1887905204156233940
+      primal_aspid_turn_1: 1146160548386289775
+      primal_aspid_turn_2: -3281352000925531119
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

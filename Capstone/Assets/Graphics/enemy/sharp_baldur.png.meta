@@ -253,13 +253,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: sharp_baldur_2
+      name: sharp_baldur_idle_1
       rect:
         serializedVersion: 2
         x: 3
         y: 584
         width: 127
-        height: 103
+        height: 102
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -275,7 +275,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: sharp_baldur_3
+      name: sharp_baldur_idle_2
       rect:
         serializedVersion: 2
         x: 134
@@ -297,13 +297,13 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: sharp_baldur_4
+      name: sharp_baldur_idle_3
       rect:
         serializedVersion: 2
         x: 267
-        y: 583
+        y: 584
         width: 127
-        height: 100
+        height: 102
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -319,7 +319,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: sharp_baldur_5
+      name: sharp_baldur_idle_4
       rect:
         serializedVersion: 2
         x: 398
@@ -341,7 +341,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: sharp_baldur_10
+      name: sharp_baldur_start_1
       rect:
         serializedVersion: 2
         x: 2
@@ -363,7 +363,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: sharp_baldur_11
+      name: sharp_baldur_start_2
       rect:
         serializedVersion: 2
         x: 123
@@ -385,12 +385,12 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: sharp_baldur_12
+      name: sharp_baldur_start_3
       rect:
         serializedVersion: 2
         x: 250
         y: 429
-        width: 113
+        width: 112
         height: 112
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
@@ -407,12 +407,12 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: sharp_baldur_15
+      name: sharp_baldur_roll_1
       rect:
         serializedVersion: 2
         x: 6
         y: 298
-        width: 108
+        width: 110
         height: 110
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
@@ -429,12 +429,12 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: sharp_baldur_16
+      name: sharp_baldur_roll_2
       rect:
         serializedVersion: 2
         x: 119
         y: 296
-        width: 108
+        width: 110
         height: 113
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
@@ -451,7 +451,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: sharp_baldur_17
+      name: sharp_baldur_roll_3
       rect:
         serializedVersion: 2
         x: 238
@@ -473,7 +473,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: sharp_baldur_22
+      name: sharp_baldur_stop_1
       rect:
         serializedVersion: 2
         x: 19
@@ -495,13 +495,13 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: sharp_baldur_23
+      name: sharp_baldur_stop_2
       rect:
         serializedVersion: 2
         x: 141
         y: 153
         width: 132
-        height: 93
+        height: 120
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -517,7 +517,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: sharp_baldur_49
+      name: sharp_baldur_death_1
       rect:
         serializedVersion: 2
         x: 2
@@ -539,7 +539,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: sharp_baldur_50
+      name: sharp_baldur_death_2
       rect:
         serializedVersion: 2
         x: 146
@@ -561,7 +561,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: sharp_baldur_51
+      name: sharp_baldur_death_3
       rect:
         serializedVersion: 2
         x: 276
@@ -598,28 +598,18 @@ TextureImporter:
     nameFileIdTable:
       sharp_baldur_0: 7350976530141290571
       sharp_baldur_1: -3178005096417496867
-      sharp_baldur_10: -7155800710452995883
-      sharp_baldur_11: 782479844701359441
-      sharp_baldur_12: 2367792472883504534
       sharp_baldur_13: -6453851712437872309
       sharp_baldur_14: 6660364313634081208
-      sharp_baldur_15: 1848838406917797496
-      sharp_baldur_16: 1936658421857948310
-      sharp_baldur_17: 776251786186772969
       sharp_baldur_18: -3598344425944102073
       sharp_baldur_19: 783300518677188786
-      sharp_baldur_2: 3029848037164096836
       sharp_baldur_20: -1259153379636124055
       sharp_baldur_21: -6601210948848637190
-      sharp_baldur_22: 3429485297906398543
-      sharp_baldur_23: -252356716895442524
       sharp_baldur_24: 5457181248772008527
       sharp_baldur_25: -3510390711168763097
       sharp_baldur_26: -6506528201259382540
       sharp_baldur_27: 1716509456536218256
       sharp_baldur_28: 1380486369891576785
       sharp_baldur_29: -6486014885654641710
-      sharp_baldur_3: -5482910694089685367
       sharp_baldur_30: 9178486422952101491
       sharp_baldur_31: -1527815306704358594
       sharp_baldur_32: 6479658070831071336
@@ -630,7 +620,6 @@ TextureImporter:
       sharp_baldur_37: 3674067075791015909
       sharp_baldur_38: 2782701447171199912
       sharp_baldur_39: -1542912805050617362
-      sharp_baldur_4: 2647770328866392842
       sharp_baldur_40: 6684386316633246313
       sharp_baldur_41: 7499730416597104967
       sharp_baldur_42: 5343198020218543721
@@ -640,14 +629,25 @@ TextureImporter:
       sharp_baldur_46: 848510339369057099
       sharp_baldur_47: 3190030175267239364
       sharp_baldur_48: 2980098854878266489
-      sharp_baldur_49: 5089072098571755057
-      sharp_baldur_5: -6955667628684467354
-      sharp_baldur_50: 7673788139252811069
-      sharp_baldur_51: -2115053811438672548
       sharp_baldur_6: 2385063914383223835
       sharp_baldur_7: -844099097684670112
       sharp_baldur_8: -6135589611135199986
       sharp_baldur_9: -1195824264154528475
+      sharp_baldur_death_1: 5089072098571755057
+      sharp_baldur_death_2: 7673788139252811069
+      sharp_baldur_death_3: -2115053811438672548
+      sharp_baldur_idle_1: 3029848037164096836
+      sharp_baldur_idle_2: -5482910694089685367
+      sharp_baldur_idle_3: 2647770328866392842
+      sharp_baldur_idle_4: -6955667628684467354
+      sharp_baldur_roll_1: 1848838406917797496
+      sharp_baldur_roll_2: 1936658421857948310
+      sharp_baldur_roll_3: 776251786186772969
+      sharp_baldur_start_1: -7155800710452995883
+      sharp_baldur_start_2: 782479844701359441
+      sharp_baldur_start_3: 2367792472883504534
+      sharp_baldur_stop_1: 3429485297906398543
+      sharp_baldur_stop_2: -252356716895442524
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

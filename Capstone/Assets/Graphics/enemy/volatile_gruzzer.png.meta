@@ -202,7 +202,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: volatile_gruzzer_2
+      name: volatile_gruzzer_fly_1
       rect:
         serializedVersion: 2
         x: 14
@@ -224,7 +224,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: volatile_gruzzer_3
+      name: volatile_gruzzer_fly_2
       rect:
         serializedVersion: 2
         x: 179
@@ -246,7 +246,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: volatile_gruzzer_4
+      name: volatile_gruzzer_fly_3
       rect:
         serializedVersion: 2
         x: 338
@@ -268,7 +268,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: volatile_gruzzer_5
+      name: volatile_gruzzer_fly_4
       rect:
         serializedVersion: 2
         x: 500
@@ -290,7 +290,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: volatile_gruzzer_6
+      name: volatile_gruzzer_fly_5
       rect:
         serializedVersion: 2
         x: 666
@@ -312,7 +312,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: volatile_gruzzer_7
+      name: volatile_gruzzer_fly_6
       rect:
         serializedVersion: 2
         x: 835
@@ -334,7 +334,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: volatile_gruzzer_8
+      name: volatile_gruzzer_fly_7
       rect:
         serializedVersion: 2
         x: 1002
@@ -356,7 +356,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: volatile_gruzzer_9
+      name: volatile_gruzzer_fly_8
       rect:
         serializedVersion: 2
         x: 1174
@@ -378,7 +378,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: volatile_gruzzer_30
+      name: volatile_gruzzer_turn_1
       rect:
         serializedVersion: 2
         x: 2
@@ -400,7 +400,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: volatile_gruzzer_31
+      name: volatile_gruzzer_death_air
       rect:
         serializedVersion: 2
         x: 189
@@ -422,7 +422,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: volatile_gruzzer_32
+      name: volatile_gruzzer_death_land_1
       rect:
         serializedVersion: 2
         x: 387
@@ -444,7 +444,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: volatile_gruzzer_33
+      name: volatile_gruzzer_death_land_2
       rect:
         serializedVersion: 2
         x: 544
@@ -466,7 +466,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: volatile_gruzzer_34
+      name: volatile_gruzzer_death_land_3
       rect:
         serializedVersion: 2
         x: 712
@@ -513,7 +513,6 @@ TextureImporter:
       volatile_gruzzer_17: -6721356937932272797
       volatile_gruzzer_18: 8548061400522482162
       volatile_gruzzer_19: -939141142316760503
-      volatile_gruzzer_2: -5131458144183468615
       volatile_gruzzer_20: 8977483723710376493
       volatile_gruzzer_21: 5016976879131055011
       volatile_gruzzer_22: 5791182638504299802
@@ -524,18 +523,19 @@ TextureImporter:
       volatile_gruzzer_27: 5727515893197916440
       volatile_gruzzer_28: 2209360780768506521
       volatile_gruzzer_29: 4840774196073852793
-      volatile_gruzzer_3: 5315580310383240884
-      volatile_gruzzer_30: -5200717034698891318
-      volatile_gruzzer_31: 7783961130970329039
-      volatile_gruzzer_32: -9191737371552988983
-      volatile_gruzzer_33: -2880535666787363395
-      volatile_gruzzer_34: -257639524999852573
-      volatile_gruzzer_4: -835712832281305680
-      volatile_gruzzer_5: -905445802964762184
-      volatile_gruzzer_6: 6838049806727843264
-      volatile_gruzzer_7: 8858797492232216477
-      volatile_gruzzer_8: 2030284475910172456
-      volatile_gruzzer_9: -4993283822969646269
+      volatile_gruzzer_death_air: 7783961130970329039
+      volatile_gruzzer_death_land_1: -9191737371552988983
+      volatile_gruzzer_death_land_2: -2880535666787363395
+      volatile_gruzzer_death_land_3: -257639524999852573
+      volatile_gruzzer_fly_1: -5131458144183468615
+      volatile_gruzzer_fly_2: 5315580310383240884
+      volatile_gruzzer_fly_3: -835712832281305680
+      volatile_gruzzer_fly_4: -905445802964762184
+      volatile_gruzzer_fly_5: 6838049806727843264
+      volatile_gruzzer_fly_6: 8858797492232216477
+      volatile_gruzzer_fly_7: 2030284475910172456
+      volatile_gruzzer_fly_8: -4993283822969646269
+      volatile_gruzzer_turn_1: -5200717034698891318
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

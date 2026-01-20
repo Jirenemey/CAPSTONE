@@ -661,7 +661,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: sturdy_fool_0
+      name: sturdy_fool_projectile_shatter_3
       rect:
         serializedVersion: 2
         x: 814
@@ -669,7 +669,7 @@ TextureImporter:
         width: 271
         height: 162
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -683,13 +683,13 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: sturdy_fool_2
+      name: sturdy_fool_idle_1
       rect:
         serializedVersion: 2
-        x: 7
+        x: 6
         y: 2480
         width: 261
-        height: 232
+        height: 236
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -705,13 +705,13 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: sturdy_fool_3
+      name: sturdy_fool_idle_2
       rect:
         serializedVersion: 2
         x: 277
         y: 2480
         width: 268
-        height: 230
+        height: 236
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -727,13 +727,13 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: sturdy_fool_4
+      name: sturdy_fool_idle_3
       rect:
         serializedVersion: 2
         x: 552
         y: 2480
         width: 266
-        height: 228
+        height: 236
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -749,13 +749,13 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: sturdy_fool_5
+      name: sturdy_fool_idle_4
       rect:
         serializedVersion: 2
         x: 824
-        y: 2481
+        y: 2480
         width: 268
-        height: 232
+        height: 236
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -771,7 +771,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: sturdy_fool_6
+      name: sturdy_fool_idle_5
       rect:
         serializedVersion: 2
         x: 1104
@@ -793,13 +793,13 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: sturdy_fool_12
+      name: sturdy_fool_startle_1
       rect:
         serializedVersion: 2
         x: 27
-        y: 2226
+        y: 2225
         width: 275
-        height: 219
+        height: 235
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -815,11 +815,11 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: sturdy_fool_13
+      name: sturdy_fool_startle_2
       rect:
         serializedVersion: 2
-        x: 303
-        y: 2224
+        x: 302
+        y: 2225
         width: 267
         height: 235
       alignment: 0
@@ -837,7 +837,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: sturdy_fool_17
+      name: sturdy_fool_run_1
       rect:
         serializedVersion: 2
         x: 2
@@ -859,7 +859,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: sturdy_fool_18
+      name: sturdy_fool_run_2
       rect:
         serializedVersion: 2
         x: 279
@@ -881,13 +881,13 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: sturdy_fool_19
+      name: sturdy_fool_run_3
       rect:
         serializedVersion: 2
         x: 560
-        y: 1966
+        y: 1956
         width: 263
-        height: 237
+        height: 248
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -903,7 +903,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: sturdy_fool_20
+      name: sturdy_fool_run_4
       rect:
         serializedVersion: 2
         x: 843
@@ -925,7 +925,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: sturdy_fool_21
+      name: sturdy_fool_run_5
       rect:
         serializedVersion: 2
         x: 1117
@@ -947,10 +947,10 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: sturdy_fool_22
+      name: sturdy_fool_run_6
       rect:
         serializedVersion: 2
-        x: 1385
+        x: 1384
         y: 1964
         width: 271
         height: 235
@@ -969,7 +969,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: sturdy_fool_39
+      name: sturdy_fool_turn_1
       rect:
         serializedVersion: 2
         x: 2
@@ -991,7 +991,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: sturdy_fool_40
+      name: sturdy_fool_turn_2
       rect:
         serializedVersion: 2
         x: 282
@@ -1013,7 +1013,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: sturdy_fool_44
+      name: sturdy_fool_evade_1
       rect:
         serializedVersion: 2
         x: 2
@@ -1035,13 +1035,13 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: sturdy_fool_45
+      name: sturdy_fool_evade_2
       rect:
         serializedVersion: 2
         x: 326
         y: 1445
         width: 265
-        height: 215
+        height: 232
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -1057,13 +1057,13 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: sturdy_fool_46
+      name: sturdy_fool_evade_3
       rect:
         serializedVersion: 2
         x: 635
-        y: 1455
+        y: 1445
         width: 286
-        height: 222
+        height: 232
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -1079,13 +1079,13 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: sturdy_fool_47
+      name: sturdy_fool_evade_4
       rect:
         serializedVersion: 2
         x: 941
-        y: 1452
+        y: 1445
         width: 303
-        height: 224
+        height: 232
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -1101,13 +1101,13 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: sturdy_fool_48
+      name: sturdy_fool_evade_5
       rect:
         serializedVersion: 2
-        x: 1257
-        y: 1455
+        x: 1256
+        y: 1445
         width: 286
-        height: 222
+        height: 232
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -1123,13 +1123,13 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: sturdy_fool_49
+      name: sturdy_fool_evade_6
       rect:
         serializedVersion: 2
         x: 1563
         y: 1445
         width: 275
-        height: 219
+        height: 232
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -1145,7 +1145,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: sturdy_fool_97
+      name: sturdy_fool_pre_slash_1
       rect:
         serializedVersion: 2
         x: 2
@@ -1167,7 +1167,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: sturdy_fool_98
+      name: sturdy_fool_pre_slash_2
       rect:
         serializedVersion: 2
         x: 330
@@ -1189,7 +1189,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: sturdy_fool_99
+      name: sturdy_fool_pre_slash_3_5
       rect:
         serializedVersion: 2
         x: 647
@@ -1211,7 +1211,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: sturdy_fool_100
+      name: sturdy_fool_pre_slash_4_6
       rect:
         serializedVersion: 2
         x: 958
@@ -1233,7 +1233,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: sturdy_fool_101
+      name: sturdy_fool_pre_slash_7
       rect:
         serializedVersion: 2
         x: 1299
@@ -1255,7 +1255,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: sturdy_fool_115
+      name: sturdy_fool_slash
       rect:
         serializedVersion: 2
         x: 2
@@ -1277,7 +1277,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: sturdy_fool_116
+      name: sturdy_fool_slash_recover_1
       rect:
         serializedVersion: 2
         x: 556
@@ -1299,13 +1299,13 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: sturdy_fool_117
+      name: sturdy_fool_slash_recover_2
       rect:
         serializedVersion: 2
         x: 916
-        y: 942
+        y: 939
         width: 250
-        height: 222
+        height: 229
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -1321,7 +1321,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: sturdy_fool_123
+      name: sturdy_fool_attack_1
       rect:
         serializedVersion: 2
         x: 38
@@ -1343,7 +1343,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: sturdy_fool_124
+      name: sturdy_fool_attack_2
       rect:
         serializedVersion: 2
         x: 397
@@ -1365,13 +1365,13 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: sturdy_fool_125
+      name: sturdy_fool_attack_3
       rect:
         serializedVersion: 2
         x: 778
         y: 680
         width: 282
-        height: 199
+        height: 235
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -1387,7 +1387,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: sturdy_fool_126
+      name: sturdy_fool_attack_4
       rect:
         serializedVersion: 2
         x: 1153
@@ -1409,7 +1409,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: sturdy_fool_127
+      name: sturdy_fool_attack_5
       rect:
         serializedVersion: 2
         x: 1528
@@ -1431,13 +1431,13 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: sturdy_fool_128
+      name: sturdy_fool_attack_6
       rect:
         serializedVersion: 2
         x: 2
         y: 438
         width: 305
-        height: 179
+        height: 220
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -1453,11 +1453,11 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: sturdy_fool_129
+      name: sturdy_fool_attack_7
       rect:
         serializedVersion: 2
         x: 467
-        y: 445
+        y: 446
         width: 284
         height: 220
       alignment: 0
@@ -1475,7 +1475,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: sturdy_fool_130
+      name: sturdy_fool_attack_8
       rect:
         serializedVersion: 2
         x: 843
@@ -1497,7 +1497,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: sturdy_fool_131
+      name: sturdy_fool_attack_9
       rect:
         serializedVersion: 2
         x: 1206
@@ -1519,7 +1519,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: sturdy_fool_152
+      name: sturdy_fool_projectile
       rect:
         serializedVersion: 2
         x: 7
@@ -1541,7 +1541,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: sturdy_fool_154
+      name: sturdy_fool_projectile_shatter_1
       rect:
         serializedVersion: 2
         x: 245
@@ -1563,7 +1563,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: sturdy_fool_159
+      name: sturdy_fool_projectile_shatter_2
       rect:
         serializedVersion: 2
         x: 494
@@ -1585,7 +1585,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: sturdy_fool_182
+      name: sturdy_fool_death_air_1
       rect:
         serializedVersion: 2
         x: 2
@@ -1607,13 +1607,13 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: sturdy_fool_183
+      name: sturdy_fool_death_air_2
       rect:
         serializedVersion: 2
         x: 299
         y: 7
         width: 241
-        height: 219
+        height: 221
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -1629,13 +1629,13 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: sturdy_fool_184
+      name: sturdy_fool_death_air_3
       rect:
         serializedVersion: 2
         x: 575
         y: 2
         width: 227
-        height: 207
+        height: 221
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -1651,7 +1651,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: sturdy_fool_185
+      name: sturdy_fool_death_land_1
       rect:
         serializedVersion: 2
         x: 850
@@ -1673,13 +1673,13 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: sturdy_fool_186
+      name: sturdy_fool_death_land_2
       rect:
         serializedVersion: 2
         x: 1105
         y: 13
         width: 257
-        height: 198
+        height: 225
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -1695,13 +1695,13 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: sturdy_fool_187
+      name: sturdy_fool_death_land_3
       rect:
         serializedVersion: 2
         x: 1385
         y: 14
         width: 237
-        height: 173
+        height: 225
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -1730,11 +1730,8 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      sturdy_fool_0: 6347089446363793023
       sturdy_fool_1: -4133336804988856177
       sturdy_fool_10: -7456931427927141756
-      sturdy_fool_100: -1315654668413796255
-      sturdy_fool_101: -4607970535951800208
       sturdy_fool_102: -4242460755700332166
       sturdy_fool_103: 4401876799178930456
       sturdy_fool_104: -4297469796268972339
@@ -1749,25 +1746,11 @@ TextureImporter:
       sturdy_fool_112: -341623951461869255
       sturdy_fool_113: 3408141942396935055
       sturdy_fool_114: 6074550029572163886
-      sturdy_fool_115: -6195303923993084584
-      sturdy_fool_116: 8923510526267420961
-      sturdy_fool_117: 5307455784751355559
       sturdy_fool_118: -3065841929170905461
       sturdy_fool_119: -7445397040808656360
-      sturdy_fool_12: -1694344227909552635
       sturdy_fool_120: 6501079817051825801
       sturdy_fool_121: 4440457068270535347
       sturdy_fool_122: -8946415282659440813
-      sturdy_fool_123: -1007913871375519335
-      sturdy_fool_124: -1242049394227200013
-      sturdy_fool_125: 8961319297800315726
-      sturdy_fool_126: 218973407736862491
-      sturdy_fool_127: 7923351678385119621
-      sturdy_fool_128: -4516925847332592308
-      sturdy_fool_129: -1156038775053011191
-      sturdy_fool_13: 196856067327003434
-      sturdy_fool_130: 5072546599835729390
-      sturdy_fool_131: -1373954322620290756
       sturdy_fool_132: 117793698347668288
       sturdy_fool_133: -874121687783321737
       sturdy_fool_134: -5115559896760006278
@@ -1790,14 +1773,11 @@ TextureImporter:
       sturdy_fool_15: 7830549541495809292
       sturdy_fool_150: -7734540609889569086
       sturdy_fool_151: -2525827988940940166
-      sturdy_fool_152: -4238487060117907779
       sturdy_fool_153: 8116183224100314169
-      sturdy_fool_154: 118040046802205321
       sturdy_fool_155: -2388156770781845288
       sturdy_fool_156: -1487562387498527552
       sturdy_fool_157: 5074486196762502945
       sturdy_fool_158: -4981394283462238868
-      sturdy_fool_159: -4828828315792813335
       sturdy_fool_16: -2905754745265126422
       sturdy_fool_160: -447784370437611480
       sturdy_fool_161: -9050779964226056132
@@ -1809,7 +1789,6 @@ TextureImporter:
       sturdy_fool_167: 3694081752753919741
       sturdy_fool_168: -6231656535287747749
       sturdy_fool_169: -3078653189708215918
-      sturdy_fool_17: -5012461354197244777
       sturdy_fool_170: -3668295349788389879
       sturdy_fool_171: 5609942709635012256
       sturdy_fool_172: -1889604856883869977
@@ -1820,20 +1799,8 @@ TextureImporter:
       sturdy_fool_177: -38437069561633679
       sturdy_fool_178: 1553662768009188411
       sturdy_fool_179: -1464060370458655622
-      sturdy_fool_18: -5432608957493446451
       sturdy_fool_180: -182898914172343296
       sturdy_fool_181: -1062867219877259686
-      sturdy_fool_182: -5191152185088199430
-      sturdy_fool_183: -5728335866307235768
-      sturdy_fool_184: -2369792541689891381
-      sturdy_fool_185: 8212200393561928117
-      sturdy_fool_186: -5944817405241658376
-      sturdy_fool_187: 1949754453447946279
-      sturdy_fool_19: -1887638178429544562
-      sturdy_fool_2: -2123917165918784490
-      sturdy_fool_20: 1253965037803045610
-      sturdy_fool_21: -80705904758536725
-      sturdy_fool_22: 5575894058845887012
       sturdy_fool_23: -7587609853709726246
       sturdy_fool_24: -4168378013748611234
       sturdy_fool_25: -6722873737498396757
@@ -1841,7 +1808,6 @@ TextureImporter:
       sturdy_fool_27: 7834113100620600466
       sturdy_fool_28: 5676556896962525100
       sturdy_fool_29: 4637092778160226574
-      sturdy_fool_3: -1683920860421228686
       sturdy_fool_30: 8744795583705801808
       sturdy_fool_31: -2366488978878087403
       sturdy_fool_32: -2964886768237090183
@@ -1851,19 +1817,9 @@ TextureImporter:
       sturdy_fool_36: 7339450504342515236
       sturdy_fool_37: 3404872258952606004
       sturdy_fool_38: 3686279822432177906
-      sturdy_fool_39: -3496650330492582619
-      sturdy_fool_4: -6554520509687884373
-      sturdy_fool_40: -6893614454841947524
       sturdy_fool_41: -6734915810631105069
       sturdy_fool_42: -6037337259835283168
       sturdy_fool_43: 4011131596823477689
-      sturdy_fool_44: 5727591965628058337
-      sturdy_fool_45: -2667605526069644172
-      sturdy_fool_46: 2601369678335443329
-      sturdy_fool_47: 1698931462459448300
-      sturdy_fool_48: 5539696784023484220
-      sturdy_fool_49: 5825833122278061300
-      sturdy_fool_5: -9074098425211804984
       sturdy_fool_50: -7196642131181074910
       sturdy_fool_51: 7374136999367130257
       sturdy_fool_52: -5418664326209633232
@@ -1874,7 +1830,6 @@ TextureImporter:
       sturdy_fool_57: 5848748046321831597
       sturdy_fool_58: -1170241883739024274
       sturdy_fool_59: -3021763050885378987
-      sturdy_fool_6: 6972879382220266945
       sturdy_fool_60: 6585541775792217681
       sturdy_fool_61: 3458981088586539931
       sturdy_fool_62: 5975317804491307029
@@ -1915,9 +1870,54 @@ TextureImporter:
       sturdy_fool_94: -4745638073006025105
       sturdy_fool_95: -8250362410189968917
       sturdy_fool_96: 1376268753796058843
-      sturdy_fool_97: 3003550686034301271
-      sturdy_fool_98: 5312315577205224132
-      sturdy_fool_99: -1621509841347862027
+      sturdy_fool_attack_1: -1007913871375519335
+      sturdy_fool_attack_2: -1242049394227200013
+      sturdy_fool_attack_3: 8961319297800315726
+      sturdy_fool_attack_4: 218973407736862491
+      sturdy_fool_attack_5: 7923351678385119621
+      sturdy_fool_attack_6: -4516925847332592308
+      sturdy_fool_attack_7: -1156038775053011191
+      sturdy_fool_attack_8: 5072546599835729390
+      sturdy_fool_attack_9: -1373954322620290756
+      sturdy_fool_death_air_1: -5191152185088199430
+      sturdy_fool_death_air_2: -5728335866307235768
+      sturdy_fool_death_air_3: -2369792541689891381
+      sturdy_fool_death_land_1: 8212200393561928117
+      sturdy_fool_death_land_2: -5944817405241658376
+      sturdy_fool_death_land_3: 1949754453447946279
+      sturdy_fool_evade_1: 5727591965628058337
+      sturdy_fool_evade_2: -2667605526069644172
+      sturdy_fool_evade_3: 2601369678335443329
+      sturdy_fool_evade_4: 1698931462459448300
+      sturdy_fool_evade_5: 5539696784023484220
+      sturdy_fool_evade_6: 5825833122278061300
+      sturdy_fool_idle_1: -2123917165918784490
+      sturdy_fool_idle_2: -1683920860421228686
+      sturdy_fool_idle_3: -6554520509687884373
+      sturdy_fool_idle_4: -9074098425211804984
+      sturdy_fool_idle_5: 6972879382220266945
+      sturdy_fool_pre_slash_1: 3003550686034301271
+      sturdy_fool_pre_slash_2: 5312315577205224132
+      sturdy_fool_pre_slash_3_5: -1621509841347862027
+      sturdy_fool_pre_slash_4_6: -1315654668413796255
+      sturdy_fool_pre_slash_7: -4607970535951800208
+      sturdy_fool_projectile: -4238487060117907779
+      sturdy_fool_projectile_shatter_1: 118040046802205321
+      sturdy_fool_projectile_shatter_2: -4828828315792813335
+      sturdy_fool_projectile_shatter_3: 6347089446363793023
+      sturdy_fool_run_1: -5012461354197244777
+      sturdy_fool_run_2: -5432608957493446451
+      sturdy_fool_run_3: -1887638178429544562
+      sturdy_fool_run_4: 1253965037803045610
+      sturdy_fool_run_5: -80705904758536725
+      sturdy_fool_run_6: 5575894058845887012
+      sturdy_fool_slash: -6195303923993084584
+      sturdy_fool_slash_recover_1: 8923510526267420961
+      sturdy_fool_slash_recover_2: 5307455784751355559
+      sturdy_fool_startle_1: -1694344227909552635
+      sturdy_fool_startle_2: 196856067327003434
+      sturdy_fool_turn_1: -3496650330492582619
+      sturdy_fool_turn_2: -6893614454841947524
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

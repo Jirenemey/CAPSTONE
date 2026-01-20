@@ -502,7 +502,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: gruz_mother_4
+      name: gruz_mother_sleep_1
       rect:
         serializedVersion: 2
         x: 7
@@ -524,7 +524,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: gruz_mother_5
+      name: gruz_mother_sleep_2
       rect:
         serializedVersion: 2
         x: 324
@@ -546,7 +546,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: gruz_mother_6
+      name: gruz_mother_sleep_3
       rect:
         serializedVersion: 2
         x: 639
@@ -568,7 +568,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: gruz_mother_7
+      name: gruz_mother_sleep_4
       rect:
         serializedVersion: 2
         x: 968
@@ -590,29 +590,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: gruz_mother_8
-      rect:
-        serializedVersion: 2
-        x: 1291
-        y: 3206
-        width: 6
-        height: 6
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 68b8674e6e56b1ce0800000000000000
-      internalID: -1433440014037513338
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: gruz_mother_9
+      name: gruz_mother_sleep_5
       rect:
         serializedVersion: 2
         x: 1296
@@ -634,7 +612,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: gruz_mother_10
+      name: gruz_mother_sleep_6
       rect:
         serializedVersion: 2
         x: 38
@@ -656,7 +634,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: gruz_mother_11
+      name: gruz_mother_sleep_7
       rect:
         serializedVersion: 2
         x: 355
@@ -678,7 +656,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: gruz_mother_12
+      name: gruz_mother_sleep_8
       rect:
         serializedVersion: 2
         x: 664
@@ -700,7 +678,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: gruz_mother_23
+      name: gruz_mother_wakedeath_1
       rect:
         serializedVersion: 2
         x: 12
@@ -722,7 +700,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: gruz_mother_24
+      name: gruz_mother_wakedeath_2
       rect:
         serializedVersion: 2
         x: 214
@@ -744,7 +722,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: gruz_mother_25
+      name: gruz_mother_wakedeath_3
       rect:
         serializedVersion: 2
         x: 446
@@ -766,7 +744,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: gruz_mother_26
+      name: gruz_mother_wakedeath_4
       rect:
         serializedVersion: 2
         x: 653
@@ -788,7 +766,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: gruz_mother_29
+      name: gruz_mother_fly_1
       rect:
         serializedVersion: 2
         x: 6
@@ -810,7 +788,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: gruz_mother_30
+      name: gruz_mother_fly_2
       rect:
         serializedVersion: 2
         x: 213
@@ -832,7 +810,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: gruz_mother_31
+      name: gruz_mother_fly_3
       rect:
         serializedVersion: 2
         x: 436
@@ -854,7 +832,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: gruz_mother_32
+      name: gruz_mother_fly_4
       rect:
         serializedVersion: 2
         x: 637
@@ -876,7 +854,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: gruz_mother_47
+      name: gruz_mother_charge_start_1
       rect:
         serializedVersion: 2
         x: 2
@@ -898,7 +876,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: gruz_mother_48
+      name: gruz_mother_charge_start_2
       rect:
         serializedVersion: 2
         x: 239
@@ -920,7 +898,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: gruz_mother_49
+      name: gruz_mother_charge_start_3
       rect:
         serializedVersion: 2
         x: 459
@@ -942,7 +920,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: gruz_mother_50
+      name: gruz_mother_charge_start_4
       rect:
         serializedVersion: 2
         x: 702
@@ -964,7 +942,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: gruz_mother_57
+      name: gruz_mother_charge
       rect:
         serializedVersion: 2
         x: 2
@@ -986,7 +964,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: gruz_mother_69
+      name: gruz_mother_charge_recover_1
       rect:
         serializedVersion: 2
         x: 27
@@ -1008,7 +986,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: gruz_mother_70
+      name: gruz_mother_charge_recover_2
       rect:
         serializedVersion: 2
         x: 223
@@ -1030,7 +1008,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: gruz_mother_78
+      name: gruz_mother_slam_down
       rect:
         serializedVersion: 2
         x: 2
@@ -1052,7 +1030,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: gruz_mother_84
+      name: gruz_mother_slam_up
       rect:
         serializedVersion: 2
         x: 2
@@ -1074,7 +1052,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: gruz_mother_93
+      name: gruz_mother_slam_recover
       rect:
         serializedVersion: 2
         x: 3
@@ -1096,7 +1074,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: gruz_mother_96
+      name: gruz_mother_fall_1
       rect:
         serializedVersion: 2
         x: 14
@@ -1118,7 +1096,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: gruz_mother_97
+      name: gruz_mother_fall_2
       rect:
         serializedVersion: 2
         x: 211
@@ -1140,7 +1118,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: gruz_mother_102
+      name: gruz_mother_wiggle_1
       rect:
         serializedVersion: 2
         x: 2
@@ -1162,7 +1140,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: gruz_mother_103
+      name: gruz_mother_wiggle_2
       rect:
         serializedVersion: 2
         x: 257
@@ -1184,7 +1162,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: gruz_mother_104
+      name: gruz_mother_wiggle_3
       rect:
         serializedVersion: 2
         x: 494
@@ -1206,7 +1184,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: gruz_mother_113
+      name: gruz_mother_wiggle_stop_1
       rect:
         serializedVersion: 2
         x: 2
@@ -1228,7 +1206,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: gruz_mother_114
+      name: gruz_mother_wiggle_stop_2
       rect:
         serializedVersion: 2
         x: 268
@@ -1250,7 +1228,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: gruz_mother_115
+      name: gruz_mother_wiggle_stop_3
       rect:
         serializedVersion: 2
         x: 530
@@ -1272,29 +1250,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: gruz_mother_120
-      rect:
-        serializedVersion: 2
-        x: 38
-        y: 596
-        width: 8
-        height: 9
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 98743f16e0098fa10800000000000000
-      internalID: 1943461630657644425
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: gruz_mother_121
+      name: gruz_mother_gurgle_1
       rect:
         serializedVersion: 2
         x: 2
@@ -1316,7 +1272,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: gruz_mother_122
+      name: gruz_mother_gurgle_2
       rect:
         serializedVersion: 2
         x: 228
@@ -1338,7 +1294,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: gruz_mother_123
+      name: gruz_mother_gurgle_3
       rect:
         serializedVersion: 2
         x: 454
@@ -1360,7 +1316,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: gruz_mother_124
+      name: gruz_mother_gurgle_4
       rect:
         serializedVersion: 2
         x: 680
@@ -1382,7 +1338,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: gruz_mother_128
+      name: gruz_mother_burst_1
       rect:
         serializedVersion: 2
         x: 39
@@ -1404,7 +1360,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: gruz_mother_129
+      name: gruz_mother_burst_2
       rect:
         serializedVersion: 2
         x: 359
@@ -1426,7 +1382,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: gruz_mother_130
+      name: gruz_mother_burst_3
       rect:
         serializedVersion: 2
         x: 675
@@ -1448,7 +1404,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: gruz_mother_131
+      name: gruz_mother_burst_4
       rect:
         serializedVersion: 2
         x: 972
@@ -1470,7 +1426,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: gruz_mother_132
+      name: gruz_mother_burst_5
       rect:
         serializedVersion: 2
         x: 1282
@@ -1492,7 +1448,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: gruz_mother_133
+      name: gruz_mother_burst_6
       rect:
         serializedVersion: 2
         x: 2
@@ -1514,7 +1470,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: gruz_mother_134
+      name: gruz_mother_burst_7
       rect:
         serializedVersion: 2
         x: 322
@@ -1551,45 +1507,25 @@ TextureImporter:
     nameFileIdTable:
       gruz_mother_0: -776581679557673011
       gruz_mother_1: 1072621820837166800
-      gruz_mother_10: -620211044103872640
       gruz_mother_100: 578364174086748918
       gruz_mother_101: -25763836319387935
-      gruz_mother_102: 2655289133203380527
-      gruz_mother_103: 7262251838474314488
-      gruz_mother_104: 9123232186722428565
       gruz_mother_105: 4639875240977479849
       gruz_mother_106: 5722778281973032119
       gruz_mother_107: 4480360137665749120
       gruz_mother_108: 2788284461045159067
       gruz_mother_109: -3233044164688445693
-      gruz_mother_11: 6215368055605175537
       gruz_mother_110: 3527912924782308671
       gruz_mother_111: 1162989982681344983
       gruz_mother_112: -4114097975611570552
-      gruz_mother_113: 1112180426667219636
-      gruz_mother_114: 4728114033627869247
-      gruz_mother_115: -6672706260155150791
       gruz_mother_116: -8158989203477332654
       gruz_mother_117: -6629977588034151682
       gruz_mother_118: 1783225080266654108
       gruz_mother_119: 632793960018379496
-      gruz_mother_12: 6149989078115585597
       gruz_mother_120: 1943461630657644425
-      gruz_mother_121: 6211410436354077446
-      gruz_mother_122: -2516134652970281363
-      gruz_mother_123: -7119158737490662999
-      gruz_mother_124: -8909937659884118465
       gruz_mother_125: 7917643884150309452
       gruz_mother_126: -6527755640750540552
       gruz_mother_127: -6322585943208927669
-      gruz_mother_128: -2151262963470242012
-      gruz_mother_129: -2458661149492970442
       gruz_mother_13: -4549290720163455659
-      gruz_mother_130: -7074793587285342911
-      gruz_mother_131: -1262943412105380354
-      gruz_mother_132: -3379737672746264619
-      gruz_mother_133: -7047057141038310083
-      gruz_mother_134: 5704395273849106659
       gruz_mother_14: -4183967957054864285
       gruz_mother_15: -5269077214111864315
       gruz_mother_16: -7246575361657962320
@@ -1600,17 +1536,9 @@ TextureImporter:
       gruz_mother_20: 8085276762555698988
       gruz_mother_21: 4133043993685654141
       gruz_mother_22: 3212101057010953192
-      gruz_mother_23: -8689211949883885948
-      gruz_mother_24: 3027674115947490441
-      gruz_mother_25: -6593936879406699243
-      gruz_mother_26: -9178720237535306937
       gruz_mother_27: -2588223734029390056
       gruz_mother_28: -5632718187803187094
-      gruz_mother_29: 3268171406635489089
       gruz_mother_3: 5334710990901182059
-      gruz_mother_30: 1091584839370665673
-      gruz_mother_31: 9018508999874555018
-      gruz_mother_32: -4388374545973811301
       gruz_mother_33: -2509208772404907607
       gruz_mother_34: -3788101974507283087
       gruz_mother_35: -6841014111991203926
@@ -1618,7 +1546,6 @@ TextureImporter:
       gruz_mother_37: -544017174150121528
       gruz_mother_38: -2022609900070363264
       gruz_mother_39: 8666277035096571966
-      gruz_mother_4: -3202458751467590146
       gruz_mother_40: 1045368949092138507
       gruz_mother_41: 3351109282880007421
       gruz_mother_42: 9200710631306316725
@@ -1626,21 +1553,14 @@ TextureImporter:
       gruz_mother_44: -1531962122627712529
       gruz_mother_45: 5340652118011287348
       gruz_mother_46: 3340367767295265194
-      gruz_mother_47: -497750644078030851
-      gruz_mother_48: -5302404747021890223
-      gruz_mother_49: -1362048275704370524
-      gruz_mother_5: 3237310696105165904
-      gruz_mother_50: -6169904697127730045
       gruz_mother_51: 4375219970887941773
       gruz_mother_52: -2399489763053640413
       gruz_mother_53: -9030920912592853988
       gruz_mother_54: 6349465168188780030
       gruz_mother_55: 7206996326672330912
       gruz_mother_56: -6745234190622479356
-      gruz_mother_57: 7033245760153686461
       gruz_mother_58: -3085344911382360217
       gruz_mother_59: -8973610998500186219
-      gruz_mother_6: 2173335723729776350
       gruz_mother_60: 2787891362704115820
       gruz_mother_61: 3971510240043939383
       gruz_mother_62: 3266713012632126906
@@ -1650,9 +1570,6 @@ TextureImporter:
       gruz_mother_66: 8987061691394763636
       gruz_mother_67: -1029069451814535813
       gruz_mother_68: -2733183177022710919
-      gruz_mother_69: 6498381795100061409
-      gruz_mother_7: -5202800559166360738
-      gruz_mother_70: -9130023920166836208
       gruz_mother_71: 7216173056684099139
       gruz_mother_72: -1575621820374433819
       gruz_mother_73: -4745915145561449333
@@ -1660,30 +1577,69 @@ TextureImporter:
       gruz_mother_75: 2718640747750692413
       gruz_mother_76: 1499747158699870296
       gruz_mother_77: 5540499845508247230
-      gruz_mother_78: 803130815421970288
       gruz_mother_79: 4292378531518226055
-      gruz_mother_8: -1433440014037513338
       gruz_mother_80: -5756599516582368380
       gruz_mother_81: -2397503581364524279
       gruz_mother_82: 7787044423716539421
       gruz_mother_83: -4846174161881129716
-      gruz_mother_84: 6469488461328009418
       gruz_mother_85: -8418205065005754668
       gruz_mother_86: -945356256413472773
       gruz_mother_87: -6867095695713994276
       gruz_mother_88: 1250198134172988722
       gruz_mother_89: 2511580181977502747
-      gruz_mother_9: 5828588261670542966
       gruz_mother_90: 2985917312257533032
       gruz_mother_91: -3846827759053954356
       gruz_mother_92: 6668348971893143313
-      gruz_mother_93: -1668646412574218479
       gruz_mother_94: -8475902703212454359
       gruz_mother_95: -3353326903538360628
-      gruz_mother_96: 4759454136336241687
-      gruz_mother_97: 6954499189645997568
       gruz_mother_98: -3383099533378115788
       gruz_mother_99: 2230980962262649161
+      gruz_mother_burst_1: -2151262963470242012
+      gruz_mother_burst_2: -2458661149492970442
+      gruz_mother_burst_3: -7074793587285342911
+      gruz_mother_burst_4: -1262943412105380354
+      gruz_mother_burst_5: -3379737672746264619
+      gruz_mother_burst_6: -7047057141038310083
+      gruz_mother_burst_7: 5704395273849106659
+      gruz_mother_charge: 7033245760153686461
+      gruz_mother_charge_recover_: 2655289133203380527
+      gruz_mother_charge_recover_1: 6498381795100061409
+      gruz_mother_charge_recover_2: -9130023920166836208
+      gruz_mother_charge_start_1: -497750644078030851
+      gruz_mother_charge_start_2: -5302404747021890223
+      gruz_mother_charge_start_3: -1362048275704370524
+      gruz_mother_charge_start_4: -6169904697127730045
+      gruz_mother_fall_1: 4759454136336241687
+      gruz_mother_fall_2: 6954499189645997568
+      gruz_mother_fly_1: 3268171406635489089
+      gruz_mother_fly_2: 1091584839370665673
+      gruz_mother_fly_3: 9018508999874555018
+      gruz_mother_fly_4: -4388374545973811301
+      gruz_mother_gurgle_1: 6211410436354077446
+      gruz_mother_gurgle_2: -2516134652970281363
+      gruz_mother_gurgle_3: -7119158737490662999
+      gruz_mother_gurgle_4: -8909937659884118465
+      gruz_mother_slam_down: 803130815421970288
+      gruz_mother_slam_recover: -1668646412574218479
+      gruz_mother_slam_up: 6469488461328009418
+      gruz_mother_sleep_1: -3202458751467590146
+      gruz_mother_sleep_2: 3237310696105165904
+      gruz_mother_sleep_3: 2173335723729776350
+      gruz_mother_sleep_4: -5202800559166360738
+      gruz_mother_sleep_5: 5828588261670542966
+      gruz_mother_sleep_6: -620211044103872640
+      gruz_mother_sleep_7: 6215368055605175537
+      gruz_mother_sleep_8: 6149989078115585597
+      gruz_mother_wakedeath_1: -8689211949883885948
+      gruz_mother_wakedeath_2: 3027674115947490441
+      gruz_mother_wakedeath_3: -6593936879406699243
+      gruz_mother_wakedeath_4: -9178720237535306937
+      gruz_mother_wiggle_1: 2655289133203380527
+      gruz_mother_wiggle_2: 7262251838474314488
+      gruz_mother_wiggle_3: 9123232186722428565
+      gruz_mother_wiggle_stop_1: 1112180426667219636
+      gruz_mother_wiggle_stop_2: 4728114033627869247
+      gruz_mother_wiggle_stop_3: -6672706260155150791
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

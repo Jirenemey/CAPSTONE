@@ -799,13 +799,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: shielded_fool_2
+      name: shielded_fool_idle_1
       rect:
         serializedVersion: 2
         x: 4
         y: 2719
         width: 187
-        height: 279
+        height: 285
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -821,13 +821,13 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: shielded_fool_3
+      name: shielded_fool_idle_2
       rect:
         serializedVersion: 2
         x: 197
         y: 2720
         width: 191
-        height: 270
+        height: 285
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -843,13 +843,13 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: shielded_fool_4
+      name: shielded_fool_idle_3
       rect:
         serializedVersion: 2
         x: 392
         y: 2719
         width: 182
-        height: 276
+        height: 285
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -865,7 +865,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: shielded_fool_5
+      name: shielded_fool_idle_4
       rect:
         serializedVersion: 2
         x: 584
@@ -887,13 +887,13 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: shielded_fool_9
+      name: shielded_fool_walk_1
       rect:
         serializedVersion: 2
         x: 2
         y: 2412
         width: 199
-        height: 277
+        height: 286
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -909,10 +909,10 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: shielded_fool_10
+      name: shielded_fool_walk_2
       rect:
         serializedVersion: 2
-        x: 203
+        x: 204
         y: 2412
         width: 191
         height: 286
@@ -931,13 +931,13 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: shielded_fool_11
+      name: shielded_fool_walk_3
       rect:
         serializedVersion: 2
         x: 403
-        y: 2414
+        y: 2412
         width: 192
-        height: 279
+        height: 286
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -953,13 +953,13 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: shielded_fool_12
+      name: shielded_fool_walk_4
       rect:
         serializedVersion: 2
         x: 603
-        y: 2413
+        y: 2412
         width: 195
-        height: 268
+        height: 286
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -975,13 +975,13 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: shielded_fool_13
+      name: shielded_fool_walk_5
       rect:
         serializedVersion: 2
         x: 803
-        y: 2413
+        y: 2412
         width: 195
-        height: 276
+        height: 286
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -997,7 +997,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: shielded_fool_14
+      name: shielded_fool_walk_6
       rect:
         serializedVersion: 2
         x: 1003
@@ -1019,13 +1019,13 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: shielded_fool_15
+      name: shielded_fool_walk_7
       rect:
         serializedVersion: 2
         x: 1204
         y: 2412
         width: 192
-        height: 281
+        height: 286
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -1041,13 +1041,13 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: shielded_fool_16
+      name: shielded_fool_walk_8
       rect:
         serializedVersion: 2
         x: 1404
-        y: 2413
+        y: 2412
         width: 194
-        height: 267
+        height: 286
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -1063,7 +1063,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: shielded_fool_51
+      name: shielded_fool_turn
       rect:
         serializedVersion: 2
         x: 2
@@ -1085,7 +1085,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: shielded_fool_52
+      name: shielded_fool_front_block_1
       rect:
         serializedVersion: 2
         x: 244
@@ -1107,7 +1107,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: shielded_fool_53
+      name: shielded_fool_front_block_2
       rect:
         serializedVersion: 2
         x: 453
@@ -1129,7 +1129,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: shielded_fool_54
+      name: shielded_fool_front_block_3
       rect:
         serializedVersion: 2
         x: 672
@@ -1151,7 +1151,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: shielded_fool_56
+      name: shielded_fool_front_block_4
       rect:
         serializedVersion: 2
         x: 878
@@ -1173,7 +1173,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: shielded_fool_57
+      name: shielded_fool_front_block_5
       rect:
         serializedVersion: 2
         x: 1085
@@ -1195,7 +1195,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: shielded_fool_58
+      name: shielded_fool_front_block_6
       rect:
         serializedVersion: 2
         x: 1294
@@ -1217,11 +1217,11 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: shielded_fool_100
+      name: shielded_fool_top_block_1
       rect:
         serializedVersion: 2
         x: 2
-        y: 1804
+        y: 1808
         width: 228
         height: 273
       alignment: 0
@@ -1239,7 +1239,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: shielded_fool_101
+      name: shielded_fool_top_block_2
       rect:
         serializedVersion: 2
         x: 291
@@ -1261,7 +1261,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: shielded_fool_102
+      name: shielded_fool_top_block_3
       rect:
         serializedVersion: 2
         x: 552
@@ -1283,7 +1283,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: shielded_fool_103
+      name: shielded_fool_top_block_4
       rect:
         serializedVersion: 2
         x: 817
@@ -1305,7 +1305,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: shielded_fool_104
+      name: shielded_fool_top_block_5
       rect:
         serializedVersion: 2
         x: 1081
@@ -1327,7 +1327,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: shielded_fool_105
+      name: shielded_fool_top_block_6
       rect:
         serializedVersion: 2
         x: 1343
@@ -1349,7 +1349,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: shielded_fool_144
+      name: shielded_fool_front_bump_1
       rect:
         serializedVersion: 2
         x: 27
@@ -1371,7 +1371,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: shielded_fool_145
+      name: shielded_fool_front_bump_2
       rect:
         serializedVersion: 2
         x: 210
@@ -1393,7 +1393,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: shielded_fool_146
+      name: shielded_fool_top_bump_1
       rect:
         serializedVersion: 2
         x: 457
@@ -1415,29 +1415,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: shielded_fool_147
-      rect:
-        serializedVersion: 2
-        x: 628
-        y: 1619
-        width: 7
-        height: 13
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 16da7a152b5cf0e50800000000000000
-      internalID: 6777853333880679777
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: shielded_fool_148
+      name: shielded_fool_top_bump_2
       rect:
         serializedVersion: 2
         x: 650
@@ -1459,7 +1437,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: shielded_fool_149
+      name: shielded_fool_attack_1
       rect:
         serializedVersion: 2
         x: 882
@@ -1481,7 +1459,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: shielded_fool_150
+      name: shielded_fool_attack_2
       rect:
         serializedVersion: 2
         x: 1169
@@ -1503,7 +1481,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: shielded_fool_159
+      name: shielded_fool_attack_3
       rect:
         serializedVersion: 2
         x: 2
@@ -1525,7 +1503,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: shielded_fool_160
+      name: shielded_fool_attack_4
       rect:
         serializedVersion: 2
         x: 461
@@ -1547,7 +1525,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: shielded_fool_161
+      name: shielded_fool_attack_5
       rect:
         serializedVersion: 2
         x: 841
@@ -1569,7 +1547,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: shielded_fool_162
+      name: shielded_fool_attack_6
       rect:
         serializedVersion: 2
         x: 1196
@@ -1591,7 +1569,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: shielded_fool_170
+      name: shielded_fool_pre_attack_1
       rect:
         serializedVersion: 2
         x: 7
@@ -1613,7 +1591,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: shielded_fool_171
+      name: shielded_fool_pre_attack_2
       rect:
         serializedVersion: 2
         x: 268
@@ -1635,7 +1613,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: shielded_fool_172
+      name: shielded_fool_pre_attack_3
       rect:
         serializedVersion: 2
         x: 524
@@ -1657,7 +1635,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: shielded_fool_173
+      name: shielded_fool_pre_attack_4
       rect:
         serializedVersion: 2
         x: 779
@@ -1679,7 +1657,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: shielded_fool_182
+      name: shielded_fool_followup_attack_1
       rect:
         serializedVersion: 2
         x: 2
@@ -1701,7 +1679,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: shielded_fool_183
+      name: shielded_fool_followup_attack_2
       rect:
         serializedVersion: 2
         x: 397
@@ -1723,7 +1701,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: shielded_fool_184
+      name: shielded_fool_followup_attack_3
       rect:
         serializedVersion: 2
         x: 781
@@ -1745,7 +1723,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: shielded_fool_192
+      name: shielded_fool_death_air_1
       rect:
         serializedVersion: 2
         x: 2
@@ -1767,7 +1745,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: shielded_fool_194
+      name: shielded_fool_death_air_2
       rect:
         serializedVersion: 2
         x: 296
@@ -1789,7 +1767,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: shielded_fool_196
+      name: shielded_fool_death_air_3
       rect:
         serializedVersion: 2
         x: 592
@@ -1811,7 +1789,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: shielded_fool_226
+      name: shielded_fool_death_land_1
       rect:
         serializedVersion: 2
         x: 2
@@ -1833,7 +1811,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: shielded_fool_227
+      name: shielded_fool_sword
       rect:
         serializedVersion: 2
         x: 721
@@ -1855,7 +1833,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: shielded_fool_228
+      name: shielded_fool_shield
       rect:
         serializedVersion: 2
         x: 942
@@ -1877,7 +1855,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: shielded_fool_229
+      name: shielded_fool_death_land_2
       rect:
         serializedVersion: 2
         x: 233
@@ -1899,7 +1877,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: shielded_fool_231
+      name: shielded_fool_death_land_3
       rect:
         serializedVersion: 2
         x: 460
@@ -1935,19 +1913,10 @@ TextureImporter:
       entries: []
     nameFileIdTable:
       shielded_fool_0: 1522076574880809638
-      shielded_fool_1: 2983650208644898562
-      shielded_fool_10: -884971665209083263
-      shielded_fool_100: -3230065767493842506
-      shielded_fool_101: 7453275610745347189
-      shielded_fool_102: 5288689401178105958
-      shielded_fool_103: -8624766613069311860
-      shielded_fool_104: 9193104206250078668
-      shielded_fool_105: 1486945809926408374
       shielded_fool_106: 1651340294450166366
       shielded_fool_107: -3923401477542587518
       shielded_fool_108: -1960747680448912713
       shielded_fool_109: 4697340176130069495
-      shielded_fool_11: 7531292079939645640
       shielded_fool_110: -8848023974836911423
       shielded_fool_111: -8026681056541652912
       shielded_fool_112: 2689031387105145206
@@ -1958,7 +1927,6 @@ TextureImporter:
       shielded_fool_117: 2696451479186070832
       shielded_fool_118: 2952152614527093490
       shielded_fool_119: 3388457314710699579
-      shielded_fool_12: -6968231817406447822
       shielded_fool_120: 8309108979058843917
       shielded_fool_121: -1450284454524136036
       shielded_fool_122: 8375062835515571920
@@ -1969,7 +1937,6 @@ TextureImporter:
       shielded_fool_127: 5597961461551521821
       shielded_fool_128: -596802686751026275
       shielded_fool_129: 6492596255199386170
-      shielded_fool_13: 6538355669275873311
       shielded_fool_130: -2003234830264692636
       shielded_fool_131: -5352123596112189554
       shielded_fool_132: 8176980243734385003
@@ -1980,19 +1947,11 @@ TextureImporter:
       shielded_fool_137: 2019614765532747501
       shielded_fool_138: -2318065717236821650
       shielded_fool_139: 1614494881467753878
-      shielded_fool_14: -8881185370859732832
       shielded_fool_140: 8005127063592919256
       shielded_fool_141: -870514597293628326
       shielded_fool_142: 2965773906886339391
       shielded_fool_143: -7620714933087005098
-      shielded_fool_144: 4089551797336574893
-      shielded_fool_145: 1449865881120856611
-      shielded_fool_146: 3520297197061827185
       shielded_fool_147: 6777853333880679777
-      shielded_fool_148: -6199379925680818060
-      shielded_fool_149: 5413625777517868659
-      shielded_fool_15: -3197442159376030092
-      shielded_fool_150: 6512558239681044274
       shielded_fool_151: -7804973608979862277
       shielded_fool_152: -8438836924138795498
       shielded_fool_153: 792773582191438665
@@ -2001,11 +1960,6 @@ TextureImporter:
       shielded_fool_156: -2959636134612015663
       shielded_fool_157: 2259664752011454123
       shielded_fool_158: -2160416843814042512
-      shielded_fool_159: -9172260001190986634
-      shielded_fool_16: 6969420142226396071
-      shielded_fool_160: 2946556255738745882
-      shielded_fool_161: 8766666796627413829
-      shielded_fool_162: 1175099729177880091
       shielded_fool_163: 6557295900845981133
       shielded_fool_164: -1705503197722332729
       shielded_fool_165: 59772321285550355
@@ -2014,10 +1968,6 @@ TextureImporter:
       shielded_fool_168: -5293575905869397098
       shielded_fool_169: -5824881039076879398
       shielded_fool_17: 1944598355572757330
-      shielded_fool_170: 1499829375414452848
-      shielded_fool_171: -4546539566332860277
-      shielded_fool_172: -511921660080305218
-      shielded_fool_173: -6592337621752701120
       shielded_fool_174: 5475320286695432391
       shielded_fool_175: 9215816037907332634
       shielded_fool_176: -3239126236090632566
@@ -2027,9 +1977,6 @@ TextureImporter:
       shielded_fool_18: 1992978253942816381
       shielded_fool_180: 7757356991159374422
       shielded_fool_181: 7813190205974797051
-      shielded_fool_182: 4748052461250628185
-      shielded_fool_183: -8951271981647949546
-      shielded_fool_184: -1022395332247274499
       shielded_fool_185: 4891933612217124484
       shielded_fool_186: -6135162013229506098
       shielded_fool_187: -2916031815748322367
@@ -2038,15 +1985,11 @@ TextureImporter:
       shielded_fool_19: -5411597673959709687
       shielded_fool_190: 3104914060812324908
       shielded_fool_191: 8489928864521181459
-      shielded_fool_192: -4533892150732329137
       shielded_fool_193: 6846789823722400142
-      shielded_fool_194: 8768813413411622692
       shielded_fool_195: 5569533106120308320
-      shielded_fool_196: -3691158524328618915
       shielded_fool_197: -1545243974061855981
       shielded_fool_198: 2211637249456337098
       shielded_fool_199: 6818481811719835559
-      shielded_fool_2: -5065418218199138502
       shielded_fool_20: -5108181871259613882
       shielded_fool_200: -2027997442045922876
       shielded_fool_201: -9164920932340963160
@@ -2076,13 +2019,8 @@ TextureImporter:
       shielded_fool_223: -7790008279239884659
       shielded_fool_224: 7269523718038607202
       shielded_fool_225: -75391179478770315
-      shielded_fool_226: 6570617764892102046
-      shielded_fool_227: -5783856936235505278
-      shielded_fool_228: -4542029392796076358
-      shielded_fool_229: -572102927913995803
       shielded_fool_23: 1848792020145119335
       shielded_fool_230: 3600954865791013529
-      shielded_fool_231: 3390353790293216399
       shielded_fool_232: -5397716664232447085
       shielded_fool_233: 7641077785385627292
       shielded_fool_24: 7347386344274701525
@@ -2091,7 +2029,6 @@ TextureImporter:
       shielded_fool_27: -2366070751795762009
       shielded_fool_28: -1148493036911319490
       shielded_fool_29: -8202051209657814909
-      shielded_fool_3: 3150690521710931603
       shielded_fool_30: -6261524351184831211
       shielded_fool_31: -7573315083979406204
       shielded_fool_32: -4435427992882457931
@@ -2102,7 +2039,6 @@ TextureImporter:
       shielded_fool_37: -1744775613333224102
       shielded_fool_38: -2786494112930580253
       shielded_fool_39: -803840011021574908
-      shielded_fool_4: 5893028126470681116
       shielded_fool_40: 4668071337753836016
       shielded_fool_41: 4468726866146034644
       shielded_fool_42: 4024277042817905101
@@ -2113,18 +2049,9 @@ TextureImporter:
       shielded_fool_47: -4493116173875701904
       shielded_fool_48: -4588464101771458512
       shielded_fool_49: 484708149668615775
-      shielded_fool_5: -7242443294120780448
       shielded_fool_50: 4412065951145803309
-      shielded_fool_51: 3865813417527659976
-      shielded_fool_52: 8795786470416880095
-      shielded_fool_53: -7706422131007770418
-      shielded_fool_54: -4728984951024965325
       shielded_fool_55: -4989726931291946276
-      shielded_fool_56: -442500559904169588
-      shielded_fool_57: 849357741316040873
-      shielded_fool_58: 2322047768009199017
       shielded_fool_59: 8010800325682350035
-      shielded_fool_6: 5003522333041217184
       shielded_fool_60: -8142948977314404665
       shielded_fool_61: 7363476098564556878
       shielded_fool_62: 8920079472815005825
@@ -2157,7 +2084,6 @@ TextureImporter:
       shielded_fool_87: -2745671139221456271
       shielded_fool_88: 8881455524284543361
       shielded_fool_89: -6993928375255836511
-      shielded_fool_9: 6563656999307184712
       shielded_fool_90: 1957904183673804240
       shielded_fool_91: 6128598552195266098
       shielded_fool_92: 2308904837778445828
@@ -2168,6 +2094,57 @@ TextureImporter:
       shielded_fool_97: -4880369708455860320
       shielded_fool_98: -6673895061500196492
       shielded_fool_99: 3720067304037836428
+      shielded_fool_attack_1: 5413625777517868659
+      shielded_fool_attack_2: 6512558239681044274
+      shielded_fool_attack_3: -9172260001190986634
+      shielded_fool_attack_4: 2946556255738745882
+      shielded_fool_attack_5: 8766666796627413829
+      shielded_fool_attack_6: 1175099729177880091
+      shielded_fool_death_air_1: -4533892150732329137
+      shielded_fool_death_air_2: 8768813413411622692
+      shielded_fool_death_air_3: -3691158524328618915
+      shielded_fool_death_land_1: 6570617764892102046
+      shielded_fool_death_land_2: -572102927913995803
+      shielded_fool_death_land_3: 3390353790293216399
+      shielded_fool_followup_attack_1: 4748052461250628185
+      shielded_fool_followup_attack_2: -8951271981647949546
+      shielded_fool_followup_attack_3: -1022395332247274499
+      shielded_fool_front_block_1: 8795786470416880095
+      shielded_fool_front_block_2: -7706422131007770418
+      shielded_fool_front_block_3: -4728984951024965325
+      shielded_fool_front_block_4: -442500559904169588
+      shielded_fool_front_block_5: 849357741316040873
+      shielded_fool_front_block_6: 2322047768009199017
+      shielded_fool_front_bump_1: 4089551797336574893
+      shielded_fool_front_bump_2: 1449865881120856611
+      shielded_fool_idle_1: -5065418218199138502
+      shielded_fool_idle_2: 3150690521710931603
+      shielded_fool_idle_3: 5893028126470681116
+      shielded_fool_idle_4: -7242443294120780448
+      shielded_fool_pre_attack_: -9172260001190986634
+      shielded_fool_pre_attack_1: 1499829375414452848
+      shielded_fool_pre_attack_2: -4546539566332860277
+      shielded_fool_pre_attack_3: -511921660080305218
+      shielded_fool_pre_attack_4: -6592337621752701120
+      shielded_fool_shield: -4542029392796076358
+      shielded_fool_sword: -5783856936235505278
+      shielded_fool_top_block_1: -3230065767493842506
+      shielded_fool_top_block_2: 7453275610745347189
+      shielded_fool_top_block_3: 5288689401178105958
+      shielded_fool_top_block_4: -8624766613069311860
+      shielded_fool_top_block_5: 9193104206250078668
+      shielded_fool_top_block_6: 1486945809926408374
+      shielded_fool_top_bump_1: 3520297197061827185
+      shielded_fool_top_bump_2: -6199379925680818060
+      shielded_fool_turn: 3865813417527659976
+      shielded_fool_walk_1: 6563656999307184712
+      shielded_fool_walk_2: -884971665209083263
+      shielded_fool_walk_3: 7531292079939645640
+      shielded_fool_walk_4: -6968231817406447822
+      shielded_fool_walk_5: 6538355669275873311
+      shielded_fool_walk_6: -8881185370859732832
+      shielded_fool_walk_7: -3197442159376030092
+      shielded_fool_walk_8: 6969420142226396071
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
