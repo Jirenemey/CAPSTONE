@@ -1393,7 +1393,7 @@ TextureImporter:
         x: 1153
         y: 681
         width: 284
-        height: 196
+        height: 235
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -1415,7 +1415,7 @@ TextureImporter:
         x: 1528
         y: 680
         width: 282
-        height: 199
+        height: 235
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -1434,10 +1434,10 @@ TextureImporter:
       name: sturdy_fool_attack_6
       rect:
         serializedVersion: 2
-        x: 2
-        y: 438
+        x: 1
+        y: 440
         width: 305
-        height: 220
+        height: 225
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -1459,7 +1459,7 @@ TextureImporter:
         x: 467
         y: 446
         width: 284
-        height: 220
+        height: 225
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -1503,7 +1503,7 @@ TextureImporter:
         x: 1206
         y: 445
         width: 231
-        height: 222
+        height: 225
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -1730,6 +1730,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
+      sturdy_fool_0: -120213765
       sturdy_fool_1: -4133336804988856177
       sturdy_fool_10: -7456931427927141756
       sturdy_fool_102: -4242460755700332166
