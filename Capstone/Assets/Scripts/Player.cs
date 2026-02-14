@@ -9,6 +9,7 @@ public class Player : MonoBehaviour
     Rigidbody2D rb;
     Collider2D col;
 	Animator anim;
+	SpriteRenderer spriteRenderer;
 
 	[Header("Input system refrences")]
 	[SerializeField] InputActionReference moveAction;
@@ -21,7 +22,7 @@ public class Player : MonoBehaviour
     [SerializeField] private float walkSpeed = 5.0f;
 	float originalWalkSpeed;
 	private float horizontalAxis;
-	float playerDirection = 1.0f;
+	float playerDirection = 1.0f; // -1 -> left, 1 -> right
 
 	[Header("Sprint Settings")]
 	[SerializeField] float sprintMultiplier = 1.3f;
@@ -62,7 +63,9 @@ public class Player : MonoBehaviour
         if(!rb) rb = GetComponent<Rigidbody2D>();
         if(!col) col = GetComponent<Collider2D>();
 		if(!anim) anim = GetComponent<Animator>();
-        rb.gravityScale = defaultGravity;
+		if (!spriteRenderer) spriteRenderer = GetComponent<SpriteRenderer>();
+
+		rb.gravityScale = defaultGravity;
         if(!groundCheck) groundCheck = transform.Find("GroundCheck");
         groundLayer = LayerMask.GetMask("Ground");
 		oldDirection = playerDirection;
@@ -140,13 +143,20 @@ public class Player : MonoBehaviour
 
 		//lookAxis = lookAction.action.ReadValue<Vector2>();
 
-		if		(horizontalAxis < 0) playerDirection = -1f;
+		SetPlayerDirection();
+	}
+
+	void SetPlayerDirection() {
+		if (horizontalAxis < 0)		 playerDirection = -1f;
 		else if (horizontalAxis > 0) playerDirection = 1f;
 
 		if (oldDirection != playerDirection) {
 			anim.SetTrigger("Turn");
 			ResetSprint();
 			oldDirection = playerDirection;
+
+			spriteRenderer.flipX = playerDirection > 0f ? true : false; 
+
 		}
 	}
 	// Not working
