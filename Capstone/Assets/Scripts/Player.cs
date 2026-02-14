@@ -51,6 +51,11 @@ public class Player : MonoBehaviour
     private Transform groundCheck;
     [SerializeField] private LayerMask groundLayer;
 
+	[Header("Attck settings")]
+	GameObject attackPoint; // this is the owner of the attack graphics and colliders
+	[SerializeField] Vector2 attackOffset = new Vector2(0.844f, -0.18f);
+
+
 	//[Header("Look Settings")]
 	////[SerializeField] Vector2 lookAxis;
 	//[SerializeField] float lookDelay = 1.0f;
@@ -64,6 +69,9 @@ public class Player : MonoBehaviour
         if(!col) col = GetComponent<Collider2D>();
 		if(!anim) anim = GetComponent<Animator>();
 		if (!spriteRenderer) spriteRenderer = GetComponent<SpriteRenderer>();
+
+		if (!attackPoint) attackPoint = gameObject.transform.Find("AttackPoint").gameObject;
+		attackPoint.SetActive(false);
 
 		rb.gravityScale = defaultGravity;
         if(!groundCheck) groundCheck = transform.Find("GroundCheck");
@@ -155,7 +163,7 @@ public class Player : MonoBehaviour
 			ResetSprint();
 			oldDirection = playerDirection;
 
-			spriteRenderer.flipX = playerDirection > 0f ? true : false; 
+			spriteRenderer.flipX = playerDirection > 0f ? true : false;
 
 		}
 	}
@@ -254,6 +262,23 @@ public class Player : MonoBehaviour
 
 	private void OnAttackMeele(InputAction.CallbackContext context) {
 		Debug.Log("Attack");
+		StartCoroutine(EnableAttack());
+	}
+
+	private System.Collections.IEnumerator EnableAttack() {
+		attackPoint.SetActive(true);
+
+		//float x_pos = -0.7f;
+		//attackPoint.transform.localScale = new Vector3(attackPoint.transform.localScale.x*playerDirection, attackPoint.transform.localScale.y, attackPoint.transform.localScale.z);
+
+		var localPos = attackPoint.transform.localPosition;
+		localPos.x = attackOffset.x * playerDirection;
+		attackPoint.transform.localPosition = localPos;
+
+
 		anim.SetTrigger("Attack");
+		yield return new WaitForSeconds(0.4f);
+		attackPoint.SetActive(false);
+
 	}
 }
