@@ -21,6 +21,7 @@ public class WaveManager : MonoBehaviour {
         Debug.Log("Enemy Count: " + enemyCount);
     }
 
+// Can change the params to wave # and use a switch case to have manual spawns based on the wave
     void SpawnEnemies()
     {   
         for(int i = 0; i < enemyCount; ++i) {
