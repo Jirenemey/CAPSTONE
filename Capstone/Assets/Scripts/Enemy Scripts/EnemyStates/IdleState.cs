@@ -1,5 +1,4 @@
 using UnityEngine;
-
 public class IdleState : EnemyState
 {
     public IdleState(EnemyAI enemy, EnemyStateMachine sm) : base(enemy, sm) {}
