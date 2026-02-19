@@ -223,6 +223,7 @@ public class Player : MonoBehaviour
 
 	private void OnJumpPress(InputAction.CallbackContext context) {
 		if (jumps < jumpCount - 1) { // -1 to account for the very next frame where it resets the double jump
+			anim.SetTrigger("Jump");
 			rb.gravityScale = defaultGravity;
 			//Debug.Log("JUMPED");
 			//rb.AddForce(Vector2.up * jumpForce, ForceMode2D.Impulse);
