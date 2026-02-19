@@ -169,7 +169,7 @@ public class Player : MonoBehaviour
 			ResetSprint();
 			oldDirection = playerDirection;
 
-			spriteRenderer.flipX = playerDirection > 0f ? true : false;
+			spriteRenderer.flipX = playerDirection > 0f;
 
 		}
 	}
