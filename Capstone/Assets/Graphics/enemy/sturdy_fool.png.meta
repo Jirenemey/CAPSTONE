@@ -1,0 +1,1926 @@
+fileFormatVersion: 2
+guid: 20ed41a0d1c22f242871877293533db1
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 6347089446363793023
+    second: sturdy_fool_0
+  - first:
+      213: -4133336804988856177
+    second: sturdy_fool_1
+  - first:
+      213: -2123917165918784490
+    second: sturdy_fool_2
+  - first:
+      213: -1683920860421228686
+    second: sturdy_fool_3
+  - first:
+      213: -6554520509687884373
+    second: sturdy_fool_4
+  - first:
+      213: -9074098425211804984
+    second: sturdy_fool_5
+  - first:
+      213: 6972879382220266945
+    second: sturdy_fool_6
+  - first:
+      213: 360727300482128326
+    second: sturdy_fool_7
+  - first:
+      213: 1046721848733523149
+    second: sturdy_fool_8
+  - first:
+      213: 1608544193966116173
+    second: sturdy_fool_9
+  - first:
+      213: -7456931427927141756
+    second: sturdy_fool_10
+  - first:
+      213: 1485516088484726539
+    second: sturdy_fool_11
+  - first:
+      213: -1694344227909552635
+    second: sturdy_fool_12
+  - first:
+      213: 196856067327003434
+    second: sturdy_fool_13
+  - first:
+      213: 5884897049341778
+    second: sturdy_fool_14
+  - first:
+      213: 7830549541495809292
+    second: sturdy_fool_15
+  - first:
+      213: -2905754745265126422
+    second: sturdy_fool_16
+  - first:
+      213: -5012461354197244777
+    second: sturdy_fool_17
+  - first:
+      213: -5432608957493446451
+    second: sturdy_fool_18
+  - first:
+      213: -1887638178429544562
+    second: sturdy_fool_19
+  - first:
+      213: 1253965037803045610
+    second: sturdy_fool_20
+  - first:
+      213: -80705904758536725
+    second: sturdy_fool_21
+  - first:
+      213: 5575894058845887012
+    second: sturdy_fool_22
+  - first:
+      213: -7587609853709726246
+    second: sturdy_fool_23
+  - first:
+      213: -4168378013748611234
+    second: sturdy_fool_24
+  - first:
+      213: -6722873737498396757
+    second: sturdy_fool_25
+  - first:
+      213: -1805304094108735176
+    second: sturdy_fool_26
+  - first:
+      213: 7834113100620600466
+    second: sturdy_fool_27
+  - first:
+      213: 5676556896962525100
+    second: sturdy_fool_28
+  - first:
+      213: 4637092778160226574
+    second: sturdy_fool_29
+  - first:
+      213: 8744795583705801808
+    second: sturdy_fool_30
+  - first:
+      213: -2366488978878087403
+    second: sturdy_fool_31
+  - first:
+      213: -2964886768237090183
+    second: sturdy_fool_32
+  - first:
+      213: -8719200120570479064
+    second: sturdy_fool_33
+  - first:
+      213: -841601818382269950
+    second: sturdy_fool_34
+  - first:
+      213: 3334474922844788801
+    second: sturdy_fool_35
+  - first:
+      213: 7339450504342515236
+    second: sturdy_fool_36
+  - first:
+      213: 3404872258952606004
+    second: sturdy_fool_37
+  - first:
+      213: 3686279822432177906
+    second: sturdy_fool_38
+  - first:
+      213: -3496650330492582619
+    second: sturdy_fool_39
+  - first:
+      213: -6893614454841947524
+    second: sturdy_fool_40
+  - first:
+      213: -6734915810631105069
+    second: sturdy_fool_41
+  - first:
+      213: -6037337259835283168
+    second: sturdy_fool_42
+  - first:
+      213: 4011131596823477689
+    second: sturdy_fool_43
+  - first:
+      213: 5727591965628058337
+    second: sturdy_fool_44
+  - first:
+      213: -2667605526069644172
+    second: sturdy_fool_45
+  - first:
+      213: 2601369678335443329
+    second: sturdy_fool_46
+  - first:
+      213: 1698931462459448300
+    second: sturdy_fool_47
+  - first:
+      213: 5539696784023484220
+    second: sturdy_fool_48
+  - first:
+      213: 5825833122278061300
+    second: sturdy_fool_49
+  - first:
+      213: -7196642131181074910
+    second: sturdy_fool_50
+  - first:
+      213: 7374136999367130257
+    second: sturdy_fool_51
+  - first:
+      213: -5418664326209633232
+    second: sturdy_fool_52
+  - first:
+      213: 1806596662199318819
+    second: sturdy_fool_53
+  - first:
+      213: -4357595280975560035
+    second: sturdy_fool_54
+  - first:
+      213: 2583196599069183262
+    second: sturdy_fool_55
+  - first:
+      213: -601898787754749099
+    second: sturdy_fool_56
+  - first:
+      213: 5848748046321831597
+    second: sturdy_fool_57
+  - first:
+      213: -1170241883739024274
+    second: sturdy_fool_58
+  - first:
+      213: -3021763050885378987
+    second: sturdy_fool_59
+  - first:
+      213: 6585541775792217681
+    second: sturdy_fool_60
+  - first:
+      213: 3458981088586539931
+    second: sturdy_fool_61
+  - first:
+      213: 5975317804491307029
+    second: sturdy_fool_62
+  - first:
+      213: 4509842845793766396
+    second: sturdy_fool_63
+  - first:
+      213: 8102385337305161027
+    second: sturdy_fool_64
+  - first:
+      213: 7069117996474928659
+    second: sturdy_fool_65
+  - first:
+      213: -7464049723249018642
+    second: sturdy_fool_66
+  - first:
+      213: 1613044442738541248
+    second: sturdy_fool_67
+  - first:
+      213: 7124324079469410287
+    second: sturdy_fool_68
+  - first:
+      213: -7304484423725339648
+    second: sturdy_fool_69
+  - first:
+      213: -5388149590557569268
+    second: sturdy_fool_70
+  - first:
+      213: 5092560279436032080
+    second: sturdy_fool_71
+  - first:
+      213: 7118037723614433565
+    second: sturdy_fool_72
+  - first:
+      213: 8594124296109594588
+    second: sturdy_fool_73
+  - first:
+      213: 3311106757598774594
+    second: sturdy_fool_74
+  - first:
+      213: 3857327796503370589
+    second: sturdy_fool_75
+  - first:
+      213: 609290986768618234
+    second: sturdy_fool_76
+  - first:
+      213: -5412091287412983025
+    second: sturdy_fool_77
+  - first:
+      213: -9182652148080640114
+    second: sturdy_fool_78
+  - first:
+      213: 4577719753219285049
+    second: sturdy_fool_79
+  - first:
+      213: -1929588035914616516
+    second: sturdy_fool_80
+  - first:
+      213: 5412112051437997242
+    second: sturdy_fool_81
+  - first:
+      213: 3112036702149849540
+    second: sturdy_fool_82
+  - first:
+      213: 9203467198868239068
+    second: sturdy_fool_83
+  - first:
+      213: 6606613934753532872
+    second: sturdy_fool_84
+  - first:
+      213: 6299982918223533457
+    second: sturdy_fool_85
+  - first:
+      213: -337762692639275239
+    second: sturdy_fool_86
+  - first:
+      213: 5124161088950426126
+    second: sturdy_fool_87
+  - first:
+      213: -413539765030172639
+    second: sturdy_fool_88
+  - first:
+      213: 8188331396655073839
+    second: sturdy_fool_89
+  - first:
+      213: -2617897629252365285
+    second: sturdy_fool_90
+  - first:
+      213: -4474680892216965530
+    second: sturdy_fool_91
+  - first:
+      213: -2349811368193393259
+    second: sturdy_fool_92
+  - first:
+      213: 2766379434363777367
+    second: sturdy_fool_93
+  - first:
+      213: -4745638073006025105
+    second: sturdy_fool_94
+  - first:
+      213: -8250362410189968917
+    second: sturdy_fool_95
+  - first:
+      213: 1376268753796058843
+    second: sturdy_fool_96
+  - first:
+      213: 3003550686034301271
+    second: sturdy_fool_97
+  - first:
+      213: 5312315577205224132
+    second: sturdy_fool_98
+  - first:
+      213: -1621509841347862027
+    second: sturdy_fool_99
+  - first:
+      213: -1315654668413796255
+    second: sturdy_fool_100
+  - first:
+      213: -4607970535951800208
+    second: sturdy_fool_101
+  - first:
+      213: -4242460755700332166
+    second: sturdy_fool_102
+  - first:
+      213: 4401876799178930456
+    second: sturdy_fool_103
+  - first:
+      213: -4297469796268972339
+    second: sturdy_fool_104
+  - first:
+      213: -5257532850717625614
+    second: sturdy_fool_105
+  - first:
+      213: -4474063626974889176
+    second: sturdy_fool_106
+  - first:
+      213: -3209579208954180195
+    second: sturdy_fool_107
+  - first:
+      213: -2368344883217096371
+    second: sturdy_fool_108
+  - first:
+      213: 117087696277050321
+    second: sturdy_fool_109
+  - first:
+      213: 8967778119435965824
+    second: sturdy_fool_110
+  - first:
+      213: -4383023391652181591
+    second: sturdy_fool_111
+  - first:
+      213: -341623951461869255
+    second: sturdy_fool_112
+  - first:
+      213: 3408141942396935055
+    second: sturdy_fool_113
+  - first:
+      213: 6074550029572163886
+    second: sturdy_fool_114
+  - first:
+      213: -6195303923993084584
+    second: sturdy_fool_115
+  - first:
+      213: 8923510526267420961
+    second: sturdy_fool_116
+  - first:
+      213: 5307455784751355559
+    second: sturdy_fool_117
+  - first:
+      213: -3065841929170905461
+    second: sturdy_fool_118
+  - first:
+      213: -7445397040808656360
+    second: sturdy_fool_119
+  - first:
+      213: 6501079817051825801
+    second: sturdy_fool_120
+  - first:
+      213: 4440457068270535347
+    second: sturdy_fool_121
+  - first:
+      213: -8946415282659440813
+    second: sturdy_fool_122
+  - first:
+      213: -1007913871375519335
+    second: sturdy_fool_123
+  - first:
+      213: -1242049394227200013
+    second: sturdy_fool_124
+  - first:
+      213: 8961319297800315726
+    second: sturdy_fool_125
+  - first:
+      213: 218973407736862491
+    second: sturdy_fool_126
+  - first:
+      213: 7923351678385119621
+    second: sturdy_fool_127
+  - first:
+      213: -4516925847332592308
+    second: sturdy_fool_128
+  - first:
+      213: -1156038775053011191
+    second: sturdy_fool_129
+  - first:
+      213: 5072546599835729390
+    second: sturdy_fool_130
+  - first:
+      213: -1373954322620290756
+    second: sturdy_fool_131
+  - first:
+      213: 117793698347668288
+    second: sturdy_fool_132
+  - first:
+      213: -874121687783321737
+    second: sturdy_fool_133
+  - first:
+      213: -5115559896760006278
+    second: sturdy_fool_134
+  - first:
+      213: -3923538269686572086
+    second: sturdy_fool_135
+  - first:
+      213: 7415236348793751060
+    second: sturdy_fool_136
+  - first:
+      213: 1965315592442501386
+    second: sturdy_fool_137
+  - first:
+      213: -6493576037073594690
+    second: sturdy_fool_138
+  - first:
+      213: 8320562787605778578
+    second: sturdy_fool_139
+  - first:
+      213: -2181598278345050989
+    second: sturdy_fool_140
+  - first:
+      213: 8471250932510481375
+    second: sturdy_fool_141
+  - first:
+      213: -6755831982068552213
+    second: sturdy_fool_142
+  - first:
+      213: -7178591118842427022
+    second: sturdy_fool_143
+  - first:
+      213: 457024474263958207
+    second: sturdy_fool_144
+  - first:
+      213: -9122893549339256834
+    second: sturdy_fool_145
+  - first:
+      213: -3990639059715254749
+    second: sturdy_fool_146
+  - first:
+      213: 4658114631966160552
+    second: sturdy_fool_147
+  - first:
+      213: -1910692937635525706
+    second: sturdy_fool_148
+  - first:
+      213: 3753829020799493741
+    second: sturdy_fool_149
+  - first:
+      213: -7734540609889569086
+    second: sturdy_fool_150
+  - first:
+      213: -2525827988940940166
+    second: sturdy_fool_151
+  - first:
+      213: -4238487060117907779
+    second: sturdy_fool_152
+  - first:
+      213: 8116183224100314169
+    second: sturdy_fool_153
+  - first:
+      213: 118040046802205321
+    second: sturdy_fool_154
+  - first:
+      213: -2388156770781845288
+    second: sturdy_fool_155
+  - first:
+      213: -1487562387498527552
+    second: sturdy_fool_156
+  - first:
+      213: 5074486196762502945
+    second: sturdy_fool_157
+  - first:
+      213: -4981394283462238868
+    second: sturdy_fool_158
+  - first:
+      213: -4828828315792813335
+    second: sturdy_fool_159
+  - first:
+      213: -447784370437611480
+    second: sturdy_fool_160
+  - first:
+      213: -9050779964226056132
+    second: sturdy_fool_161
+  - first:
+      213: 7548499213650018024
+    second: sturdy_fool_162
+  - first:
+      213: 6569376265774646679
+    second: sturdy_fool_163
+  - first:
+      213: -5407860046448212746
+    second: sturdy_fool_164
+  - first:
+      213: 2884822273367130749
+    second: sturdy_fool_165
+  - first:
+      213: -6215568164771546361
+    second: sturdy_fool_166
+  - first:
+      213: 3694081752753919741
+    second: sturdy_fool_167
+  - first:
+      213: -6231656535287747749
+    second: sturdy_fool_168
+  - first:
+      213: -3078653189708215918
+    second: sturdy_fool_169
+  - first:
+      213: -3668295349788389879
+    second: sturdy_fool_170
+  - first:
+      213: 5609942709635012256
+    second: sturdy_fool_171
+  - first:
+      213: -1889604856883869977
+    second: sturdy_fool_172
+  - first:
+      213: -6229219082674274752
+    second: sturdy_fool_173
+  - first:
+      213: -8887599023516905291
+    second: sturdy_fool_174
+  - first:
+      213: 8019356637271387719
+    second: sturdy_fool_175
+  - first:
+      213: -1380196822182978047
+    second: sturdy_fool_176
+  - first:
+      213: -38437069561633679
+    second: sturdy_fool_177
+  - first:
+      213: 1553662768009188411
+    second: sturdy_fool_178
+  - first:
+      213: -1464060370458655622
+    second: sturdy_fool_179
+  - first:
+      213: -182898914172343296
+    second: sturdy_fool_180
+  - first:
+      213: -1062867219877259686
+    second: sturdy_fool_181
+  - first:
+      213: -5191152185088199430
+    second: sturdy_fool_182
+  - first:
+      213: -5728335866307235768
+    second: sturdy_fool_183
+  - first:
+      213: -2369792541689891381
+    second: sturdy_fool_184
+  - first:
+      213: 8212200393561928117
+    second: sturdy_fool_185
+  - first:
+      213: -5944817405241658376
+    second: sturdy_fool_186
+  - first:
+      213: 1949754453447946279
+    second: sturdy_fool_187
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: sturdy_fool_projectile_shatter_3
+      rect:
+        serializedVersion: 2
+        x: 814
+        y: 256
+        width: 271
+        height: 162
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f7605202934651850800000000000000
+      internalID: 6347089446363793023
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sturdy_fool_idle_1
+      rect:
+        serializedVersion: 2
+        x: 6
+        y: 2480
+        width: 261
+        height: 236
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6147e0137945682e0800000000000000
+      internalID: -2123917165918784490
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sturdy_fool_idle_2
+      rect:
+        serializedVersion: 2
+        x: 277
+        y: 2480
+        width: 268
+        height: 236
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 277f8b436e281a8e0800000000000000
+      internalID: -1683920860421228686
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sturdy_fool_idle_3
+      rect:
+        serializedVersion: 2
+        x: 552
+        y: 2480
+        width: 266
+        height: 236
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ba59a03e25aa905a0800000000000000
+      internalID: -6554520509687884373
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sturdy_fool_idle_4
+      rect:
+        serializedVersion: 2
+        x: 824
+        y: 2480
+        width: 268
+        height: 236
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8c2a1541f83521280800000000000000
+      internalID: -9074098425211804984
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sturdy_fool_idle_5
+      rect:
+        serializedVersion: 2
+        x: 1104
+        y: 2480
+        width: 266
+        height: 236
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1cd52eeaad4a4c060800000000000000
+      internalID: 6972879382220266945
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sturdy_fool_startle_1
+      rect:
+        serializedVersion: 2
+        x: 27
+        y: 2225
+        width: 275
+        height: 235
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 506b738d6ea7c78e0800000000000000
+      internalID: -1694344227909552635
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sturdy_fool_startle_2
+      rect:
+        serializedVersion: 2
+        x: 302
+        y: 2225
+        width: 267
+        height: 235
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a2b08ecdc8f5bb200800000000000000
+      internalID: 196856067327003434
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sturdy_fool_run_1
+      rect:
+        serializedVersion: 2
+        x: 2
+        y: 1954
+        width: 267
+        height: 235
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 79423bc94f8207ab0800000000000000
+      internalID: -5012461354197244777
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sturdy_fool_run_2
+      rect:
+        serializedVersion: 2
+        x: 279
+        y: 1956
+        width: 271
+        height: 239
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: dc87ff4bfee7b94b0800000000000000
+      internalID: -5432608957493446451
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sturdy_fool_run_3
+      rect:
+        serializedVersion: 2
+        x: 560
+        y: 1956
+        width: 263
+        height: 248
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e87dd3ee313cdc5e0800000000000000
+      internalID: -1887638178429544562
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sturdy_fool_run_4
+      rect:
+        serializedVersion: 2
+        x: 843
+        y: 1952
+        width: 256
+        height: 234
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ae2820fde8af66110800000000000000
+      internalID: 1253965037803045610
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sturdy_fool_run_5
+      rect:
+        serializedVersion: 2
+        x: 1117
+        y: 1955
+        width: 254
+        height: 236
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: be5479f386641eef0800000000000000
+      internalID: -80705904758536725
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sturdy_fool_run_6
+      rect:
+        serializedVersion: 2
+        x: 1384
+        y: 1964
+        width: 271
+        height: 235
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 42a58baaa1e816d40800000000000000
+      internalID: 5575894058845887012
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sturdy_fool_turn_1
+      rect:
+        serializedVersion: 2
+        x: 2
+        y: 1699
+        width: 257
+        height: 231
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 525cc3bec07697fc0800000000000000
+      internalID: -3496650330492582619
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sturdy_fool_turn_2
+      rect:
+        serializedVersion: 2
+        x: 282
+        y: 1700
+        width: 234
+        height: 231
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c7ac5a06d26f450a0800000000000000
+      internalID: -6893614454841947524
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sturdy_fool_evade_1
+      rect:
+        serializedVersion: 2
+        x: 2
+        y: 1446
+        width: 270
+        height: 232
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1ea44a1fb8e7c7f40800000000000000
+      internalID: 5727591965628058337
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sturdy_fool_evade_2
+      rect:
+        serializedVersion: 2
+        x: 326
+        y: 1445
+        width: 265
+        height: 232
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 474ffb958e2cafad0800000000000000
+      internalID: -2667605526069644172
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sturdy_fool_evade_3
+      rect:
+        serializedVersion: 2
+        x: 635
+        y: 1445
+        width: 286
+        height: 232
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 18108a690fbe91420800000000000000
+      internalID: 2601369678335443329
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sturdy_fool_evade_4
+      rect:
+        serializedVersion: 2
+        x: 941
+        y: 1445
+        width: 303
+        height: 232
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ceb51ade921d39710800000000000000
+      internalID: 1698931462459448300
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sturdy_fool_evade_5
+      rect:
+        serializedVersion: 2
+        x: 1256
+        y: 1445
+        width: 286
+        height: 232
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c37f71fdfd4f0ec40800000000000000
+      internalID: 5539696784023484220
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sturdy_fool_evade_6
+      rect:
+        serializedVersion: 2
+        x: 1563
+        y: 1445
+        width: 275
+        height: 232
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4f4b61eab5489d050800000000000000
+      internalID: 5825833122278061300
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sturdy_fool_pre_slash_1
+      rect:
+        serializedVersion: 2
+        x: 2
+        y: 1192
+        width: 273
+        height: 232
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 75194f97f61cea920800000000000000
+      internalID: 3003550686034301271
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sturdy_fool_pre_slash_2
+      rect:
+        serializedVersion: 2
+        x: 330
+        y: 1191
+        width: 265
+        height: 231
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4c277122fd229b940800000000000000
+      internalID: 5312315577205224132
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sturdy_fool_pre_slash_3_5
+      rect:
+        serializedVersion: 2
+        x: 647
+        y: 1190
+        width: 267
+        height: 224
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5f129a2f36d3f79e0800000000000000
+      internalID: -1621509841347862027
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sturdy_fool_pre_slash_4_6
+      rect:
+        serializedVersion: 2
+        x: 958
+        y: 1189
+        width: 269
+        height: 226
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1608c1abc0bddbde0800000000000000
+      internalID: -1315654668413796255
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sturdy_fool_pre_slash_7
+      rect:
+        serializedVersion: 2
+        x: 1299
+        y: 1190
+        width: 260
+        height: 224
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 078602d26333d00c0800000000000000
+      internalID: -4607970535951800208
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sturdy_fool_slash
+      rect:
+        serializedVersion: 2
+        x: 2
+        y: 960
+        width: 516
+        height: 208
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 85dfeceb7ebd50aa0800000000000000
+      internalID: -6195303923993084584
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sturdy_fool_slash_recover_1
+      rect:
+        serializedVersion: 2
+        x: 556
+        y: 939
+        width: 358
+        height: 229
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 121f0ab7b8da6db70800000000000000
+      internalID: 8923510526267420961
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sturdy_fool_slash_recover_2
+      rect:
+        serializedVersion: 2
+        x: 916
+        y: 939
+        width: 250
+        height: 229
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7a652378aeed7a940800000000000000
+      internalID: 5307455784751355559
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sturdy_fool_attack_1
+      rect:
+        serializedVersion: 2
+        x: 38
+        y: 686
+        width: 273
+        height: 232
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 99139749cab2302f0800000000000000
+      internalID: -1007913871375519335
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sturdy_fool_attack_2
+      rect:
+        serializedVersion: 2
+        x: 397
+        y: 682
+        width: 267
+        height: 235
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3ff399718aa53cee0800000000000000
+      internalID: -1242049394227200013
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sturdy_fool_attack_3
+      rect:
+        serializedVersion: 2
+        x: 778
+        y: 680
+        width: 282
+        height: 235
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e43ad381c600d5c70800000000000000
+      internalID: 8961319297800315726
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sturdy_fool_attack_4
+      rect:
+        serializedVersion: 2
+        x: 1153
+        y: 681
+        width: 284
+        height: 235
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b1799677723f90300800000000000000
+      internalID: 218973407736862491
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sturdy_fool_attack_5
+      rect:
+        serializedVersion: 2
+        x: 1528
+        y: 680
+        width: 282
+        height: 235
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 581e3ac2f5665fd60800000000000000
+      internalID: 7923351678385119621
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sturdy_fool_attack_6
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 440
+        width: 305
+        height: 225
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c45e5f0afd7a051c0800000000000000
+      internalID: -4516925847332592308
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sturdy_fool_attack_7
+      rect:
+        serializedVersion: 2
+        x: 467
+        y: 446
+        width: 284
+        height: 225
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 907336aebdce4ffe0800000000000000
+      internalID: -1156038775053011191
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sturdy_fool_attack_8
+      rect:
+        serializedVersion: 2
+        x: 843
+        y: 446
+        width: 238
+        height: 225
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: eedf2ddc14e456640800000000000000
+      internalID: 5072546599835729390
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sturdy_fool_attack_9
+      rect:
+        serializedVersion: 2
+        x: 1206
+        y: 445
+        width: 231
+        height: 225
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c39ea96b2dbbeece0800000000000000
+      internalID: -1373954322620290756
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sturdy_fool_projectile
+      rect:
+        serializedVersion: 2
+        x: 7
+        y: 269
+        width: 138
+        height: 148
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: db6159ca97edd25c0800000000000000
+      internalID: -4238487060117907779
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sturdy_fool_projectile_shatter_1
+      rect:
+        serializedVersion: 2
+        x: 245
+        y: 256
+        width: 194
+        height: 161
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 98a7ae21ccc53a100800000000000000
+      internalID: 118040046802205321
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sturdy_fool_projectile_shatter_2
+      rect:
+        serializedVersion: 2
+        x: 494
+        y: 256
+        width: 301
+        height: 162
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9e252d32b3e8cfcb0800000000000000
+      internalID: -4828828315792813335
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sturdy_fool_death_air_1
+      rect:
+        serializedVersion: 2
+        x: 2
+        y: 7
+        width: 231
+        height: 221
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: af433d0779255f7b0800000000000000
+      internalID: -5191152185088199430
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sturdy_fool_death_air_2
+      rect:
+        serializedVersion: 2
+        x: 299
+        y: 7
+        width: 241
+        height: 221
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 840b0ae21ecd080b0800000000000000
+      internalID: -5728335866307235768
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sturdy_fool_death_air_3
+      rect:
+        serializedVersion: 2
+        x: 575
+        y: 2
+        width: 227
+        height: 221
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bc534313d3ecc1fd0800000000000000
+      internalID: -2369792541689891381
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sturdy_fool_death_land_1
+      rect:
+        serializedVersion: 2
+        x: 850
+        y: 3
+        width: 253
+        height: 225
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5b1f4927fb897f170800000000000000
+      internalID: 8212200393561928117
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sturdy_fool_death_land_2
+      rect:
+        serializedVersion: 2
+        x: 1105
+        y: 13
+        width: 257
+        height: 225
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8f3f2022114cf7da0800000000000000
+      internalID: -5944817405241658376
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sturdy_fool_death_land_3
+      rect:
+        serializedVersion: 2
+        x: 1385
+        y: 14
+        width: 237
+        height: 225
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 720300d585bee0b10800000000000000
+      internalID: 1949754453447946279
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 6ef811cc7529df043bc0e77d29022d52
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      sturdy_fool_0: -120213765
+      sturdy_fool_1: -4133336804988856177
+      sturdy_fool_10: -7456931427927141756
+      sturdy_fool_102: -4242460755700332166
+      sturdy_fool_103: 4401876799178930456
+      sturdy_fool_104: -4297469796268972339
+      sturdy_fool_105: -5257532850717625614
+      sturdy_fool_106: -4474063626974889176
+      sturdy_fool_107: -3209579208954180195
+      sturdy_fool_108: -2368344883217096371
+      sturdy_fool_109: 117087696277050321
+      sturdy_fool_11: 1485516088484726539
+      sturdy_fool_110: 8967778119435965824
+      sturdy_fool_111: -4383023391652181591
+      sturdy_fool_112: -341623951461869255
+      sturdy_fool_113: 3408141942396935055
+      sturdy_fool_114: 6074550029572163886
+      sturdy_fool_118: -3065841929170905461
+      sturdy_fool_119: -7445397040808656360
+      sturdy_fool_120: 6501079817051825801
+      sturdy_fool_121: 4440457068270535347
+      sturdy_fool_122: -8946415282659440813
+      sturdy_fool_132: 117793698347668288
+      sturdy_fool_133: -874121687783321737
+      sturdy_fool_134: -5115559896760006278
+      sturdy_fool_135: -3923538269686572086
+      sturdy_fool_136: 7415236348793751060
+      sturdy_fool_137: 1965315592442501386
+      sturdy_fool_138: -6493576037073594690
+      sturdy_fool_139: 8320562787605778578
+      sturdy_fool_14: 5884897049341778
+      sturdy_fool_140: -2181598278345050989
+      sturdy_fool_141: 8471250932510481375
+      sturdy_fool_142: -6755831982068552213
+      sturdy_fool_143: -7178591118842427022
+      sturdy_fool_144: 457024474263958207
+      sturdy_fool_145: -9122893549339256834
+      sturdy_fool_146: -3990639059715254749
+      sturdy_fool_147: 4658114631966160552
+      sturdy_fool_148: -1910692937635525706
+      sturdy_fool_149: 3753829020799493741
+      sturdy_fool_15: 7830549541495809292
+      sturdy_fool_150: -7734540609889569086
+      sturdy_fool_151: -2525827988940940166
+      sturdy_fool_153: 8116183224100314169
+      sturdy_fool_155: -2388156770781845288
+      sturdy_fool_156: -1487562387498527552
+      sturdy_fool_157: 5074486196762502945
+      sturdy_fool_158: -4981394283462238868
+      sturdy_fool_16: -2905754745265126422
+      sturdy_fool_160: -447784370437611480
+      sturdy_fool_161: -9050779964226056132
+      sturdy_fool_162: 7548499213650018024
+      sturdy_fool_163: 6569376265774646679
+      sturdy_fool_164: -5407860046448212746
+      sturdy_fool_165: 2884822273367130749
+      sturdy_fool_166: -6215568164771546361
+      sturdy_fool_167: 3694081752753919741
+      sturdy_fool_168: -6231656535287747749
+      sturdy_fool_169: -3078653189708215918
+      sturdy_fool_170: -3668295349788389879
+      sturdy_fool_171: 5609942709635012256
+      sturdy_fool_172: -1889604856883869977
+      sturdy_fool_173: -6229219082674274752
+      sturdy_fool_174: -8887599023516905291
+      sturdy_fool_175: 8019356637271387719
+      sturdy_fool_176: -1380196822182978047
+      sturdy_fool_177: -38437069561633679
+      sturdy_fool_178: 1553662768009188411
+      sturdy_fool_179: -1464060370458655622
+      sturdy_fool_180: -182898914172343296
+      sturdy_fool_181: -1062867219877259686
+      sturdy_fool_23: -7587609853709726246
+      sturdy_fool_24: -4168378013748611234
+      sturdy_fool_25: -6722873737498396757
+      sturdy_fool_26: -1805304094108735176
+      sturdy_fool_27: 7834113100620600466
+      sturdy_fool_28: 5676556896962525100
+      sturdy_fool_29: 4637092778160226574
+      sturdy_fool_30: 8744795583705801808
+      sturdy_fool_31: -2366488978878087403
+      sturdy_fool_32: -2964886768237090183
+      sturdy_fool_33: -8719200120570479064
+      sturdy_fool_34: -841601818382269950
+      sturdy_fool_35: 3334474922844788801
+      sturdy_fool_36: 7339450504342515236
+      sturdy_fool_37: 3404872258952606004
+      sturdy_fool_38: 3686279822432177906
+      sturdy_fool_41: -6734915810631105069
+      sturdy_fool_42: -6037337259835283168
+      sturdy_fool_43: 4011131596823477689
+      sturdy_fool_50: -7196642131181074910
+      sturdy_fool_51: 7374136999367130257
+      sturdy_fool_52: -5418664326209633232
+      sturdy_fool_53: 1806596662199318819
+      sturdy_fool_54: -4357595280975560035
+      sturdy_fool_55: 2583196599069183262
+      sturdy_fool_56: -601898787754749099
+      sturdy_fool_57: 5848748046321831597
+      sturdy_fool_58: -1170241883739024274
+      sturdy_fool_59: -3021763050885378987
+      sturdy_fool_60: 6585541775792217681
+      sturdy_fool_61: 3458981088586539931
+      sturdy_fool_62: 5975317804491307029
+      sturdy_fool_63: 4509842845793766396
+      sturdy_fool_64: 8102385337305161027
+      sturdy_fool_65: 7069117996474928659
+      sturdy_fool_66: -7464049723249018642
+      sturdy_fool_67: 1613044442738541248
+      sturdy_fool_68: 7124324079469410287
+      sturdy_fool_69: -7304484423725339648
+      sturdy_fool_7: 360727300482128326
+      sturdy_fool_70: -5388149590557569268
+      sturdy_fool_71: 5092560279436032080
+      sturdy_fool_72: 7118037723614433565
+      sturdy_fool_73: 8594124296109594588
+      sturdy_fool_74: 3311106757598774594
+      sturdy_fool_75: 3857327796503370589
+      sturdy_fool_76: 609290986768618234
+      sturdy_fool_77: -5412091287412983025
+      sturdy_fool_78: -9182652148080640114
+      sturdy_fool_79: 4577719753219285049
+      sturdy_fool_8: 1046721848733523149
+      sturdy_fool_80: -1929588035914616516
+      sturdy_fool_81: 5412112051437997242
+      sturdy_fool_82: 3112036702149849540
+      sturdy_fool_83: 9203467198868239068
+      sturdy_fool_84: 6606613934753532872
+      sturdy_fool_85: 6299982918223533457
+      sturdy_fool_86: -337762692639275239
+      sturdy_fool_87: 5124161088950426126
+      sturdy_fool_88: -413539765030172639
+      sturdy_fool_89: 8188331396655073839
+      sturdy_fool_9: 1608544193966116173
+      sturdy_fool_90: -2617897629252365285
+      sturdy_fool_91: -4474680892216965530
+      sturdy_fool_92: -2349811368193393259
+      sturdy_fool_93: 2766379434363777367
+      sturdy_fool_94: -4745638073006025105
+      sturdy_fool_95: -8250362410189968917
+      sturdy_fool_96: 1376268753796058843
+      sturdy_fool_attack_1: -1007913871375519335
+      sturdy_fool_attack_2: -1242049394227200013
+      sturdy_fool_attack_3: 8961319297800315726
+      sturdy_fool_attack_4: 218973407736862491
+      sturdy_fool_attack_5: 7923351678385119621
+      sturdy_fool_attack_6: -4516925847332592308
+      sturdy_fool_attack_7: -1156038775053011191
+      sturdy_fool_attack_8: 5072546599835729390
+      sturdy_fool_attack_9: -1373954322620290756
+      sturdy_fool_death_air_1: -5191152185088199430
+      sturdy_fool_death_air_2: -5728335866307235768
+      sturdy_fool_death_air_3: -2369792541689891381
+      sturdy_fool_death_land_1: 8212200393561928117
+      sturdy_fool_death_land_2: -5944817405241658376
+      sturdy_fool_death_land_3: 1949754453447946279
+      sturdy_fool_evade_1: 5727591965628058337
+      sturdy_fool_evade_2: -2667605526069644172
+      sturdy_fool_evade_3: 2601369678335443329
+      sturdy_fool_evade_4: 1698931462459448300
+      sturdy_fool_evade_5: 5539696784023484220
+      sturdy_fool_evade_6: 5825833122278061300
+      sturdy_fool_idle_1: -2123917165918784490
+      sturdy_fool_idle_2: -1683920860421228686
+      sturdy_fool_idle_3: -6554520509687884373
+      sturdy_fool_idle_4: -9074098425211804984
+      sturdy_fool_idle_5: 6972879382220266945
+      sturdy_fool_pre_slash_1: 3003550686034301271
+      sturdy_fool_pre_slash_2: 5312315577205224132
+      sturdy_fool_pre_slash_3_5: -1621509841347862027
+      sturdy_fool_pre_slash_4_6: -1315654668413796255
+      sturdy_fool_pre_slash_7: -4607970535951800208
+      sturdy_fool_projectile: -4238487060117907779
+      sturdy_fool_projectile_shatter_1: 118040046802205321
+      sturdy_fool_projectile_shatter_2: -4828828315792813335
+      sturdy_fool_projectile_shatter_3: 6347089446363793023
+      sturdy_fool_run_1: -5012461354197244777
+      sturdy_fool_run_2: -5432608957493446451
+      sturdy_fool_run_3: -1887638178429544562
+      sturdy_fool_run_4: 1253965037803045610
+      sturdy_fool_run_5: -80705904758536725
+      sturdy_fool_run_6: 5575894058845887012
+      sturdy_fool_slash: -6195303923993084584
+      sturdy_fool_slash_recover_1: 8923510526267420961
+      sturdy_fool_slash_recover_2: 5307455784751355559
+      sturdy_fool_startle_1: -1694344227909552635
+      sturdy_fool_startle_2: 196856067327003434
+      sturdy_fool_turn_1: -3496650330492582619
+      sturdy_fool_turn_2: -6893614454841947524
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
