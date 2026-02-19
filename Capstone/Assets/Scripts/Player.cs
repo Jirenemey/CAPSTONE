@@ -12,8 +12,10 @@ public class Player : MonoBehaviour
 
 	[Header("Input system refrences")]
 	[SerializeField] InputActionReference moveAction;
+	[SerializeField] InputActionReference lookAction;
 	[SerializeField] InputActionReference jumpAction;
 	[SerializeField] InputActionReference dashAction;
+	[SerializeField] InputActionReference attackAction;
 
 	[Header("Movement Settings")]
     [SerializeField] private float walkSpeed = 5.0f;
@@ -48,10 +50,18 @@ public class Player : MonoBehaviour
     private Transform groundCheck;
     [SerializeField] private LayerMask groundLayer;
 
+	//[Header("Look Settings")]
+	////[SerializeField] Vector2 lookAxis;
+	//[SerializeField] float lookDelay = 1.0f;
+	//float currentLookTimer = 0.0f;// counts up while the look buttom is down
+	//[SerializeField] Vector2 cameraLookOffset;
+	//bool cameraMoved = false;
+	//Vector3 oldCameraPos;
+
 	void Start() {
         if(!rb) rb = GetComponent<Rigidbody2D>();
         if(!col) col = GetComponent<Collider2D>();
-        if(!anim) anim = GetComponent<Animator>();
+		if(!anim) anim = GetComponent<Animator>();
         rb.gravityScale = defaultGravity;
         if(!groundCheck) groundCheck = transform.Find("GroundCheck");
         groundLayer = LayerMask.GetMask("Ground");
@@ -66,6 +76,10 @@ public class Player : MonoBehaviour
 
 		dashAction.action.started += OnDashPress;
 		dashAction.action.Enable();
+
+		attackAction.action.started += OnAttackMeele;
+		attackAction.action.Enable();
+
 	}
 	void OnDisable() {
 		jumpAction.action.Disable();
@@ -78,14 +92,15 @@ public class Player : MonoBehaviour
 
 	void Update() {
         GetInputs();
+		//Look(lookAxis);
 
 		if (Mathf.Abs(horizontalAxis) > 0.01f) {
 			walkHeldDuration += Time.deltaTime;
-            anim.SetBool("isMoving", true);
-        } else {
-            // Reset timer if we stop moving
-            anim.SetBool("isMoving", false);
-            ResetSprint();
+			anim.SetBool("isMoving", true);
+		} else {
+			// Reset timer if we stop moving
+			anim.SetBool("isMoving", false);
+			ResetSprint();
 		}
 
 		if (walkHeldDuration >= durationBeforeSprint && !isSprinting) {
@@ -114,31 +129,70 @@ public class Player : MonoBehaviour
         if(Physics2D.OverlapCircle(groundCheck.position, groundCheckRadius, groundLayer)){
             jumps = 0; // reset double jump
 			anim.SetBool("isGrounded", true);
-        } else
-		{
+		} else {
 			anim.SetBool("isGrounded", false);
 		}
-    }
+	}
 
     void GetInputs(){
 		//horizontalAxis = Input.GetAxis("Horizontal");
 		horizontalAxis = moveAction.action.ReadValue<Vector2>().x;
+
+		//lookAxis = lookAction.action.ReadValue<Vector2>();
+
 		if		(horizontalAxis < 0) playerDirection = -1f;
 		else if (horizontalAxis > 0) playerDirection = 1f;
 
 		if (oldDirection != playerDirection) {
+			anim.SetTrigger("Turn");
 			ResetSprint();
 			oldDirection = playerDirection;
 		}
 	}
+	// Not working
+	//private void Look(Vector2 lookAxis_) {
+	//	// make sure the look button has been held for long enouph
+	//	if (lookAxis_.magnitude > 0f) {
+	//		currentLookTimer += Time.deltaTime;
+	//		if (currentLookTimer >= lookDelay && !cameraMoved) {
+	//			// only look in one direction at a time
+	//			// find the dominant direction
+	//			lookAxis_ = lookAxis_.normalized; // Normalize to unit vector
+	//			Vector2 camerOffsetDirection;
+	//			if (Mathf.Abs(lookAxis_.x) > Mathf.Abs(lookAxis_.y))
+	//				camerOffsetDirection = new Vector2(Mathf.Sign(lookAxis_.x), 0);
+	//			else
+	//				camerOffsetDirection = new Vector2(0, Mathf.Sign(lookAxis_.y));
+	//			// Offset camera in the right direction
+	//			camerOffsetDirection.x *= cameraLookOffset.x;
+	//			camerOffsetDirection.y *= cameraLookOffset.y;
+	//			oldCameraPos = Camera.allCameras[0].transform.position;
+	//			Camera.allCameras[0].transform.position += new Vector3(camerOffsetDirection.x, camerOffsetDirection.y, 0.0f);
+	//			cameraMoved = true;
+	//		}
+	//	} else {
+	//		currentLookTimer = 0f;
+	//		// reset camera
+	//		ResetCamera();
+	//	}
+	//}
+	//void ResetCamera() {
+	//	Camera.allCameras[0].transform.position = oldCameraPos;
+	//	cameraMoved = false;
+	//}
 
 	private void OnJumpPress(InputAction.CallbackContext context) {
 		if (jumps < jumpCount - 1) { // -1 to account for the very next frame where it resets the double jump
 			anim.SetTrigger("Jump");
 			rb.gravityScale = defaultGravity;
-			Debug.Log("JUMPED");
+			//Debug.Log("JUMPED");
 			//rb.AddForce(Vector2.up * jumpForce, ForceMode2D.Impulse);
 			rb.linearVelocity = new Vector2(rb.linearVelocity.x, jumpForce);
+			if (jumps == 1) {
+				anim.SetTrigger("Jump");
+			} else if (jumps == 2) {
+				anim.SetTrigger("Double Jump");
+			}
 			jumps++;
 		}
 	}
@@ -151,7 +205,7 @@ public class Player : MonoBehaviour
 
 	private void OnDashPress(InputAction.CallbackContext context) {
 		if (isDashing) return; // Prevent double dash
-		Debug.Log("Dash");
+		anim.SetTrigger("Dash");
 		StartCoroutine(DashRoutine());
 	}
 	private System.Collections.IEnumerator DashRoutine() {
@@ -187,5 +241,10 @@ public class Player : MonoBehaviour
 		walkHeldDuration = 0.0f;
 		isSprinting = false;
 		walkSpeed = originalWalkSpeed;
+	}
+
+	private void OnAttackMeele(InputAction.CallbackContext context) {
+		Debug.Log("Attack");
+		anim.SetTrigger("Attack");
 	}
 }

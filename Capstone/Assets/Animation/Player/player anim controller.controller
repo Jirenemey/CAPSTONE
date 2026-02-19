@@ -667,6 +667,12 @@ AnimatorController:
     m_DefaultInt: 0
     m_DefaultBool: 0
     m_Controller: {fileID: 9100000}
+  - m_Name: Double Jump
+    m_Type: 9
+    m_DefaultFloat: 0
+    m_DefaultInt: 0
+    m_DefaultBool: 0
+    m_Controller: {fileID: 9100000}
   - m_Name: Attack
     m_Type: 9
     m_DefaultFloat: 0
@@ -686,12 +692,6 @@ AnimatorController:
     m_DefaultBool: 0
     m_Controller: {fileID: 9100000}
   - m_Name: Dash
-    m_Type: 9
-    m_DefaultFloat: 0
-    m_DefaultInt: 0
-    m_DefaultBool: 0
-    m_Controller: {fileID: 9100000}
-  - m_Name: Double Jump
     m_Type: 9
     m_DefaultFloat: 0
     m_DefaultInt: 0
@@ -1468,10 +1468,10 @@ AnimatorStateMachine:
     m_Position: {x: 1010, y: 110, z: 0}
   - serializedVersion: 1
     m_State: {fileID: 4692569491286466551}
-    m_Position: {x: 590, y: -120, z: 0}
+    m_Position: {x: 380, y: -200, z: 0}
   - serializedVersion: 1
     m_State: {fileID: -7304633742756940224}
-    m_Position: {x: 210, y: -150, z: 0}
+    m_Position: {x: 130, y: -200, z: 0}
   - serializedVersion: 1
     m_State: {fileID: -4642430438030795402}
     m_Position: {x: 1160, y: -120, z: 0}
@@ -1495,7 +1495,7 @@ AnimatorStateMachine:
     m_Position: {x: 1500, y: 80, z: 0}
   - serializedVersion: 1
     m_State: {fileID: -3838561010083730427}
-    m_Position: {x: 720, y: -310, z: 0}
+    m_Position: {x: 870, y: -300, z: 0}
   - serializedVersion: 1
     m_State: {fileID: -6584703575754459636}
     m_Position: {x: 1500, y: 40, z: 0}
@@ -1504,10 +1504,10 @@ AnimatorStateMachine:
     m_Position: {x: 1500, y: 0, z: 0}
   - serializedVersion: 1
     m_State: {fileID: 1566775975683761001}
-    m_Position: {x: 690, y: -50, z: 0}
+    m_Position: {x: 700, y: -70, z: 0}
   - serializedVersion: 1
     m_State: {fileID: -5279075971844026811}
-    m_Position: {x: 400, y: -40, z: 0}
+    m_Position: {x: 200, y: -20, z: 0}
   - serializedVersion: 1
     m_State: {fileID: 6343113900203117755}
     m_Position: {x: 1160, y: -250, z: 0}
