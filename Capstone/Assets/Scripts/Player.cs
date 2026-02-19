@@ -17,6 +17,7 @@ public class Player : MonoBehaviour
 	[SerializeField] InputActionReference jumpAction;
 	[SerializeField] InputActionReference dashAction;
 	[SerializeField] InputActionReference attackAction;
+	[SerializeField] InputActionReference quickCastAction;
 
 	[Header("Movement Settings")]
     [SerializeField] private float walkSpeed = 5.0f;
@@ -60,6 +61,11 @@ public class Player : MonoBehaviour
 	bool canAttack = true;
 	[SerializeField] float attackCooldown = 0.5f;
 	float lastAttackTime = -Mathf.Infinity;
+
+	[Header("Vengful spirite Ability Settings")]
+	[SerializeField] GameObject projectilePrefab;
+	[SerializeField] Transform projectileSpawnPoint;
+
 	//[Header("Look Settings")]
 	////[SerializeField] Vector2 lookAxis;
 	//[SerializeField] float lookDelay = 1.0f;
@@ -67,6 +73,7 @@ public class Player : MonoBehaviour
 	//[SerializeField] Vector2 cameraLookOffset;
 	//bool cameraMoved = false;
 	//Vector3 oldCameraPos;
+
 
 	void Start() {
         if(!rb) rb = GetComponent<Rigidbody2D>();
@@ -95,6 +102,9 @@ public class Player : MonoBehaviour
 		attackAction.action.started += OnAttackMeele;
 		attackAction.action.Enable();
 
+		quickCastAction.action.started += OnQuickCast;
+		quickCastAction.action.Enable();
+
 	}
 	void OnDisable() {
 		jumpAction.action.Disable();
@@ -103,6 +113,12 @@ public class Player : MonoBehaviour
 
 		dashAction.action.Disable();
 		dashAction.action.started -= OnDashPress;
+
+		attackAction.action.Disable();
+		attackAction.action.started -= OnAttackMeele;
+
+		quickCastAction.action.Disable();
+		quickCastAction.action.started -= OnQuickCast;
 	}
 
 	void Update() {
@@ -316,6 +332,22 @@ public class Player : MonoBehaviour
 		yield return new WaitForSeconds(0.4f);
 		attackPoint.SetActive(false);
 		isAttacking = false;
+	}
+
+	private void OnQuickCast(InputAction.CallbackContext context) {
+		// shoot projectile
+		if (projectilePrefab == null || projectileSpawnPoint == null) return;
+
+		GameObject proj = Instantiate(
+			projectilePrefab,
+			projectileSpawnPoint.position,
+			Quaternion.identity
+		);
+
+		// Flip sprite to match travel direction
+		proj.GetComponent<SpriteRenderer>().flipX = playerDirection < 0f;
+
+		proj.GetComponent<Projectile>().Init(playerDirection);
 	}
 
 }
