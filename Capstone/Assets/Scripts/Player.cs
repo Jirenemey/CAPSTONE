@@ -21,7 +21,7 @@ public class Player : MonoBehaviour
 	[Header("Movement Settings")]
     [SerializeField] private float walkSpeed = 5.0f;
 	float originalWalkSpeed;
-	private float horizontalAxis;
+	private float horizontalAxis, verticalAxis;
 	float playerDirection = 1.0f; // -1 -> left, 1 -> right
 
 	[Header("Sprint Settings")]
@@ -53,8 +53,10 @@ public class Player : MonoBehaviour
 
 	[Header("Attck settings")]
 	GameObject attackPoint; // this is the owner of the attack graphics and colliders
-	[SerializeField] Vector2 attackOffset = new Vector2(0.844f, -0.18f);
-
+	[SerializeField] Vector2 attackOffset = new Vector2(0.844f, 0.826f);
+	public enum AttackDirection { Left, Right, Up, Down }
+	AttackDirection currentAttackDir;
+	bool isAttacking = false;
 
 	//[Header("Look Settings")]
 	////[SerializeField] Vector2 lookAxis;
@@ -137,8 +139,9 @@ public class Player : MonoBehaviour
 
         rb.linearVelocity = movement;
 
-        if(Physics2D.OverlapCircle(groundCheck.position, groundCheckRadius, groundLayer)){
-            jumps = 0; // reset double jump
+        //if(Physics2D.OverlapCircle(groundCheck.position, groundCheckRadius, groundLayer)){
+        if(IsGrounded()) {
+				jumps = 0; // reset double jump
 			anim.SetBool("isGrounded", true);
 		} else {
 			anim.SetBool("isGrounded", false);
@@ -148,6 +151,7 @@ public class Player : MonoBehaviour
     void GetInputs(){
 		//horizontalAxis = Input.GetAxis("Horizontal");
 		horizontalAxis = moveAction.action.ReadValue<Vector2>().x;
+		//verticalAxis = moveAction.action.ReadValue<Vector2>().y;
 
 		//lookAxis = lookAction.action.ReadValue<Vector2>();
 
@@ -260,25 +264,87 @@ public class Player : MonoBehaviour
 		walkSpeed = originalWalkSpeed;
 	}
 
+	//private void OnAttackMeele(InputAction.CallbackContext context) {
+	//	Debug.Log("Attack");
+	//	StartCoroutine(EnableAttack());
+	//}
+
+	//private System.Collections.IEnumerator EnableAttack() {
+	//	attackPoint.SetActive(true);
+
+	//	//float x_pos = -0.7f;
+	//	//attackPoint.transform.localScale = new Vector3(attackPoint.transform.localScale.x*playerDirection, attackPoint.transform.localScale.y, attackPoint.transform.localScale.z);
+
+	//	// if there the player is holding up or down, priritize that direction for attack
+	//	if (moveAction.action.ReadValue<Vector2>().y != 0f) {
+	//		Debug.Log("UP DOWN");
+	//		var localPos = attackPoint.transform.localPosition;//0.826
+	//		localPos.y = attackOffset.y * playerDirection;
+	//		localPos.x = 0f;
+	//		attackPoint.transform.localPosition = localPos;
+
+	//	} else {
+	//		var localPos = attackPoint.transform.localPosition;
+	//		localPos.x = attackOffset.x * playerDirection;
+	//		localPos.y = 0f;
+	//		attackPoint.transform.localPosition = localPos;
+	//	}
+
+
+	//	anim.SetTrigger("Attack");
+	//	yield return new WaitForSeconds(0.4f);
+	//	attackPoint.SetActive(false);
+
+	//}
 	private void OnAttackMeele(InputAction.CallbackContext context) {
-		Debug.Log("Attack");
+		if (isAttacking) return; // prevent coroutine stacking
 		StartCoroutine(EnableAttack());
 	}
 
-	private System.Collections.IEnumerator EnableAttack() {
+	private bool IsGrounded() {
+		return Physics2D.OverlapCircle(groundCheck.position, groundCheckRadius, groundLayer);
+	}
+
+	private IEnumerator EnableAttack() {
+		isAttacking = true;
 		attackPoint.SetActive(true);
 
-		//float x_pos = -0.7f;
-		//attackPoint.transform.localScale = new Vector3(attackPoint.transform.localScale.x*playerDirection, attackPoint.transform.localScale.y, attackPoint.transform.localScale.z);
-
+		Vector2 verticalInput = moveAction.action.ReadValue<Vector2>();
 		var localPos = attackPoint.transform.localPosition;
-		localPos.x = attackOffset.x * playerDirection;
+		Quaternion localRot = Quaternion.identity;
+
+		bool grounded = IsGrounded();
+
+		if (verticalInput.y > 0.5f) {
+			// UP attack
+			currentAttackDir = AttackDirection.Up;
+			localPos = new Vector2(0f, attackOffset.y);
+			localRot = Quaternion.Euler(0, 0, 90f);
+		} else if (!grounded && verticalInput.y < -0.5f) {// down attacks only allowed in the air
+			// DOWN attack
+			currentAttackDir = AttackDirection.Down;
+			localPos = new Vector2(0f, -attackOffset.y);
+			localRot = Quaternion.Euler(0, 0, -90f);
+		} else {
+			// LEFT / RIGHT attack (always available)
+			currentAttackDir = playerDirection > 0 ? AttackDirection.Right : AttackDirection.Left;
+			localPos = new Vector2(attackOffset.x * playerDirection, 0f);
+			localRot = Quaternion.identity; // hitbox already faces right by default
+		}
+
 		attackPoint.transform.localPosition = localPos;
+		attackPoint.transform.localRotation = localRot;
 
+		// Fire the correct animation trigger
+		switch (currentAttackDir) {
+		case AttackDirection.Up: anim.SetTrigger("AttackUp"); break;
+		case AttackDirection.Down: anim.SetTrigger("AttackDown"); break;
+		default: anim.SetTrigger("Attack"); break;
+		}
 
-		anim.SetTrigger("Attack");
 		yield return new WaitForSeconds(0.4f);
 		attackPoint.SetActive(false);
-
+		isAttacking = false;
 	}
+
 }
