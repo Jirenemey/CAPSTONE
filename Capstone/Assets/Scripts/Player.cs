@@ -57,7 +57,9 @@ public class Player : MonoBehaviour
 	public enum AttackDirection { Left, Right, Up, Down }
 	AttackDirection currentAttackDir;
 	bool isAttacking = false;
-
+	bool canAttack = true;
+	[SerializeField] float attackCooldown = 0.5f;
+	float lastAttackTime = -Mathf.Infinity;
 	//[Header("Look Settings")]
 	////[SerializeField] Vector2 lookAxis;
 	//[SerializeField] float lookDelay = 1.0f;
@@ -263,40 +265,9 @@ public class Player : MonoBehaviour
 		isSprinting = false;
 		walkSpeed = originalWalkSpeed;
 	}
-
-	//private void OnAttackMeele(InputAction.CallbackContext context) {
-	//	Debug.Log("Attack");
-	//	StartCoroutine(EnableAttack());
-	//}
-
-	//private System.Collections.IEnumerator EnableAttack() {
-	//	attackPoint.SetActive(true);
-
-	//	//float x_pos = -0.7f;
-	//	//attackPoint.transform.localScale = new Vector3(attackPoint.transform.localScale.x*playerDirection, attackPoint.transform.localScale.y, attackPoint.transform.localScale.z);
-
-	//	// if there the player is holding up or down, priritize that direction for attack
-	//	if (moveAction.action.ReadValue<Vector2>().y != 0f) {
-	//		Debug.Log("UP DOWN");
-	//		var localPos = attackPoint.transform.localPosition;//0.826
-	//		localPos.y = attackOffset.y * playerDirection;
-	//		localPos.x = 0f;
-	//		attackPoint.transform.localPosition = localPos;
-
-	//	} else {
-	//		var localPos = attackPoint.transform.localPosition;
-	//		localPos.x = attackOffset.x * playerDirection;
-	//		localPos.y = 0f;
-	//		attackPoint.transform.localPosition = localPos;
-	//	}
-
-
-	//	anim.SetTrigger("Attack");
-	//	yield return new WaitForSeconds(0.4f);
-	//	attackPoint.SetActive(false);
-
-	//}
 	private void OnAttackMeele(InputAction.CallbackContext context) {
+		if (Time.time < lastAttackTime + attackCooldown) return;
+		lastAttackTime = Time.time;
 		if (isAttacking) return; // prevent coroutine stacking
 		StartCoroutine(EnableAttack());
 	}
