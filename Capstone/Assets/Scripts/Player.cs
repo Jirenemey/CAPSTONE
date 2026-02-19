@@ -9,6 +9,7 @@ public class Player : MonoBehaviour
     Rigidbody2D rb;
     Collider2D col;
 	Animator anim;
+	SpriteRenderer spriteRenderer;
 
 	[Header("Input system refrences")]
 	[SerializeField] InputActionReference moveAction;
@@ -16,12 +17,13 @@ public class Player : MonoBehaviour
 	[SerializeField] InputActionReference jumpAction;
 	[SerializeField] InputActionReference dashAction;
 	[SerializeField] InputActionReference attackAction;
+	[SerializeField] InputActionReference quickCastAction;
 
 	[Header("Movement Settings")]
     [SerializeField] private float walkSpeed = 5.0f;
 	float originalWalkSpeed;
-	private float horizontalAxis;
-	float playerDirection = 1.0f;
+	private float horizontalAxis, verticalAxis;
+	float playerDirection = 1.0f; // -1 -> left, 1 -> right
 
 	[Header("Sprint Settings")]
 	[SerializeField] float sprintMultiplier = 1.3f;
@@ -50,6 +52,20 @@ public class Player : MonoBehaviour
     private Transform groundCheck;
     [SerializeField] private LayerMask groundLayer;
 
+	[Header("Attck settings")]
+	GameObject attackPoint; // this is the owner of the attack graphics and colliders
+	[SerializeField] Vector2 attackOffset = new Vector2(0.844f, 0.826f);
+	public enum AttackDirection { Left, Right, Up, Down }
+	AttackDirection currentAttackDir;
+	bool isAttacking = false;
+	bool canAttack = true;
+	[SerializeField] float attackCooldown = 0.5f;
+	float lastAttackTime = -Mathf.Infinity;
+
+	[Header("Vengful spirite Ability Settings")]
+	[SerializeField] GameObject projectilePrefab;
+	[SerializeField] Transform projectileSpawnPoint;
+
 	//[Header("Look Settings")]
 	////[SerializeField] Vector2 lookAxis;
 	//[SerializeField] float lookDelay = 1.0f;
@@ -58,11 +74,17 @@ public class Player : MonoBehaviour
 	//bool cameraMoved = false;
 	//Vector3 oldCameraPos;
 
+
 	void Start() {
         if(!rb) rb = GetComponent<Rigidbody2D>();
         if(!col) col = GetComponent<Collider2D>();
 		if(!anim) anim = GetComponent<Animator>();
-        rb.gravityScale = defaultGravity;
+		if (!spriteRenderer) spriteRenderer = GetComponent<SpriteRenderer>();
+
+		if (!attackPoint) attackPoint = gameObject.transform.Find("AttackPoint").gameObject;
+		attackPoint.SetActive(false);
+
+		rb.gravityScale = defaultGravity;
         if(!groundCheck) groundCheck = transform.Find("GroundCheck");
         groundLayer = LayerMask.GetMask("Ground");
 		oldDirection = playerDirection;
@@ -80,6 +102,9 @@ public class Player : MonoBehaviour
 		attackAction.action.started += OnAttackMeele;
 		attackAction.action.Enable();
 
+		quickCastAction.action.started += OnQuickCast;
+		quickCastAction.action.Enable();
+
 	}
 	void OnDisable() {
 		jumpAction.action.Disable();
@@ -88,6 +113,12 @@ public class Player : MonoBehaviour
 
 		dashAction.action.Disable();
 		dashAction.action.started -= OnDashPress;
+
+		attackAction.action.Disable();
+		attackAction.action.started -= OnAttackMeele;
+
+		quickCastAction.action.Disable();
+		quickCastAction.action.started -= OnQuickCast;
 	}
 
 	void Update() {
@@ -126,8 +157,9 @@ public class Player : MonoBehaviour
 
         rb.linearVelocity = movement;
 
-        if(Physics2D.OverlapCircle(groundCheck.position, groundCheckRadius, groundLayer)){
-            jumps = 0; // reset double jump
+        //if(Physics2D.OverlapCircle(groundCheck.position, groundCheckRadius, groundLayer)){
+        if(IsGrounded()) {
+				jumps = 0; // reset double jump
 			anim.SetBool("isGrounded", true);
 		} else {
 			anim.SetBool("isGrounded", false);
@@ -137,16 +169,24 @@ public class Player : MonoBehaviour
     void GetInputs(){
 		//horizontalAxis = Input.GetAxis("Horizontal");
 		horizontalAxis = moveAction.action.ReadValue<Vector2>().x;
+		//verticalAxis = moveAction.action.ReadValue<Vector2>().y;
 
 		//lookAxis = lookAction.action.ReadValue<Vector2>();
 
-		if		(horizontalAxis < 0) playerDirection = -1f;
+		SetPlayerDirection();
+	}
+
+	void SetPlayerDirection() {
+		if (horizontalAxis < 0)		 playerDirection = -1f;
 		else if (horizontalAxis > 0) playerDirection = 1f;
 
 		if (oldDirection != playerDirection) {
 			anim.SetTrigger("Turn");
 			ResetSprint();
 			oldDirection = playerDirection;
+
+			spriteRenderer.flipX = playerDirection > 0f;
+
 		}
 	}
 	// Not working
@@ -242,9 +282,73 @@ public class Player : MonoBehaviour
 		isSprinting = false;
 		walkSpeed = originalWalkSpeed;
 	}
-
 	private void OnAttackMeele(InputAction.CallbackContext context) {
-		Debug.Log("Attack");
-		anim.SetTrigger("Attack");
+		if (Time.time < lastAttackTime + attackCooldown) return;
+		lastAttackTime = Time.time;
+		if (isAttacking) return; // prevent coroutine stacking
+		StartCoroutine(EnableAttack());
 	}
+
+	private bool IsGrounded() {
+		return Physics2D.OverlapCircle(groundCheck.position, groundCheckRadius, groundLayer);
+	}
+
+	private IEnumerator EnableAttack() {
+		isAttacking = true;
+		attackPoint.SetActive(true);
+
+		Vector2 verticalInput = moveAction.action.ReadValue<Vector2>();
+		var localPos = attackPoint.transform.localPosition;
+		Quaternion localRot = Quaternion.identity;
+
+		bool grounded = IsGrounded();
+
+		if (verticalInput.y > 0.5f) {
+			// UP attack
+			currentAttackDir = AttackDirection.Up;
+			localPos = new Vector2(0f, attackOffset.y);
+			localRot = Quaternion.Euler(0, 0, 90f);
+		} else if (!grounded && verticalInput.y < -0.5f) {// down attacks only allowed in the air
+			// DOWN attack
+			currentAttackDir = AttackDirection.Down;
+			localPos = new Vector2(0f, -attackOffset.y);
+			localRot = Quaternion.Euler(0, 0, -90f);
+		} else {
+			// LEFT / RIGHT attack (always available)
+			currentAttackDir = playerDirection > 0 ? AttackDirection.Right : AttackDirection.Left;
+			localPos = new Vector2(attackOffset.x * playerDirection, 0f);
+			localRot = Quaternion.identity; // hitbox already faces right by default
+		}
+
+		attackPoint.transform.localPosition = localPos;
+		attackPoint.transform.localRotation = localRot;
+
+		// Fire the correct animation trigger
+		switch (currentAttackDir) {
+		case AttackDirection.Up: anim.SetTrigger("AttackUp"); break;
+		case AttackDirection.Down: anim.SetTrigger("AttackDown"); break;
+		default: anim.SetTrigger("Attack"); break;
+		}
+
+		yield return new WaitForSeconds(0.4f);
+		attackPoint.SetActive(false);
+		isAttacking = false;
+	}
+
+	private void OnQuickCast(InputAction.CallbackContext context) {
+		// shoot projectile
+		if (projectilePrefab == null || projectileSpawnPoint == null) return;
+
+		GameObject proj = Instantiate(
+			projectilePrefab,
+			projectileSpawnPoint.position,
+			Quaternion.identity
+		);
+
+		// Flip sprite to match travel direction
+		proj.GetComponent<SpriteRenderer>().flipX = playerDirection < 0f;
+
+		proj.GetComponent<Projectile>().Init(playerDirection);
+	}
+
 }
