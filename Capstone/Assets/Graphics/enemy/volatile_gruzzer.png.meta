@@ -1,0 +1,543 @@
+fileFormatVersion: 2
+guid: f2ad4bad4edecba40bf3f1594acb182c
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 1435842044595005450
+    second: volatile_gruzzer_0
+  - first:
+      213: -752626969778786395
+    second: volatile_gruzzer_1
+  - first:
+      213: -5131458144183468615
+    second: volatile_gruzzer_2
+  - first:
+      213: 5315580310383240884
+    second: volatile_gruzzer_3
+  - first:
+      213: -835712832281305680
+    second: volatile_gruzzer_4
+  - first:
+      213: -905445802964762184
+    second: volatile_gruzzer_5
+  - first:
+      213: 6838049806727843264
+    second: volatile_gruzzer_6
+  - first:
+      213: 8858797492232216477
+    second: volatile_gruzzer_7
+  - first:
+      213: 2030284475910172456
+    second: volatile_gruzzer_8
+  - first:
+      213: -4993283822969646269
+    second: volatile_gruzzer_9
+  - first:
+      213: -9061115763793501547
+    second: volatile_gruzzer_10
+  - first:
+      213: -2322001806645993935
+    second: volatile_gruzzer_11
+  - first:
+      213: -6434566276683851252
+    second: volatile_gruzzer_12
+  - first:
+      213: -3324703121719915020
+    second: volatile_gruzzer_13
+  - first:
+      213: 5567483854153513666
+    second: volatile_gruzzer_14
+  - first:
+      213: -5597615603011641972
+    second: volatile_gruzzer_15
+  - first:
+      213: 5234575609760876152
+    second: volatile_gruzzer_16
+  - first:
+      213: -6721356937932272797
+    second: volatile_gruzzer_17
+  - first:
+      213: 8548061400522482162
+    second: volatile_gruzzer_18
+  - first:
+      213: -939141142316760503
+    second: volatile_gruzzer_19
+  - first:
+      213: 8977483723710376493
+    second: volatile_gruzzer_20
+  - first:
+      213: 5016976879131055011
+    second: volatile_gruzzer_21
+  - first:
+      213: 5791182638504299802
+    second: volatile_gruzzer_22
+  - first:
+      213: -4068267867241747246
+    second: volatile_gruzzer_23
+  - first:
+      213: 5423485604876977784
+    second: volatile_gruzzer_24
+  - first:
+      213: -1233582511570151327
+    second: volatile_gruzzer_25
+  - first:
+      213: 1290658768212086251
+    second: volatile_gruzzer_26
+  - first:
+      213: 5727515893197916440
+    second: volatile_gruzzer_27
+  - first:
+      213: 2209360780768506521
+    second: volatile_gruzzer_28
+  - first:
+      213: 4840774196073852793
+    second: volatile_gruzzer_29
+  - first:
+      213: -5200717034698891318
+    second: volatile_gruzzer_30
+  - first:
+      213: 7783961130970329039
+    second: volatile_gruzzer_31
+  - first:
+      213: -9191737371552988983
+    second: volatile_gruzzer_32
+  - first:
+      213: -2880535666787363395
+    second: volatile_gruzzer_33
+  - first:
+      213: -257639524999852573
+    second: volatile_gruzzer_34
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: volatile_gruzzer_fly_1
+      rect:
+        serializedVersion: 2
+        x: 14
+        y: 216
+        width: 151
+        height: 172
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9bdb828610669c8b0800000000000000
+      internalID: -5131458144183468615
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: volatile_gruzzer_fly_2
+      rect:
+        serializedVersion: 2
+        x: 179
+        y: 218
+        width: 153
+        height: 154
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4b6247f012cb4c940800000000000000
+      internalID: 5315580310383240884
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: volatile_gruzzer_fly_3
+      rect:
+        serializedVersion: 2
+        x: 338
+        y: 221
+        width: 157
+        height: 157
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0bd13a95b93f664f0800000000000000
+      internalID: -835712832281305680
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: volatile_gruzzer_fly_4
+      rect:
+        serializedVersion: 2
+        x: 500
+        y: 225
+        width: 154
+        height: 168
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8b1cae6e6d53f63f0800000000000000
+      internalID: -905445802964762184
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: volatile_gruzzer_fly_5
+      rect:
+        serializedVersion: 2
+        x: 666
+        y: 217
+        width: 151
+        height: 172
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0cd0176d112a5ee50800000000000000
+      internalID: 6838049806727843264
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: volatile_gruzzer_fly_6
+      rect:
+        serializedVersion: 2
+        x: 835
+        y: 209
+        width: 153
+        height: 154
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d9f5f9d1265c0fa70800000000000000
+      internalID: 8858797492232216477
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: volatile_gruzzer_fly_7
+      rect:
+        serializedVersion: 2
+        x: 1002
+        y: 206
+        width: 157
+        height: 157
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 82fad9359f40d2c10800000000000000
+      internalID: 2030284475910172456
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: volatile_gruzzer_fly_8
+      rect:
+        serializedVersion: 2
+        x: 1174
+        y: 212
+        width: 152
+        height: 166
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 343903d81da44bab0800000000000000
+      internalID: -4993283822969646269
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: volatile_gruzzer_turn_1
+      rect:
+        serializedVersion: 2
+        x: 2
+        y: 31
+        width: 146
+        height: 155
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: acf1379596753d7b0800000000000000
+      internalID: -5200717034698891318
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: volatile_gruzzer_death_air
+      rect:
+        serializedVersion: 2
+        x: 189
+        y: 2
+        width: 141
+        height: 175
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: fcf2fec486f260c60800000000000000
+      internalID: 7783961130970329039
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: volatile_gruzzer_death_land_1
+      rect:
+        serializedVersion: 2
+        x: 387
+        y: 26
+        width: 149
+        height: 151
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9c0c6eb7f83607080800000000000000
+      internalID: -9191737371552988983
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: volatile_gruzzer_death_land_2
+      rect:
+        serializedVersion: 2
+        x: 544
+        y: 25
+        width: 163
+        height: 158
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: db5db42a2184608d0800000000000000
+      internalID: -2880535666787363395
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: volatile_gruzzer_death_land_3
+      rect:
+        serializedVersion: 2
+        x: 712
+        y: 27
+        width: 158
+        height: 158
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3ed8840973eac6cf0800000000000000
+      internalID: -257639524999852573
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: fc12e76b6fae3ad4294c474c092bd548
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      volatile_gruzzer_0: 1435842044595005450
+      volatile_gruzzer_1: -752626969778786395
+      volatile_gruzzer_10: -9061115763793501547
+      volatile_gruzzer_11: -2322001806645993935
+      volatile_gruzzer_12: -6434566276683851252
+      volatile_gruzzer_13: -3324703121719915020
+      volatile_gruzzer_14: 5567483854153513666
+      volatile_gruzzer_15: -5597615603011641972
+      volatile_gruzzer_16: 5234575609760876152
+      volatile_gruzzer_17: -6721356937932272797
+      volatile_gruzzer_18: 8548061400522482162
+      volatile_gruzzer_19: -939141142316760503
+      volatile_gruzzer_20: 8977483723710376493
+      volatile_gruzzer_21: 5016976879131055011
+      volatile_gruzzer_22: 5791182638504299802
+      volatile_gruzzer_23: -4068267867241747246
+      volatile_gruzzer_24: 5423485604876977784
+      volatile_gruzzer_25: -1233582511570151327
+      volatile_gruzzer_26: 1290658768212086251
+      volatile_gruzzer_27: 5727515893197916440
+      volatile_gruzzer_28: 2209360780768506521
+      volatile_gruzzer_29: 4840774196073852793
+      volatile_gruzzer_death_air: 7783961130970329039
+      volatile_gruzzer_death_land_1: -9191737371552988983
+      volatile_gruzzer_death_land_2: -2880535666787363395
+      volatile_gruzzer_death_land_3: -257639524999852573
+      volatile_gruzzer_fly_1: -5131458144183468615
+      volatile_gruzzer_fly_2: 5315580310383240884
+      volatile_gruzzer_fly_3: -835712832281305680
+      volatile_gruzzer_fly_4: -905445802964762184
+      volatile_gruzzer_fly_5: 6838049806727843264
+      volatile_gruzzer_fly_6: 8858797492232216477
+      volatile_gruzzer_fly_7: 2030284475910172456
+      volatile_gruzzer_fly_8: -4993283822969646269
+      volatile_gruzzer_turn_1: -5200717034698891318
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
