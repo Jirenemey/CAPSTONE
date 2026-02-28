@@ -18,6 +18,8 @@ public class VolatileGruzzerAI : MonoBehaviour
     private Vector2 direction;
     private float projectileTimer = 0;
 
+    public float groundCheckRadius = 0.2f;
+    private Transform groundCheck;
 
     void Start()
     {
@@ -76,7 +78,7 @@ public class VolatileGruzzerAI : MonoBehaviour
 
     private void Die()
     {
-         
+         //rb.
     }
 
 }
