@@ -4,10 +4,9 @@ using UnityEngine.InputSystem;
 
 [RequireComponent(typeof(Rigidbody2D))]
 [RequireComponent(typeof(Collider2D))]
-public class Player : MonoBehaviour
-{
-    Rigidbody2D rb;
-    Collider2D col;
+public class Player : MonoBehaviour {
+	Rigidbody2D rb;
+	Collider2D col;
 	Animator anim;
 	SpriteRenderer spriteRenderer;
 
@@ -20,7 +19,7 @@ public class Player : MonoBehaviour
 	[SerializeField] InputActionReference quickCastAction;
 
 	[Header("Movement Settings")]
-    [SerializeField] private float walkSpeed = 5.0f;
+	[SerializeField] private float walkSpeed = 5.0f;
 	float originalWalkSpeed;
 	private float horizontalAxis, verticalAxis;
 	float playerDirection = 1.0f; // -1 -> left, 1 -> right
@@ -41,16 +40,16 @@ public class Player : MonoBehaviour
 	private bool isDashing;
 
 	[Header("Jump Settings")]
-    public float jumpForce = 2.0f;
+	public float jumpForce = 2.0f;
 	private int jumpCount = 2; // double jump
-    private int jumps = 0;
-    [SerializeField] private float defaultGravity = 1.0f;
-    [SerializeField] private float fallingGravityMultiplier = 2.0f;
+	private int jumps = 0;
+	[SerializeField] private float defaultGravity = 1.0f;
+	[SerializeField] private float fallingGravityMultiplier = 2.0f;
 
 	[Header("Ground Check settings")]
-    public float groundCheckRadius = 0.2f;
-    private Transform groundCheck;
-    [SerializeField] private LayerMask groundLayer;
+	public float groundCheckRadius = 0.2f;
+	private Transform groundCheck;
+	[SerializeField] private LayerMask groundLayer;
 
 	[Header("Attck settings")]
 	GameObject attackPoint; // this is the owner of the attack graphics and colliders
@@ -63,8 +62,13 @@ public class Player : MonoBehaviour
 	float lastAttackTime = -Mathf.Infinity;
 
 	[Header("Vengful spirite Ability Settings")]
-	[SerializeField] GameObject projectilePrefab;
+	[SerializeField] GameObject VengefulSpiritProjectilePrefab;
 	[SerializeField] Transform projectileSpawnPoint;
+
+	[Header("Howling Wraiths Ability Settings")]
+	[SerializeField] GameObject HowlingWraithsPrefab;
+	[SerializeField] Transform HowlingWraithsSpawnPoint;
+
 
 	//[Header("Look Settings")]
 	////[SerializeField] Vector2 lookAxis;
@@ -76,17 +80,17 @@ public class Player : MonoBehaviour
 
 
 	void Start() {
-        if(!rb) rb = GetComponent<Rigidbody2D>();
-        if(!col) col = GetComponent<Collider2D>();
-		if(!anim) anim = GetComponent<Animator>();
+		if (!rb) rb = GetComponent<Rigidbody2D>();
+		if (!col) col = GetComponent<Collider2D>();
+		if (!anim) anim = GetComponent<Animator>();
 		if (!spriteRenderer) spriteRenderer = GetComponent<SpriteRenderer>();
 
 		if (!attackPoint) attackPoint = gameObject.transform.Find("AttackPoint").gameObject;
 		attackPoint.SetActive(false);
 
 		rb.gravityScale = defaultGravity;
-        if(!groundCheck) groundCheck = transform.Find("GroundCheck");
-        groundLayer = LayerMask.GetMask("Ground");
+		if (!groundCheck) groundCheck = transform.Find("GroundCheck");
+		groundLayer = LayerMask.GetMask("Ground");
 		oldDirection = playerDirection;
 		originalWalkSpeed = walkSpeed;
 	}
@@ -122,7 +126,7 @@ public class Player : MonoBehaviour
 	}
 
 	void Update() {
-        GetInputs();
+		GetInputs();
 		//Look(lookAxis);
 
 		if (Mathf.Abs(horizontalAxis) > 0.01f) {
@@ -141,32 +145,32 @@ public class Player : MonoBehaviour
 	}
 
 	void FixedUpdate() {
-        Move();
-        // if player is falling, add gravity
-        if(rb.linearVelocity.y < -0.4f) {
-            rb.gravityScale = defaultGravity * fallingGravityMultiplier;
+		Move();
+		// if player is falling, add gravity
+		if (rb.linearVelocity.y < -0.4f) {
+			rb.gravityScale = defaultGravity * fallingGravityMultiplier;
 		} else {
-            rb.gravityScale = defaultGravity;
-        }
-    }
+			rb.gravityScale = defaultGravity;
+		}
+	}
 
 
 	private void Move() {
 		if (isDashing) return;
-        Vector2 movement = new Vector2(horizontalAxis * walkSpeed, rb.linearVelocity.y);
+		Vector2 movement = new Vector2(horizontalAxis * walkSpeed, rb.linearVelocity.y);
 
-        rb.linearVelocity = movement;
+		rb.linearVelocity = movement;
 
-        //if(Physics2D.OverlapCircle(groundCheck.position, groundCheckRadius, groundLayer)){
-        if(IsGrounded()) {
-				jumps = 0; // reset double jump
+		//if(Physics2D.OverlapCircle(groundCheck.position, groundCheckRadius, groundLayer)){
+		if (IsGrounded()) {
+			jumps = 0; // reset double jump
 			anim.SetBool("isGrounded", true);
 		} else {
 			anim.SetBool("isGrounded", false);
 		}
 	}
 
-    void GetInputs(){
+	void GetInputs() {
 		//horizontalAxis = Input.GetAxis("Horizontal");
 		horizontalAxis = moveAction.action.ReadValue<Vector2>().x;
 		//verticalAxis = moveAction.action.ReadValue<Vector2>().y;
@@ -177,7 +181,7 @@ public class Player : MonoBehaviour
 	}
 
 	void SetPlayerDirection() {
-		if (horizontalAxis < 0)		 playerDirection = -1f;
+		if (horizontalAxis < 0) playerDirection = -1f;
 		else if (horizontalAxis > 0) playerDirection = 1f;
 
 		if (oldDirection != playerDirection) {
@@ -309,7 +313,7 @@ public class Player : MonoBehaviour
 			localPos = new Vector2(0f, attackOffset.y);
 			localRot = Quaternion.Euler(0, 0, 90f);
 		} else if (!grounded && verticalInput.y < -0.5f) {// down attacks only allowed in the air
-			// DOWN attack
+														  // DOWN attack
 			currentAttackDir = AttackDirection.Down;
 			localPos = new Vector2(0f, -attackOffset.y);
 			localRot = Quaternion.Euler(0, 0, -90f);
@@ -336,14 +340,24 @@ public class Player : MonoBehaviour
 	}
 
 	private void OnQuickCast(InputAction.CallbackContext context) {
-		// shoot projectile
-		if (projectilePrefab == null || projectileSpawnPoint == null) {
+		Vector2 moveInput = moveAction.action.ReadValue<Vector2>();
+
+		if (moveInput.y > 0.5f) {
+			// if Up is held
+			CastHowlingWraiths();
+		} else {
+			CastVengefulSpirit();
+		}
+	}
+
+	private void CastVengefulSpirit() {
+		if (VengefulSpiritProjectilePrefab == null || projectileSpawnPoint == null) {
 			Debug.LogError("Vengeful Spirit: Projectile prefab or projectileSpawnPoint is not set");
 			return;
 		}
 
 		GameObject proj = Instantiate(
-			projectilePrefab,
+			VengefulSpiritProjectilePrefab,
 			projectileSpawnPoint.position,
 			Quaternion.identity
 		);
@@ -353,5 +367,11 @@ public class Player : MonoBehaviour
 
 		proj.GetComponent<Projectile>().Init(playerDirection);
 	}
-
+	private void CastHowlingWraiths(){
+		GameObject proj = Instantiate(
+			HowlingWraithsPrefab,
+			HowlingWraithsSpawnPoint.position,
+			Quaternion.identity
+		);
+	}
 }
