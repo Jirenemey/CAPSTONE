@@ -337,7 +337,10 @@ public class Player : MonoBehaviour
 
 	private void OnQuickCast(InputAction.CallbackContext context) {
 		// shoot projectile
-		if (projectilePrefab == null || projectileSpawnPoint == null) return;
+		if (projectilePrefab == null || projectileSpawnPoint == null) {
+			Debug.LogError("Vengeful Spirit: Projectile prefab or projectileSpawnPoint is not set");
+			return;
+		}
 
 		GameObject proj = Instantiate(
 			projectilePrefab,
@@ -346,7 +349,7 @@ public class Player : MonoBehaviour
 		);
 
 		// Flip sprite to match travel direction
-		proj.GetComponent<SpriteRenderer>().flipX = playerDirection < 0f;
+		proj.GetComponent<SpriteRenderer>().flipX = playerDirection > 0f;
 
 		proj.GetComponent<Projectile>().Init(playerDirection);
 	}

@@ -18,7 +18,9 @@ public class Projectile : MonoBehaviour {
 
 	private void OnTriggerEnter2D(Collider2D other) {
 		// Hit wall — destroy projectile
-		if (other.gameObject.layer == LayerMask.NameToLayer("Ground")) {
+		
+		if (other.gameObject.TryGetComponent<Wall>(out Wall wall) || other.gameObject.TryGetComponent<Ground>(out Ground ground)) {
+			Debug.Log("Projectile hit the wall/ground");
 			Destroy(gameObject);
 			return;
 		}
