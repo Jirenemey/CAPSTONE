@@ -1,12 +1,10 @@
 using Unity.VisualScripting;
+using UnityEditorInternal;
 using UnityEngine;
 
-public class EnemyAI : MonoBehaviour
+public class EnemyAI : EnemyBase
 {
-    public Transform player;
-    public float moveSpeed = 3.0f;
-    public float sightRadius = 10;
-
+    [Header("Enemy Specific")]
     public float attackRadius = 2;
     public float windupTime = 0.5f;
     public float recoveryTime = 0.5f;
@@ -14,27 +12,28 @@ public class EnemyAI : MonoBehaviour
 
     private float lastAttackTime;
 
-    public EnemyStateMachine StateMachine {  get; private set; }
+    //states
+    public IdleState IdleState { get; private set; }
+    public ChaseState ChaseState { get; private set; }
 
-    private void Awake()
+    protected override void Awake()
     {
-       StateMachine = new EnemyStateMachine();
+        base.Awake();
+
+        IdleState = new IdleState(this, fsm);
+        ChaseState = new ChaseState(this, fsm);
+        DefaultState = IdleState;
+
+        fsm.ChangeState(IdleState);
     }
     void Start()
     {
-        GameObject playerObj = GameObject.FindGameObjectWithTag("Player");
 
-        if (playerObj != null)
-            player = playerObj.transform;
-        else
-            Debug.LogWarning("Player not found! Make sure Player has the Player tag.");
-
-        StateMachine.ChangeState(new IdleState(this, StateMachine));
     }
 
-    void Update()
+    protected override void Update()
     {
-        StateMachine.UpdateState();
+        base.Update();
     }
 
     public bool CanSeePlayer()
@@ -46,6 +45,10 @@ public class EnemyAI : MonoBehaviour
     {
         Vector2 dir = (player.position - transform.position).normalized;
         transform.position += (Vector3)dir * moveSpeed * Time.deltaTime;
+
+        //rigidbody
+        //rb.linearVelocity = dir * moveSpeed;
+
     }
 
     public bool InAttackRange()

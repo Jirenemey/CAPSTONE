@@ -6,18 +6,21 @@ public class AttackState : EnemyState
 
     public override void Enter()
     {
+        base.Enter();   
         Debug.Log("ENTERED ATTACK STATE");
     }
 
     public override void Update()
     {
+        base.Update();
+
         if (enemy.InAttackRange() && enemy.CanAttackPlayer())
         {
             Debug.Log("Attacked");
         }
         else
         {
-            sm.ChangeState(new IdleState(enemy, sm));
+            sm.ChangeState(enemy.IdleState);
         }
     }
 

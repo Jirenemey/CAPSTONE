@@ -5,14 +5,17 @@ public class IdleState : EnemyState
 
     public override void Enter()
     {
+        base.Enter();
         Debug.Log("ENTERED IDLE STATE");
     }
 
     public override void Update()
     {
+        base.Update();
+
         if (enemy.CanSeePlayer())
         {
-            sm.ChangeState(new ChaseState(enemy, sm));
+            sm.ChangeState(enemy.ChaseState);
         }
     }
 

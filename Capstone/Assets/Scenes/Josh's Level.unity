@@ -1140,13 +1140,13 @@ GameObject:
   - component: {fileID: 710315371}
   - component: {fileID: 710315370}
   - component: {fileID: 710315376}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Vengefly
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!95 &710315370
 Animator:
   serializedVersion: 7
@@ -1246,10 +1246,10 @@ Rigidbody2D:
     m_Bits: 0
   m_ExcludeLayers:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 1280
   m_Interpolate: 0
   m_SleepingMode: 1
-  m_CollisionDetection: 0
+  m_CollisionDetection: 1
   m_Constraints: 4
 --- !u!4 &710315374
 Transform:
@@ -1260,7 +1260,7 @@ Transform:
   m_GameObject: {fileID: 710315369}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.24192452, y: -0.79199606, z: 0.0748324}
+  m_LocalPosition: {x: 3, y: -0.79199606, z: 0.0748324}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1314,9 +1314,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 47a62341581fbe245a3097be4426dcb3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  player: {fileID: 0}
-  moveSpeed: 1
+  maxHealth: 100
   sightRadius: 5
+  moveSpeed: 3
+  collisionDMG: 1
   attackRadius: 2
   windupTime: 0.5
   recoveryTime: 0.5
@@ -1538,13 +1539,14 @@ GameObject:
   - component: {fileID: 861752649}
   - component: {fileID: 861752648}
   - component: {fileID: 861752654}
+  - component: {fileID: 861752655}
   m_Layer: 10
   m_Name: Volatile Gruzzer
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!95 &861752648
 Animator:
   serializedVersion: 7
@@ -1670,7 +1672,7 @@ Rigidbody2D:
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
-  m_Mass: 1000
+  m_Mass: 1
   m_LinearDamping: 0
   m_AngularDamping: 0
   m_GravityScale: 0
@@ -1680,7 +1682,7 @@ Rigidbody2D:
     m_Bits: 0
   m_ExcludeLayers:
     serializedVersion: 2
-    m_Bits: 256
+    m_Bits: 1280
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 1
@@ -1718,6 +1720,19 @@ MonoBehaviour:
   moveSpeed: 4
   projectileSpawnRate: 2
   explosionTimer: 10
+  groundCheckRadius: 0.2
+--- !u!114 &861752655
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 861752647}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c0f935b144ae6dc4fb9b46b4b72d160e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &1051943153
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1877,7 +1892,7 @@ Transform:
   m_GameObject: {fileID: 1060558054}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: -0.5, z: 0}
+  m_LocalPosition: {x: 0, y: -0.75, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -2890,8 +2905,8 @@ Transform:
   m_GameObject: {fileID: 1847536178}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -1.1449578, y: -5.54, z: 0}
-  m_LocalScale: {x: 100, y: 5, z: 1}
+  m_LocalPosition: {x: -1.1449578, y: -3.4827, z: 0}
+  m_LocalScale: {x: 100, y: 0.8855, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}

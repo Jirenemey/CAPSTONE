@@ -2,13 +2,12 @@ using UnityEngine;
 
 public class VGruzzerProjectile : MonoBehaviour
 {
-    [SerializeField] float speed = 6f;
     [SerializeField] float damage = 20f;
     [SerializeField] float lifetime = 3f; // destroy if it never hits a wall
 
-    void Update()
+    private void Start()
     {
-        transform.Translate(Vector2.down * speed * Time.deltaTime);
+        Destroy(gameObject, lifetime);
     }
 
     private void OnTriggerEnter2D(Collider2D other)
@@ -16,12 +15,12 @@ public class VGruzzerProjectile : MonoBehaviour
         // Hit wall — destroy projectile
         if (other.gameObject.layer == LayerMask.NameToLayer("Ground"))
         {
-            Destroy(gameObject);
+            Destroy(gameObject, 1);
             return;
         }
 
         // Hit enemy — deal damage but keep going
-        if (other.TryGetComponent<IDamageable>(out var target))
+        if (other.TryGetComponent<IDamageable>(out var target) && other.gameObject.layer == LayerMask.NameToLayer("Player"))
         {
             target.TakeDamage(damage);
         }
