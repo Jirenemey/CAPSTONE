@@ -18,6 +18,12 @@ public class Player : MonoBehaviour {
 	[SerializeField] InputActionReference attackAction;
 	[SerializeField] InputActionReference quickCastAction;
 
+	[Header("Player stats")]
+	[SerializeField] int maxHp = 5;
+	[SerializeField] int maxSoul = 3;
+	[SerializeField] int hp = 5;
+	[SerializeField] int soul = 3;
+
 	[Header("Movement Settings")]
 	[SerializeField] private float walkSpeed = 5.0f;
 	float originalWalkSpeed;
@@ -93,6 +99,9 @@ public class Player : MonoBehaviour {
 		groundLayer = LayerMask.GetMask("Ground");
 		oldDirection = playerDirection;
 		originalWalkSpeed = walkSpeed;
+
+		if (hp > maxHp) hp = maxHp;
+		if(soul > maxSoul) soul = maxSoul;
 	}
 	private void OnEnable() {
 		// Input system event binding

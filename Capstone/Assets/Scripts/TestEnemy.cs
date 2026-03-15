@@ -1,6 +1,6 @@
 using UnityEngine;
 using TMPro;
-public class TestEnemy : MonoBehaviour, IDamageable {
+public class TestEnemy : MonoBehaviour, IDamageable, ICanGiveSoul {
 	float health = 100f;
 	float flashDuration = 0.5f;
 	SpriteRenderer sr;
@@ -29,5 +29,11 @@ public class TestEnemy : MonoBehaviour, IDamageable {
 		sr.color = originalColor;
 	}
 
-
+	public bool GetSoulVal() {
+		if(health > 0f) {
+			return true;
+		} else {
+			return false;
+		}
+	}
 }
