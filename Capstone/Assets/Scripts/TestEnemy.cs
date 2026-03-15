@@ -12,7 +12,7 @@ public class TestEnemy : MonoBehaviour, IDamageable, ICanGiveSoul {
 	public void TakeDamage(float amount) {
 		health -= amount;
 		ui_hp.text = ""+health;
-		Debug.Log($"{gameObject.name} took {amount} damage. HP: {health}");
+		//Debug.Log($"{gameObject.name} took {amount} damage. HP: {health}");
 		StartCoroutine(FlashRed());
 		if (health <= 0) Die();
 	}

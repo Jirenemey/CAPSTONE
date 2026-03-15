@@ -1,14 +1,18 @@
+using System.Collections.Generic;
 using UnityEngine;
 
 public class HowlingWraiths : MonoBehaviour
 {
-    private float spawnTime;
-    private float duration = 1f;
-    void Start(){
-        
-    }
+    public float duration;
+    public float dmg;
+	public int numberOfTicks;
 
-    void Update(){
-        
-    }
+    void Start(){
+		DamageTicker ticker = gameObject.AddComponent<DamageTicker>();
+
+		ticker.damage = dmg;
+		ticker.tickInterval = duration / numberOfTicks;
+
+		Destroy(gameObject, duration);
+	}
 }
