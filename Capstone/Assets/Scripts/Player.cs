@@ -1,6 +1,8 @@
+using NUnit.Framework;
 using System.Collections;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using UnityEngine.Windows;
 
 [RequireComponent(typeof(Rigidbody2D))]
 [RequireComponent(typeof(Collider2D))]
@@ -9,14 +11,7 @@ public class Player : MonoBehaviour {
 	Collider2D col;
 	Animator anim;
 	SpriteRenderer spriteRenderer;
-
-	[Header("Input system refrences")]
-	[SerializeField] InputActionReference moveAction;
-	[SerializeField] InputActionReference lookAction;
-	[SerializeField] InputActionReference jumpAction;
-	[SerializeField] InputActionReference dashAction;
-	[SerializeField] InputActionReference attackAction;
-	[SerializeField] InputActionReference quickCastAction;
+	PlayerInputHandler inputHandler;
 
 	[Header("Player stats")]
 	[SerializeField] int maxHp = 5;
@@ -66,6 +61,7 @@ public class Player : MonoBehaviour {
 	bool canAttack = true;
 	[SerializeField] float attackCooldown = 0.5f;
 	float lastAttackTime = -Mathf.Infinity;
+	[SerializeField] float meleeDuration = 0.3f;
 
 	[Header("Vengful spirite Ability Settings")]
 	[SerializeField] GameObject VengefulSpiritProjectilePrefab;
@@ -91,6 +87,9 @@ public class Player : MonoBehaviour {
 		if (!anim) anim = GetComponent<Animator>();
 		if (!spriteRenderer) spriteRenderer = GetComponent<SpriteRenderer>();
 
+		inputHandler = GetComponent<PlayerInputHandler>();
+		if (!inputHandler) Assert.Fail("Player does not have an input handler, plz fix.");
+
 		if (!attackPoint) attackPoint = gameObject.transform.Find("AttackPoint").gameObject;
 		attackPoint.SetActive(false);
 
@@ -103,41 +102,18 @@ public class Player : MonoBehaviour {
 		if (hp > maxHp) hp = maxHp;
 		if(soul > maxSoul) soul = maxSoul;
 	}
-	private void OnEnable() {
-		// Input system event binding
-		jumpAction.action.started += OnJumpPress; // ButtonDown equivalent
-		jumpAction.action.canceled += OnJumpRelease; // ButtonUp equivalent
-		jumpAction.action.Enable();
-
-		dashAction.action.started += OnDashPress;
-		dashAction.action.Enable();
-
-		attackAction.action.started += OnAttackMeele;
-		attackAction.action.Enable();
-
-		quickCastAction.action.started += OnQuickCast;
-		quickCastAction.action.Enable();
-
-	}
-	void OnDisable() {
-		jumpAction.action.Disable();
-		jumpAction.action.started -= OnJumpPress;
-		jumpAction.action.canceled -= OnJumpRelease;
-
-		dashAction.action.Disable();
-		dashAction.action.started -= OnDashPress;
-
-		attackAction.action.Disable();
-		attackAction.action.started -= OnAttackMeele;
-
-		quickCastAction.action.Disable();
-		quickCastAction.action.started -= OnQuickCast;
-	}
 
 	void Update() {
-		GetInputs();
-		//Look(lookAxis);
+		horizontalAxis = inputHandler.MovementInput.x;
+		SetPlayerDirection();
 
+		if (inputHandler.JumpTriggered) HandleJumpPress();
+		if (inputHandler.JumpReleased) HandleJumpRelease();
+		if (inputHandler.DashTriggered) HandleDashPress();
+		if (inputHandler.AttackTriggered) HandleAttack();
+		if (inputHandler.QuickCastTriggered) HandleQuickCast();
+
+		// walk held
 		if (Mathf.Abs(horizontalAxis) > 0.01f) {
 			walkHeldDuration += Time.deltaTime;
 			anim.SetBool("isMoving", true);
@@ -151,6 +127,9 @@ public class Player : MonoBehaviour {
 			isSprinting = true;
 			walkSpeed = originalWalkSpeed * sprintMultiplier;
 		}
+
+		inputHandler.ConsumeTriggers();
+
 	}
 
 	void FixedUpdate() {
@@ -179,16 +158,6 @@ public class Player : MonoBehaviour {
 		}
 	}
 
-	void GetInputs() {
-		//horizontalAxis = Input.GetAxis("Horizontal");
-		horizontalAxis = moveAction.action.ReadValue<Vector2>().x;
-		//verticalAxis = moveAction.action.ReadValue<Vector2>().y;
-
-		//lookAxis = lookAction.action.ReadValue<Vector2>();
-
-		SetPlayerDirection();
-	}
-
 	void SetPlayerDirection() {
 		if (horizontalAxis < 0) playerDirection = -1f;
 		else if (horizontalAxis > 0) playerDirection = 1f;
@@ -202,39 +171,7 @@ public class Player : MonoBehaviour {
 
 		}
 	}
-	// Not working
-	//private void Look(Vector2 lookAxis_) {
-	//	// make sure the look button has been held for long enouph
-	//	if (lookAxis_.magnitude > 0f) {
-	//		currentLookTimer += Time.deltaTime;
-	//		if (currentLookTimer >= lookDelay && !cameraMoved) {
-	//			// only look in one direction at a time
-	//			// find the dominant direction
-	//			lookAxis_ = lookAxis_.normalized; // Normalize to unit vector
-	//			Vector2 camerOffsetDirection;
-	//			if (Mathf.Abs(lookAxis_.x) > Mathf.Abs(lookAxis_.y))
-	//				camerOffsetDirection = new Vector2(Mathf.Sign(lookAxis_.x), 0);
-	//			else
-	//				camerOffsetDirection = new Vector2(0, Mathf.Sign(lookAxis_.y));
-	//			// Offset camera in the right direction
-	//			camerOffsetDirection.x *= cameraLookOffset.x;
-	//			camerOffsetDirection.y *= cameraLookOffset.y;
-	//			oldCameraPos = Camera.allCameras[0].transform.position;
-	//			Camera.allCameras[0].transform.position += new Vector3(camerOffsetDirection.x, camerOffsetDirection.y, 0.0f);
-	//			cameraMoved = true;
-	//		}
-	//	} else {
-	//		currentLookTimer = 0f;
-	//		// reset camera
-	//		ResetCamera();
-	//	}
-	//}
-	//void ResetCamera() {
-	//	Camera.allCameras[0].transform.position = oldCameraPos;
-	//	cameraMoved = false;
-	//}
-
-	private void OnJumpPress(InputAction.CallbackContext context) {
+	private void HandleJumpPress() {
 		if (jumps < jumpCount - 1) { // -1 to account for the very next frame where it resets the double jump
 			anim.SetTrigger("Jump");
 			rb.gravityScale = defaultGravity;
@@ -249,14 +186,14 @@ public class Player : MonoBehaviour {
 			jumps++;
 		}
 	}
-	private void OnJumpRelease(InputAction.CallbackContext context) {
+	private void HandleJumpRelease() {
 		if (rb.linearVelocity.y > 0) {
 			rb.linearVelocity = new Vector2(rb.linearVelocity.x, rb.linearVelocity.x * 0.1f);
 			rb.gravityScale = defaultGravity * fallingGravityMultiplier;
 		}
 	}
 
-	private void OnDashPress(InputAction.CallbackContext context) {
+	private void HandleDashPress() {
 		if (isDashing) return; // Prevent double dash
 		anim.SetTrigger("Dash");
 		StartCoroutine(DashRoutine());
@@ -295,7 +232,7 @@ public class Player : MonoBehaviour {
 		isSprinting = false;
 		walkSpeed = originalWalkSpeed;
 	}
-	private void OnAttackMeele(InputAction.CallbackContext context) {
+	private void HandleAttack() {
 		if (Time.time < lastAttackTime + attackCooldown) return;
 		lastAttackTime = Time.time;
 		if (isAttacking) return; // prevent coroutine stacking
@@ -310,7 +247,7 @@ public class Player : MonoBehaviour {
 		isAttacking = true;
 		attackPoint.SetActive(true);
 
-		Vector2 verticalInput = moveAction.action.ReadValue<Vector2>();
+		Vector2 verticalInput = inputHandler.MovementInput;
 		var localPos = attackPoint.transform.localPosition;
 		Quaternion localRot = Quaternion.identity;
 
@@ -343,13 +280,13 @@ public class Player : MonoBehaviour {
 		default: anim.SetTrigger("Attack"); break;
 		}
 
-		yield return new WaitForSeconds(0.4f);
+		yield return new WaitForSeconds(meleeDuration);
 		attackPoint.SetActive(false);
 		isAttacking = false;
 	}
 
-	private void OnQuickCast(InputAction.CallbackContext context) {
-		Vector2 moveInput = moveAction.action.ReadValue<Vector2>();
+	private void HandleQuickCast() {
+		Vector2 moveInput = inputHandler.MovementInput;
 
 		if (moveInput.y > 0.5f) {
 			// if Up is held
@@ -377,6 +314,10 @@ public class Player : MonoBehaviour {
 		proj.GetComponent<Projectile>().Init(playerDirection);
 	}
 	private void CastHowlingWraiths(){
+		if (HowlingWraithsPrefab == null || HowlingWraithsSpawnPoint == null) {
+			Debug.LogError("Howling Wraiths: prefab or SpawnPoint is not set");
+			return;
+		}
 		GameObject proj = Instantiate(
 			HowlingWraithsPrefab,
 			HowlingWraithsSpawnPoint.position,
