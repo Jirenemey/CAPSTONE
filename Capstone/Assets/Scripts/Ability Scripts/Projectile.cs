@@ -1,14 +1,20 @@
 using UnityEngine;
 
 public class Projectile : MonoBehaviour {
-	[SerializeField] float speed = 15f;
-	[SerializeField] float damage = 20f;
-	[SerializeField] float lifetime = 3f; // destroy if it never hits a wall
+	[SerializeField] float speed;
+	[SerializeField] float damage;
+	[SerializeField] float lifetime; // destroy if it never hits a wall
+	[SerializeField] int numberOfTicks;
 
 	float direction;
 
 	public void Init(float dir) {
 		direction = dir;
+
+		DamageTicker ticker = gameObject.AddComponent<DamageTicker>();
+		ticker.damage = damage;
+		ticker.tickInterval = lifetime / numberOfTicks;
+
 		Destroy(gameObject, lifetime);
 	}
 
@@ -25,8 +31,8 @@ public class Projectile : MonoBehaviour {
 		}
 
 		// Hit enemy — deal damage but keep going
-		if (other.TryGetComponent<IDamageable>(out var target)) {
-			target.TakeDamage(damage);
-		}
+		//if (other.TryGetComponent<IDamageable>(out var target)) {
+		//	target.TakeDamage(damage);
+		//}
 	}
 }
