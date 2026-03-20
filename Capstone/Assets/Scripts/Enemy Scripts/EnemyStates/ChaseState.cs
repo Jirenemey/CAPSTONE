@@ -13,9 +13,12 @@ public class ChaseState : EnemyState
     {
         base.Update();
 
-        enemy.MoveTowardsPlayer();
+        //enemy.MoveTowardsPlayer();
+        //enemy.Move();
+        Vector2 dir = enemy.detection.DirectionToPlayer();
+        enemy.movement.Move(dir);
 
-        if (!enemy.CanSeePlayer())
+        if (enemy.detection.PlayerExitedSight())
         {
             sm.ChangeState(enemy.DefaultState);
         }

@@ -13,7 +13,7 @@ public class IdleState : EnemyState
     {
         base.Update();
 
-        if (enemy.CanSeePlayer())
+        if (enemy.detection.PlayerEnteredSight())
         {
             sm.ChangeState(enemy.ChaseState);
         }

@@ -36,26 +36,6 @@ public class EnemyAI : EnemyBase
         base.Update();
     }
 
-    public bool CanSeePlayer()
-    {
-        return Vector2.Distance(transform.position, player.position) <= sightRadius;
-    }
-
-    public void MoveTowardsPlayer()
-    {
-        Vector2 dir = (player.position - transform.position).normalized;
-        transform.position += (Vector3)dir * moveSpeed * Time.deltaTime;
-
-        //rigidbody
-        //rb.linearVelocity = dir * moveSpeed;
-
-    }
-
-    public bool InAttackRange()
-    {
-        return Vector2.Distance(transform.position, player.position) <= attackRadius;
-    }
-
     public bool CanAttackPlayer()
     {
         if (attackCooldown <= lastAttackTime)

@@ -1140,6 +1140,8 @@ GameObject:
   - component: {fileID: 710315371}
   - component: {fileID: 710315370}
   - component: {fileID: 710315376}
+  - component: {fileID: 710315377}
+  - component: {fileID: 710315378}
   m_Layer: 10
   m_Name: Vengefly
   m_TagString: Untagged
@@ -1322,6 +1324,35 @@ MonoBehaviour:
   windupTime: 0.5
   recoveryTime: 0.5
   attackCooldown: 2
+--- !u!114 &710315377
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 710315369}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 822d639825d07f64585eb10bb89088f8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  moveSpeed: 3
+--- !u!114 &710315378
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 710315369}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6ea2c20ac5bda9f4c9fc2be21e493c7e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  player: {fileID: 0}
+  sightRadius: 5
+  exitSightRadius: 10
+  attackRadius: 2
 --- !u!1 &841347626
 GameObject:
   m_ObjectHideFlags: 0

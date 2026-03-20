@@ -14,7 +14,7 @@ public class AttackState : EnemyState
     {
         base.Update();
 
-        if (enemy.InAttackRange() && enemy.CanAttackPlayer())
+        if (enemy.detection.InAttackRange() && enemy.CanAttackPlayer())
         {
             Debug.Log("Attacked");
         }

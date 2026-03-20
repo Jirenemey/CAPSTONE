@@ -14,9 +14,6 @@ public class EnemyBase : MonoBehaviour, IDamageable
     protected float currentHealth;
     protected bool isDead = false;
 
-    [Header("Movement")]
-    public float moveSpeed = 3f;
-
     [Header("Damage")]
     public float collisionDMG = 1f;
 
@@ -26,6 +23,9 @@ public class EnemyBase : MonoBehaviour, IDamageable
     protected Collider2D col;
     protected Animator anim;
     protected SpriteRenderer spriteRenderer;
+
+    public DetectionComponent detection {  get; private set; }
+    public MovementComponent movement {  get; private set; }
 
     protected EnemyStateMachine fsm;
 
@@ -37,6 +37,9 @@ public class EnemyBase : MonoBehaviour, IDamageable
         if (!col) col = GetComponent<Collider2D>();
         if (!anim) anim = GetComponent<Animator>();
         if (!spriteRenderer) spriteRenderer = GetComponent<SpriteRenderer>();
+
+        if (!detection) detection = GetComponent<DetectionComponent>();
+        if (!movement) movement = GetComponent<MovementComponent>();
 
         GameObject playerObj = GameObject.FindGameObjectWithTag("Player");
         if (playerObj != null)
