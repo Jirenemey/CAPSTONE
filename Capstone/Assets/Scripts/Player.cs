@@ -13,12 +13,6 @@ public class Player : MonoBehaviour {
 	SpriteRenderer spriteRenderer;
 	PlayerInputHandler inputHandler;
 
-	[Header("Player stats")]
-	[SerializeField] int maxHp = 5;
-	[SerializeField] int maxSoul = 3;
-	[SerializeField] int hp = 5;
-	[SerializeField] int soul = 3;
-
 	[Header("Movement Settings")]
 	[SerializeField] private float walkSpeed = 5.0f;
 	float originalWalkSpeed;
@@ -72,15 +66,6 @@ public class Player : MonoBehaviour {
 	[SerializeField] Transform HowlingWraithsSpawnPoint;
 
 
-	//[Header("Look Settings")]
-	////[SerializeField] Vector2 lookAxis;
-	//[SerializeField] float lookDelay = 1.0f;
-	//float currentLookTimer = 0.0f;// counts up while the look buttom is down
-	//[SerializeField] Vector2 cameraLookOffset;
-	//bool cameraMoved = false;
-	//Vector3 oldCameraPos;
-
-
 	void Start() {
 		if (!rb) rb = GetComponent<Rigidbody2D>();
 		if (!col) col = GetComponent<Collider2D>();
@@ -98,9 +83,6 @@ public class Player : MonoBehaviour {
 		groundLayer = LayerMask.GetMask("Ground");
 		oldDirection = playerDirection;
 		originalWalkSpeed = walkSpeed;
-
-		if (hp > maxHp) hp = maxHp;
-		if(soul > maxSoul) soul = maxSoul;
 	}
 
 	void Update() {
