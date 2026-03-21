@@ -1,6 +1,7 @@
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
+using UnityEngine.SceneManagement;
 using System.Threading.Tasks;
 using Unity.Netcode;
 using Unity.Services.Core;
@@ -25,6 +26,8 @@ public class NetworkLobyyUI : MonoBehaviour
     [SerializeField] Button m_StartHostButton;
     [SerializeField] Button m_StartClientButton;
     [SerializeField] GameObject backButton;
+    [SerializeField] Button menuBackButton;
+
 
     void Start()
     {
@@ -37,8 +40,10 @@ public class NetworkLobyyUI : MonoBehaviour
         if(!m_StartHostButton) m_StartHostButton = GameObject.Find("StartHostButton").GetComponent<Button>();
         if(!m_StartClientButton) m_StartClientButton = GameObject.Find("StartClientButton").GetComponent<Button>();
         if(!backButton) backButton = GameObject.Find("BackButton");
+        if(!menuBackButton) menuBackButton = GameObject.Find("MenuBackButton").GetComponent<Button>();
 
         Back();
+        menuBackButton.onClick.AddListener(() => Menu());
 
         m_StartHostButton.onClick.AddListener(async () => await StartHostWithRelay(1, "UDP"));
         m_StartClientButton.onClick.AddListener(async () => await StartClientWithRelay(inputField.text, "UDP"));
@@ -76,6 +81,11 @@ public class NetworkLobyyUI : MonoBehaviour
         joinScreen.SetActive(false);
         backButton.SetActive(false);
         LeaveLobby();
+    }
+
+    public void Menu()
+    {
+        SceneManager.LoadScene("MainMenu");
     }
 
     public async Task<string> StartHostWithRelay(int maxConnections, string connectionType) {
