@@ -17,12 +17,21 @@ public class PlayerStats : MonoBehaviour {
 
 	private void Start() {
 		currentHp = maxHp;
-		currentSoul = maxSoul;
+		currentSoul = 0;
 
 		// Notify of starting values once the game starts
 		OnHealthChanged?.Invoke(currentHp, maxHp);
 		OnSoulChanged?.Invoke(currentSoul, maxSoul);
+
+		print("PlayerStats created");
+		FindFirstObjectByType<HealthSoulUI>().Initialize(this);
+
 	}
+
+	public int GetCurrentHp() { return currentHp; }
+	public int GetMaxHp() {  return maxHp; }
+	public int GetCurrentSoul() {  return currentSoul; }
+	public int GetMaxSoul() {  return maxSoul; }
 
 	public void TakeDamage(int damageAmount) {
 		currentHp -= damageAmount;

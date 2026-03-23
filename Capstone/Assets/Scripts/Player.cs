@@ -12,6 +12,7 @@ public class Player : MonoBehaviour {
 	Animator anim;
 	SpriteRenderer spriteRenderer;
 	PlayerInputHandler inputHandler;
+	PlayerStats playerStats;
 
 	[Header("Movement Settings")]
 	[SerializeField] private float walkSpeed = 5.0f;
@@ -75,6 +76,9 @@ public class Player : MonoBehaviour {
 		inputHandler = GetComponent<PlayerInputHandler>();
 		if (!inputHandler) Assert.Fail("Player does not have an input handler, plz fix.");
 
+		playerStats = GetComponent<PlayerStats>();
+		if (!playerStats) Assert.Fail("Player does not have PlayerStats object, plz fix.");
+
 		if (!attackPoint) attackPoint = gameObject.transform.Find("AttackPoint").gameObject;
 		attackPoint.SetActive(false);
 
@@ -83,6 +87,8 @@ public class Player : MonoBehaviour {
 		groundLayer = LayerMask.GetMask("Ground");
 		oldDirection = playerDirection;
 		originalWalkSpeed = walkSpeed;
+
+		//playerStats.
 	}
 
 	void Update() {
