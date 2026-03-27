@@ -10,10 +10,12 @@ public class MenuScript : MonoBehaviour
 	[SerializeField] Button singleplayerBtn;
 	[SerializeField] Button multiplayerBtn;
 	[SerializeField] Button settingsBtn;
+    [SerializeField] Button quitBtn;
     [SerializeField] Button backBtn;
     [Header("Screens")]
     [SerializeField] GameObject settingsScrn;
     [SerializeField] GameObject menuScrn;
+    [SerializeField] GameObject menuTitle;
     [Header("Settings Screen References")]
     // Bindings
 	[SerializeField] InputActionReference jumpAction;
@@ -31,6 +33,11 @@ public class MenuScript : MonoBehaviour
     [SerializeField] TMP_Text sfxText;
     [SerializeField] Slider musicSlider;
     [SerializeField] TMP_Text musicText;
+    [Header("Animation Related")]
+    [SerializeField] GameObject menuBackground;
+    int xWidthLimit = Screen.width / 4;
+    public float movementAmountX = 10f;
+    public float movementAmountY = 2f;
 
     void Awake() {
         // check if bindings were already set before
@@ -40,14 +47,30 @@ public class MenuScript : MonoBehaviour
             actions.LoadBindingOverridesFromJson(PlayerPrefs.GetString("rebinds"));
     }
 
+    void Update()
+    {
+        Vector2 mousePos = Mouse.current.position.ReadValue();
+        Debug.Log("Mouse X Pos: " + mousePos.x);
+
+        float normalizedX = (mousePos.x / Screen.width) * 2f - 1f;
+        float normalizedY = (mousePos.y / Screen.height) * 2f - 1f;
+
+        float easedX = Mathf.Sin(normalizedX * Mathf.PI * 0.5f);
+        float easedY = Mathf.Sin(normalizedY * Mathf.PI * 0.5f);
+
+        menuBackground.GetComponent<RectTransform>().anchoredPosition = new Vector2(easedX * movementAmountX, easedY * movementAmountY);
+    }
+
     void Start()
     {
         // Menu Items
         if(!singleplayerBtn) singleplayerBtn = GameObject.Find("SingleplayerBtn").GetComponent<Button>();
         if(!multiplayerBtn) multiplayerBtn = GameObject.Find("MultiplayerBtn").GetComponent<Button>();
         if(!settingsBtn) settingsBtn = GameObject.Find("SettingsBtn").GetComponent<Button>();
+        if(!quitBtn) quitBtn = GameObject.Find("QuitBtn").GetComponent<Button>();
         if(!backBtn) backBtn = GameObject.Find("BackBtn").GetComponent<Button>();
         if(!menuScrn) menuScrn = GameObject.Find("Menu");
+        if(!menuTitle) menuTitle = GameObject.Find("MenuTitle");
 
         // Settings Items
         if(!settingsScrn) settingsScrn = GameObject.Find("Settings");
@@ -59,17 +82,21 @@ public class MenuScript : MonoBehaviour
         if(!sfxText) sfxText = GameObject.Find("SFXPercent").GetComponent<TextMeshProUGUI>();
         if(!musicSlider) musicSlider = GameObject.Find("MusicSlider").GetComponent<Slider>();
         if(!musicText) musicText = GameObject.Find("MusicPercent").GetComponent<TextMeshProUGUI>();
-        
+        // Animations
+        if(!menuBackground) menuBackground = GameObject.Find("MenuBackground");
 
         singleplayerBtn.onClick.AddListener(() => LoadScene("SampleScene"));
         multiplayerBtn.onClick.AddListener(() => LoadScene("Multiplayer"));
         settingsBtn.onClick.AddListener(() => SettingsPage());
+        quitBtn.onClick.AddListener(() => Quit());
         backBtn.onClick.AddListener(() => Back());
 
         backBtn.gameObject.SetActive(false);
         pressKeyScreen.gameObject.SetActive(false);
         Back();
         ListBindingText();
+
+        //audioManager.PlayMusic("MenuMusic");
     }
     // Main Menu Button management
     public void LoadScene(string sceneName) {
@@ -81,13 +108,22 @@ public class MenuScript : MonoBehaviour
         menuScrn.SetActive(false);
         settingsScrn.SetActive(true);
         backBtn.gameObject.SetActive(true);
+        menuTitle.SetActive(false);
     }
 
     public void Back()
     {
+        audioManager.PlaySFX("Btn");
         menuScrn.SetActive(true);
         settingsScrn.SetActive(false);
         backBtn.gameObject.SetActive(false);
+        menuTitle.SetActive(true);
+    }
+
+    public void Quit()
+    {
+        audioManager.PlaySFX("Btn");
+        Application.Quit();
     }
 
     //Settings menu stuff
@@ -189,26 +225,32 @@ public class MenuScript : MonoBehaviour
 
     // Binding buttons in UI
     public void RebindAttackAction() {
+        audioManager.PlaySFX("BindingBtn");
         RebindAction(attackAction.action);
     }
     public void RebindQuickCastAction() {
+        audioManager.PlaySFX("BindingBtn");
         RebindAction(quickCastAction.action);
     }
     public void RebindJumpAction() {
+        audioManager.PlaySFX("BindingBtn");
         RebindAction(jumpAction.action);
     }
     public void RebindDashAction() {
+        audioManager.PlaySFX("BindingBtn");
         RebindAction(dashAction.action);
     }
 
     // Volume
     public void UpdateSFX(){
         audioManager.SFXVolume(sfxSlider.value);
+        audioManager.PlaySFX("Btn");
         sfxText.text = (sfxSlider.value * 100).ToString("F0") + "%";
     }
 
     public void UpdateMusic(){
         audioManager.MusicVolume(musicSlider.value);
+        audioManager.PlaySFX("Btn");
         musicText.text = (musicSlider.value * 100).ToString("F0") + "%";
     }
 
