@@ -1,26 +1,21 @@
+using NUnit.Framework;
 using System.Collections;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using UnityEngine.Windows;
 
 [RequireComponent(typeof(Rigidbody2D))]
 [RequireComponent(typeof(Collider2D))]
-public class Player : MonoBehaviour
-{
-    Rigidbody2D rb;
-    Collider2D col;
+public class Player : MonoBehaviour {
+	Rigidbody2D rb;
+	Collider2D col;
 	Animator anim;
 	SpriteRenderer spriteRenderer;
-
-	[Header("Input system refrences")]
-	[SerializeField] InputActionReference moveAction;
-	[SerializeField] InputActionReference lookAction;
-	[SerializeField] InputActionReference jumpAction;
-	[SerializeField] InputActionReference dashAction;
-	[SerializeField] InputActionReference attackAction;
-	[SerializeField] InputActionReference quickCastAction;
+	PlayerInputHandler inputHandler;
+	PlayerStats playerStats;
 
 	[Header("Movement Settings")]
-    [SerializeField] private float walkSpeed = 5.0f;
+	[SerializeField] private float walkSpeed = 5.0f;
 	float originalWalkSpeed;
 	private float horizontalAxis, verticalAxis;
 	float playerDirection = 1.0f; // -1 -> left, 1 -> right
@@ -41,16 +36,16 @@ public class Player : MonoBehaviour
 	private bool isDashing;
 
 	[Header("Jump Settings")]
-    public float jumpForce = 2.0f;
+	public float jumpForce = 2.0f;
 	private int jumpCount = 2; // double jump
-    private int jumps = 0;
-    [SerializeField] private float defaultGravity = 1.0f;
-    [SerializeField] private float fallingGravityMultiplier = 2.0f;
+	private int jumps = 0;
+	[SerializeField] private float defaultGravity = 1.0f;
+	[SerializeField] private float fallingGravityMultiplier = 2.0f;
 
 	[Header("Ground Check settings")]
-    public float groundCheckRadius = 0.2f;
-    private Transform groundCheck;
-    [SerializeField] private LayerMask groundLayer;
+	public float groundCheckRadius = 0.2f;
+	private Transform groundCheck;
+	[SerializeField] private LayerMask groundLayer;
 
 	[Header("Attck settings")]
 	GameObject attackPoint; // this is the owner of the attack graphics and colliders
@@ -61,70 +56,52 @@ public class Player : MonoBehaviour
 	bool canAttack = true;
 	[SerializeField] float attackCooldown = 0.5f;
 	float lastAttackTime = -Mathf.Infinity;
+	[SerializeField] float meleeDuration = 0.3f;
 
 	[Header("Vengful spirite Ability Settings")]
-	[SerializeField] GameObject projectilePrefab;
+	[SerializeField] GameObject VengefulSpiritProjectilePrefab;
 	[SerializeField] Transform projectileSpawnPoint;
 
-	//[Header("Look Settings")]
-	////[SerializeField] Vector2 lookAxis;
-	//[SerializeField] float lookDelay = 1.0f;
-	//float currentLookTimer = 0.0f;// counts up while the look buttom is down
-	//[SerializeField] Vector2 cameraLookOffset;
-	//bool cameraMoved = false;
-	//Vector3 oldCameraPos;
+	[Header("Howling Wraiths Ability Settings")]
+	[SerializeField] GameObject HowlingWraithsPrefab;
+	[SerializeField] Transform HowlingWraithsSpawnPoint;
 
 
 	void Start() {
-        if(!rb) rb = GetComponent<Rigidbody2D>();
-        if(!col) col = GetComponent<Collider2D>();
-		if(!anim) anim = GetComponent<Animator>();
+		if (!rb) rb = GetComponent<Rigidbody2D>();
+		if (!col) col = GetComponent<Collider2D>();
+		if (!anim) anim = GetComponent<Animator>();
 		if (!spriteRenderer) spriteRenderer = GetComponent<SpriteRenderer>();
+
+		inputHandler = GetComponent<PlayerInputHandler>();
+		if (!inputHandler) Assert.Fail("Player does not have an input handler, plz fix.");
+
+		playerStats = GetComponent<PlayerStats>();
+		if (!playerStats) Assert.Fail("Player does not have PlayerStats object, plz fix.");
 
 		if (!attackPoint) attackPoint = gameObject.transform.Find("AttackPoint").gameObject;
 		attackPoint.SetActive(false);
 
 		rb.gravityScale = defaultGravity;
-        if(!groundCheck) groundCheck = transform.Find("GroundCheck");
-        groundLayer = LayerMask.GetMask("Ground");
+		if (!groundCheck) groundCheck = transform.Find("GroundCheck");
+		groundLayer = LayerMask.GetMask("Ground");
 		oldDirection = playerDirection;
 		originalWalkSpeed = walkSpeed;
-	}
-	private void OnEnable() {
-		// Input system event binding
-		jumpAction.action.started += OnJumpPress; // ButtonDown equivalent
-		jumpAction.action.canceled += OnJumpRelease; // ButtonUp equivalent
-		jumpAction.action.Enable();
 
-		dashAction.action.started += OnDashPress;
-		dashAction.action.Enable();
-
-		attackAction.action.started += OnAttackMeele;
-		attackAction.action.Enable();
-
-		quickCastAction.action.started += OnQuickCast;
-		quickCastAction.action.Enable();
-
-	}
-	void OnDisable() {
-		jumpAction.action.Disable();
-		jumpAction.action.started -= OnJumpPress;
-		jumpAction.action.canceled -= OnJumpRelease;
-
-		dashAction.action.Disable();
-		dashAction.action.started -= OnDashPress;
-
-		attackAction.action.Disable();
-		attackAction.action.started -= OnAttackMeele;
-
-		quickCastAction.action.Disable();
-		quickCastAction.action.started -= OnQuickCast;
+		//playerStats.
 	}
 
 	void Update() {
-        GetInputs();
-		//Look(lookAxis);
+		horizontalAxis = inputHandler.MovementInput.x;
+		SetPlayerDirection();
 
+		if (inputHandler.JumpTriggered) HandleJumpPress();
+		if (inputHandler.JumpReleased) HandleJumpRelease();
+		if (inputHandler.DashTriggered) HandleDashPress();
+		if (inputHandler.AttackTriggered) HandleAttack();
+		if (inputHandler.QuickCastTriggered) HandleQuickCast();
+
+		// walk held
 		if (Mathf.Abs(horizontalAxis) > 0.01f) {
 			walkHeldDuration += Time.deltaTime;
 			anim.SetBool("isMoving", true);
@@ -138,46 +115,39 @@ public class Player : MonoBehaviour
 			isSprinting = true;
 			walkSpeed = originalWalkSpeed * sprintMultiplier;
 		}
+
+		inputHandler.ConsumeTriggers();
+
 	}
 
 	void FixedUpdate() {
-        Move();
-        // if player is falling, add gravity
-        if(rb.linearVelocity.y < -0.4f) {
-            rb.gravityScale = defaultGravity * fallingGravityMultiplier;
+		Move();
+		// if player is falling, add gravity
+		if (rb.linearVelocity.y < -0.4f) {
+			rb.gravityScale = defaultGravity * fallingGravityMultiplier;
 		} else {
-            rb.gravityScale = defaultGravity;
-        }
-    }
+			rb.gravityScale = defaultGravity;
+		}
+	}
 
 
 	private void Move() {
 		if (isDashing) return;
-        Vector2 movement = new Vector2(horizontalAxis * walkSpeed, rb.linearVelocity.y);
+		Vector2 movement = new Vector2(horizontalAxis * walkSpeed, rb.linearVelocity.y);
 
-        rb.linearVelocity = movement;
+		rb.linearVelocity = movement;
 
-        //if(Physics2D.OverlapCircle(groundCheck.position, groundCheckRadius, groundLayer)){
-        if(IsGrounded()) {
-				jumps = 0; // reset double jump
+		//if(Physics2D.OverlapCircle(groundCheck.position, groundCheckRadius, groundLayer)){
+		if (IsGrounded()) {
+			jumps = 0; // reset double jump
 			anim.SetBool("isGrounded", true);
 		} else {
 			anim.SetBool("isGrounded", false);
 		}
 	}
 
-    void GetInputs(){
-		//horizontalAxis = Input.GetAxis("Horizontal");
-		horizontalAxis = moveAction.action.ReadValue<Vector2>().x;
-		//verticalAxis = moveAction.action.ReadValue<Vector2>().y;
-
-		//lookAxis = lookAction.action.ReadValue<Vector2>();
-
-		SetPlayerDirection();
-	}
-
 	void SetPlayerDirection() {
-		if (horizontalAxis < 0)		 playerDirection = -1f;
+		if (horizontalAxis < 0) playerDirection = -1f;
 		else if (horizontalAxis > 0) playerDirection = 1f;
 
 		if (oldDirection != playerDirection) {
@@ -189,39 +159,7 @@ public class Player : MonoBehaviour
 
 		}
 	}
-	// Not working
-	//private void Look(Vector2 lookAxis_) {
-	//	// make sure the look button has been held for long enouph
-	//	if (lookAxis_.magnitude > 0f) {
-	//		currentLookTimer += Time.deltaTime;
-	//		if (currentLookTimer >= lookDelay && !cameraMoved) {
-	//			// only look in one direction at a time
-	//			// find the dominant direction
-	//			lookAxis_ = lookAxis_.normalized; // Normalize to unit vector
-	//			Vector2 camerOffsetDirection;
-	//			if (Mathf.Abs(lookAxis_.x) > Mathf.Abs(lookAxis_.y))
-	//				camerOffsetDirection = new Vector2(Mathf.Sign(lookAxis_.x), 0);
-	//			else
-	//				camerOffsetDirection = new Vector2(0, Mathf.Sign(lookAxis_.y));
-	//			// Offset camera in the right direction
-	//			camerOffsetDirection.x *= cameraLookOffset.x;
-	//			camerOffsetDirection.y *= cameraLookOffset.y;
-	//			oldCameraPos = Camera.allCameras[0].transform.position;
-	//			Camera.allCameras[0].transform.position += new Vector3(camerOffsetDirection.x, camerOffsetDirection.y, 0.0f);
-	//			cameraMoved = true;
-	//		}
-	//	} else {
-	//		currentLookTimer = 0f;
-	//		// reset camera
-	//		ResetCamera();
-	//	}
-	//}
-	//void ResetCamera() {
-	//	Camera.allCameras[0].transform.position = oldCameraPos;
-	//	cameraMoved = false;
-	//}
-
-	private void OnJumpPress(InputAction.CallbackContext context) {
+	private void HandleJumpPress() {
 		if (jumps < jumpCount - 1) { // -1 to account for the very next frame where it resets the double jump
 			anim.SetTrigger("Jump");
 			rb.gravityScale = defaultGravity;
@@ -236,14 +174,14 @@ public class Player : MonoBehaviour
 			jumps++;
 		}
 	}
-	private void OnJumpRelease(InputAction.CallbackContext context) {
+	private void HandleJumpRelease() {
 		if (rb.linearVelocity.y > 0) {
 			rb.linearVelocity = new Vector2(rb.linearVelocity.x, rb.linearVelocity.x * 0.1f);
 			rb.gravityScale = defaultGravity * fallingGravityMultiplier;
 		}
 	}
 
-	private void OnDashPress(InputAction.CallbackContext context) {
+	private void HandleDashPress() {
 		if (isDashing) return; // Prevent double dash
 		anim.SetTrigger("Dash");
 		StartCoroutine(DashRoutine());
@@ -282,7 +220,7 @@ public class Player : MonoBehaviour
 		isSprinting = false;
 		walkSpeed = originalWalkSpeed;
 	}
-	private void OnAttackMeele(InputAction.CallbackContext context) {
+	private void HandleAttack() {
 		if (Time.time < lastAttackTime + attackCooldown) return;
 		lastAttackTime = Time.time;
 		if (isAttacking) return; // prevent coroutine stacking
@@ -297,7 +235,7 @@ public class Player : MonoBehaviour
 		isAttacking = true;
 		attackPoint.SetActive(true);
 
-		Vector2 verticalInput = moveAction.action.ReadValue<Vector2>();
+		Vector2 verticalInput = inputHandler.MovementInput;
 		var localPos = attackPoint.transform.localPosition;
 		Quaternion localRot = Quaternion.identity;
 
@@ -309,7 +247,7 @@ public class Player : MonoBehaviour
 			localPos = new Vector2(0f, attackOffset.y);
 			localRot = Quaternion.Euler(0, 0, 90f);
 		} else if (!grounded && verticalInput.y < -0.5f) {// down attacks only allowed in the air
-			// DOWN attack
+														  // DOWN attack
 			currentAttackDir = AttackDirection.Down;
 			localPos = new Vector2(0f, -attackOffset.y);
 			localRot = Quaternion.Euler(0, 0, -90f);
@@ -330,25 +268,48 @@ public class Player : MonoBehaviour
 		default: anim.SetTrigger("Attack"); break;
 		}
 
-		yield return new WaitForSeconds(0.4f);
+		yield return new WaitForSeconds(meleeDuration);
 		attackPoint.SetActive(false);
 		isAttacking = false;
 	}
 
-	private void OnQuickCast(InputAction.CallbackContext context) {
-		// shoot projectile
-		if (projectilePrefab == null || projectileSpawnPoint == null) return;
+	private void HandleQuickCast() {
+		Vector2 moveInput = inputHandler.MovementInput;
+
+		if (moveInput.y > 0.5f) {
+			// if Up is held
+			CastHowlingWraiths();
+		} else {
+			CastVengefulSpirit();
+		}
+	}
+
+	private void CastVengefulSpirit() {
+		if (VengefulSpiritProjectilePrefab == null || projectileSpawnPoint == null) {
+			Debug.LogError("Vengeful Spirit: Projectile prefab or projectileSpawnPoint is not set");
+			return;
+		}
 
 		GameObject proj = Instantiate(
-			projectilePrefab,
+			VengefulSpiritProjectilePrefab,
 			projectileSpawnPoint.position,
 			Quaternion.identity
 		);
 
 		// Flip sprite to match travel direction
-		proj.GetComponent<SpriteRenderer>().flipX = playerDirection < 0f;
+		proj.GetComponent<SpriteRenderer>().flipX = playerDirection > 0f;
 
 		proj.GetComponent<Projectile>().Init(playerDirection);
 	}
-
+	private void CastHowlingWraiths(){
+		if (HowlingWraithsPrefab == null || HowlingWraithsSpawnPoint == null) {
+			Debug.LogError("Howling Wraiths: prefab or SpawnPoint is not set");
+			return;
+		}
+		GameObject proj = Instantiate(
+			HowlingWraithsPrefab,
+			HowlingWraithsSpawnPoint.position,
+			Quaternion.identity
+		);
+	}
 }

@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 8081291573784867573}
   - component: {fileID: 5657518480074682669}
   m_Layer: 0
-  m_Name: Projectile
+  m_Name: Vengeful Spirit Projectile
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -104,7 +104,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 15
   damage: 20
-  lifetime: 999
+  lifetime: 20
 --- !u!61 &8081291573784867573
 BoxCollider2D:
   m_ObjectHideFlags: 0
