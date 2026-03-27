@@ -3,6 +3,7 @@ using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 using TMPro;
 using UnityEngine.InputSystem;
+using System.Threading.Tasks;
 
 public class MenuScript : MonoBehaviour
 {
@@ -113,7 +114,7 @@ public class MenuScript : MonoBehaviour
 
     public void Back()
     {
-        audioManager.PlaySFX("Btn");
+        audioManager.PlaySFX("BindingBtn");
         menuScrn.SetActive(true);
         settingsScrn.SetActive(false);
         backBtn.gameObject.SetActive(false);
@@ -150,6 +151,7 @@ public class MenuScript : MonoBehaviour
 
     public void ResetBindings()
     {
+        audioManager.PlaySFX("Btn");
         actions.RemoveAllBindingOverrides();
         PlayerPrefs.DeleteKey("rebinds");
         ListBindingText();
@@ -242,16 +244,19 @@ public class MenuScript : MonoBehaviour
     }
 
     // Volume
-    public void UpdateSFX(){
+    public  void UpdateSFX(){
         audioManager.SFXVolume(sfxSlider.value);
-        audioManager.PlaySFX("Btn");
         sfxText.text = (sfxSlider.value * 100).ToString("F0") + "%";
+        if (!audioManager.sfxSource.isPlaying)
+            audioManager.PlaySFX("Btn");
     }
 
-    public void UpdateMusic(){
+    public  void UpdateMusic(){
         audioManager.MusicVolume(musicSlider.value);
-        audioManager.PlaySFX("Btn");
         musicText.text = (musicSlider.value * 100).ToString("F0") + "%";
+
+        if (!audioManager.sfxSource.isPlaying)
+            audioManager.PlaySFX("Btn");
     }
 
 }

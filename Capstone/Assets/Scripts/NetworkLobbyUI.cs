@@ -27,6 +27,7 @@ public class NetworkLobyyUI : MonoBehaviour
     [SerializeField] Button m_StartClientButton;
     [SerializeField] GameObject backButton;
     [SerializeField] Button menuBackButton;
+    [SerializeField] AudioManager audioManager;
 
 
     void Start()
@@ -41,6 +42,8 @@ public class NetworkLobyyUI : MonoBehaviour
         if(!m_StartClientButton) m_StartClientButton = GameObject.Find("StartClientButton").GetComponent<Button>();
         if(!backButton) backButton = GameObject.Find("BackButton");
         if(!menuBackButton) menuBackButton = GameObject.Find("MenuBackButton").GetComponent<Button>();
+
+        if(!audioManager) audioManager = GameObject.Find("AudioManager").GetComponent<AudioManager>();
 
         Back();
         menuBackButton.onClick.AddListener(() => Menu());
@@ -76,6 +79,7 @@ public class NetworkLobyyUI : MonoBehaviour
 
     public void Back()
     {
+        audioManager.PlaySFX("Btn");
         startScreen.SetActive(true);
         hostScreen.SetActive(false);
         joinScreen.SetActive(false);

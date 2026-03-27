@@ -6,10 +6,21 @@ using System;
 public class AudioManager : MonoBehaviour
 {
 
-    public static AudioManager Instance;
+    public static AudioManager instance;
 
     public Sound[] musicSounds, sfxSounds;
     public AudioSource musicSource, sfxSource;
+
+    void Awake() {
+        if (instance != null && instance != this)
+        {
+            Destroy(gameObject);
+            return;
+        }
+
+        instance = this;
+        DontDestroyOnLoad(gameObject);
+    }
 
     public void PlayMusic(string name){
         Sound s = Array.Find(musicSounds, x=> x.name == name);
