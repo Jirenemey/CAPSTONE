@@ -12,7 +12,7 @@ public class MovementComponent : MonoBehaviour
     }
     public virtual void Move(Vector2 direction)
     {
-        rb.linearVelocity = direction * moveSpeed;
+        rb.linearVelocity = new Vector2(direction.x * moveSpeed, rb.linearVelocity.y);
     }
 
     public virtual void Stop()

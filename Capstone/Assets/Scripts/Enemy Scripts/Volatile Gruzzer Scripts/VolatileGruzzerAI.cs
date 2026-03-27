@@ -1,4 +1,5 @@
 using UnityEngine;
+using System.Collections;
 
 public class VolatileGruzzerAI : MonoBehaviour, IDamageable
 {
@@ -8,21 +9,22 @@ public class VolatileGruzzerAI : MonoBehaviour, IDamageable
     SpriteRenderer spriteRenderer;
 
     [SerializeField] GameObject projectilePrefab;
+    [SerializeField] GameObject explosionPrefab;
 
-    public float health = 100;
-
-    public float moveSpeed = 3.0f;
-    public float projectileSpawnRate = 3;
-    public float explosionTimer = 10;
+    [SerializeField] private float health = 100;
+    [SerializeField] private float moveSpeed = 3.0f;
+    [SerializeField] private float projectileSpawnRate = 3f;
+    [SerializeField] private float explosionTimer = 5f;
+    [SerializeField] private float groundCheckRadius = 0.2f;
 
     private Vector2 direction;
     private float projectileTimer = 0;
 
-    public float groundCheckRadius = 1f;
     private Transform groundCheck;
     private LayerMask groundLayer;
 
     private bool isDead = false;
+    private bool explosionCountdownStarted = false;
 
     void Start()
     {
@@ -45,18 +47,19 @@ public class VolatileGruzzerAI : MonoBehaviour, IDamageable
 
     private void Update()
     {
-        //if (Input.GetKeyDown(KeyCode.O))
-        //{
-            if (IsGrounded())
-            {
-                Debug.Log("is touching the ground");
-            }
-            else
-            {
-                Debug.Log("is OFF the ground");
-            }
+        if (Input.GetKeyDown(KeyCode.P))
+        {
+            Die();
+        }
 
-        //}
+        if (!isDead) return;
+
+        if (!explosionCountdownStarted && IsGrounded())
+        {
+            anim.SetBool("isGrounded", true);
+            explosionCountdownStarted = true;
+            StartCoroutine(ExplosionCountdown());
+        }
     }
     private void FixedUpdate()
     {
@@ -65,27 +68,22 @@ public class VolatileGruzzerAI : MonoBehaviour, IDamageable
 
         if (projectileTimer >= projectileSpawnRate)
         {
-            if (projectilePrefab == null) return;
-
-            GameObject proj = Instantiate(
-            projectilePrefab,
-            transform.position,
-            Quaternion.identity
-            );
+            if (projectilePrefab != null)
+            {
+                GameObject proj = Instantiate(
+                projectilePrefab,
+                transform.position,
+                Quaternion.identity
+                );
+            }
 
             projectileTimer = 0;
         }
 
         projectileTimer += Time.deltaTime;
-
-        if (Input.GetKeyDown(KeyCode.P))
-        {
-            Die();
-        }
-
     }
 
-    void OnCollisionEnter2D(Collision2D collision)
+    private void OnCollisionEnter2D(Collision2D collision)
     {
         direction = Vector2.Reflect(direction, collision.GetContact(0).normal);
 
@@ -99,12 +97,12 @@ public class VolatileGruzzerAI : MonoBehaviour, IDamageable
         }
 
         rb.linearVelocity = direction * moveSpeed;
-
-        //if (collision.gameObject.layer == LayerMask.NameToLayer("Ground")) { }
     }
 
     private bool IsGrounded()
     {
+        if (groundCheck == null) return false;
+
         return Physics2D.OverlapCircle(groundCheck.position, groundCheckRadius, groundLayer);
     }
 
@@ -120,13 +118,41 @@ public class VolatileGruzzerAI : MonoBehaviour, IDamageable
 
     private void Die()
     {
+        if (isDead) return;
+
         isDead = true;
 
         rb.linearVelocity = Vector2.zero;
         rb.gravityScale = 1;
 
+        anim.SetTrigger("Died");
 
-        Destroy(gameObject, 10);
+        //Destroy(gameObject, 10);
     }
 
+    private IEnumerator ExplosionCountdown()
+    {
+        yield return new WaitForSeconds(explosionTimer);
+
+        Explode();
+    }
+
+    private void Explode()
+    {
+        if (explosionPrefab != null)
+        {
+            Instantiate(explosionPrefab, transform.position, Quaternion.identity);
+        }
+
+        Destroy(gameObject);
+    }
+
+    private void OnDrawGizmosSelected()
+    {
+        Transform gc = transform.Find("GroundCheck");
+        if (gc == null) return;
+
+        Gizmos.color = Color.yellow;
+        Gizmos.DrawWireSphere(gc.position, groundCheckRadius);
+    }
 }

@@ -1,6 +1,7 @@
 using Unity.VisualScripting;
 using UnityEditorInternal;
 using UnityEngine;
+using static UnityEngine.PlayerLoop.PreUpdate;
 
 public class EnemyAI : EnemyBase
 {
@@ -12,28 +13,26 @@ public class EnemyAI : EnemyBase
 
     private float lastAttackTime;
 
-    //states
-    public IdleState IdleState { get; private set; }
-    public ChaseState ChaseState { get; private set; }
+    public static readonly int DiedHash = Animator.StringToHash("Died");
+    public static readonly int IsChasingHash = Animator.StringToHash("isChasing");
 
     protected override void Awake()
     {
         base.Awake();
-
-        IdleState = new IdleState(this, fsm);
-        ChaseState = new ChaseState(this, fsm);
-        DefaultState = IdleState;
-
-        fsm.ChangeState(IdleState);
-    }
-    void Start()
-    {
-
     }
 
     protected override void Update()
     {
         base.Update();
+    }
+
+    protected override void RegisterStates()
+    {
+        AddState(new IdleState(this, fsm));
+        AddState(new ChaseState(this, fsm));
+        AddState(new AttackState(this, fsm));
+        
+        fsm.ChangeState(GetState<IdleState>());
     }
 
     public bool CanAttackPlayer()

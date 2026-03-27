@@ -1,12 +1,14 @@
 using UnityEngine;
 public class IdleState : EnemyState
 {
-    public IdleState(EnemyAI enemy, EnemyStateMachine sm) : base(enemy, sm) {}
+    public IdleState(EnemyBase enemy, EnemyStateMachine sm) : base(enemy, sm) {}
 
     public override void Enter()
     {
-        base.Enter();
+        base.Enter();   
         Debug.Log("ENTERED IDLE STATE");
+
+        enemy.movement.Stop();
     }
 
     public override void Update()
@@ -15,12 +17,7 @@ public class IdleState : EnemyState
 
         if (enemy.detection.PlayerEnteredSight())
         {
-            sm.ChangeState(enemy.ChaseState);
+            ChangeState<ChaseState>();
         }
-    }
-
-    public override void Exit()
-    {
-        Debug.Log("EXITED IDLE STATE");
     }
 }

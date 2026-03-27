@@ -3,9 +3,9 @@ using UnityEngine;
 public class DetectionComponent : MonoBehaviour
 {
     public Transform player;
-    public float sightRadius = 10;
-    public float exitSightRadius = 10;
-    public float attackRadius = 2;
+    public float sightRadius = 5f;
+    public float exitSightRadius = 6.5f;
+    public float attackRadius = 2f;
 
     private void Awake()
     {
@@ -14,6 +14,11 @@ public class DetectionComponent : MonoBehaviour
             player = playerObj.transform;
         else
             Debug.LogWarning("Player not found! Make sure Player has the Player tag.");
+    }
+
+    public void SetPlayer(Transform player)
+    {
+        this.player = player;
     }
 
     public bool PlayerEnteredSight()
@@ -34,5 +39,12 @@ public class DetectionComponent : MonoBehaviour
     public Vector2 DirectionToPlayer()
     {
         return (player.position - transform.position).normalized;
+    }
+
+    public float PlayerLeftOrRight()
+    {
+        if (DirectionToPlayer().x >= 0)
+            return 1f;
+        else return -1f;
     }
 }

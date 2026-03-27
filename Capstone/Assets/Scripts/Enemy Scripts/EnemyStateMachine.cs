@@ -4,6 +4,8 @@ public class EnemyStateMachine
 
     public void ChangeState(EnemyState newState)
     {
+        if (newState == null) return;
+
         CurrentState?.Exit();
         CurrentState = newState;
         CurrentState.Enter();
@@ -12,5 +14,10 @@ public class EnemyStateMachine
     public void UpdateState()
     {
         CurrentState?.Update();
+    }
+
+    public void FixedUpdateState()
+    {
+        CurrentState?.FixedUpdate();
     }
 }

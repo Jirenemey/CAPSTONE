@@ -15,7 +15,7 @@ public class VGruzzerProjectile : MonoBehaviour
         // Hit wall — destroy projectile
         if (other.gameObject.layer == LayerMask.NameToLayer("Ground"))
         {
-            Destroy(gameObject, 1);
+            Destroy(gameObject);
             return;
         }
 

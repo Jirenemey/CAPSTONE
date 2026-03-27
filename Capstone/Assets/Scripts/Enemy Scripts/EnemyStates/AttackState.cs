@@ -2,7 +2,7 @@ using UnityEngine;
 
 public class AttackState : EnemyState
 {
-    public AttackState(EnemyAI enemy, EnemyStateMachine sm) : base(enemy, sm){}
+    public AttackState(EnemyBase enemy, EnemyStateMachine sm) : base(enemy, sm){}
 
     public override void Enter()
     {
@@ -14,13 +14,14 @@ public class AttackState : EnemyState
     {
         base.Update();
 
-        if (enemy.detection.InAttackRange() && enemy.CanAttackPlayer())
+        if (enemy.detection.InAttackRange())
         {
             Debug.Log("Attacked");
         }
         else
         {
-            sm.ChangeState(enemy.IdleState);
+            //sm.ChangeState(enemy.IdleState);
+            ChangeState<IdleState>();
         }
     }
 

@@ -1,31 +1,40 @@
 using UnityEngine;
 public class ChaseState : EnemyState
 {
-    public ChaseState(EnemyAI enemy, EnemyStateMachine sm) : base(enemy, sm){}
+    private EnemyAI vengefly;
+    public ChaseState(EnemyBase enemy, EnemyStateMachine sm) : base(enemy, sm)
+    {
+        vengefly = enemy as EnemyAI;
+    }
 
     public override void Enter()
     {
         base.Enter();
         Debug.Log("ENTERED CHASE STATE");
+
+        enemy.Anim.SetBool(EnemyAI.IsChasingHash, true);
     }
 
     public override void Update()
     {
         base.Update();
 
-        //enemy.MoveTowardsPlayer();
-        //enemy.Move();
+        enemy.FacePlayer();
+
         Vector2 dir = enemy.detection.DirectionToPlayer();
         enemy.movement.Move(dir);
 
         if (enemy.detection.PlayerExitedSight())
         {
-            sm.ChangeState(enemy.DefaultState);
+            //sm.ChangeState(enemy.DefaultState);
+            ChangeState<IdleState>();
         }
     }
 
     public override void Exit()
     {
-        Debug.Log("EXITED CHASE STATE");
+        base.Exit();
+
+        enemy.Anim.SetBool(EnemyAI.IsChasingHash, false);
     }
 }
