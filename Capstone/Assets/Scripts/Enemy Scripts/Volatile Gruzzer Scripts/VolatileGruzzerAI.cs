@@ -1,0 +1,158 @@
+using UnityEngine;
+using System.Collections;
+
+public class VolatileGruzzerAI : MonoBehaviour, IDamageable
+{
+    Rigidbody2D rb;
+    Collider2D col;
+    Animator anim;
+    SpriteRenderer spriteRenderer;
+
+    [SerializeField] GameObject projectilePrefab;
+    [SerializeField] GameObject explosionPrefab;
+
+    [SerializeField] private float health = 100;
+    [SerializeField] private float moveSpeed = 3.0f;
+    [SerializeField] private float projectileSpawnRate = 3f;
+    [SerializeField] private float explosionTimer = 5f;
+    [SerializeField] private float groundCheckRadius = 0.2f;
+
+    private Vector2 direction;
+    private float projectileTimer = 0;
+
+    private Transform groundCheck;
+    private LayerMask groundLayer;
+
+    private bool isDead = false;
+    private bool explosionCountdownStarted = false;
+
+    void Start()
+    {
+        if (!rb) rb = GetComponent<Rigidbody2D>();
+        if (!col) col = GetComponent<Collider2D>();
+        if (!anim) anim = GetComponent<Animator>();
+        if (!spriteRenderer) spriteRenderer = GetComponent<SpriteRenderer>();
+
+        float x = Random.value > 0.5f ? 1 : -1;
+        float y = Random.value > 0.5f ? 1 : -1;
+        if (x > 0) spriteRenderer.flipX = true;
+        // start at perfect 45 degrees
+        direction = new Vector2(x, y).normalized;
+
+        rb.linearVelocity = direction * moveSpeed;
+
+        if (!groundCheck) groundCheck = transform.Find("GroundCheck");
+        groundLayer = LayerMask.GetMask("Ground");
+    }
+
+    private void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.P))
+        {
+            Die();
+        }
+
+        if (!isDead) return;
+
+        if (!explosionCountdownStarted && IsGrounded())
+        {
+            anim.SetBool("isGrounded", true);
+            explosionCountdownStarted = true;
+            StartCoroutine(ExplosionCountdown());
+        }
+    }
+    private void FixedUpdate()
+    {
+        //stop anything after this line if dead
+        if (isDead) return;
+
+        if (projectileTimer >= projectileSpawnRate)
+        {
+            if (projectilePrefab != null)
+            {
+                GameObject proj = Instantiate(
+                projectilePrefab,
+                transform.position,
+                Quaternion.identity
+                );
+            }
+
+            projectileTimer = 0;
+        }
+
+        projectileTimer += Time.deltaTime;
+    }
+
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        direction = Vector2.Reflect(direction, collision.GetContact(0).normal);
+
+        if (direction.x < 0)
+        {
+            spriteRenderer.flipX = false;
+        }
+        else
+        {
+            spriteRenderer.flipX = true;
+        }
+
+        rb.linearVelocity = direction * moveSpeed;
+    }
+
+    private bool IsGrounded()
+    {
+        if (groundCheck == null) return false;
+
+        return Physics2D.OverlapCircle(groundCheck.position, groundCheckRadius, groundLayer);
+    }
+
+    public void TakeDamage(float amount)
+    {
+        if (isDead) return;
+
+        health -= amount;
+        Debug.Log($"{gameObject.name} took {amount} damage. HP: {health}");
+
+        if (health <= 0) Die();
+    }
+
+    private void Die()
+    {
+        if (isDead) return;
+
+        isDead = true;
+
+        rb.linearVelocity = Vector2.zero;
+        rb.gravityScale = 1;
+
+        anim.SetTrigger("Died");
+
+        //Destroy(gameObject, 10);
+    }
+
+    private IEnumerator ExplosionCountdown()
+    {
+        yield return new WaitForSeconds(explosionTimer);
+
+        Explode();
+    }
+
+    private void Explode()
+    {
+        if (explosionPrefab != null)
+        {
+            Instantiate(explosionPrefab, transform.position, Quaternion.identity);
+        }
+
+        Destroy(gameObject);
+    }
+
+    private void OnDrawGizmosSelected()
+    {
+        Transform gc = transform.Find("GroundCheck");
+        if (gc == null) return;
+
+        Gizmos.color = Color.yellow;
+        Gizmos.DrawWireSphere(gc.position, groundCheckRadius);
+    }
+}

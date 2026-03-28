@@ -1,0 +1,191 @@
+using System;
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+
+[RequireComponent(typeof(Rigidbody2D))]
+[RequireComponent(typeof(Collider2D))]
+[RequireComponent(typeof(Animator))]
+[RequireComponent(typeof(SpriteRenderer))]
+
+public abstract class EnemyBase : MonoBehaviour, IDamageable
+{
+    [Header("Stats")]
+    public float maxHealth = 100f;
+
+    protected float currentHealth;
+    protected bool isDead = false;
+
+    [Header("Damage")]
+    [SerializeField] private float knockbackForce = 5f;
+    public float collisionDMG = 1f;
+
+    private float knockbackTime = 0.2f;
+    private bool isKnockedBack = false;
+
+    [SerializeField] private Color hitColor = Color.white;
+    [SerializeField] private float flashDuration = 0.1f;
+
+    private Color originalColor;
+
+    protected Rigidbody2D rb;
+    protected Collider2D col;
+    protected Animator anim;
+    protected SpriteRenderer spriteRenderer;
+
+    public Rigidbody2D RB => rb;
+    public Collider2D Col => col;
+    public Animator Anim => anim;
+    public SpriteRenderer SpriteRenderer => spriteRenderer;
+
+    public static readonly int DiedHash = Animator.StringToHash("Died");
+
+    public DetectionComponent detection {  get; private set; }
+    public MovementComponent movement {  get; private set; }
+
+    //protected EnemyStateMachine fsm;
+    public EnemyStateMachine fsm { get; private set; }
+    private Dictionary<Type, EnemyState> states = new();
+
+    protected virtual void Awake()
+    {
+        if (!rb) rb = GetComponent<Rigidbody2D>();
+        if (!col) col = GetComponent<Collider2D>();
+        if (!anim) anim = GetComponent<Animator>();
+        if (!spriteRenderer) spriteRenderer = GetComponent<SpriteRenderer>();
+
+        if (!detection) detection = GetComponent<DetectionComponent>();
+        if (!movement) movement = GetComponent<MovementComponent>();
+
+        currentHealth = maxHealth;
+
+        fsm = new EnemyStateMachine();
+        RegisterStates();
+    }
+
+    protected virtual void Start()
+    {
+        originalColor = spriteRenderer.color;
+    }
+
+    protected virtual void Update()
+    {
+        if (isDead) return;
+        if (isKnockedBack) return;
+        fsm.UpdateState();
+
+        if (Input.GetKeyDown(KeyCode.P))
+        {
+            TakeDamage(25);
+        }
+    }
+
+    protected virtual void FixedUpdate()
+    {
+        if (isDead) return;
+        if (isKnockedBack) return;
+
+        fsm.FixedUpdateState();
+    }
+
+    // Each enemy defines its own states
+    protected abstract void RegisterStates();
+
+    // Register a state
+    protected void AddState(EnemyState state)
+    {
+        states[state.GetType()] = state;
+    }
+
+    // Get a state safely
+    public T GetState<T>() where T : EnemyState
+    {
+        if (states.TryGetValue(typeof(T), out var state))
+            return (T)state;
+
+        return null;
+    }
+
+    public virtual void FaceDirection(float xDirection)
+    {
+        const float flipDeadZone = 0.5f;
+
+        if (Mathf.Abs(xDirection) < flipDeadZone) return;
+
+        spriteRenderer.flipX = xDirection > 0f;
+    }
+
+    public virtual void FacePlayer()
+    {
+        if (detection == null || detection.player == null) return;
+
+        FaceDirection(detection.DirectionToPlayer().x);
+    }
+
+    public virtual void TakeDamage(float damage)
+    {
+        if (isDead) return;
+
+        currentHealth -= damage;
+
+        ApplyKnockback();
+        //HitFlash();
+
+        if (currentHealth <= 0)
+        {
+            Die();
+        }
+    }
+
+    private void ApplyKnockback()
+    {
+        if (detection.player == null) return;
+
+        Vector2 dir = (transform.position - detection.player.position).normalized;
+
+        Vector2 knockbackDir;
+
+        if (Mathf.Abs(dir.x) > Mathf.Abs(dir.y))
+        {
+            knockbackDir = dir.x > 0 ? Vector2.right : Vector2.left;
+        }
+        else
+        {
+            knockbackDir = dir.y > 0 ? Vector2.up : Vector2.down;
+        }
+
+        StartCoroutine(KnockbackRoutine(knockbackDir));
+    }
+
+    private IEnumerator KnockbackRoutine(Vector2 dir)
+    {
+        isKnockedBack = true;
+
+        rb.linearVelocity = Vector2.zero;
+        rb.AddForce(dir * knockbackForce, ForceMode2D.Impulse);
+
+        yield return new WaitForSeconds(knockbackTime);
+
+        isKnockedBack = false;
+        rb.linearVelocity = Vector2.zero;
+    }
+
+    private IEnumerator HitFlash()
+    {
+        spriteRenderer.color = hitColor;
+
+        yield return new WaitForSeconds(flashDuration);
+
+        spriteRenderer.color = originalColor;
+    }
+
+    protected virtual void Die()
+    {
+        isDead = true;
+        anim.SetTrigger(EnemyBase.DiedHash);
+        rb.gravityScale = 1.0f;
+        Vector2 currentVel = rb.linearVelocity;
+        rb.linearVelocity = new Vector2(currentVel.x, 5f);
+        Destroy(gameObject, 2);
+    }
+}
