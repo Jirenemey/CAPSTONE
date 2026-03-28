@@ -32,8 +32,9 @@ public class ArenaManager : MonoBehaviour
             // close door
             door.GetComponent<Animator>().SetTrigger("CloseNow");
             door.GetComponent<BoxCollider2D>().enabled = true;
-            audioManager.SFXVolume(100f);
 			audioManager.PlaySFX("GateClose");
+
+			doorTrigger.GetComponent<BoxCollider2D>().enabled = false;
 		}
 
 	}
