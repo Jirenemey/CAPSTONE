@@ -11,11 +11,7 @@ using Unity.Netcode.Transports.UTP;
 using Unity.Services.Relay;
 using Unity.Services.Relay.Models;
 
-#if NEW_INPUT_SYSTEM_INSTALLED
-using UnityEngine.InputSystem.UI;
-#endif
-
-public class NetworkLobyyUI : MonoBehaviour
+public class NetworkLobyyUI : NetworkBehaviour
 {
 
     [SerializeField] GameObject startScreen;
@@ -23,20 +19,29 @@ public class NetworkLobyyUI : MonoBehaviour
     [SerializeField] GameObject joinScreen;
     [SerializeField] TMP_InputField inputField;
     [SerializeField] TMP_Text codeText;
+    [SerializeField] GameObject invalidCodeText;
     [SerializeField] Button m_StartHostButton;
     [SerializeField] Button m_StartClientButton;
     [SerializeField] GameObject backButton;
     [SerializeField] Button menuBackButton;
     [SerializeField] AudioManager audioManager;
+    [SerializeField] GameObject readySystem;
+    [SerializeField] Button readyUp;
+    [SerializeField] Button unReady;
+    [SerializeField] TMP_Text readyText;
+    public NetworkVariable<int> readyCount = new NetworkVariable<int>(0, NetworkVariableReadPermission.Everyone, NetworkVariableWritePermission.Server);
+    public int playerCount = 2;
+    private bool localReady = false;
 
 
-    void Start()
-    {
+    void Start() {
+
         if(!startScreen) startScreen = GameObject.Find("Start Screen");
         if(!hostScreen) hostScreen = GameObject.Find("Host Lobby Screen");
         if(!joinScreen) joinScreen = GameObject.Find("Join Lobby Screen");
         if(!inputField) inputField = GameObject.Find("Input Lobby Code").GetComponent<TMP_InputField>();
         if(!codeText) codeText = GameObject.Find("Lobby Code").GetComponent<TMP_Text>();
+        if(!invalidCodeText) invalidCodeText = GameObject.Find("InvalidCode");
 
         if(!m_StartHostButton) m_StartHostButton = GameObject.Find("StartHostButton").GetComponent<Button>();
         if(!m_StartClientButton) m_StartClientButton = GameObject.Find("StartClientButton").GetComponent<Button>();
@@ -45,67 +50,122 @@ public class NetworkLobyyUI : MonoBehaviour
 
         if(!audioManager) audioManager = GameObject.Find("AudioManager").GetComponent<AudioManager>();
 
+        if(!readySystem) readySystem = GameObject.Find("ReadySystem");
+        if(!readyUp) readyUp = GameObject.Find("ReadyBtn").GetComponent<Button>();
+        if(!unReady) unReady = GameObject.Find("UnReadyBtn").GetComponent<Button>();
+        if(!readyText) readyText = GameObject.Find("ReadyText").GetComponent<TMP_Text>();
+
         Back();
         menuBackButton.onClick.AddListener(() => Menu());
 
-        m_StartHostButton.onClick.AddListener(async () => await StartHostWithRelay(1, "UDP"));
+        m_StartHostButton.onClick.AddListener(async () => await StartHostWithRelay(playerCount - 1, "UDP"));
         m_StartClientButton.onClick.AddListener(async () => await StartClientWithRelay(inputField.text, "UDP"));
+
+        backButton.GetComponent<Button>().onClick.AddListener(() => Back());
+
     }
 
-    void Update()
-    {
+    void Update() {
         Debug.Log(inputField.text);
     }
 
-    public void HostScreen()
-    {
+    public void HostScreen() {
         hostScreen.SetActive(true);
         startScreen.SetActive(false);
         backButton.SetActive(true);
     }
 
-    public void JoinScreen()
-    {
+    public void JoinScreen() {
         joinScreen.SetActive(true);
         startScreen.SetActive(false);
         backButton.SetActive(true);
+        invalidCodeText.SetActive(false);
     }
 
-    public void JoinComplete()
-    {
+    public void JoinComplete() {
         joinScreen.SetActive(false);
         backButton.SetActive(true);
+        invalidCodeText.SetActive(false);
     }
 
-    public void Back()
-    {
+    public void JoinFailed() {
+        Debug.Log("Failed to connect to server!");
+        invalidCodeText.SetActive(true);
+    }
+
+    public void Back() {
         audioManager.PlaySFX("Btn");
         startScreen.SetActive(true);
         hostScreen.SetActive(false);
         joinScreen.SetActive(false);
         backButton.SetActive(false);
+        invalidCodeText.SetActive(false);
+        unReady.gameObject.SetActive(false);
+        readySystem.SetActive(false);
         LeaveLobby();
     }
 
-    public void Menu()
-    {
+    public void Menu() {
         SceneManager.LoadScene("MainMenu");
     }
 
-    public async Task<string> StartHostWithRelay(int maxConnections, string connectionType) {
-        HostScreen();
+    public override void OnNetworkSpawn() {
 
-        await UnityServices.InitializeAsync();
-        if (!AuthenticationService.Instance.IsSignedIn)
+        base.OnNetworkSpawn();
+        readyUp.interactable = true;
+        unReady.interactable = true;
+        readyUp.onClick.AddListener(() => ReadyUp());
+        unReady.onClick.AddListener(() => UnReady());
+        readyCount.OnValueChanged += (prev, curr) =>
         {
-            await AuthenticationService.Instance.SignInAnonymouslyAsync();
+            readyText.text = curr + "/2";
+        };
+    }
+
+    public void ReadyUp() {
+        readyUp.gameObject.SetActive(false);
+        unReady.gameObject.SetActive(true);
+        if (localReady) return;
+        localReady = true;
+
+        if (NetworkManager.Singleton.IsClient)
+            UpdateReadyStatusServerRpc(1);
+        else if (NetworkManager.Singleton.IsHost)
+            readyCount.Value += 1;
+        
+        StartGame();   
+    }
+
+    public void UnReady() {
+        unReady.gameObject.SetActive(false);
+        readyUp.gameObject.SetActive(true);
+        if (!localReady) return;
+        localReady = false;
+
+        if (NetworkManager.Singleton.IsClient)
+            UpdateReadyStatusServerRpc(-1);
+        else if (NetworkManager.Singleton.IsHost)
+            readyCount.Value += -1;
+    }
+
+    [ServerRpc(RequireOwnership = false)]
+    public void UpdateReadyStatusServerRpc(int value)
+    {
+        readyCount.Value += value; 
+    }
+
+    public void StartGame() {
+        if (!NetworkManager.Singleton.IsServer)
+        {
+            Debug.LogWarning("Only the host can start the game!");
+            return;
         }
-        var allocation = await RelayService.Instance.CreateAllocationAsync(maxConnections);
-        NetworkManager.Singleton.GetComponent<UnityTransport>().SetRelayServerData(AllocationUtils.ToRelayServerData(allocation, connectionType));
-        var joinCode = await RelayService.Instance.GetJoinCodeAsync(allocation.AllocationId);
-        Debug.Log(joinCode);
-        codeText.text = "Code: " + joinCode;
-        return NetworkManager.Singleton.StartHost() ? joinCode : null;
+        if(readyCount.Value == playerCount){
+            NetworkManager.Singleton.SceneManager.LoadScene(
+                "SampleScene",
+                LoadSceneMode.Single
+            );
+        }
     }
 
     public void LeaveLobby() {
@@ -116,17 +176,95 @@ public class NetworkLobyyUI : MonoBehaviour
         }
     }
 
-    public async Task<bool> StartClientWithRelay(string joinCode, string connectionType) {
-        Debug.Log("Attempting to join server.");
-        Debug.Log("Attempted code: " + inputField.text);
+
+    public async Task<bool> StartHostWithRelay(int maxConnections, string connectionType) {
+        try {
         await UnityServices.InitializeAsync();
         if (!AuthenticationService.Instance.IsSignedIn)
         {
             await AuthenticationService.Instance.SignInAnonymouslyAsync();
         }
-        JoinComplete();
+
+        var allocation = await RelayService.Instance.CreateAllocationAsync(maxConnections);
+        NetworkManager.Singleton.GetComponent<UnityTransport>().SetRelayServerData(AllocationUtils.ToRelayServerData(allocation, connectionType));
+        var joinCode = await RelayService.Instance.GetJoinCodeAsync(allocation.AllocationId);
+        
+        Debug.Log(joinCode);
+        codeText.text = "Code: " + joinCode;
+
+        bool started = NetworkManager.Singleton.StartHost();
+
+        if (started) {
+            Debug.Log("Host started successfully!");
+            OnHostCreated();
+        }
+        else {
+            Debug.LogError("Host failed to start.");
+        }
+
+        return started;
+        }
+        catch (RelayServiceException ex) {
+            Debug.LogError("Failed to create relay. " + ex.Message);
+            return false;
+        }
+        catch (AuthenticationException ex) {
+            Debug.LogError("Authentication failed: " + ex.Message);
+            return false;
+        }
+        catch (System.Exception ex) {
+            Debug.LogError("Unexpected error creating server: " + ex.Message);
+            return false;
+        }
+    }
+
+    private void OnHostCreated() {
+        Debug.Log("Successfully created server!");
+        HostScreen();
+        readySystem.SetActive(true);
+        OnNetworkSpawn();
+    }
+
+    public async Task<bool> StartClientWithRelay(string joinCode, string connectionType) {
+        try {
+        if (string.IsNullOrEmpty(joinCode)) {
+            Debug.LogError("Join code is empty!");
+            return false;
+        }
+
+        Debug.Log("Attempting to join server.");
+        Debug.Log("Attempted code: " + inputField.text);
+
+        await UnityServices.InitializeAsync();
+        if (!AuthenticationService.Instance.IsSignedIn)
+        {
+            await AuthenticationService.Instance.SignInAnonymouslyAsync();
+        }
+
         var allocation = await RelayService.Instance.JoinAllocationAsync(joinCode: joinCode);
         NetworkManager.Singleton.GetComponent<UnityTransport>().SetRelayServerData(AllocationUtils.ToRelayServerData(allocation, connectionType));
-        return !string.IsNullOrEmpty(joinCode) && NetworkManager.Singleton.StartClient();
+        NetworkManager.Singleton.OnClientConnectedCallback += OnClientConnected;
+
+        return NetworkManager.Singleton.StartClient();
+        }
+        catch (RelayServiceException ex) {
+            Debug.LogError("Failed to join relay. The join code may be incorrect: " + ex.Message);
+            JoinFailed();
+            return false;
+        }
+        catch (AuthenticationException ex) {
+            Debug.LogError("Authentication failed: " + ex.Message);
+            return false;
+        }
+        catch (System.Exception ex) {
+            Debug.LogError("Unexpected error joining server: " + ex.Message);
+            return false;
+        }
+    }
+
+    private void OnClientConnected(ulong clientId) {
+        Debug.Log("Successfully connected to server! Client ID: " + clientId);
+        JoinComplete();
+        readySystem.SetActive(true);
     }
 }
