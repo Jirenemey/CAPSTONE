@@ -18,10 +18,15 @@ public abstract class EnemyBase : MonoBehaviour, IDamageable
 
     [Header("Damage")]
     [SerializeField] private float knockbackForce = 5f;
-    public float collisionDMG = 1f;
+    [SerializeField] private float collisionDMG = 1f;
 
     private float knockbackTime = 0.2f;
     private bool isKnockedBack = false;
+
+    [Header("Others")]
+    [SerializeField] private int spriteFacing = -1;
+    // 1 = sprite faces RIGHT by default
+    // -1 = sprite faces LEFT by default
 
     [SerializeField] private Color hitColor = Color.white;
     [SerializeField] private float flashDuration = 0.1f;
@@ -37,6 +42,8 @@ public abstract class EnemyBase : MonoBehaviour, IDamageable
     public Collider2D Col => col;
     public Animator Anim => anim;
     public SpriteRenderer SpriteRenderer => spriteRenderer;
+
+    public int FacingDirection { get; private set; } = 1;
 
     public static readonly int DiedHash = Animator.StringToHash("Died");
 
@@ -112,7 +119,14 @@ public abstract class EnemyBase : MonoBehaviour, IDamageable
 
         if (Mathf.Abs(xDirection) < flipDeadZone) return;
 
-        spriteRenderer.flipX = xDirection > 0f;
+        //spriteRenderer.flipX = xDirection > 0f;
+
+        int newDir = xDirection > 0 ? 1 : -1;
+
+        if (newDir != FacingDirection)
+        {
+            Flip();
+        }
     }
 
     public virtual void FacePlayer()
@@ -122,14 +136,21 @@ public abstract class EnemyBase : MonoBehaviour, IDamageable
         FaceDirection(detection.DirectionToPlayer().x);
     }
 
+    public virtual void Flip()
+    {
+        FacingDirection *= -1;
+
+        spriteRenderer.flipX = (FacingDirection * spriteFacing) == -1;
+    }
+
     public virtual void TakeDamage(float damage)
     {
         if (isDead) return;
 
         currentHealth -= damage;
 
+        StartCoroutine(HitFlash());
         ApplyKnockback();
-        //HitFlash();
 
         if (currentHealth <= 0)
         {
@@ -172,10 +193,9 @@ public abstract class EnemyBase : MonoBehaviour, IDamageable
 
     private IEnumerator HitFlash()
     {
+        Color originalColor = Color.white;
         spriteRenderer.color = hitColor;
-
         yield return new WaitForSeconds(flashDuration);
-
         spriteRenderer.color = originalColor;
     }
 

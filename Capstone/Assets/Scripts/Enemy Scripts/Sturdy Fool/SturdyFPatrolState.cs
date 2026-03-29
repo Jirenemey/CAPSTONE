@@ -3,6 +3,9 @@ using UnityEngine;
 public class SturdyFPatrolState : EnemyState
 {
     private SturdyFoolAI sturdyFool;
+    private float lastFlipTime;
+    private float flipCooldown = 0.2f;
+    private float playerY;
 
     public SturdyFPatrolState(EnemyBase enemy, EnemyStateMachine sm) : base(enemy, sm)
     {
@@ -13,15 +16,69 @@ public class SturdyFPatrolState : EnemyState
     {
         base.Enter();
         Debug.Log("ENTERED SF PATROL STATE");
+        enemy.Anim.SetBool(SturdyFoolAI.IsMovingHash, true);
     }
 
     public override void Update()
     {
         base.Update();
 
-        //if (enemy.detection.PlayerEnteredSight())
-        //{
-        //    ChangeState<SBWindUpState>();
-        //}
+        bool noGroundAhead = !sturdyFool.IsGroundAhead();
+        bool hitWall = sturdyFool.IsWallAhead();
+
+        if (!sturdyFool.IsGrounded())
+        {
+            ChangeState<SturdyFIdleState>();
+        }
+
+        // Edge / wall check
+        if ((noGroundAhead || hitWall) && Time.time > lastFlipTime + flipCooldown)
+        {
+            enemy.Flip();
+            lastFlipTime = Time.time;
+        }
+
+        playerY = enemy.detection.PlayerRelativeHeight();
+        // Player detection
+        if (enemy.detection.PlayerEnteredSight() && Time.time >= sturdyFool.LastAttackTime + sturdyFool.AttackCooldown)
+        {
+            float distance = enemy.detection.DistanceToPlayer();
+            float rand = Random.value;
+
+            if (distance <= sturdyFool.MeleeRange && (Mathf.Abs(playerY) <= sturdyFool.MeleeHeight))
+            {
+                if (rand < 0.7f)
+                    ChangeState<SturdyFSlashState>();
+                else
+                    ChangeState<SturdyFSlashState>();
+            }
+            else if (distance <= sturdyFool.RangedRange)
+            {
+                if (rand < 0.8f)
+                    ChangeState<SturdyFThrowState>();
+                else
+                    ChangeState<SturdyFEvadeState>();
+            }
+        }
+
+        // Small random idle
+        if (Random.value < 0.001f)
+        {
+            ChangeState<SturdyFIdleState>();
+        }
+    }
+
+    public override void FixedUpdate()
+    {
+        base.FixedUpdate();
+
+        enemy.movement.Move(Vector2.right * enemy.FacingDirection);
+    }
+
+    public override void Exit()
+    {
+        base.Exit();
+
+        enemy.Anim.SetBool(SturdyFoolAI.IsMovingHash, false);
     }
 }

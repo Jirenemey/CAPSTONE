@@ -45,4 +45,11 @@ public class EnemyAI : EnemyBase
         lastAttackTime += Time.deltaTime;
         return false;
     }
+
+    protected override void Die()
+    {
+        base.Die();
+
+
+    }
 }

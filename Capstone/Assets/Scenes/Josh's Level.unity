@@ -171,6 +171,7 @@ GameObject:
   - component: {fileID: 165888513}
   - component: {fileID: 165888512}
   - component: {fileID: 165888511}
+  - component: {fileID: 165888514}
   m_Layer: 10
   m_Name: Sturdy Fool
   m_TagString: Untagged
@@ -327,11 +328,13 @@ Transform:
   m_GameObject: {fileID: 165888504}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -5.79, y: 3.44, z: 0.0748324}
+  m_LocalPosition: {x: -0.48, y: 3.12, z: 0.0748324}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 171354013}
+  - {fileID: 1888842032}
+  - {fileID: 1551066062}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &165888511
@@ -346,7 +349,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 76e0f886fde15ce40b494a68e4048369, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveSpeed: 3
+  moveSpeed: 2
 --- !u!114 &165888512
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -376,13 +379,42 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   maxHealth: 100
-  knockbackForce: 5
+  knockbackForce: 3
   collisionDMG: 1
+  spriteFacing: 1
   hitColor: {r: 1, g: 1, b: 1, a: 1}
   flashDuration: 0.1
   projectilePrefab: {fileID: 0}
-  attackCooldown: 2
+  groundCheck: {fileID: 0}
   groundCheckRadius: 0.5
+  ledgeCheck: {fileID: 0}
+  ledgeCheckDistance: 0.5
+  ledgeCheckXOffset: 1
+  ledgeCheckYOffset: -1
+  wallCheck: {fileID: 0}
+  wallCheckHeight: 2
+  wallCheckXOffset: 1.5
+  wallCheckYOffset: 1
+  groundLayer:
+    serializedVersion: 2
+    m_Bits: 0
+  attackCooldown: 2
+  lastAttackTime: 2
+  meleeRange: 3
+  meleeHeight: 2
+  rangedRange: 6
+--- !u!114 &165888514
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 165888504}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b2920df4af30de4498915257eb28b51f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &171354012
 GameObject:
   m_ObjectHideFlags: 0
@@ -1480,11 +1512,11 @@ PrefabInstance:
       objectReference: {fileID: 1052830349}
     - target: {fileID: 7330531380822282525, guid: 33a4a1835edc44144b51368b2e222aa8, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -5.99
+      value: -5.49
       objectReference: {fileID: 0}
     - target: {fileID: 7330531380822282525, guid: 33a4a1835edc44144b51368b2e222aa8, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -2.07
+      value: -2.14
       objectReference: {fileID: 0}
     - target: {fileID: 7330531380822282525, guid: 33a4a1835edc44144b51368b2e222aa8, type: 3}
       propertyPath: m_LocalPosition.z
@@ -1778,7 +1810,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!95 &1299537525
 Animator:
   serializedVersion: 7
@@ -2008,7 +2040,7 @@ Transform:
   m_GameObject: {fileID: 1442640915}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -3.68, y: 2.96, z: 0.020245755}
+  m_LocalPosition: {x: -3.2, y: 2.61, z: 0.020245755}
   m_LocalScale: {x: 5, y: 0.25, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -2142,6 +2174,68 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!1 &1519315168
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1519315169}
+  m_Layer: 0
+  m_Name: SturdyFoolProjectile
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1519315169
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1519315168}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -0.7664411, y: -0.39477706, z: 0.08365305}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1551066061
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1551066062}
+  m_Layer: 0
+  m_Name: WallCheck
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1551066062
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1551066061}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -0.23473012, y: 0.09875023, z: 0.01909604}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 165888510}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1559103866
 GameObject:
   m_ObjectHideFlags: 0
@@ -2711,6 +2805,37 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1888842031
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1888842032}
+  m_Layer: 0
+  m_Name: LedgeCheck
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1888842032
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1888842031}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 165888510}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &92252020413205033
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2894,8 +3019,9 @@ SceneRoots:
   - {fileID: 1586113193}
   - {fileID: 1299537530}
   - {fileID: 1559103872}
-  - {fileID: 165888510}
   - {fileID: 1226847160}
   - {fileID: 92252020413205033}
   - {fileID: 4968024423823597867}
   - {fileID: 2500797007731172833}
+  - {fileID: 165888510}
+  - {fileID: 1519315169}

@@ -45,7 +45,7 @@ GameObject:
   - component: {fileID: 2677382216086662818}
   - component: {fileID: 463913482183138259}
   - component: {fileID: 3670669379528966296}
-  - component: {fileID: 4718638139681666908}
+  - component: {fileID: 1304261526340659016}
   m_Layer: 10
   m_Name: Volatile Gruzzer
   m_TagString: Untagged
@@ -228,7 +228,11 @@ MonoBehaviour:
   projectileSpawnRate: 2
   explosionTimer: 2.5
   groundCheckRadius: 0.5
---- !u!114 &4718638139681666908
+  player: {fileID: 0}
+  knockbackForce: 5
+  hitColor: {r: 1, g: 1, b: 1, a: 1}
+  flashDuration: 0.1
+--- !u!114 &1304261526340659016
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -237,6 +241,6 @@ MonoBehaviour:
   m_GameObject: {fileID: 5136342113278747969}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c0f935b144ae6dc4fb9b46b4b72d160e, type: 3}
+  m_Script: {fileID: 11500000, guid: b2920df4af30de4498915257eb28b51f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 

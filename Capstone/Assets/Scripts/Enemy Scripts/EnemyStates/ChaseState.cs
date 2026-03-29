@@ -2,6 +2,7 @@ using UnityEngine;
 public class ChaseState : EnemyState
 {
     private EnemyAI vengefly;
+    private Vector2 dir;
     public ChaseState(EnemyBase enemy, EnemyStateMachine sm) : base(enemy, sm)
     {
         vengefly = enemy as EnemyAI;
@@ -21,7 +22,7 @@ public class ChaseState : EnemyState
 
         enemy.FacePlayer();
 
-        Vector2 dir = enemy.detection.DirectionToPlayer();
+        dir = enemy.detection.DirectionToPlayer();
         enemy.movement.Move(dir);
 
         if (enemy.detection.PlayerExitedSight())
