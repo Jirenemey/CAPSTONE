@@ -29,12 +29,13 @@ public class NetworkLobyyUI : NetworkBehaviour
     [SerializeField] Button readyUp;
     [SerializeField] Button unReady;
     [SerializeField] TMP_Text readyText;
+    [SerializeField] Button startBtn;
     public NetworkVariable<int> readyCount = new NetworkVariable<int>(0, NetworkVariableReadPermission.Everyone, NetworkVariableWritePermission.Server);
     public int playerCount = 2;
     private bool localReady = false;
 
 
-    void Start() {
+    void Initialize() {
 
         if(!startScreen) startScreen = GameObject.Find("Start Screen");
         if(!hostScreen) hostScreen = GameObject.Find("Host Lobby Screen");
@@ -54,6 +55,7 @@ public class NetworkLobyyUI : NetworkBehaviour
         if(!readyUp) readyUp = GameObject.Find("ReadyBtn").GetComponent<Button>();
         if(!unReady) unReady = GameObject.Find("UnReadyBtn").GetComponent<Button>();
         if(!readyText) readyText = GameObject.Find("ReadyText").GetComponent<TMP_Text>();
+        if(!startBtn) startBtn = GameObject.Find("StartBtn").GetComponent<Button>();
 
         Back();
         menuBackButton.onClick.AddListener(() => Menu());
@@ -63,6 +65,11 @@ public class NetworkLobyyUI : NetworkBehaviour
 
         backButton.GetComponent<Button>().onClick.AddListener(() => Back());
 
+    }
+
+    void Start()
+    {
+        Initialize();
     }
 
     void Update() {
@@ -112,17 +119,31 @@ public class NetworkLobyyUI : NetworkBehaviour
     public override void OnNetworkSpawn() {
 
         base.OnNetworkSpawn();
+
         readyUp.interactable = true;
         unReady.interactable = true;
+        startBtn.interactable = true;
+
         readyUp.onClick.AddListener(() => ReadyUp());
         unReady.onClick.AddListener(() => UnReady());
+        startBtn.onClick.AddListener(() => StartGame());
+
+        startBtn.gameObject.SetActive(false);
+
         readyCount.OnValueChanged += (prev, curr) =>
         {
             readyText.text = curr + "/2";
+
+            if(readyCount.Value == playerCount && NetworkManager.Singleton.IsHost)
+                startBtn.gameObject.SetActive(true);
+            else
+                startBtn.gameObject.SetActive(false);
+
         };
     }
 
     public void ReadyUp() {
+        audioManager.PlaySFX("Btn");
         readyUp.gameObject.SetActive(false);
         unReady.gameObject.SetActive(true);
         if (localReady) return;
@@ -132,11 +153,10 @@ public class NetworkLobyyUI : NetworkBehaviour
             UpdateReadyStatusServerRpc(1);
         else if (NetworkManager.Singleton.IsHost)
             readyCount.Value += 1;
-        
-        StartGame();   
     }
 
     public void UnReady() {
+        audioManager.PlaySFX("BindingBtn");
         unReady.gameObject.SetActive(false);
         readyUp.gameObject.SetActive(true);
         if (!localReady) return;
@@ -155,17 +175,17 @@ public class NetworkLobyyUI : NetworkBehaviour
     }
 
     public void StartGame() {
+        audioManager.PlaySFX("Btn");
         if (!NetworkManager.Singleton.IsServer)
         {
             Debug.LogWarning("Only the host can start the game!");
             return;
         }
-        if(readyCount.Value == playerCount){
-            NetworkManager.Singleton.SceneManager.LoadScene(
-                "SampleScene",
-                LoadSceneMode.Single
-            );
-        }
+        NetworkManager.Singleton.SceneManager.LoadScene(
+            "SampleScene",
+            LoadSceneMode.Single
+        );
+        
     }
 
     public void LeaveLobby() {

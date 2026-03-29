@@ -8,11 +8,11 @@ public class PauseUI : MonoBehaviour
 {
     [SerializeField] GameObject pauseMenu;
     [SerializeField] GameObject pauseScreen;
-    [SerializeField] GameObject settingsScreen;
+    [SerializeField] SettingsScript settings;
     [SerializeField] GameObject confirmLeavePrompt;
     [SerializeField] InputActionReference pauseKey;
+    [SerializeField] Button back;
     [SerializeField] Button resume;
-    [SerializeField] Button settings;
     [SerializeField] Button quit;
     [SerializeField] Button quitYes;
     [SerializeField] Button quitNo;
@@ -29,8 +29,8 @@ public class PauseUI : MonoBehaviour
         if(!resume) resume = GameObject.Find("Resume").GetComponent<Button>();
         
         // Settings
-        if(!settingsScreen) settingsScreen = GameObject.Find("SettingsScreen");
-        if(!settings) settings = GameObject.Find("Settings").GetComponent<Button>();
+        if(!settings) settings = GameObject.Find("SettingsContainer").GetComponent<SettingsScript>();
+        if(!back) back = GameObject.Find("Back").GetComponent<Button>();
 
         // Quit 
         if(!confirmLeavePrompt) confirmLeavePrompt = GameObject.Find("ConfirmLeave");
@@ -39,7 +39,8 @@ public class PauseUI : MonoBehaviour
         if(!quitNo) quitNo = GameObject.Find("No").GetComponent<Button>();
 
         resume.onClick.AddListener(() => Resume());
-        //settings.onClick.AddListener(() => Resume());
+        settings.settingsBtn.onClick.AddListener(() => Settings());
+        back.onClick.AddListener(() => Back());
         quit.onClick.AddListener(() => QuitToMenu());
         quitYes.onClick.AddListener(() => ConfirmQuit());
         quitNo.onClick.AddListener(() => Back());
@@ -65,7 +66,7 @@ public class PauseUI : MonoBehaviour
     {
         pauseMenu.SetActive(true);
         pauseScreen.SetActive(true);
-        settingsScreen.SetActive(false);
+        settings.settingsScrn.SetActive(false);
         confirmLeavePrompt.SetActive(false);
         paused = true;
         playerInput.enabled = false;
@@ -75,16 +76,23 @@ public class PauseUI : MonoBehaviour
     {
         pauseMenu.SetActive(false);
         pauseScreen.SetActive(false);
-        settingsScreen.SetActive(false);
+        settings.settingsScrn.SetActive(false);
         confirmLeavePrompt.SetActive(false);
         paused = false;
         playerInput.enabled = true;
     }
 
+    public void Settings()
+    {
+        settings.settingsScrn.SetActive(true);
+        pauseScreen.SetActive(false);
+        confirmLeavePrompt.SetActive(false);
+    }
+
     public void QuitToMenu()
     {
         pauseScreen.SetActive(false);
-        settingsScreen.SetActive(false);
+        settings.settingsScrn.SetActive(false);
         confirmLeavePrompt.SetActive(true);
     }
 
@@ -95,8 +103,9 @@ public class PauseUI : MonoBehaviour
 
     public void Back()
     {
+        settings.audioManager.PlaySFX("BindingBtn");
         pauseScreen.SetActive(true);
-        settingsScreen.SetActive(false);
+        settings.settingsScrn.SetActive(false);
         confirmLeavePrompt.SetActive(false);
     }
 
