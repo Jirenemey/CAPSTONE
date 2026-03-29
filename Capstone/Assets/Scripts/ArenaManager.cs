@@ -1,3 +1,4 @@
+using NUnit.Framework;
 using Unity.Netcode;
 using UnityEngine;
 
@@ -9,6 +10,8 @@ public class ArenaManager : MonoBehaviour
     int numberOfPlayersinArena = 0;
     int numberOfPlayerInLobby = 1;
 
+    WaveManager waveManager;
+
 	void Start(){
 		if (!audioManager) audioManager = GameObject.Find("AudioManager").GetComponent<AudioManager>();
 
@@ -18,6 +21,8 @@ public class ArenaManager : MonoBehaviour
         triggerProxy.tagName = "Player";
 
         door = GameObject.Find("White_Gate");
+        waveManager = GetComponent<WaveManager>();
+        if (!waveManager) Assert.Fail("WaveManager cannot be accessed by the ArenaManager");
         
     }
 
@@ -35,7 +40,11 @@ public class ArenaManager : MonoBehaviour
 			audioManager.PlaySFX("GateClose");
 
 			doorTrigger.GetComponent<BoxCollider2D>().enabled = false;
+            StartArena();
 		}
-
 	}
+
+    void StartArena() {
+        waveManager.StartNextWave();
+    }
 }

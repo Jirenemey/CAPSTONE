@@ -3,8 +3,9 @@ using System.Collections;
 
 public class VolatileGruzzerAI : MonoBehaviour, IDamageable
 {
+	public event System.Action OnDeath;
     Rigidbody2D rb;
-    Collider2D col;
+	Collider2D col;
     Animator anim;
     SpriteRenderer spriteRenderer;
 
@@ -127,8 +128,10 @@ public class VolatileGruzzerAI : MonoBehaviour, IDamageable
 
         anim.SetTrigger("Died");
 
-        //Destroy(gameObject, 10);
-    }
+		OnDeath?.Invoke();
+
+		//Destroy(gameObject, 10);
+	}
 
     private IEnumerator ExplosionCountdown()
     {

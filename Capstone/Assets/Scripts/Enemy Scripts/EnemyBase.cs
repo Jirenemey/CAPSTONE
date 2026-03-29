@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 
 [RequireComponent(typeof(Rigidbody2D))]
 [RequireComponent(typeof(Collider2D))]
@@ -10,7 +11,8 @@ using UnityEngine;
 
 public abstract class EnemyBase : MonoBehaviour, IDamageable
 {
-    [Header("Stats")]
+	public event System.Action OnDeath;
+	[Header("Stats")]
     public float maxHealth = 100f;
 
     protected float currentHealth;
@@ -187,5 +189,6 @@ public abstract class EnemyBase : MonoBehaviour, IDamageable
         Vector2 currentVel = rb.linearVelocity;
         rb.linearVelocity = new Vector2(currentVel.x, 5f);
         Destroy(gameObject, 2);
-    }
+		OnDeath?.Invoke();
+	}
 }

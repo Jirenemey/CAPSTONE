@@ -1,6 +1,7 @@
 using UnityEngine;
 using TMPro;
 public class TestEnemy : MonoBehaviour, IDamageable, ICanGiveSoul {
+	public event System.Action OnDeath;
 	float health = 100f;
 	float flashDuration = 0.5f;
 	SpriteRenderer sr;
@@ -20,6 +21,7 @@ public class TestEnemy : MonoBehaviour, IDamageable, ICanGiveSoul {
 	void Die() {
 		//Destroy(gameObject);
 		print("die lol");
+		OnDeath?.Invoke();
 	}
 
 	System.Collections.IEnumerator FlashRed() {
