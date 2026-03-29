@@ -9,6 +9,11 @@ public class HoverButton : MonoBehaviour, IPointerEnterHandler, IPointerExitHand
 
     void Start()
     {
+        Initialize();
+    }
+
+    void Initialize()
+    {
         if(transform.Find("ButtonSides").gameObject) buttonSides = transform.Find("ButtonSides").gameObject;
         if(buttonSides) buttonSides.SetActive(false);
         

@@ -1,44 +1,30 @@
 using UnityEngine;
-using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 using TMPro;
 using UnityEngine.InputSystem;
-using System.Threading.Tasks;
 
-public class MenuScript : MonoBehaviour
+public class SettingsScript : MonoBehaviour
 {
-    [Header("Buttons")]
-	[SerializeField] Button singleplayerBtn;
-	[SerializeField] Button multiplayerBtn;
-	[SerializeField] Button settingsBtn;
-    [SerializeField] Button quitBtn;
-    [SerializeField] Button backBtn;
-    [Header("Screens")]
-    [SerializeField] GameObject settingsScrn;
-    [SerializeField] GameObject menuScrn;
-    [SerializeField] GameObject menuTitle;
     [Header("Settings Screen References")]
+    [SerializeField] public Button settingsBtn;
+    [SerializeField] public GameObject settingsScrn;
     // Bindings
 	[SerializeField] InputActionReference jumpAction;
 	[SerializeField] InputActionReference dashAction;
 	[SerializeField] InputActionReference attackAction;
 	[SerializeField] InputActionReference quickCastAction;
     [SerializeField] GameObject[] bindBtns;
+    [SerializeField] Button resetBindings;
     public PlayerInput playerInput;
     InputActionAsset actions;
     InputActionRebindingExtensions.RebindingOperation rebindingOperation;
-    [SerializeField] GameObject pressKeyScreen;
+    [SerializeField] public GameObject pressKeyScreen;
     // Volume 
-    [SerializeField] AudioManager audioManager;
+    [SerializeField] public AudioManager audioManager;
     [SerializeField] Slider sfxSlider;
     [SerializeField] TMP_Text sfxText;
     [SerializeField] Slider musicSlider;
     [SerializeField] TMP_Text musicText;
-    [Header("Animation Related")]
-    [SerializeField] GameObject menuBackground;
-    int xWidthLimit = Screen.width / 4;
-    public float movementAmountX = 10f;
-    public float movementAmountY = 2f;
 
     void Awake() {
         // check if bindings were already set before
@@ -48,93 +34,58 @@ public class MenuScript : MonoBehaviour
             actions.LoadBindingOverridesFromJson(PlayerPrefs.GetString("rebinds"));
     }
 
-    void Update()
-    {
-        Vector2 mousePos = Mouse.current.position.ReadValue();
-        Debug.Log("Mouse X Pos: " + mousePos.x);
-
-        float normalizedX = (mousePos.x / Screen.width) * 2f - 1f;
-        float normalizedY = (mousePos.y / Screen.height) * 2f - 1f;
-
-        float easedX = Mathf.Sin(normalizedX * Mathf.PI * 0.5f);
-        float easedY = Mathf.Sin(normalizedY * Mathf.PI * 0.5f);
-
-        menuBackground.GetComponent<RectTransform>().anchoredPosition = new Vector2(easedX * movementAmountX, easedY * movementAmountY);
-    }
-
     void Start()
     {
-        // Menu Items
-        if(!singleplayerBtn) singleplayerBtn = GameObject.Find("SingleplayerBtn").GetComponent<Button>();
-        if(!multiplayerBtn) multiplayerBtn = GameObject.Find("MultiplayerBtn").GetComponent<Button>();
-        if(!settingsBtn) settingsBtn = GameObject.Find("SettingsBtn").GetComponent<Button>();
-        if(!quitBtn) quitBtn = GameObject.Find("QuitBtn").GetComponent<Button>();
-        if(!backBtn) backBtn = GameObject.Find("BackBtn").GetComponent<Button>();
-        if(!menuScrn) menuScrn = GameObject.Find("Menu");
-        if(!menuTitle) menuTitle = GameObject.Find("MenuTitle");
+        Initialize();
+    }
 
+    public void Initialize()
+    {
+        if(!settingsBtn) settingsBtn = GameObject.Find("SettingsBtn").GetComponent<Button>();
         // Settings Items
         if(!settingsScrn) settingsScrn = GameObject.Find("Settings");
         // Bindings
         if(!pressKeyScreen) pressKeyScreen = GameObject.Find("PressKeyScreen");
+        if(!resetBindings) resetBindings = GameObject.Find("ResetBindings").GetComponent<Button>();
+
+        resetBindings.onClick.AddListener(() => ResetBindings());
+        bindBtns[0].GetComponent<Button>().onClick.AddListener(() => RebindJumpAction());
+        bindBtns[1].GetComponent<Button>().onClick.AddListener(() => RebindDashAction());
+        bindBtns[2].GetComponent<Button>().onClick.AddListener(() => RebindAttackAction());
+        bindBtns[3].GetComponent<Button>().onClick.AddListener(() => RebindQuickCastAction());
+        
+        ListBindingText();
+
         // Volume
         if(!audioManager) audioManager = GameObject.Find("AudioManager").GetComponent<AudioManager>();
         if(!sfxSlider) sfxSlider = GameObject.Find("SFXSlider").GetComponent<Slider>();
         if(!sfxText) sfxText = GameObject.Find("SFXPercent").GetComponent<TextMeshProUGUI>();
         if(!musicSlider) musicSlider = GameObject.Find("MusicSlider").GetComponent<Slider>();
         if(!musicText) musicText = GameObject.Find("MusicPercent").GetComponent<TextMeshProUGUI>();
-        // Animations
-        if(!menuBackground) menuBackground = GameObject.Find("MenuBackground");
 
-        singleplayerBtn.onClick.AddListener(() => LoadScene("SampleScene"));
-        multiplayerBtn.onClick.AddListener(() => LoadScene("Multiplayer"));
-        settingsBtn.onClick.AddListener(() => SettingsPage());
-        quitBtn.onClick.AddListener(() => Quit());
-        backBtn.onClick.AddListener(() => Back());
+        sfxSlider.onValueChanged.AddListener(delegate { UpdateSFX(); });
+        musicSlider.onValueChanged.AddListener(delegate { UpdateMusic(); });
 
-        backBtn.gameObject.SetActive(false);
-        pressKeyScreen.gameObject.SetActive(false);
-        Back();
-        ListBindingText();
-
-        //audioManager.PlayMusic("MenuMusic");
-    }
-    // Main Menu Button management
-    public void LoadScene(string sceneName) {
-		SceneManager.LoadScene(sceneName);
-	}
-
-    public void SettingsPage()
-    {
-        menuScrn.SetActive(false);
-        settingsScrn.SetActive(true);
-        backBtn.gameObject.SetActive(true);
-        menuTitle.SetActive(false);
+        pressKeyScreen.SetActive(false);
     }
 
-    public void Back()
-    {
-        audioManager.PlaySFX("BindingBtn");
-        menuScrn.SetActive(true);
-        settingsScrn.SetActive(false);
-        backBtn.gameObject.SetActive(false);
-        menuTitle.SetActive(true);
-    }
+    // [RuntimeInitializeOnLoadMethod(RuntimeInitializeLoadType.AfterSceneLoad)]
+    // static void OnAfterSceneLoad()
+    // {
+    //     SettingsScript settings = FindObjectOfType<SettingsScript>();
+    //     if (settings != null)
+    //     {
+    //         settings.Initialize();
+    //     }
+    // }
 
-    public void Quit()
-    {
-        audioManager.PlaySFX("Btn");
-        Application.Quit();
-    }
-
-    //Settings menu stuff
-    // Bindings
     string GetBindingText(InputAction action) {
-    if (Gamepad.current != null) 
-        return action.GetBindingDisplayString(group: "Gamepad");
-    else 
-        return action.GetBindingDisplayString(group: "Keyboard&Mouse");
+        if (Gamepad.current != null) 
+            return action.GetBindingDisplayString(group: "Gamepad");
+        else 
+            return action.GetBindingDisplayString(group: "Keyboard&Mouse");
     }
+
 
     void ListBindingText()
     {
@@ -151,6 +102,7 @@ public class MenuScript : MonoBehaviour
 
     public void ResetBindings()
     {
+        if(!audioManager) audioManager = GameObject.Find("AudioManager").GetComponent<AudioManager>();
         audioManager.PlaySFX("Btn");
         actions.RemoveAllBindingOverrides();
         PlayerPrefs.DeleteKey("rebinds");
@@ -227,36 +179,43 @@ public class MenuScript : MonoBehaviour
 
     // Binding buttons in UI
     public void RebindAttackAction() {
+        if(!audioManager) audioManager = GameObject.Find("AudioManager").GetComponent<AudioManager>();
         audioManager.PlaySFX("BindingBtn");
         RebindAction(attackAction.action);
     }
     public void RebindQuickCastAction() {
+        if(!audioManager) audioManager = GameObject.Find("AudioManager").GetComponent<AudioManager>();
         audioManager.PlaySFX("BindingBtn");
         RebindAction(quickCastAction.action);
     }
     public void RebindJumpAction() {
+        if(!audioManager) audioManager = GameObject.Find("AudioManager").GetComponent<AudioManager>();
         audioManager.PlaySFX("BindingBtn");
         RebindAction(jumpAction.action);
     }
     public void RebindDashAction() {
+        if(!audioManager) audioManager = GameObject.Find("AudioManager").GetComponent<AudioManager>();
         audioManager.PlaySFX("BindingBtn");
         RebindAction(dashAction.action);
     }
 
     // Volume
-    public  void UpdateSFX(){
+    public void UpdateSFX(){
+        if(!audioManager) audioManager = GameObject.Find("AudioManager").GetComponent<AudioManager>();
         audioManager.SFXVolume(sfxSlider.value);
         sfxText.text = (sfxSlider.value * 100).ToString("F0") + "%";
         if (!audioManager.sfxSource.isPlaying)
             audioManager.PlaySFX("Btn");
     }
 
-    public  void UpdateMusic(){
+    public void UpdateMusic(){
+        if(!audioManager) audioManager = GameObject.Find("AudioManager").GetComponent<AudioManager>();
         audioManager.MusicVolume(musicSlider.value);
         musicText.text = (musicSlider.value * 100).ToString("F0") + "%";
 
         if (!audioManager.sfxSource.isPlaying)
             audioManager.PlaySFX("Btn");
     }
-
 }
+
+
