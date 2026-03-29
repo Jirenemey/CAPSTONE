@@ -21,9 +21,9 @@ public class SturdyFIdleState : EnemyState
     {
         base.Update();
 
-        //if (enemy.detection.PlayerEnteredSight())
-        //{
-        //    ChangeState<SBWindUpState>();
-        //}
+        if (sturdyFool.IsGrounded() && stateTimer >= 1f)
+        {
+            ChangeState<SturdyFPatrolState>();
+        }
     }
 }

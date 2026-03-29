@@ -41,10 +41,28 @@ public class DetectionComponent : MonoBehaviour
         return (player.position - transform.position).normalized;
     }
 
+    public float DistanceToPlayer()
+    {
+        return Vector2.Distance(transform.position, player.position);
+    }
+
     public float PlayerLeftOrRight()
     {
         if (DirectionToPlayer().x >= 0)
             return 1f;
         else return -1f;
+    }
+
+    public float PlayerRelativeHeight()
+    {
+        return (player.position.y - transform.position.y);
+    }
+
+    private void OnDrawGizmosSelected()
+    {
+        Gizmos.color = Color.blue;
+        Gizmos.DrawWireSphere(transform.position, sightRadius);
+        Gizmos.color = Color.cyan;
+        Gizmos.DrawWireSphere(transform.position, exitSightRadius);
     }
 }
