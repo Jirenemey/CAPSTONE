@@ -48,7 +48,7 @@ public class WaveManager : MonoBehaviour {
 
         WaveData currentWave = waves[currentWaveIndex];
 
-        currentWave.platforms.SetActive(true);
+        currentWave.waveParentGameObject.SetActive(true);
         foreach(EnemyData enemyData in currentWave.enemies) {
 			GameObject spawnedEnemy = Instantiate(enemyData.enemie, enemyData.spawnPoint);
 
@@ -57,21 +57,13 @@ public class WaveManager : MonoBehaviour {
 			if (damageable != null) {
 				enemyCount++;
 				damageable.OnDeath += EnemyDied;
+				EnemyBase aiScript = spawnedEnemy.GetComponent<EnemyBase>();
+                if(aiScript != null) {
+					aiScript.enabled = true;
+				}
 			}
 
 		}
-
-        //while(endlessMode || wave <= maxWaves) {
-        //    if(enemyCount > 0) { 
-        //        //yield return new WaitForSeconds(5f);
-        //        continue;
-        //    }
-        //    wave++;
-        //    CalculateEnemyCount();
-        //    SpawnEnemies();
-
-        //    Debug.Log("Starting Wave: " + wave);
-        //}
     }
 
     // Button cmds for testing purposes
@@ -93,7 +85,9 @@ public class WaveManager : MonoBehaviour {
 		if (enemyCount <= 0) {
 			Debug.Log("Wave Cleared!");
 			currentWaveIndex++;
-			// Logic to trigger next wave or show victory UI
+            // Logic to trigger next wave or show victory UI
+            currentWaveIndex++;
+            StartNextWave();
 		}
 	}
 
