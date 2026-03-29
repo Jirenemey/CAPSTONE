@@ -23,7 +23,11 @@ public class ChaseState : EnemyState
         enemy.FacePlayer();
 
         dir = enemy.detection.DirectionToPlayer();
-        enemy.movement.Move(dir);
+
+        if (enemy.detection.DistanceToPlayer() > 0.4f)
+        {
+            enemy.movement.Move(dir);
+        }
 
         if (enemy.detection.PlayerExitedSight())
         {

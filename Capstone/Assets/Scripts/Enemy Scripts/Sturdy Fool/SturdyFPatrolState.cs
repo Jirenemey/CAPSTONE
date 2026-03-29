@@ -50,7 +50,7 @@ public class SturdyFPatrolState : EnemyState
                 if (rand < 0.7f)
                     ChangeState<SturdyFSlashState>();
                 else
-                    ChangeState<SturdyFSlashState>();
+                    ChangeState<SturdyFEvadeState>();
             }
             else if (distance <= sturdyFool.RangedRange)
             {

@@ -28,7 +28,7 @@ public abstract class EnemyBase : MonoBehaviour, IDamageable
     // 1 = sprite faces RIGHT by default
     // -1 = sprite faces LEFT by default
 
-    [SerializeField] private Color hitColor = Color.white;
+    [SerializeField] private Color hitColor = Color.red;
     [SerializeField] private float flashDuration = 0.1f;
 
     private Color originalColor;
@@ -139,7 +139,10 @@ public abstract class EnemyBase : MonoBehaviour, IDamageable
     public virtual void Flip()
     {
         FacingDirection *= -1;
-
+        
+        Vector2 colOffSet = col.offset;
+        colOffSet.x *= -1;
+        col.offset = colOffSet;
         spriteRenderer.flipX = (FacingDirection * spriteFacing) == -1;
     }
 

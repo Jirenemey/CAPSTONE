@@ -23,6 +23,9 @@ public class SturdyFoolAI : EnemyBase
     [SerializeField] private float meleeHeight = 2f;
     [SerializeField] private float rangedRange = 2f;
 
+    [SerializeField] private float evadeSpeed = 4;
+
+    private bool applyforce;
     private bool animationFinished;
 
     public float AttackCooldown => attackCooldown;
@@ -30,6 +33,8 @@ public class SturdyFoolAI : EnemyBase
     public float MeleeRange => meleeRange;
     public float MeleeHeight => meleeHeight;
     public float RangedRange => rangedRange;
+    public float EvadeSpeed => evadeSpeed;
+    public bool Applyforce => applyforce;
     public bool AnimationFinished => animationFinished;
 
     //Animation Hashes
@@ -141,6 +146,16 @@ public class SturdyFoolAI : EnemyBase
                 wallCheckYOffset
             );
         }
+    }
+
+    public void ApplyForce()
+    {
+        applyforce = true;
+    }
+
+    public void StopForce()
+    {
+        applyforce = false;
     }
 
     public void ResetAnimationFinished()

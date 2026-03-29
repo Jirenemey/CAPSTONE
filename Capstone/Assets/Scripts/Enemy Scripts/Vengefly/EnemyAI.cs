@@ -35,17 +35,6 @@ public class EnemyAI : EnemyBase
         fsm.ChangeState(GetState<IdleState>());
     }
 
-    public bool CanAttackPlayer()
-    {
-        if (attackCooldown <= lastAttackTime)
-        {
-            lastAttackTime = 0;
-            return true;
-        }
-        lastAttackTime += Time.deltaTime;
-        return false;
-    }
-
     protected override void Die()
     {
         base.Die();

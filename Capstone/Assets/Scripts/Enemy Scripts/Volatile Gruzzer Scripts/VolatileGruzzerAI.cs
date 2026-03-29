@@ -31,7 +31,7 @@ public class VolatileGruzzerAI : MonoBehaviour, IDamageable
     private float knockbackTime = 0.2f;
     private bool isKnockedBack = false;
 
-    [SerializeField] private Color hitColor = Color.white;
+    [SerializeField] private Color hitColor = Color.red;
     [SerializeField] private float flashDuration = 0.1f;
 
     void Start()
@@ -169,7 +169,7 @@ public class VolatileGruzzerAI : MonoBehaviour, IDamageable
     private IEnumerator HitFlash()
     {
         Color originalColor = Color.white;
-        spriteRenderer.color = Color.white;
+        spriteRenderer.color = hitColor;
         yield return new WaitForSeconds(flashDuration);
         spriteRenderer.color = originalColor;
     }
