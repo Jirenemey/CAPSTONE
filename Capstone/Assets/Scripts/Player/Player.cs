@@ -3,10 +3,11 @@ using System.Collections;
 using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.Windows;
+using Unity.Netcode;
 
 [RequireComponent(typeof(Rigidbody2D))]
 [RequireComponent(typeof(Collider2D))]
-public class Player : MonoBehaviour {
+public class Player : NetworkBehaviour {
 	Rigidbody2D rb;
 	Collider2D col;
 	Animator anim;
@@ -92,6 +93,8 @@ public class Player : MonoBehaviour {
 	}
 
 	void Update() {
+		if(!IsOwner) return;
+
 		horizontalAxis = inputHandler.MovementInput.x;
 		SetPlayerDirection();
 
@@ -156,7 +159,13 @@ public class Player : MonoBehaviour {
 			oldDirection = playerDirection;
 
 			spriteRenderer.flipX = playerDirection > 0f;
-
+			
+			if(NetworkManager.Singleton){
+				if(NetworkManager.Singleton.IsClient)
+					SetFacingServerRpc(playerDirection < 0f);
+				if(NetworkManager.Singleton.IsHost)
+					SetFacingClientRpc(playerDirection > 0f);
+			}
 		}
 	}
 	private void HandleJumpPress() {
@@ -289,27 +298,69 @@ public class Player : MonoBehaviour {
 			Debug.LogError("Vengeful Spirit: Projectile prefab or projectileSpawnPoint is not set");
 			return;
 		}
+		if(!NetworkManager.Singleton){
+			GameObject proj = Instantiate(
+				VengefulSpiritProjectilePrefab,
+				projectileSpawnPoint.position,
+				Quaternion.identity
+			);
 
-		GameObject proj = Instantiate(
-			VengefulSpiritProjectilePrefab,
-			projectileSpawnPoint.position,
-			Quaternion.identity
-		);
+			// Flip sprite to match travel direction
+			proj.GetComponent<SpriteRenderer>().flipX = playerDirection > 0f;
 
-		// Flip sprite to match travel direction
-		proj.GetComponent<SpriteRenderer>().flipX = playerDirection > 0f;
-
-		proj.GetComponent<Projectile>().Init(playerDirection);
+			proj.GetComponent<Projectile>().Init(playerDirection);
+		} else {
+			SpawnVengefulSpiritServerRpc(projectileSpawnPoint.position, Quaternion.identity);
+		}
+		
 	}
 	private void CastHowlingWraiths(){
 		if (HowlingWraithsPrefab == null || HowlingWraithsSpawnPoint == null) {
 			Debug.LogError("Howling Wraiths: prefab or SpawnPoint is not set");
 			return;
 		}
+		if(!NetworkManager.Singleton){
 		GameObject proj = Instantiate(
 			HowlingWraithsPrefab,
 			HowlingWraithsSpawnPoint.position,
 			Quaternion.identity
 		);
+		} else {
+			SyncHowlingWraithsServerRpc(HowlingWraithsSpawnPoint.position, Quaternion.identity);
+		}
 	}
+
+	// NETWORKING SYNCHRONIZATION METHODS
+	// SERVER SIDED METHODS FOR REPLICATION (what server sees)
+	[ServerRpc]
+	void SetFacingServerRpc(bool facingRight)
+	{
+		spriteRenderer.flipX = !facingRight;
+		playerDirection *= -1;
+	}
+
+	[ServerRpc]
+    void SpawnVengefulSpiritServerRpc(Vector3 pos, Quaternion rot)
+    {
+        GameObject obj = Instantiate(VengefulSpiritProjectilePrefab, pos, rot);
+        obj.GetComponent<NetworkObject>().Spawn();
+
+		obj.GetComponent<Projectile>().Init(playerDirection);
+    }
+
+	[ServerRpc]
+    void SyncHowlingWraithsServerRpc(Vector3 pos, Quaternion rot)
+    {
+        GameObject obj = Instantiate(HowlingWraithsPrefab, pos, rot);
+        obj.GetComponent<NetworkObject>().Spawn();
+		
+    }
+	// CLIENT SIDE METHODS FOR REPLICATION (what client sees)
+	[ClientRpc]
+	void SetFacingClientRpc(bool facingRight)
+	{
+		spriteRenderer.flipX = !facingRight;
+		playerDirection *= -1;
+	}
+
 }
