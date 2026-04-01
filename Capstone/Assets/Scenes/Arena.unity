@@ -5858,7 +5858,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 84591d1933ef5214d9c49d2d253bdc8a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  currentWaveIndex: 2
+  currentWaveIndex: 0
   maxWaves: 10
   enemies:
   - {fileID: 8414971049533135686, guid: cd81cb062295a2649acd5a0b50f36874, type: 3}

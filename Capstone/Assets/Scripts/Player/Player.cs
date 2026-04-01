@@ -93,7 +93,7 @@ public class Player : NetworkBehaviour {
 	}
 
 	void Update() {
-		if(!IsOwner) return;
+		if(NetworkManager.Singleton && !IsOwner) return;
 
 		horizontalAxis = inputHandler.MovementInput.x;
 		SetPlayerDirection();

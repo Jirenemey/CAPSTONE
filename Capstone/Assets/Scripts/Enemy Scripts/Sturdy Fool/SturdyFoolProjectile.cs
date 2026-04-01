@@ -1,7 +1,7 @@
 using Unity.VisualScripting;
 using UnityEngine;
 
-public class SturdyFoolProjectile : MonoBehaviour, IDamageable
+public class SturdyFoolProjectile : MonoBehaviour
 {
     Rigidbody2D rb;
     Collider2D col;
@@ -37,14 +37,14 @@ public class SturdyFoolProjectile : MonoBehaviour, IDamageable
 
     private void OnTriggerEnter2D(Collider2D other)
     {
-        // Hit wall — destroy projectile
+        // Hit wall ï¿½ destroy projectile
         if (other.gameObject.layer == LayerMask.NameToLayer("Ground"))
         {
             Destroy(gameObject);
             return;
         }
 
-        // Hit enemy — deal damage but keep going
+        // Hit enemy ï¿½ deal damage but keep going
         if (other.TryGetComponent<IDamageable>(out var target) && other.gameObject.layer == LayerMask.NameToLayer("Player"))
         {
             target.TakeDamage(damage);
