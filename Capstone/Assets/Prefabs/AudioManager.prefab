@@ -175,7 +175,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 844467388fba4d1498b707e522033ea0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  musicSounds: []
+  musicSounds:
+  - name: MultiplayerMenuMusic
+    clip: {fileID: 8300000, guid: 166be0aa319a4be44ba3fe1c399cf586, type: 3}
+  - name: MenuMusic
+    clip: {fileID: 8300000, guid: 8c225dad7e3bc7d439f6a2a612dd0ad0, type: 3}
   sfxSounds:
   - name: Btn
     clip: {fileID: 8300000, guid: 9250d3c6087e83a48986f93b9139fabd, type: 3}
@@ -232,7 +236,7 @@ AudioSource:
   m_PlayOnAwake: 1
   m_Volume: 1
   m_Pitch: 1
-  Loop: 0
+  Loop: 1
   Mute: 0
   Spatialize: 0
   SpatializePostEffects: 0

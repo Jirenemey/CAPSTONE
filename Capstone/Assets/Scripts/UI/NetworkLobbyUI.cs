@@ -36,6 +36,7 @@ public class NetworkLobyyUI : NetworkBehaviour
 
 
     void Initialize() {
+        if(!audioManager) audioManager = GameObject.Find("AudioManager").GetComponent<AudioManager>();
 
         if(!startScreen) startScreen = GameObject.Find("Start Screen");
         if(!hostScreen) hostScreen = GameObject.Find("Host Lobby Screen");
@@ -49,27 +50,31 @@ public class NetworkLobyyUI : NetworkBehaviour
         if(!backButton) backButton = GameObject.Find("BackButton");
         if(!menuBackButton) menuBackButton = GameObject.Find("MenuBackButton").GetComponent<Button>();
 
-        if(!audioManager) audioManager = GameObject.Find("AudioManager").GetComponent<AudioManager>();
-
         if(!readySystem) readySystem = GameObject.Find("ReadySystem");
         if(!readyUp) readyUp = GameObject.Find("ReadyBtn").GetComponent<Button>();
         if(!unReady) unReady = GameObject.Find("UnReadyBtn").GetComponent<Button>();
         if(!readyText) readyText = GameObject.Find("ReadyText").GetComponent<TMP_Text>();
         if(!startBtn) startBtn = GameObject.Find("StartBtn").GetComponent<Button>();
 
-        Back();
-        menuBackButton.onClick.AddListener(() => Menu());
-
         m_StartHostButton.onClick.AddListener(async () => await StartHostWithRelay(playerCount - 1, "UDP"));
         m_StartClientButton.onClick.AddListener(async () => await StartClientWithRelay(inputField.text, "UDP"));
 
         backButton.GetComponent<Button>().onClick.AddListener(() => Back());
 
+        hostScreen.SetActive(false);
+        joinScreen.SetActive(false);
+        backButton.SetActive(false);
+        invalidCodeText.SetActive(false);
+        unReady.gameObject.SetActive(false);
+        readySystem.SetActive(false);
+
+        menuBackButton.onClick.AddListener(() => Menu());
     }
 
     void Start()
     {
         Initialize();
+        audioManager.PlayMusic("Multiplayer");
     }
 
     void Update() {
@@ -113,6 +118,7 @@ public class NetworkLobyyUI : NetworkBehaviour
     }
 
     public void Menu() {
+        audioManager.PlayMusic("Menu");
         SceneManager.LoadScene("MainMenu");
     }
 
@@ -182,7 +188,7 @@ public class NetworkLobyyUI : NetworkBehaviour
             return;
         }
         NetworkManager.Singleton.SceneManager.LoadScene(
-            "SampleScene",
+            "Arena",
             LoadSceneMode.Single
         );
         

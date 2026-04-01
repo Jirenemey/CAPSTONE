@@ -22,11 +22,17 @@ public class AudioManager : MonoBehaviour
         DontDestroyOnLoad(gameObject);
     }
 
+    void Start()
+    {
+        if(!musicSource) musicSource = GameObject.Find("Music").GetComponent<AudioSource>();
+        if(!sfxSource) sfxSource = GameObject.Find("SFX").GetComponent<AudioSource>();
+    }
+
     public void PlayMusic(string name){
         Sound s = Array.Find(musicSounds, x=> x.name == name);
-
+        
         if(s == null){
-            Debug.Log("Sound Not Found");
+            Debug.Log("Music Not Found");
         }
 
         else{
@@ -46,9 +52,8 @@ public class AudioManager : MonoBehaviour
         Sound s = Array.Find(sfxSounds, x=> x.name == name);
 
         if(s == null){
-            Debug.Log("Sound Not Found");
+            Debug.Log("SFX Not Found");
         }
-
         else{
             sfxSource.PlayOneShot(s.clip);
         }
