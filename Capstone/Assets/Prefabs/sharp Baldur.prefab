@@ -16,7 +16,7 @@ GameObject:
   - component: {fileID: 2488656085915235877}
   - component: {fileID: 2799715147053447626}
   - component: {fileID: 6186451152408035915}
-  - component: {fileID: 5552394635339323650}
+  - component: {fileID: 8865926897432860696}
   m_Layer: 10
   m_Name: sharp Baldur
   m_TagString: Untagged
@@ -192,7 +192,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   maxHealth: 100
+  knockbackForce: 5
   collisionDMG: 1
+  hitColor: {r: 1, g: 1, b: 1, a: 1}
+  flashDuration: 0.1
   rollSpeed: 6
   rollDuration: 4
   attackCooldown: 2
@@ -226,7 +229,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   moveSpeed: 3
---- !u!114 &5552394635339323650
+--- !u!114 &8865926897432860696
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -235,6 +238,6 @@ MonoBehaviour:
   m_GameObject: {fileID: 3417591668451977817}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c0f935b144ae6dc4fb9b46b4b72d160e, type: 3}
+  m_Script: {fileID: 11500000, guid: b2920df4af30de4498915257eb28b51f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 

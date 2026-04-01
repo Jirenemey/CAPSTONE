@@ -16,7 +16,7 @@ GameObject:
   - component: {fileID: 321948756182141476}
   - component: {fileID: 4547412061801759554}
   - component: {fileID: 8438939041228769909}
-  - component: {fileID: 6583471712261076958}
+  - component: {fileID: 3608738222200683186}
   m_Layer: 10
   m_Name: Vengefly
   m_TagString: Untagged
@@ -192,7 +192,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   maxHealth: 100
+  knockbackForce: 5
   collisionDMG: 1
+  hitColor: {r: 1, g: 1, b: 1, a: 1}
+  flashDuration: 0.1
   attackRadius: 2
   windupTime: 0.5
   recoveryTime: 0.5
@@ -226,7 +229,7 @@ MonoBehaviour:
   sightRadius: 5
   exitSightRadius: 5
   attackRadius: 2
---- !u!114 &6583471712261076958
+--- !u!114 &3608738222200683186
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -235,6 +238,6 @@ MonoBehaviour:
   m_GameObject: {fileID: 8414971049533135686}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c0f935b144ae6dc4fb9b46b4b72d160e, type: 3}
+  m_Script: {fileID: 11500000, guid: b2920df4af30de4498915257eb28b51f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 

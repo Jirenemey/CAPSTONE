@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 
 [RequireComponent(typeof(Rigidbody2D))]
 [RequireComponent(typeof(Collider2D))]
@@ -10,7 +11,8 @@ using UnityEngine;
 
 public abstract class EnemyBase : MonoBehaviour, IDamageable
 {
-    [Header("Stats")]
+	public event System.Action OnDeath;
+	[Header("Stats")]
     public float maxHealth = 100f;
 
     protected float currentHealth;
@@ -18,12 +20,17 @@ public abstract class EnemyBase : MonoBehaviour, IDamageable
 
     [Header("Damage")]
     [SerializeField] private float knockbackForce = 5f;
-    public float collisionDMG = 1f;
+    [SerializeField] private float collisionDMG = 1f;
 
     private float knockbackTime = 0.2f;
     private bool isKnockedBack = false;
 
-    [SerializeField] private Color hitColor = Color.white;
+    [Header("Others")]
+    [SerializeField] private int spriteFacing = -1;
+    // 1 = sprite faces RIGHT by default
+    // -1 = sprite faces LEFT by default
+
+    [SerializeField] private Color hitColor = Color.red;
     [SerializeField] private float flashDuration = 0.1f;
 
     private Color originalColor;
@@ -37,6 +44,8 @@ public abstract class EnemyBase : MonoBehaviour, IDamageable
     public Collider2D Col => col;
     public Animator Anim => anim;
     public SpriteRenderer SpriteRenderer => spriteRenderer;
+
+    public int FacingDirection { get; private set; } = 1;
 
     public static readonly int DiedHash = Animator.StringToHash("Died");
 
@@ -112,7 +121,14 @@ public abstract class EnemyBase : MonoBehaviour, IDamageable
 
         if (Mathf.Abs(xDirection) < flipDeadZone) return;
 
-        spriteRenderer.flipX = xDirection > 0f;
+        //spriteRenderer.flipX = xDirection > 0f;
+
+        int newDir = xDirection > 0 ? 1 : -1;
+
+        if (newDir != FacingDirection)
+        {
+            Flip();
+        }
     }
 
     public virtual void FacePlayer()
@@ -122,14 +138,24 @@ public abstract class EnemyBase : MonoBehaviour, IDamageable
         FaceDirection(detection.DirectionToPlayer().x);
     }
 
+    public virtual void Flip()
+    {
+        FacingDirection *= -1;
+        
+        Vector2 colOffSet = col.offset;
+        colOffSet.x *= -1;
+        col.offset = colOffSet;
+        spriteRenderer.flipX = (FacingDirection * spriteFacing) == -1;
+    }
+
     public virtual void TakeDamage(float damage)
     {
         if (isDead) return;
 
         currentHealth -= damage;
 
+        StartCoroutine(HitFlash());
         ApplyKnockback();
-        //HitFlash();
 
         if (currentHealth <= 0)
         {
@@ -172,10 +198,9 @@ public abstract class EnemyBase : MonoBehaviour, IDamageable
 
     private IEnumerator HitFlash()
     {
+        Color originalColor = Color.white;
         spriteRenderer.color = hitColor;
-
         yield return new WaitForSeconds(flashDuration);
-
         spriteRenderer.color = originalColor;
     }
 
@@ -187,5 +212,6 @@ public abstract class EnemyBase : MonoBehaviour, IDamageable
         Vector2 currentVel = rb.linearVelocity;
         rb.linearVelocity = new Vector2(currentVel.x, 5f);
         Destroy(gameObject, 2);
-    }
+		OnDeath?.Invoke();
+	}
 }

@@ -3,8 +3,9 @@ using System.Collections;
 
 public class VolatileGruzzerAI : MonoBehaviour, IDamageable
 {
+	public event System.Action OnDeath;
     Rigidbody2D rb;
-    Collider2D col;
+	Collider2D col;
     Animator anim;
     SpriteRenderer spriteRenderer;
 
@@ -26,12 +27,26 @@ public class VolatileGruzzerAI : MonoBehaviour, IDamageable
     private bool isDead = false;
     private bool explosionCountdownStarted = false;
 
+    [SerializeField] private Transform player;
+    [SerializeField] private float knockbackForce = 5f;
+    private float knockbackTime = 0.2f;
+    private bool isKnockedBack = false;
+
+    [SerializeField] private Color hitColor = Color.red;
+    [SerializeField] private float flashDuration = 0.1f;
+
     void Start()
     {
         if (!rb) rb = GetComponent<Rigidbody2D>();
         if (!col) col = GetComponent<Collider2D>();
         if (!anim) anim = GetComponent<Animator>();
         if (!spriteRenderer) spriteRenderer = GetComponent<SpriteRenderer>();
+
+        GameObject playerObj = GameObject.FindGameObjectWithTag("Player");
+        if (playerObj != null)
+            player = playerObj.transform;
+        else
+            Debug.LogWarning("Player not found! Make sure Player has the Player tag.");
 
         float x = Random.value > 0.5f ? 1 : -1;
         float y = Random.value > 0.5f ? 1 : -1;
@@ -49,7 +64,7 @@ public class VolatileGruzzerAI : MonoBehaviour, IDamageable
     {
         if (Input.GetKeyDown(KeyCode.P))
         {
-            Die();
+            TakeDamage(25f);
         }
 
         if (!isDead) return;
@@ -113,7 +128,51 @@ public class VolatileGruzzerAI : MonoBehaviour, IDamageable
         health -= amount;
         Debug.Log($"{gameObject.name} took {amount} damage. HP: {health}");
 
+        StartCoroutine(HitFlash());
+        ApplyKnockback();
+
         if (health <= 0) Die();
+    }
+
+    private void ApplyKnockback()
+    {
+        if (player == null) return;
+
+        Vector2 dir = (transform.position - player.position).normalized;
+
+        Vector2 knockbackDir;
+
+        if (Mathf.Abs(dir.x) > Mathf.Abs(dir.y))
+        {
+            knockbackDir = dir.x > 0 ? Vector2.right : Vector2.left;
+        }
+        else
+        {
+            knockbackDir = dir.y > 0 ? Vector2.up : Vector2.down;
+        }
+
+        StartCoroutine(KnockbackRoutine(knockbackDir));
+    }
+
+    private IEnumerator KnockbackRoutine(Vector2 dir)
+    {
+        isKnockedBack = true;
+
+        rb.linearVelocity = Vector2.zero;
+        rb.AddForce(dir * knockbackForce, ForceMode2D.Impulse);
+
+        yield return new WaitForSeconds(knockbackTime);
+
+        isKnockedBack = false;
+        rb.linearVelocity = Vector2.zero;
+    }
+
+    private IEnumerator HitFlash()
+    {
+        Color originalColor = Color.white;
+        spriteRenderer.color = hitColor;
+        yield return new WaitForSeconds(flashDuration);
+        spriteRenderer.color = originalColor;
     }
 
     private void Die()
@@ -127,8 +186,10 @@ public class VolatileGruzzerAI : MonoBehaviour, IDamageable
 
         anim.SetTrigger("Died");
 
-        //Destroy(gameObject, 10);
-    }
+		OnDeath?.Invoke();
+
+		//Destroy(gameObject, 10);
+	}
 
     private IEnumerator ExplosionCountdown()
     {

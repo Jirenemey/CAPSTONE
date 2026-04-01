@@ -1,0 +1,949 @@
+fileFormatVersion: 2
+guid: 7d95c110901fc8a45b36d4d5a3910b8a
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 1002661519922154270
+    second: sactx-1-2048x2048-DXT5-Colosseum_interior-b5374320_0
+  - first:
+      213: 931559245766935942
+    second: sactx-1-2048x2048-DXT5-Colosseum_interior-b5374320_1
+  - first:
+      213: 5205849881518734153
+    second: sactx-1-2048x2048-DXT5-Colosseum_interior-b5374320_2
+  - first:
+      213: 4752749877548429121
+    second: sactx-1-2048x2048-DXT5-Colosseum_interior-b5374320_3
+  - first:
+      213: -5355062916424962235
+    second: sactx-1-2048x2048-DXT5-Colosseum_interior-b5374320_4
+  - first:
+      213: -4230186492819772562
+    second: sactx-1-2048x2048-DXT5-Colosseum_interior-b5374320_5
+  - first:
+      213: 6196513067270977541
+    second: sactx-1-2048x2048-DXT5-Colosseum_interior-b5374320_6
+  - first:
+      213: 2793300069802930172
+    second: sactx-1-2048x2048-DXT5-Colosseum_interior-b5374320_7
+  - first:
+      213: -6134502079356433828
+    second: sactx-1-2048x2048-DXT5-Colosseum_interior-b5374320_8
+  - first:
+      213: 1875893667495336677
+    second: sactx-1-2048x2048-DXT5-Colosseum_interior-b5374320_9
+  - first:
+      213: -5088149063286897589
+    second: sactx-1-2048x2048-DXT5-Colosseum_interior-b5374320_10
+  - first:
+      213: -9133201356912423519
+    second: sactx-1-2048x2048-DXT5-Colosseum_interior-b5374320_11
+  - first:
+      213: -237960073555550675
+    second: sactx-1-2048x2048-DXT5-Colosseum_interior-b5374320_12
+  - first:
+      213: -4107505760371474239
+    second: sactx-1-2048x2048-DXT5-Colosseum_interior-b5374320_13
+  - first:
+      213: 1791263726002271922
+    second: sactx-1-2048x2048-DXT5-Colosseum_interior-b5374320_14
+  - first:
+      213: -6779653473162424597
+    second: sactx-1-2048x2048-DXT5-Colosseum_interior-b5374320_15
+  - first:
+      213: -221585647231850434
+    second: sactx-1-2048x2048-DXT5-Colosseum_interior-b5374320_16
+  - first:
+      213: -564881680843026356
+    second: sactx-1-2048x2048-DXT5-Colosseum_interior-b5374320_17
+  - first:
+      213: -4159874010305134503
+    second: sactx-1-2048x2048-DXT5-Colosseum_interior-b5374320_18
+  - first:
+      213: 1686773460353295534
+    second: sactx-1-2048x2048-DXT5-Colosseum_interior-b5374320_19
+  - first:
+      213: 1569354213640974042
+    second: sactx-1-2048x2048-DXT5-Colosseum_interior-b5374320_20
+  - first:
+      213: 5110461623400385175
+    second: sactx-1-2048x2048-DXT5-Colosseum_interior-b5374320_21
+  - first:
+      213: -3546989094815986863
+    second: sactx-1-2048x2048-DXT5-Colosseum_interior-b5374320_22
+  - first:
+      213: -7706375428917358468
+    second: sactx-1-2048x2048-DXT5-Colosseum_interior-b5374320_23
+  - first:
+      213: 6284769679537782057
+    second: sactx-1-2048x2048-DXT5-Colosseum_interior-b5374320_24
+  - first:
+      213: -4068436622519050464
+    second: sactx-1-2048x2048-DXT5-Colosseum_interior-b5374320_25
+  - first:
+      213: -6946325026709924536
+    second: sactx-1-2048x2048-DXT5-Colosseum_interior-b5374320_26
+  - first:
+      213: 6888173392165371306
+    second: sactx-1-2048x2048-DXT5-Colosseum_interior-b5374320_27
+  - first:
+      213: 8990130334448712719
+    second: sactx-1-2048x2048-DXT5-Colosseum_interior-b5374320_28
+  - first:
+      213: 1424506500877628175
+    second: sactx-1-2048x2048-DXT5-Colosseum_interior-b5374320_29
+  - first:
+      213: -3721569731515979358
+    second: sactx-1-2048x2048-DXT5-Colosseum_interior-b5374320_30
+  - first:
+      213: 3537084945985110189
+    second: sactx-1-2048x2048-DXT5-Colosseum_interior-b5374320_31
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: sactx-1-2048x2048-DXT5-Colosseum_interior-b5374320_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1473
+        width: 148
+        height: 335
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e1bc9ec075b2aed00800000000000000
+      internalID: 1002661519922154270
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sactx-1-2048x2048-DXT5-Colosseum_interior-b5374320_1
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1322
+        width: 349
+        height: 160
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6854b2bc2309dec00800000000000000
+      internalID: 931559245766935942
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sactx-1-2048x2048-DXT5-Colosseum_interior-b5374320_2
+      rect:
+        serializedVersion: 2
+        x: 313
+        y: 1459
+        width: 276
+        height: 131
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 94bfeeda2e4ee3840800000000000000
+      internalID: 5205849881518734153
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sactx-1-2048x2048-DXT5-Colosseum_interior-b5374320_3
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1269
+        width: 82
+        height: 106
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 14f2e8d15d825f140800000000000000
+      internalID: 4752749877548429121
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sactx-1-2048x2048-DXT5-Colosseum_interior-b5374320_4
+      rect:
+        serializedVersion: 2
+        x: 292
+        y: 1212
+        width: 70
+        height: 147
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 54f6f9c56aefea5b0800000000000000
+      internalID: -5355062916424962235
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sactx-1-2048x2048-DXT5-Colosseum_interior-b5374320_5
+      rect:
+        serializedVersion: 2
+        x: 363
+        y: 1210
+        width: 127
+        height: 254
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e6b62d91ccb5b45c0800000000000000
+      internalID: -4230186492819772562
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sactx-1-2048x2048-DXT5-Colosseum_interior-b5374320_6
+      rect:
+        serializedVersion: 2
+        x: 600
+        y: 1085
+        width: 97
+        height: 373
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 508b0ccddcf6ef550800000000000000
+      internalID: 6196513067270977541
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sactx-1-2048x2048-DXT5-Colosseum_interior-b5374320_7
+      rect:
+        serializedVersion: 2
+        x: 695
+        y: 1280
+        width: 7
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: cff6dab2d9bc3c620800000000000000
+      internalID: 2793300069802930172
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sactx-1-2048x2048-DXT5-Colosseum_interior-b5374320_8
+      rect:
+        serializedVersion: 2
+        x: 700
+        y: 1204
+        width: 135
+        height: 94
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c5a801e5cdedddaa0800000000000000
+      internalID: -6134502079356433828
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sactx-1-2048x2048-DXT5-Colosseum_interior-b5374320_9
+      rect:
+        serializedVersion: 2
+        x: 818
+        y: 1184
+        width: 116
+        height: 188
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5ead6770a53880a10800000000000000
+      internalID: 1875893667495336677
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sactx-1-2048x2048-DXT5-Colosseum_interior-b5374320_10
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 913
+        width: 179
+        height: 360
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b444c8692634369b0800000000000000
+      internalID: -5088149063286897589
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sactx-1-2048x2048-DXT5-Colosseum_interior-b5374320_11
+      rect:
+        serializedVersion: 2
+        x: 170
+        y: 1071
+        width: 436
+        height: 148
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1ad8e1371c9504180800000000000000
+      internalID: -9133201356912423519
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sactx-1-2048x2048-DXT5-Colosseum_interior-b5374320_12
+      rect:
+        serializedVersion: 2
+        x: 793
+        y: 944
+        width: 105
+        height: 276
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d2edef8e29892bcf0800000000000000
+      internalID: -237960073555550675
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sactx-1-2048x2048-DXT5-Colosseum_interior-b5374320_13
+      rect:
+        serializedVersion: 2
+        x: 910
+        y: 1167
+        width: 11
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1c0003006453ff6c0800000000000000
+      internalID: -4107505760371474239
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sactx-1-2048x2048-DXT5-Colosseum_interior-b5374320_14
+      rect:
+        serializedVersion: 2
+        x: 916
+        y: 938
+        width: 252
+        height: 271
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2b678674ed8dbd810800000000000000
+      internalID: 1791263726002271922
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sactx-1-2048x2048-DXT5-Colosseum_interior-b5374320_15
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 630
+        width: 717
+        height: 454
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bee09e71615d9e1a0800000000000000
+      internalID: -6779653473162424597
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sactx-1-2048x2048-DXT5-Colosseum_interior-b5374320_16
+      rect:
+        serializedVersion: 2
+        x: 670
+        y: 819
+        width: 140
+        height: 304
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e38ab612705ccecf0800000000000000
+      internalID: -221585647231850434
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sactx-1-2048x2048-DXT5-Colosseum_interior-b5374320_17
+      rect:
+        serializedVersion: 2
+        x: 1027
+        y: 909
+        width: 301
+        height: 87
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c40d939aa132928f0800000000000000
+      internalID: -564881680843026356
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sactx-1-2048x2048-DXT5-Colosseum_interior-b5374320_18
+      rect:
+        serializedVersion: 2
+        x: 1296
+        y: 995
+        width: 7
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9500269a0a82546c0800000000000000
+      internalID: -4159874010305134503
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sactx-1-2048x2048-DXT5-Colosseum_interior-b5374320_19
+      rect:
+        serializedVersion: 2
+        x: 317
+        y: 0
+        width: 1090
+        height: 819
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ea42ae8768f986710800000000000000
+      internalID: 1686773460353295534
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sactx-1-2048x2048-DXT5-Colosseum_interior-b5374320_20
+      rect:
+        serializedVersion: 2
+        x: 780
+        y: 817
+        width: 6
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ade25dea75777c510800000000000000
+      internalID: 1569354213640974042
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sactx-1-2048x2048-DXT5-Colosseum_interior-b5374320_21
+      rect:
+        serializedVersion: 2
+        x: 818
+        y: 686
+        width: 260
+        height: 263
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 79acb0525c10ce640800000000000000
+      internalID: 5110461623400385175
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sactx-1-2048x2048-DXT5-Colosseum_interior-b5374320_22
+      rect:
+        serializedVersion: 2
+        x: 1522
+        y: 753
+        width: 101
+        height: 199
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 15b0f45063096cec0800000000000000
+      internalID: -3546989094815986863
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sactx-1-2048x2048-DXT5-Colosseum_interior-b5374320_23
+      rect:
+        serializedVersion: 2
+        x: 1714
+        y: 711
+        width: 83
+        height: 203
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c701595a0647d0590800000000000000
+      internalID: -7706375428917358468
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sactx-1-2048x2048-DXT5-Colosseum_interior-b5374320_24
+      rect:
+        serializedVersion: 2
+        x: 1917
+        y: 691
+        width: 70
+        height: 212
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 92dbef3b9bcf73750800000000000000
+      internalID: 6284769679537782057
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sactx-1-2048x2048-DXT5-Colosseum_interior-b5374320_25
+      rect:
+        serializedVersion: 2
+        x: 1048
+        y: 566
+        width: 587
+        height: 206
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 02fdf8382720a87c0800000000000000
+      internalID: -4068436622519050464
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sactx-1-2048x2048-DXT5-Colosseum_interior-b5374320_26
+      rect:
+        serializedVersion: 2
+        x: 1573
+        y: 0
+        width: 188
+        height: 701
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8459c800132b99f90800000000000000
+      internalID: -6946325026709924536
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sactx-1-2048x2048-DXT5-Colosseum_interior-b5374320_27
+      rect:
+        serializedVersion: 2
+        x: 1623
+        y: 701
+        width: 76
+        height: 113
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: aad705f7435b79f50800000000000000
+      internalID: 6888173392165371306
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sactx-1-2048x2048-DXT5-Colosseum_interior-b5374320_28
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 353
+        width: 472
+        height: 309
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f0c774d48eb53cc70800000000000000
+      internalID: 8990130334448712719
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sactx-1-2048x2048-DXT5-Colosseum_interior-b5374320_29
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 371
+        height: 411
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f03bb0d7d1dd4c310800000000000000
+      internalID: 1424506500877628175
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sactx-1-2048x2048-DXT5-Colosseum_interior-b5374320_30
+      rect:
+        serializedVersion: 2
+        x: 1357
+        y: 1
+        width: 214
+        height: 574
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2a9e4220c045a5cc0800000000000000
+      internalID: -3721569731515979358
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sactx-1-2048x2048-DXT5-Colosseum_interior-b5374320_31
+      rect:
+        serializedVersion: 2
+        x: 1757
+        y: 1
+        width: 21
+        height: 572
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: da003d1a400461130800000000000000
+      internalID: 3537084945985110189
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      sactx-1-2048x2048-DXT5-Colosseum_interior-b5374320_0: 1002661519922154270
+      sactx-1-2048x2048-DXT5-Colosseum_interior-b5374320_1: 931559245766935942
+      sactx-1-2048x2048-DXT5-Colosseum_interior-b5374320_10: -5088149063286897589
+      sactx-1-2048x2048-DXT5-Colosseum_interior-b5374320_11: -9133201356912423519
+      sactx-1-2048x2048-DXT5-Colosseum_interior-b5374320_12: -237960073555550675
+      sactx-1-2048x2048-DXT5-Colosseum_interior-b5374320_13: -4107505760371474239
+      sactx-1-2048x2048-DXT5-Colosseum_interior-b5374320_14: 1791263726002271922
+      sactx-1-2048x2048-DXT5-Colosseum_interior-b5374320_15: -6779653473162424597
+      sactx-1-2048x2048-DXT5-Colosseum_interior-b5374320_16: -221585647231850434
+      sactx-1-2048x2048-DXT5-Colosseum_interior-b5374320_17: -564881680843026356
+      sactx-1-2048x2048-DXT5-Colosseum_interior-b5374320_18: -4159874010305134503
+      sactx-1-2048x2048-DXT5-Colosseum_interior-b5374320_19: 1686773460353295534
+      sactx-1-2048x2048-DXT5-Colosseum_interior-b5374320_2: 5205849881518734153
+      sactx-1-2048x2048-DXT5-Colosseum_interior-b5374320_20: 1569354213640974042
+      sactx-1-2048x2048-DXT5-Colosseum_interior-b5374320_21: 5110461623400385175
+      sactx-1-2048x2048-DXT5-Colosseum_interior-b5374320_22: -3546989094815986863
+      sactx-1-2048x2048-DXT5-Colosseum_interior-b5374320_23: -7706375428917358468
+      sactx-1-2048x2048-DXT5-Colosseum_interior-b5374320_24: 6284769679537782057
+      sactx-1-2048x2048-DXT5-Colosseum_interior-b5374320_25: -4068436622519050464
+      sactx-1-2048x2048-DXT5-Colosseum_interior-b5374320_26: -6946325026709924536
+      sactx-1-2048x2048-DXT5-Colosseum_interior-b5374320_27: 6888173392165371306
+      sactx-1-2048x2048-DXT5-Colosseum_interior-b5374320_28: 8990130334448712719
+      sactx-1-2048x2048-DXT5-Colosseum_interior-b5374320_29: 1424506500877628175
+      sactx-1-2048x2048-DXT5-Colosseum_interior-b5374320_3: 4752749877548429121
+      sactx-1-2048x2048-DXT5-Colosseum_interior-b5374320_30: -3721569731515979358
+      sactx-1-2048x2048-DXT5-Colosseum_interior-b5374320_31: 3537084945985110189
+      sactx-1-2048x2048-DXT5-Colosseum_interior-b5374320_4: -5355062916424962235
+      sactx-1-2048x2048-DXT5-Colosseum_interior-b5374320_5: -4230186492819772562
+      sactx-1-2048x2048-DXT5-Colosseum_interior-b5374320_6: 6196513067270977541
+      sactx-1-2048x2048-DXT5-Colosseum_interior-b5374320_7: 2793300069802930172
+      sactx-1-2048x2048-DXT5-Colosseum_interior-b5374320_8: -6134502079356433828
+      sactx-1-2048x2048-DXT5-Colosseum_interior-b5374320_9: 1875893667495336677
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
