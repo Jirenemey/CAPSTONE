@@ -47,13 +47,13 @@ GameObject:
   - component: {fileID: 697960525809708663}
   - component: {fileID: 2338194408777348852}
   - component: {fileID: 8116716110664175888}
-  - component: {fileID: 1919163165415653956}
   - component: {fileID: -2866978521334262893}
+  - component: {fileID: 1919163165415653956}
   - component: {fileID: 1400838923696641267}
   - component: {fileID: -3887516623540475071}
   - component: {fileID: -4699259820456412801}
-  - component: {fileID: 8689707098941948081}
-  m_Layer: 8
+  - component: {fileID: 3249721183121365453}
+  m_Layer: 0
   m_Name: Player
   m_TagString: Player
   m_Icon: {fileID: 0}
@@ -284,10 +284,6 @@ MonoBehaviour:
     m_ActionName: 'Player/SuperDash[/Keyboard/s,/XInputControllerWindows/leftTrigger]'
   - m_PersistentCalls:
       m_Calls: []
-    m_ActionId: c4b8f69a-e677-4a6a-acc5-23bf75a04f19
-    m_ActionName: 'Player/Pause[/Keyboard/escape,/XInputControllerWindows/select]'
-  - m_PersistentCalls:
-      m_Calls: []
     m_ActionId: 852140f2-7766-474d-8707-702459ba45f3
     m_ActionName: 'Player/Interact[/Keyboard/upArrow,/XInputControllerWindows/dpad/up]'
   - m_PersistentCalls:
@@ -337,6 +333,10 @@ MonoBehaviour:
       m_Calls: []
     m_ActionId: 9caa3d8a-6b2f-4e8e-8bad-6ede561bd9be
     m_ActionName: UI/TrackedDeviceOrientation
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 84edb5a5-8620-4408-aa52-bfcaa92a42b2
+    m_ActionName: 'UI/Pause[/Keyboard/escape]'
   m_NeverAutoSwitchControlSchemes: 0
   m_DefaultControlScheme: Keyboard&Mouse
   m_DefaultActionMap: Player
@@ -373,6 +373,31 @@ MonoBehaviour:
   dashAction: {fileID: -7619157589409501069, guid: 2bcd2660ca9b64942af0de543d8d7100, type: 3}
   attackAction: {fileID: 1120369429361536294, guid: 2bcd2660ca9b64942af0de543d8d7100, type: 3}
   quickCastAction: {fileID: 5325731216392178691, guid: 2bcd2660ca9b64942af0de543d8d7100, type: 3}
+--- !u!114 &-2866978521334262893
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 901652932801601688}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d5a57f767e5e46a458fc5d3c628d0cbb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  GlobalObjectIdHash: 2949389996
+  InScenePlacedSourceGlobalObjectIdHash: 0
+  DeferredDespawnTick: 0
+  Ownership: 1
+  AlwaysReplicateAsRoot: 0
+  SynchronizeTransform: 1
+  ActiveSceneSynchronization: 0
+  SceneMigrationSynchronization: 1
+  SpawnWithObservers: 1
+  DontDestroyWithOwner: 0
+  AutoObjectParentSync: 1
+  SyncOwnerTransformWhenParented: 1
+  AllowOwnerToParent: 0
 --- !u!114 &1919163165415653956
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -385,6 +410,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b075625e7bb893e448adb66e5d974386, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  ShowTopMostFoldoutHeaderGroup: 1
   walkSpeed: 5
   sprintMultiplier: 1.3
   durationBeforeSprint: 2
@@ -405,31 +431,6 @@ MonoBehaviour:
   projectileSpawnPoint: {fileID: 7330531380822282525}
   HowlingWraithsPrefab: {fileID: 5494110075115208127, guid: e3b245f85ca887341a989cc2bfb5c47a, type: 3}
   HowlingWraithsSpawnPoint: {fileID: 8209784924459026341}
---- !u!114 &-2866978521334262893
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 901652932801601688}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d5a57f767e5e46a458fc5d3c628d0cbb, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  GlobalObjectIdHash: 1617384583
-  InScenePlacedSourceGlobalObjectIdHash: 0
-  DeferredDespawnTick: 0
-  Ownership: 1
-  AlwaysReplicateAsRoot: 0
-  SynchronizeTransform: 1
-  ActiveSceneSynchronization: 0
-  SceneMigrationSynchronization: 1
-  SpawnWithObservers: 1
-  DontDestroyWithOwner: 0
-  AutoObjectParentSync: 1
-  SyncOwnerTransformWhenParented: 1
-  AllowOwnerToParent: 0
 --- !u!114 &1400838923696641267
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -503,43 +504,123 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ShowTopMostFoldoutHeaderGroup: 1
---- !u!70 &8689707098941948081
-CapsuleCollider2D:
+--- !u!114 &3249721183121365453
+MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 901652932801601688}
   m_Enabled: 1
-  serializedVersion: 3
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_ForceSendLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_ForceReceiveLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_ContactCaptureLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_CallbackLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_IsTrigger: 0
-  m_UsedByEffector: 0
-  m_CompositeOperation: 0
-  m_CompositeOrder: 0
-  m_Offset: {x: 0, y: -0.02648282}
-  m_Size: {x: 0.44813758, y: 1.1082304}
-  m_Direction: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e8d0727d5ae3244e3b569694d3912374, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ShowTopMostFoldoutHeaderGroup: 1
+  NetworkAnimatorExpanded: 0
+  AuthorityMode: 1
+  m_Animator: {fileID: -81321523107543937}
+  TransitionStateInfoList:
+  - IsCrossFadeExit: 0
+    Layer: 0
+    OriginatingState: -601574123
+    DestinationState: 538973511
+    TransitionDuration: 0.25
+    TriggerNameHash: -2146256263
+    TransitionIndex: 1
+  - IsCrossFadeExit: 0
+    Layer: 0
+    OriginatingState: -1919845803
+    DestinationState: 538973511
+    TransitionDuration: 0.25
+    TriggerNameHash: -2146256263
+    TransitionIndex: 1
+  - IsCrossFadeExit: 0
+    Layer: 0
+    OriginatingState: 1418504410
+    DestinationState: -796564351
+    TransitionDuration: 0.25
+    TriggerNameHash: -164936600
+    TransitionIndex: 2
+  - IsCrossFadeExit: 0
+    Layer: 0
+    OriginatingState: 819377066
+    DestinationState: -796564351
+    TransitionDuration: 0.25
+    TriggerNameHash: -164936600
+    TransitionIndex: 1
+  - IsCrossFadeExit: 0
+    Layer: 0
+    OriginatingState: 819377066
+    DestinationState: -1872353592
+    TransitionDuration: 0.25
+    TriggerNameHash: 1080829965
+    TransitionIndex: 2
+  - IsCrossFadeExit: 0
+    Layer: 0
+    OriginatingState: 819377066
+    DestinationState: -1949847895
+    TransitionDuration: 0.25
+    TriggerNameHash: 1080829965
+    TransitionIndex: 3
+  - IsCrossFadeExit: 0
+    Layer: 0
+    OriginatingState: 819377066
+    DestinationState: 1446113556
+    TransitionDuration: 0.25
+    TriggerNameHash: 1080829965
+    TransitionIndex: 4
+  AnimatorParameterEntries:
+    ParameterEntries:
+    - name: isMoving
+      NameHash: -27727268
+      Synchronize: 1
+      ParameterType: 4
+    - name: Turn
+      NameHash: -2146256263
+      Synchronize: 1
+      ParameterType: 9
+    - name: isGrounded
+      NameHash: 1360771445
+      Synchronize: 1
+      ParameterType: 4
+    - name: Jump
+      NameHash: 125937960
+      Synchronize: 1
+      ParameterType: 9
+    - name: Double Jump
+      NameHash: -164936600
+      Synchronize: 1
+      ParameterType: 9
+    - name: Attack
+      NameHash: 1080829965
+      Synchronize: 1
+      ParameterType: 9
+    - name: isLookingUp
+      NameHash: -431343905
+      Synchronize: 1
+      ParameterType: 4
+    - name: isLookingDown
+      NameHash: -1117204699
+      Synchronize: 1
+      ParameterType: 4
+    - name: Dash
+      NameHash: 995914302
+      Synchronize: 1
+      ParameterType: 9
+    - name: Hit
+      NameHash: 1654612129
+      Synchronize: 1
+      ParameterType: 9
+    - name: Dead
+      NameHash: 1293411866
+      Synchronize: 1
+      ParameterType: 9
+    - name: isWallClimbing
+      NameHash: 132581077
+      Synchronize: 1
+      ParameterType: 4
+  AnimatorParametersExpanded: 0
 --- !u!1 &2456055388100116536
 GameObject:
   m_ObjectHideFlags: 0
@@ -584,6 +665,7 @@ GameObject:
   - component: {fileID: 4865785387720614333}
   - component: {fileID: 5768910124186514946}
   - component: {fileID: 674258115556416666}
+  - component: {fileID: 1107649186353076718}
   m_Layer: 0
   m_Name: AttackPoint
   m_TagString: Untagged
@@ -750,3 +832,49 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 1024
   damage: 10
+--- !u!114 &1107649186353076718
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5224605153192405352}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: da52bf8bbc1de48cfb221a6ff30f7972, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ShowTopMostFoldoutHeaderGroup: 1
+  NetworkTransformExpanded: 1
+  AutoOwnerAuthorityTickOffset: 1
+  PositionInterpolationType: 0
+  RotationInterpolationType: 0
+  ScaleInterpolationType: 0
+  PositionLerpSmoothing: 1
+  PositionMaxInterpolationTime: 0.1
+  RotationLerpSmoothing: 1
+  RotationMaxInterpolationTime: 0.1
+  ScaleLerpSmoothing: 1
+  ScaleMaxInterpolationTime: 0.1
+  AuthorityMode: 0
+  TickSyncChildren: 0
+  UseUnreliableDeltas: 0
+  SyncPositionX: 1
+  SyncPositionY: 1
+  SyncPositionZ: 1
+  SyncRotAngleX: 1
+  SyncRotAngleY: 1
+  SyncRotAngleZ: 1
+  SyncScaleX: 1
+  SyncScaleY: 1
+  SyncScaleZ: 1
+  PositionThreshold: 0.001
+  RotAngleThreshold: 0.01
+  ScaleThreshold: 0.01
+  UseQuaternionSynchronization: 0
+  UseQuaternionCompression: 0
+  UseHalfFloatPrecision: 0
+  InLocalSpace: 0
+  SwitchTransformSpaceWhenParented: 0
+  Interpolate: 1
+  SlerpPosition: 0
