@@ -34,5 +34,6 @@ public class SturdyFSlashState : EnemyState
     {
         base.Exit();
         sturdyFool.ResetAnimationFinished();
+        sturdyFool.SetAttackCooldown();
     }
 }
