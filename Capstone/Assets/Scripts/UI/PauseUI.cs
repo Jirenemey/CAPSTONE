@@ -99,6 +99,7 @@ public class PauseUI : MonoBehaviour
     public void ConfirmQuit()
     {
         SceneManager.LoadScene("MainMenu");
+        SceneManager.UnloadSceneAsync("Arena");
     }
 
     public void Back()

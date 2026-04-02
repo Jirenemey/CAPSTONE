@@ -1380,7 +1380,6 @@ GameObject:
   - component: {fileID: 622825743555222334}
   - component: {fileID: 298897804513463703}
   - component: {fileID: 1974585359781216405}
-  - component: {fileID: 8021869461436422222}
   m_Layer: 5
   m_Name: RebindDash
   m_TagString: Untagged
@@ -1472,18 +1471,6 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
---- !u!114 &8021869461436422222
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4007743667855912063}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 312a33727013af54683f1115d6f70261, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &4358629061321345686
 GameObject:
   m_ObjectHideFlags: 0
@@ -1495,7 +1482,6 @@ GameObject:
   - component: {fileID: 6878783838353598795}
   - component: {fileID: 8670783349327740514}
   - component: {fileID: 6367382124339273727}
-  - component: {fileID: 4043340045879214870}
   m_Layer: 5
   m_Name: RebindAttack
   m_TagString: Untagged
@@ -1587,18 +1573,6 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
---- !u!114 &4043340045879214870
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4358629061321345686}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 312a33727013af54683f1115d6f70261, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &4439596947805498447
 GameObject:
   m_ObjectHideFlags: 0
@@ -1746,7 +1720,6 @@ GameObject:
   - component: {fileID: 5404585049383147505}
   - component: {fileID: 7520697579458561221}
   - component: {fileID: 7675050910823489949}
-  - component: {fileID: 4285541870976173222}
   m_Layer: 5
   m_Name: RebindQuickCast
   m_TagString: Untagged
@@ -1838,18 +1811,6 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
---- !u!114 &4285541870976173222
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4887021322509215723}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 312a33727013af54683f1115d6f70261, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &5331078798607563655
 GameObject:
   m_ObjectHideFlags: 0
@@ -2244,7 +2205,6 @@ GameObject:
   - component: {fileID: 6915308381805876286}
   - component: {fileID: 5170348760598592679}
   - component: {fileID: 5177320211763893868}
-  - component: {fileID: 1082084201886706074}
   m_Layer: 5
   m_Name: ResetBindings
   m_TagString: Untagged
@@ -2324,18 +2284,6 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls: []
---- !u!114 &1082084201886706074
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5706693798958529377}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 312a33727013af54683f1115d6f70261, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &5740567168733722955
 GameObject:
   m_ObjectHideFlags: 0
@@ -2693,7 +2641,6 @@ GameObject:
   - component: {fileID: 1560777009471829703}
   - component: {fileID: 8972582343906214978}
   - component: {fileID: 932581850089238807}
-  - component: {fileID: 4538165559169668289}
   m_Layer: 5
   m_Name: RebindJump
   m_TagString: Untagged
@@ -2785,18 +2732,6 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
---- !u!114 &4538165559169668289
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6044676191294439496}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 312a33727013af54683f1115d6f70261, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &6283291977476850749
 GameObject:
   m_ObjectHideFlags: 0
@@ -3523,7 +3458,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   settingsBtn: {fileID: 0}
-  settingsScrn: {fileID: 0}
+  settingsScrn: {fileID: 8083360614870709046}
   jumpAction: {fileID: -2099379676528639254, guid: 2bcd2660ca9b64942af0de543d8d7100, type: 3}
   dashAction: {fileID: -7619157589409501069, guid: 2bcd2660ca9b64942af0de543d8d7100, type: 3}
   attackAction: {fileID: 1120369429361536294, guid: 2bcd2660ca9b64942af0de543d8d7100, type: 3}
@@ -3533,10 +3468,11 @@ MonoBehaviour:
   - {fileID: 4007743667855912063}
   - {fileID: 4358629061321345686}
   - {fileID: 4887021322509215723}
+  resetBindings: {fileID: 5177320211763893868}
   playerInput: {fileID: 697960525809708663, guid: 33a4a1835edc44144b51368b2e222aa8, type: 3}
-  pressKeyScreen: {fileID: 0}
+  pressKeyScreen: {fileID: 6657756228597872559}
   audioManager: {fileID: 0}
-  sfxSlider: {fileID: 0}
-  sfxText: {fileID: 0}
-  musicSlider: {fileID: 0}
-  musicText: {fileID: 0}
+  sfxSlider: {fileID: 1774143478839344152}
+  sfxText: {fileID: 4592811889819023455}
+  musicSlider: {fileID: 1143395022380156632}
+  musicText: {fileID: 4393052396847563350}

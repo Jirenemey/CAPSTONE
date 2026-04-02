@@ -26,7 +26,6 @@ public class MenuScript : MonoBehaviour
     void Update()
     {
         Vector2 mousePos = Mouse.current.position.ReadValue();
-        Debug.Log("Mouse X Pos: " + mousePos.x);
 
         float normalizedX = (mousePos.x / Screen.width) * 2f - 1f;
         float normalizedY = (mousePos.y / Screen.height) * 2f - 1f;
@@ -37,13 +36,10 @@ public class MenuScript : MonoBehaviour
         menuBackground.GetComponent<RectTransform>().anchoredPosition = new Vector2(easedX * movementAmountX, easedY * movementAmountY);
     }
 
-    void Start()
-    {
-        Initialize();
-    }
-
     public void Initialize()
     {
+        if(!audioManager) audioManager = GameObject.Find("AudioManager").GetComponent<AudioManager>();
+        
         // Menu Items
         if(!singleplayerBtn) singleplayerBtn = GameObject.Find("SingleplayerBtn").GetComponent<Button>();
         if(!multiplayerBtn) multiplayerBtn = GameObject.Find("MultiplayerBtn").GetComponent<Button>();
@@ -58,7 +54,7 @@ public class MenuScript : MonoBehaviour
         // Animations
         if(!menuBackground) menuBackground = GameObject.Find("MenuBackground");
 
-        singleplayerBtn.onClick.AddListener(() => LoadScene("SampleScene"));
+        singleplayerBtn.onClick.AddListener(() => LoadSinglePlayer());
         multiplayerBtn.onClick.AddListener(() => LoadScene("Multiplayer"));
         settings.settingsBtn.onClick.AddListener(() => SettingsPage());
         quitBtn.onClick.AddListener(() => Quit());
@@ -66,28 +62,27 @@ public class MenuScript : MonoBehaviour
 
         backBtn.gameObject.SetActive(false);
         settings.pressKeyScreen.gameObject.SetActive(false);
-        
-        Back();
-
-        if(!audioManager) audioManager = GameObject.Find("AudioManager").GetComponent<AudioManager>();
-        //audioManager.PlayMusic("MenuMusic");
+        settings.settingsScrn.SetActive(false);
     }
 
-    // [RuntimeInitializeOnLoadMethod(RuntimeInitializeLoadType.AfterSceneLoad)]
-    // static void OnAfterSceneLoad()
-    // {
-    //     MenuScript menu = FindObjectOfType<MenuScript>();
-    //     if (menu != null)
-    //     {
-    //         menu.Initialize();
-    //     }
-    // }
-
+    void Start()
+    {
+        Initialize();
+        audioManager.PlayMusic("Menu");
+    }
 
     // Main Menu Button management
     public void LoadScene(string sceneName) {
 		SceneManager.LoadScene(sceneName);
 	}
+
+    public void LoadSinglePlayer()
+    {
+        SceneManager.LoadScene("Arena");
+        var networkManager = GameObject.Find("NetworkManager");
+        if(networkManager)
+            Destroy(networkManager);
+    }
 
     public void SettingsPage()
     {
