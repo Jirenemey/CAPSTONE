@@ -17,6 +17,9 @@ public class SturdyFThrowState : EnemyState
         sturdyFool.ResetAnimationFinished();
         enemy.movement.Stop();
         enemy.FacePlayer();
+
+        sturdyFool.SetThrowTarget(sturdyFool.detection.FindClosestPlayer().position);
+
         enemy.Anim.SetTrigger(SturdyFoolAI.ProjectileHash);
     }
 
@@ -34,5 +37,6 @@ public class SturdyFThrowState : EnemyState
     {
         base.Exit();
         sturdyFool.ResetAnimationFinished();
+        sturdyFool.SetAttackCooldown();
     }
 }

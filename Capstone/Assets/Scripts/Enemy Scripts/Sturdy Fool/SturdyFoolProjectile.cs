@@ -1,15 +1,23 @@
 using Unity.VisualScripting;
 using UnityEngine;
 
-public class SturdyFoolProjectile : MonoBehaviour, IDamageable
+public class SturdyFoolProjectile : MonoBehaviour
 {
     Rigidbody2D rb;
     Collider2D col;
     Animator anim;
     SpriteRenderer spriteRenderer;
 
-    [SerializeField] float damage = 20f;
-    [SerializeField] float lifetime = 5f; // destroy if it never hits a wall
+    [Header("Settings")]
+    [SerializeField] private float arcHeight = 2f;
+    [SerializeField] private float travelTime = 0.8f;
+    [SerializeField] private float damage = 10f;
+    [SerializeField] private float lifetime = 5f; // destroy if it never hits a wall
+    [SerializeField] private LayerMask targetLayers;
+    [SerializeField] private LayerMask Ground;
+
+    private bool launched = false;
+    private bool isDead = false;
 
     void Awake()
     {
@@ -18,37 +26,73 @@ public class SturdyFoolProjectile : MonoBehaviour, IDamageable
         if (!anim) anim = GetComponent<Animator>();
         if (!spriteRenderer) spriteRenderer = GetComponent<SpriteRenderer>();
     }
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
+
     void Start()
     {
         Destroy(gameObject, lifetime);
     }
 
-    // Update is called once per frame
     void Update()
     {
         
     }
 
-    public virtual void TakeDamage(float damage)
+    public void LaunchArc(Vector2 target)
     {
-        
+        launched = true;
+
+        Vector2 start = transform.position;
+
+        float gravity = Mathf.Abs(Physics2D.gravity.y * rb.gravityScale);
+
+        float height = arcHeight;
+
+        // Time to reach peak
+        float timeUp = Mathf.Sqrt(2 * height / gravity);
+
+        // Time to fall from peak to target
+        float timeDown = Mathf.Sqrt(2 * Mathf.Max(0.01f, (height - (target.y - start.y))) / gravity);
+
+        float totalTime = timeUp + timeDown;
+
+        float vx = (target.x - start.x) / totalTime;
+        float vy = gravity * timeUp;
+
+        // Apply velocity (note: Unity gravity is negative)
+        rb.linearVelocity = new Vector2(vx, vy);
     }
 
     private void OnTriggerEnter2D(Collider2D other)
     {
-        // Hit wall — destroy projectile
-        if (other.gameObject.layer == LayerMask.NameToLayer("Ground"))
+        // Hit player
+        if ((targetLayers.value & (1 << other.gameObject.layer)) != 0)
         {
-            Destroy(gameObject);
-            return;
+            //player doesn't have IDamageable at the moment
+            if (other.TryGetComponent(out IDamageable damageable))
+            {
+                damageable.TakeDamage(damage);
+                Die();
+                return;
+            }
         }
 
-        // Hit enemy — deal damage but keep going
-        if (other.TryGetComponent<IDamageable>(out var target) && other.gameObject.layer == LayerMask.NameToLayer("Player"))
+        // Hit ground
+        if ((Ground.value & (1 << other.gameObject.layer)) != 0)
         {
-            target.TakeDamage(damage);
+            Die();
         }
     }
 
+    private void Die()
+    {
+        if (isDead) return;
+
+        isDead = true;
+        rb.gravityScale = 0f;
+        rb.linearVelocity = Vector2.zero;
+        // Optional: spawn effect here
+        anim.SetTrigger("Break");
+
+        Destroy(gameObject, 0.5f);
+    }
 }

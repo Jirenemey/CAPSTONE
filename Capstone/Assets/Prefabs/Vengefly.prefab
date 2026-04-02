@@ -194,7 +194,8 @@ MonoBehaviour:
   maxHealth: 100
   knockbackForce: 5
   collisionDMG: 1
-  hitColor: {r: 1, g: 1, b: 1, a: 1}
+  spriteFacing: -1
+  hitColor: {r: 1, g: 0, b: 0, a: 1}
   flashDuration: 0.1
   attackRadius: 2
   windupTime: 0.5
