@@ -249,6 +249,8 @@ public class NetworkLobyyUI : NetworkBehaviour
         HostScreen();
         readySystem.SetActive(true);
         OnNetworkSpawn();
+        readyCount.Value += 1;
+        readyCount.Value += -1;
     }
 
     public async Task<bool> StartClientWithRelay(string joinCode, string connectionType) {
@@ -292,5 +294,7 @@ public class NetworkLobyyUI : NetworkBehaviour
         Debug.Log("Successfully connected to server! Client ID: " + clientId);
         JoinComplete();
         readySystem.SetActive(true);
+        UpdateReadyStatusServerRpc(1);
+        UpdateReadyStatusServerRpc(-1);
     }
 }

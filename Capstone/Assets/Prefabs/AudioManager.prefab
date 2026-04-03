@@ -176,9 +176,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   musicSounds:
-  - name: MultiplayerMenuMusic
+  - name: Multiplayer
     clip: {fileID: 8300000, guid: 166be0aa319a4be44ba3fe1c399cf586, type: 3}
-  - name: MenuMusic
+  - name: Menu
     clip: {fileID: 8300000, guid: 8c225dad7e3bc7d439f6a2a612dd0ad0, type: 3}
   sfxSounds:
   - name: Btn
