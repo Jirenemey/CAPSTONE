@@ -9,13 +9,15 @@ using System;
 
 [RequireComponent(typeof(Rigidbody2D))]
 [RequireComponent(typeof(Collider2D))]
-public class Player : NetworkBehaviour {
+public class Player : NetworkBehaviour, IDamageable {
 	Rigidbody2D rb;
 	Collider2D col;
 	Animator anim;
 	SpriteRenderer spriteRenderer;
 	PlayerInputHandler inputHandler;
 	public PlayerStats playerStats;
+	public event System.Action OnDeath;
+
 
 	[Header("Movement Settings")]
 	[SerializeField] private float walkSpeed = 5.0f;
@@ -73,6 +75,11 @@ public class Player : NetworkBehaviour {
 	[SerializeField] GameObject HowlingWraithsPrefab;
 	[SerializeField] Transform HowlingWraithsSpawnPoint;
 
+	[Header("Damage Settings")]
+	[SerializeField] float invincibilityDuration = 1.0f;
+	[SerializeField] AudioClip damageSound;
+	private AudioSource audioSource;
+	private bool isInvincible = false;
 
 	void Start() {
 		if (!rb) rb = GetComponent<Rigidbody2D>();
@@ -94,6 +101,13 @@ public class Player : NetworkBehaviour {
 		groundLayer = LayerMask.GetMask("Ground");
 		oldDirection = playerDirection;
 		originalWalkSpeed = walkSpeed;
+
+		audioSource = GetComponent<AudioSource>();
+		if (!audioSource) {
+			audioSource = gameObject.AddComponent<AudioSource>();
+		}
+
+		playerStats.OnPlayerDeath += () => OnDeath?.Invoke();
 
 		attackPointLocations = new Dictionary<AttackDirection, Vector2>(){
 			{
@@ -465,6 +479,34 @@ public class Player : NetworkBehaviour {
 		yield return new WaitForSeconds(bounceDuration);
 
 		isBouncing = false;
+	}
+
+	public void TakeDamage(float amount) {
+		print("Player got hit");
+		if (isInvincible) return;
+
+		playerStats.TakeDamage(1);
+
+		// Play sound
+		if (damageSound && audioSource) {
+			audioSource.PlayOneShot(damageSound);
+		}
+
+		// Start invincibility
+		StartCoroutine(InvincibilityRoutine());
+	}
+
+	private System.Collections.IEnumerator InvincibilityRoutine() {
+		isInvincible = true;
+
+		// Optional: Make player flash or something for visual feedback
+		// For now, just disable collider to prevent further damage
+		col.enabled = false;//bug?splayer could fall
+
+		yield return new WaitForSeconds(invincibilityDuration);
+
+		col.enabled = true;
+		isInvincible = false;
 	}
 
 }
