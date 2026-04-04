@@ -1,0 +1,150 @@
+using UnityEngine;
+using UnityEngine.UI;
+using Unity.Netcode;
+using UnityEngine.SceneManagement;
+using TMPro;
+
+public class GameOver : NetworkBehaviour
+{
+    [SerializeField] AudioManager audioManager;
+    [SerializeField] GameObject gameOverScreen;
+    [SerializeField] Button mainMenuBtn;
+    [SerializeField] Button restartBtn;
+    [SerializeField] GameObject voteRestartContainer;
+    [SerializeField] Button voteRestartBtn;
+    [SerializeField] Button cancelRestartBtn;
+    [SerializeField] TMP_Text restartText;
+    public NetworkVariable<int> restartCount = new NetworkVariable<int>(0, NetworkVariableReadPermission.Everyone, NetworkVariableWritePermission.Server);
+
+
+    void Start()
+    {
+        Initialize();
+    }
+
+    void Initialize()
+    {
+        if(!audioManager) audioManager = GameObject.Find("AudioManager").GetComponent<AudioManager>();
+
+        if(!gameOverScreen) gameOverScreen = GameObject.Find("GameOverScreen");
+        if(!mainMenuBtn) mainMenuBtn = GameObject.Find("MainMenuBtn").GetComponent<Button>();
+
+        if(!restartBtn) restartBtn = GameObject.Find("RestartBtn").GetComponent<Button>();
+
+        if(!voteRestartContainer) voteRestartContainer = GameObject.Find("VoteRestartContainer");
+        if(!voteRestartBtn) voteRestartBtn = GameObject.Find("VoteRestartBtn").GetComponent<Button>();
+        if(!cancelRestartBtn) cancelRestartBtn = GameObject.Find("CancelVoteBtn").GetComponent<Button>();
+        if(!restartText) restartText = GameObject.Find("VoteRestartTxt").GetComponent<TMP_Text>();
+
+        mainMenuBtn.onClick.AddListener(() => MainMenu());
+        restartBtn.onClick.AddListener(() => Restart());
+
+        if (NetworkManager.Singleton)
+        {
+            OnNetworkSpawn();
+        } 
+        else {
+            restartBtn.interactable = true;
+            restartBtn.onClick.AddListener(() => Restart());
+        }
+
+        gameOverScreen.SetActive(false);
+
+    }
+
+    public void SetGameOver()
+    {
+        gameOverScreen.SetActive(true);
+
+        mainMenuBtn.gameObject.SetActive(true);
+        if (NetworkManager.Singleton)
+        {
+            voteRestartContainer.SetActive(true);
+            restartBtn.gameObject.SetActive(false);
+            voteRestartBtn.gameObject.SetActive(true);
+            cancelRestartBtn.gameObject.SetActive(false);
+            restartText.gameObject.SetActive(true);
+        } else
+        {
+            voteRestartContainer.SetActive(false);
+            restartBtn.gameObject.SetActive(true);
+        }
+    }
+
+    void MainMenu()
+    {
+        if(NetworkManager.Singleton){
+            NetworkManager.Singleton.Shutdown();
+            Destroy(GameObject.Find("NetworkManager"));
+        }
+        SceneManager.LoadScene("MainMenu");
+    }
+    
+    void Restart()
+    {   if(!NetworkManager.Singleton){
+            SceneManager.LoadScene("Arena");
+        } 
+        else {
+            NetworkManager.Singleton.SceneManager.LoadScene(
+            "Arena",
+            LoadSceneMode.Single
+            );
+        }
+    }
+
+    public override void OnNetworkSpawn()
+    {
+        base.OnNetworkSpawn();
+        
+        restartBtn.interactable = true;
+        voteRestartBtn.interactable = true;
+        cancelRestartBtn.interactable = true;
+
+        restartBtn.onClick.AddListener(() => Restart());
+        voteRestartBtn.onClick.AddListener(() => VoteRestart());
+        cancelRestartBtn.onClick.AddListener(() => CancelVote());
+
+        restartText.text = "0/2";
+
+        restartCount.OnValueChanged += (prev, curr) =>
+        {
+            restartText.text = curr + "/2";
+
+            if(restartCount.Value == 2 && NetworkManager.Singleton.IsHost)
+                restartBtn.gameObject.SetActive(true);
+            else
+                restartBtn.gameObject.SetActive(false);
+
+        };
+    }
+
+    public void VoteRestart()
+    {
+        voteRestartBtn.gameObject.SetActive(false);
+        cancelRestartBtn.gameObject.SetActive(true);
+
+        if (NetworkManager.Singleton.IsClient)
+            VoteRestartServerRpc(1);
+        else if(NetworkManager.Singleton.IsHost)
+            restartCount.Value += 1;
+    }
+
+    public void CancelVote()
+    {
+        voteRestartBtn.gameObject.SetActive(true);
+        cancelRestartBtn.gameObject.SetActive(false);
+
+        if (NetworkManager.Singleton.IsClient)
+            VoteRestartServerRpc(-1);
+        else if(NetworkManager.Singleton.IsHost)
+            restartCount.Value += -1;
+    }
+
+    [ServerRpc(RequireOwnership = false)]
+    public void VoteRestartServerRpc(int value)
+    {
+        restartCount.Value += value; 
+    } 
+
+
+}

@@ -57,6 +57,7 @@ public class WaveManager : MonoBehaviour {
         WaveData currentWave = waves[currentWaveIndex];
 
         currentWave.waveParentGameObject.SetActive(true);
+        DisplayWaveObjectsClientRpc(currentWave);
         foreach(EnemyData enemyData in currentWave.enemies) {
 			GameObject spawnedEnemy = Instantiate(enemyData.enemie, enemyData.spawnPoint);
 
@@ -73,6 +74,12 @@ public class WaveManager : MonoBehaviour {
 
             spawnedEnemy.GetComponent<NetworkObject>().Spawn();
 		}
+    }
+
+    [ClientRpc]
+    void DisplayWaveObjectsClientRpc(WaveData currentWave)
+    {
+        currentWave.waveParentGameObject.SetActive(true);
     }
     
 
