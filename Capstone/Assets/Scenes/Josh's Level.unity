@@ -1208,6 +1208,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: -2866978521334262893, guid: 33a4a1835edc44144b51368b2e222aa8, type: 3}
+      propertyPath: GlobalObjectIdHash
+      value: 217933447
+      objectReference: {fileID: 0}
     - target: {fileID: 155722702718343512, guid: 33a4a1835edc44144b51368b2e222aa8, type: 3}
       propertyPath: m_Size.x
       value: 0.4987569
@@ -2521,10 +2525,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: sharp Baldur
       objectReference: {fileID: 0}
-    - target: {fileID: 3417591668451977817, guid: 2d6c354e28b046f4096fdf5f939c422e, type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 6153310976648274172, guid: 2d6c354e28b046f4096fdf5f939c422e, type: 3}
       propertyPath: m_LocalPosition.x
       value: 7.79
@@ -2564,6 +2564,10 @@ PrefabInstance:
     - target: {fileID: 6153310976648274172, guid: 2d6c354e28b046f4096fdf5f939c422e, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7748793935417409510, guid: 2d6c354e28b046f4096fdf5f939c422e, type: 3}
+      propertyPath: GlobalObjectIdHash
+      value: 1256145985
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -2635,6 +2639,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 3429527091910375493, guid: bb8bfdf606e97104eaf7dd8b7c1ad58b, type: 3}
+      propertyPath: GlobalObjectIdHash
+      value: 2769590856
+      objectReference: {fileID: 0}
     - target: {fileID: 4937116342610955899, guid: bb8bfdf606e97104eaf7dd8b7c1ad58b, type: 3}
       propertyPath: m_LocalPosition.x
       value: -0.83
@@ -2679,10 +2687,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Volatile Gruzzer
       objectReference: {fileID: 0}
-    - target: {fileID: 5136342113278747969, guid: bb8bfdf606e97104eaf7dd8b7c1ad58b, type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -2696,6 +2700,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: -1196298241999572189, guid: cd81cb062295a2649acd5a0b50f36874, type: 3}
+      propertyPath: GlobalObjectIdHash
+      value: 1127931863
+      objectReference: {fileID: 0}
     - target: {fileID: 79898377011106583, guid: cd81cb062295a2649acd5a0b50f36874, type: 3}
       propertyPath: m_LocalPosition.x
       value: 3
@@ -2739,10 +2747,6 @@ PrefabInstance:
     - target: {fileID: 8414971049533135686, guid: cd81cb062295a2649acd5a0b50f36874, type: 3}
       propertyPath: m_Name
       value: Vengefly
-      objectReference: {fileID: 0}
-    - target: {fileID: 8414971049533135686, guid: cd81cb062295a2649acd5a0b50f36874, type: 3}
-      propertyPath: m_IsActive
-      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

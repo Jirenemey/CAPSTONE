@@ -208,7 +208,10 @@ public abstract class EnemyBase : MonoBehaviour, IDamageable
 
     private void OnCollideEnter2D(Collider2D collision)
     {
-        //if (collision.gameObject.TryGetComponent<Spikes>)
+        if (collision.gameObject.TryGetComponent<Spikes>(out var spikes))
+        {
+            Die();
+        }
     }
 
     protected virtual void Die()

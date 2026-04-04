@@ -46,7 +46,7 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
-    filterMode: 0
+    filterMode: 1
     aniso: 1
     mipBias: 0
     wrapU: 1
@@ -109,59 +109,15 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: atlas0_78_0
-      rect:
-        serializedVersion: 2
-        x: 0
-        y: 133
-        width: 138
-        height: 112
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: e06834c93c31f4817be1932ff14b59ca
-      internalID: 21300000
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: atlas0_78_1
-      rect:
-        serializedVersion: 2
-        x: 74
-        y: 0
-        width: 180
-        height: 214
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 584f4404cddd54cacb4d38cb4ee9f902
-      internalID: 21300002
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: atlas0_78_2
+      name: Blob_1
       rect:
         serializedVersion: 2
         x: 138
-        y: 192
+        y: 191
         width: 65
-        height: 63
+        height: 65
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -175,7 +131,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: atlas0_78_3
+      name: Blob_7
       rect:
         serializedVersion: 2
         x: 0
@@ -183,7 +139,7 @@ TextureImporter:
         width: 74
         height: 72
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -192,6 +148,226 @@ TextureImporter:
       bones: []
       spriteID: 34445d193326c46c583714dcc386a672
       internalID: 21300006
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Blob_2
+      rect:
+        serializedVersion: 2
+        x: 149
+        y: 130
+        width: 65
+        height: 65
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1e6b88fad2df66042a8d54f8dd31befa
+      internalID: -1367691225
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Blob_3
+      rect:
+        serializedVersion: 2
+        x: 149
+        y: 67
+        width: 65
+        height: 65
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 07856b00b740de64c80ec61fcb8f3b0b
+      internalID: 1987066459
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Blob_4
+      rect:
+        serializedVersion: 2
+        x: 149
+        y: 0
+        width: 70
+        height: 70
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e50c15956e62d6343b71b98288baa928
+      internalID: 248309759
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Blob_6
+      rect:
+        serializedVersion: 2
+        x: 78
+        y: 0
+        width: 70
+        height: 70
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 109101e472a1666418661092cf9f0bb1
+      internalID: -1412432197
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Blob_5
+      rect:
+        serializedVersion: 2
+        x: 76
+        y: 68
+        width: 70
+        height: 65
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a88ace28541ea5b4aa4b95eeb82cc148
+      internalID: -121937418
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Blob_Hit_1
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 135
+        width: 86
+        height: 49
+      alignment: 9
+      pivot: {x: 0.5, y: 0.81632656}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e36b8a74cc7ea734f8c524026434f9ae
+      internalID: 387130191
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Blob_Hit_2
+      rect:
+        serializedVersion: 2
+        x: 2
+        y: 216
+        width: 104
+        height: 34
+      alignment: 9
+      pivot: {x: 0.5, y: 1.1764706}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5c3d48a702f3874418c933cc7dbea5d7
+      internalID: 1886959595
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Blob_Hit_3
+      rect:
+        serializedVersion: 2
+        x: 219
+        y: 109
+        width: 31
+        height: 104
+      alignment: 9
+      pivot: {x: 1.2903225, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 478a8f8d38fe2f84bb9bcf2a20756ab7
+      internalID: 855917826
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Blob_Hit_4
+      rect:
+        serializedVersion: 2
+        x: 223
+        y: 2
+        width: 30
+        height: 104
+      alignment: 9
+      pivot: {x: 1.3333334, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e4b404fc03729194d9e87d1d8c6d2180
+      internalID: -706409921
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Blob_Hit_5
+      rect:
+        serializedVersion: 2
+        x: 110
+        y: 135
+        width: 27
+        height: 104
+      alignment: 9
+      pivot: {x: 1.4814814, y: 0.3846154}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5c11182c4f5ac234498a4fdbb050e09b
+      internalID: 21300000
       vertices: []
       indices: 
       edges: []
@@ -210,10 +386,18 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      atlas0_78_0: 21300000
-      atlas0_78_1: 21300002
-      atlas0_78_2: 21300004
-      atlas0_78_3: 21300006
+      Blob_1: 21300004
+      Blob_2: 21300000
+      Blob_3: 1987066459
+      Blob_4: 21300002
+      Blob_5: -121937418
+      Blob_6: -1412432197
+      Blob_7: 21300006
+      Blob_Hit_1: 387130191
+      Blob_Hit_2: 1886959595
+      Blob_Hit_3: 855917826
+      Blob_Hit_4: -706409921
+      Blob_Hit_5: 21300000
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

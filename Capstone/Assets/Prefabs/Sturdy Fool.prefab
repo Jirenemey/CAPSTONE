@@ -201,6 +201,7 @@ MonoBehaviour:
   spriteFacing: 1
   hitColor: {r: 1, g: 0, b: 0, a: 1}
   flashDuration: 0.1
+  audioManager: {fileID: 0}
   slashHitbox: {fileID: 3311009216577586011}
   projectilePrefab: {fileID: 2637100556598761044, guid: f309d97f9f606cd439c6e3c4a52c9379, type: 3}
   groundCheck: {fileID: 0}

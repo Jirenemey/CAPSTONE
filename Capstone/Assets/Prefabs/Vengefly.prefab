@@ -199,6 +199,7 @@ MonoBehaviour:
   spriteFacing: -1
   hitColor: {r: 1, g: 0, b: 0, a: 1}
   flashDuration: 0.1
+  audioManager: {fileID: 0}
   attackRadius: 2
   windupTime: 0.5
   recoveryTime: 0.5
@@ -228,6 +229,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6ea2c20ac5bda9f4c9fc2be21e493c7e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  playerlist: []
   player: {fileID: 0}
   sightRadius: 5
   exitSightRadius: 5
@@ -256,7 +258,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d5a57f767e5e46a458fc5d3c628d0cbb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  GlobalObjectIdHash: 2120359497
+  GlobalObjectIdHash: 1127931863
   InScenePlacedSourceGlobalObjectIdHash: 0
   DeferredDespawnTick: 0
   Ownership: 1

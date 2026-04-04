@@ -125,6 +125,11 @@ public class VolatileGruzzerAI : MonoBehaviour, IDamageable
         spriteRenderer.flipX = direction.x > 0;
 
         rb.linearVelocity = direction * moveSpeed;
+
+        if (collision.gameObject.TryGetComponent<Spikes>(out var spikes))
+        {
+            Die();
+        }
     }
 
     private bool IsGrounded()
