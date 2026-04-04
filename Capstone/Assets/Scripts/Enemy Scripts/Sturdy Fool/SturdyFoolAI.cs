@@ -81,6 +81,11 @@ public class SturdyFoolAI : EnemyBase
 
     protected override void Update()
     {
+        if (isDead && IsGrounded())
+        {
+            anim.SetBool(IsGroundedHash, true);
+        }
+
         base.Update();
 
         IsLedgeAhead();

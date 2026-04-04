@@ -31,10 +31,14 @@ public abstract class EnemyBase : NetworkBehaviour, IDamageable
     // 1 = sprite faces RIGHT by default
     // -1 = sprite faces LEFT by default
 
+    private Color originalColor;
     [SerializeField] private Color hitColor = Color.red;
     [SerializeField] private float flashDuration = 0.1f;
 
-    private Color originalColor;
+    //[SerializeField] private Material flashMaterial;
+
+    //private Material originalMaterial;
+    //private Coroutine flashRoutine;
 
     protected Rigidbody2D rb;
     protected Collider2D col;
@@ -78,6 +82,7 @@ public abstract class EnemyBase : NetworkBehaviour, IDamageable
     protected virtual void Start()
     {
         originalColor = spriteRenderer.color;
+        //originalMaterial = spriteRenderer.material;
     }
 
     protected virtual void Update()
@@ -232,11 +237,33 @@ public abstract class EnemyBase : NetworkBehaviour, IDamageable
 
     private IEnumerator HitFlash()
     {
-        Color originalColor = Color.white;
+        //Color originalColor = Color.white;
         spriteRenderer.color = hitColor;
         yield return new WaitForSeconds(flashDuration);
         spriteRenderer.color = originalColor;
     }
+
+    //private IEnumerator HitFlash()
+    //{
+    //    if (flashRoutine != null)
+    //        StopCoroutine(flashRoutine);
+
+    //    flashRoutine = StartCoroutine(FlashRoutine());
+    //    yield return flashRoutine;
+    //}
+
+    //private IEnumerator FlashRoutine()
+    //{
+    //    spriteRenderer.material = flashMaterial;
+
+    //    flashMaterial.SetFloat("_FlashAmount", 1f);
+
+    //    yield return new WaitForSeconds(flashDuration);
+
+    //    flashMaterial.SetFloat("_FlashAmount", 0f);
+
+    //    spriteRenderer.material = originalMaterial;
+    //}
 
     private void OnCollideEnter2D(Collider2D collision)
     {
