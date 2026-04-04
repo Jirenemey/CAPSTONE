@@ -58,6 +58,9 @@ public class Player : NetworkBehaviour {
 	[SerializeField] float attackCooldown = 0.5f;
 	float lastAttackTime = -Mathf.Infinity;
 	[SerializeField] float meleeDuration = 0.3f;
+	[SerializeField] float pushbackScale = 5f;
+	private bool isBouncing = false;
+	[SerializeField] private float bounceDuration = 0.2f;
 
 	[Header("Vengful spirite Ability Settings")]
 	[SerializeField] GameObject VengefulSpiritProjectilePrefab;
@@ -141,7 +144,7 @@ public class Player : NetworkBehaviour {
 
 
 	private void Move() {
-		if (isDashing) return;
+		if (isDashing || isBouncing) return;
 		Vector2 movement = new Vector2(horizontalAxis * walkSpeed, rb.linearVelocity.y);
 
 		rb.linearVelocity = movement;
@@ -385,8 +388,50 @@ public class Player : NetworkBehaviour {
 	}
 
 	public void BounceBack() {
-		float pushbackScale = 2.3f;
-		rb.AddForce(-rb.linearVelocity.normalized * pushbackScale, ForceMode2D.Impulse);
+		StartCoroutine(BounceRoutine(GetBounceDirectionFromAttack()));
+	}
+
+	public void BounceBack(Vector2 sourcePosition) {
+		StartCoroutine(BounceRoutine(GetBounceDirectionFromSource(sourcePosition)));
+	}
+
+	private Vector2 GetBounceDirectionFromAttack() {
+		switch (currentAttackDir) {
+		case AttackDirection.Up: return Vector2.down;
+		case AttackDirection.Down: return Vector2.up;
+		case AttackDirection.Right: return Vector2.left;
+		case AttackDirection.Left: return Vector2.right;
+		default: return Vector2.left;
+		}
+	}
+
+	private Vector2 GetBounceDirectionFromSource(Vector2 sourcePosition) {
+		Vector2 difference = (Vector2)transform.position - sourcePosition;
+
+		// Vertical bounce when the spike is mainly below/above the player
+		if (Mathf.Abs(difference.y) > Mathf.Abs(difference.x)) {
+			return difference.y >= 0 ? Vector2.up : Vector2.down;
+		}
+
+		// Horizontal bounce away from the spike
+		return difference.x >= 0 ? Vector2.right : Vector2.left;
+	}
+
+	private System.Collections.IEnumerator BounceRoutine(Vector2 bounceDirection) {
+		if (isBouncing) yield break;
+
+		isBouncing = true;
+
+		// Reset velocity so the knockback is consistent and doesn't stack with falling momentum
+		rb.linearVelocity = Vector2.zero;
+
+		// Apply the knockback force
+		rb.AddForce(bounceDirection * pushbackScale, ForceMode2D.Impulse);
+
+		// Wait for the knockback to finish before giving movement back to the player
+		yield return new WaitForSeconds(bounceDuration);
+
+		isBouncing = false;
 	}
 
 }
