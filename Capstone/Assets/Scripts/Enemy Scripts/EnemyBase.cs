@@ -45,6 +45,8 @@ public abstract class EnemyBase : MonoBehaviour, IDamageable
     public Animator Anim => anim;
     public SpriteRenderer SpriteRenderer => spriteRenderer;
 
+    public AudioManager audioManager;
+
     public int FacingDirection { get; private set; } = 1;
 
     public static readonly int DiedHash = Animator.StringToHash("Died");
@@ -202,6 +204,11 @@ public abstract class EnemyBase : MonoBehaviour, IDamageable
         spriteRenderer.color = hitColor;
         yield return new WaitForSeconds(flashDuration);
         spriteRenderer.color = originalColor;
+    }
+
+    private void OnCollideEnter2D(Collider2D collision)
+    {
+        //if (collision.gameObject.TryGetComponent<Spikes>)
     }
 
     protected virtual void Die()

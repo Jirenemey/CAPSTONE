@@ -9,6 +9,8 @@ public class VolatileGruzzerAI : MonoBehaviour, IDamageable
     Animator anim;
     SpriteRenderer spriteRenderer;
 
+    AudioManager audio;
+
     [SerializeField] GameObject projectilePrefab;
     [SerializeField] GameObject explosionPrefab;
 
@@ -74,6 +76,7 @@ public class VolatileGruzzerAI : MonoBehaviour, IDamageable
             anim.SetBool("isGrounded", true);
             explosionCountdownStarted = true;
             StartCoroutine(ExplosionCountdown());
+            //audio.PlaySFX("");
         }
     }
     private void FixedUpdate()
