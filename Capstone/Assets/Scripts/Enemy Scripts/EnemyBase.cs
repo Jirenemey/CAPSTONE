@@ -3,13 +3,14 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
+using Unity.Netcode;
 
 [RequireComponent(typeof(Rigidbody2D))]
 [RequireComponent(typeof(Collider2D))]
 [RequireComponent(typeof(Animator))]
 [RequireComponent(typeof(SpriteRenderer))]
 
-public abstract class EnemyBase : MonoBehaviour, IDamageable
+public abstract class EnemyBase : NetworkBehaviour, IDamageable
 {
 	public event System.Action OnDeath;
 	[Header("Stats")]
@@ -127,15 +128,46 @@ public abstract class EnemyBase : MonoBehaviour, IDamageable
 
         if (newDir != FacingDirection)
         {
-            Flip();
+            if(NetworkManager.Singleton){
+                if (IsServer)
+                {
+                    FlipClientRpc();
+                }
+            } else {
+                Flip();
+            }
         }
+    }
+
+    [ClientRpc]
+    public virtual void FlipClientRpc()
+    {
+        FacingDirection *= -1;
+        
+        Vector2 colOffSet = col.offset;
+        colOffSet.x *= -1;
+        col.offset = colOffSet;
+        spriteRenderer.flipX = (FacingDirection * spriteFacing) == -1;
+    }
+    [ServerRpc]
+    public virtual void FlipServerRpc()
+    {
+        FacingDirection *= -1;
+        
+        Vector2 colOffSet = col.offset;
+        colOffSet.x *= -1;
+        col.offset = colOffSet;
+        spriteRenderer.flipX = (FacingDirection * spriteFacing) == -1;
     }
 
     public virtual void FacePlayer()
     {
         if (detection == null || detection.player == null) return;
 
+
         FaceDirection(detection.DirectionToPlayer().x);
+
+
     }
 
     public virtual void Flip()

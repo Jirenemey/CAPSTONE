@@ -13,12 +13,13 @@ GameObject:
   - component: {fileID: 4884706373610985492}
   - component: {fileID: 1817887319647667334}
   - component: {fileID: 3834903322415748363}
+  - component: {fileID: 7748793935417409510}
   - component: {fileID: 2488656085915235877}
   - component: {fileID: 2799715147053447626}
   - component: {fileID: 6186451152408035915}
   - component: {fileID: 8865926897432860696}
   - component: {fileID: 7495273024599918385}
-  - component: {fileID: 7748793935417409510}
+  - component: {fileID: -5819919368645068471}
   m_Layer: 10
   m_Name: sharp Baldur
   m_TagString: Untagged
@@ -181,6 +182,31 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &7748793935417409510
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3417591668451977817}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d5a57f767e5e46a458fc5d3c628d0cbb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  GlobalObjectIdHash: 1977528443
+  InScenePlacedSourceGlobalObjectIdHash: 0
+  DeferredDespawnTick: 0
+  Ownership: 1
+  AlwaysReplicateAsRoot: 0
+  SynchronizeTransform: 1
+  ActiveSceneSynchronization: 0
+  SceneMigrationSynchronization: 1
+  SpawnWithObservers: 1
+  DontDestroyWithOwner: 0
+  AutoObjectParentSync: 1
+  SyncOwnerTransformWhenParented: 1
+  AllowOwnerToParent: 0
 --- !u!114 &2488656085915235877
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -193,6 +219,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dc3e22e0dc54db14abfafbd5e2eeaf93, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  ShowTopMostFoldoutHeaderGroup: 1
   maxHealth: 100
   knockbackForce: 5
   collisionDMG: 1
@@ -215,6 +242,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6ea2c20ac5bda9f4c9fc2be21e493c7e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  playerlist: []
   player: {fileID: 0}
   sightRadius: 5
   exitSightRadius: 5
@@ -290,7 +318,7 @@ MonoBehaviour:
   SwitchTransformSpaceWhenParented: 0
   Interpolate: 1
   SlerpPosition: 0
---- !u!114 &7748793935417409510
+--- !u!114 &-5819919368645068471
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -299,19 +327,33 @@ MonoBehaviour:
   m_GameObject: {fileID: 3417591668451977817}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d5a57f767e5e46a458fc5d3c628d0cbb, type: 3}
+  m_Script: {fileID: 11500000, guid: e8d0727d5ae3244e3b569694d3912374, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  GlobalObjectIdHash: 0
-  InScenePlacedSourceGlobalObjectIdHash: 0
-  DeferredDespawnTick: 0
-  Ownership: 1
-  AlwaysReplicateAsRoot: 0
-  SynchronizeTransform: 1
-  ActiveSceneSynchronization: 0
-  SceneMigrationSynchronization: 1
-  SpawnWithObservers: 1
-  DontDestroyWithOwner: 0
-  AutoObjectParentSync: 1
-  SyncOwnerTransformWhenParented: 1
-  AllowOwnerToParent: 0
+  ShowTopMostFoldoutHeaderGroup: 1
+  NetworkAnimatorExpanded: 0
+  AuthorityMode: 0
+  m_Animator: {fileID: 3834903322415748363}
+  TransitionStateInfoList:
+  - IsCrossFadeExit: 0
+    Layer: 0
+    OriginatingState: -675357813
+    DestinationState: -2000326238
+    TransitionDuration: 0.25
+    TriggerNameHash: 1299585295
+    TransitionIndex: 0
+  AnimatorParameterEntries:
+    ParameterEntries:
+    - name: Died
+      NameHash: 543283834
+      Synchronize: 1
+      ParameterType: 9
+    - name: StartRoll
+      NameHash: 1299585295
+      Synchronize: 1
+      ParameterType: 9
+    - name: Roll
+      NameHash: -1903714832
+      Synchronize: 1
+      ParameterType: 4
+  AnimatorParametersExpanded: 0
