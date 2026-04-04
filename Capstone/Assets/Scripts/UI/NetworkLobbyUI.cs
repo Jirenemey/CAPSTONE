@@ -136,6 +136,8 @@ public class NetworkLobyyUI : NetworkBehaviour
 
         startBtn.gameObject.SetActive(false);
 
+        readyText.text = "0/2";
+
         readyCount.OnValueChanged += (prev, curr) =>
         {
             readyText.text = curr + "/2";
@@ -249,6 +251,7 @@ public class NetworkLobyyUI : NetworkBehaviour
         HostScreen();
         readySystem.SetActive(true);
         OnNetworkSpawn();
+
     }
 
     public async Task<bool> StartClientWithRelay(string joinCode, string connectionType) {
@@ -292,5 +295,6 @@ public class NetworkLobyyUI : NetworkBehaviour
         Debug.Log("Successfully connected to server! Client ID: " + clientId);
         JoinComplete();
         readySystem.SetActive(true);
+
     }
 }

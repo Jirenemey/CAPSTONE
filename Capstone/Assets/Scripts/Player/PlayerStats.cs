@@ -1,5 +1,6 @@
 using System;
 using UnityEngine;
+using Unity.Netcode;
 
 public class PlayerStats : MonoBehaviour {
 	[Header("Health")]
@@ -24,9 +25,16 @@ public class PlayerStats : MonoBehaviour {
 		OnSoulChanged?.Invoke(currentSoul, maxSoul);
 
 		print("PlayerStats created");
-		FindFirstObjectByType<HealthSoulUI>().Initialize(this);
+		if(!NetworkManager.Singleton)
+			FindFirstObjectByType<HealthSoulUI>().Initialize(this);
 
 	}
+
+    public void SetPlayerStats()
+    {
+        FindFirstObjectByType<HealthSoulUI>().Initialize(this);
+    }
+
 
 	public int GetCurrentHp() { return currentHp; }
 	public int GetMaxHp() {  return maxHp; }

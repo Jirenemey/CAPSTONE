@@ -18,7 +18,12 @@ public class AttackHitbox : MonoBehaviour {
     }
 
     private void OnTriggerEnter2D(Collider2D other) {
-		// Check if the object is on the enemy layer
+        // Check if the object is on the enemy layer
+        if(other.gameObject.TryGetComponent<Bouncable>(out Bouncable bouncable)) {
+            //push backwards
+            transform.parent.GetComponent<Player>().BounceBack();
+		}
+
 		if ((enemyLayer.value & (1 << other.gameObject.layer)) == 0) return;
 		print("hit");
 		// Try to get a health/damageable component and apply damage

@@ -13,7 +13,7 @@ public class Player : NetworkBehaviour {
 	Animator anim;
 	SpriteRenderer spriteRenderer;
 	PlayerInputHandler inputHandler;
-	PlayerStats playerStats;
+	public PlayerStats playerStats;
 
 	[Header("Movement Settings")]
 	[SerializeField] private float walkSpeed = 5.0f;
@@ -93,7 +93,12 @@ public class Player : NetworkBehaviour {
 	}
 
 	void Update() {
-		if(NetworkManager.Singleton && !IsOwner) return;
+		if (NetworkManager.Singleton && !IsOwner) return;
+		if (!GetComponent<PlayerInput>().enabled){
+			walkSpeed = 0.0f;
+			Move();
+			return;
+		};
 
 		horizontalAxis = inputHandler.MovementInput.x;
 		SetPlayerDirection();
@@ -124,6 +129,7 @@ public class Player : NetworkBehaviour {
 	}
 
 	void FixedUpdate() {
+
 		Move();
 		// if player is falling, add gravity
 		if (rb.linearVelocity.y < -0.4f) {
@@ -361,6 +367,26 @@ public class Player : NetworkBehaviour {
 	{
 		spriteRenderer.flipX = !facingRight;
 		playerDirection *= -1;
+	}
+
+	public void Respawn() {
+		SpawnPoint[] spawnPoints = FindObjectsByType<SpawnPoint>(FindObjectsSortMode.None);
+
+		float minDist = float.MaxValue;
+		SpawnPoint closestSpawnPoint = spawnPoints[0];
+		foreach (SpawnPoint spawnPoint in spawnPoints) {
+			float dist = Vector2.Distance(transform.position, spawnPoint.gameObject.transform.position);
+			dist = dist < minDist ? dist : minDist;
+			closestSpawnPoint = spawnPoint;
+		}
+		// move the player to the closes spawn point to them
+		Debug.LogWarning("Player respawned");
+		transform.position = closestSpawnPoint.transform.position;
+	}
+
+	public void BounceBack() {
+		float pushbackScale = 2.3f;
+		rb.AddForce(-rb.linearVelocity.normalized * pushbackScale, ForceMode2D.Impulse);
 	}
 
 }

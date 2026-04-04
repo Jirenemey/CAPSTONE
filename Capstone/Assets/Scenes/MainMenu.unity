@@ -1459,14 +1459,6 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 2186781158421514749, guid: 1361c50fd7f266949975b773cf4305f3, type: 3}
-      propertyPath: musicSounds.Array.data[0].name
-      value: Multiplayer
-      objectReference: {fileID: 0}
-    - target: {fileID: 2186781158421514749, guid: 1361c50fd7f266949975b773cf4305f3, type: 3}
-      propertyPath: musicSounds.Array.data[1].name
-      value: Menu
-      objectReference: {fileID: 0}
     - target: {fileID: 5653707628930376404, guid: 1361c50fd7f266949975b773cf4305f3, type: 3}
       propertyPath: m_Name
       value: AudioManager
