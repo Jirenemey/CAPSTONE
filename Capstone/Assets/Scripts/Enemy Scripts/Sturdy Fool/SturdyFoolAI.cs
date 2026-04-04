@@ -3,7 +3,9 @@ using UnityEngine;
 public class SturdyFoolAI : EnemyBase
 {
     [Header("Enemy Specific")]
-    [SerializeField] GameObject projectilePrefab;
+    [SerializeField] private AttackHitbox slashHitbox;
+    [SerializeField] private GameObject projectilePrefab;
+    private Vector2 cachedThrowTarget;
 
     [SerializeField] private Transform groundCheck;
     [SerializeField] private float groundCheckRadius = 0.2f;
@@ -17,19 +19,19 @@ public class SturdyFoolAI : EnemyBase
     [SerializeField] private float wallCheckYOffset = 0.5f;
     [SerializeField] private LayerMask groundLayer;
 
-    [SerializeField] private float attackCooldown = 2f;
-    [SerializeField] private float lastAttackTime = 2f;
+    [SerializeField] private float minAttackCooldown = 0.5f;
+    [SerializeField] private float maxAttackCooldown = 1.5f;
+    private float nextAttackTime;
     [SerializeField] private float meleeRange = 2f;
     [SerializeField] private float meleeHeight = 2f;
     [SerializeField] private float rangedRange = 2f;
-
-    [SerializeField] private float evadeSpeed = 4;
+    [SerializeField] private float evadeSpeed = 4f;
 
     private bool applyforce;
     private bool animationFinished;
 
-    public float AttackCooldown => attackCooldown;
-    public float LastAttackTime => lastAttackTime;
+    public GameObject ProjectilePrefab => projectilePrefab;
+    public float NextAttackTime => nextAttackTime;
     public float MeleeRange => meleeRange;
     public float MeleeHeight => meleeHeight;
     public float RangedRange => rangedRange;
@@ -62,6 +64,7 @@ public class SturdyFoolAI : EnemyBase
         base.Start();
 
         UpdateSensorPosition();
+        SetAttackCooldown();
     }
 
     protected override void RegisterStates()
@@ -80,7 +83,7 @@ public class SturdyFoolAI : EnemyBase
     {
         base.Update();
 
-        IsGroundAhead();
+        IsLedgeAhead();
     }
 
     public bool IsGrounded()
@@ -90,14 +93,7 @@ public class SturdyFoolAI : EnemyBase
         return Physics2D.OverlapCircle(groundCheck.position, groundCheckRadius, groundLayer);
     }
 
-    public override void Flip()
-    {
-        base.Flip();
-
-        UpdateSensorPosition();
-    }
-
-    public bool IsGroundAhead()
+    public bool IsLedgeAhead()
     {
         if (ledgeCheck == null) return false;
 
@@ -129,8 +125,22 @@ public class SturdyFoolAI : EnemyBase
         return hit.collider != null;
     }
 
+    public void SetAttackCooldown()
+    {
+        float cooldown = Random.Range(minAttackCooldown, maxAttackCooldown);
+        nextAttackTime = Time.time + cooldown;
+    }
+
+    public override void Flip()
+    {
+        base.Flip();
+
+        UpdateSensorPosition();
+    }
+
     private void UpdateSensorPosition()
     {
+        // flip the ledge and wall detections
         if (ledgeCheck != null)
         {
             ledgeCheck.localPosition = new Vector2(
@@ -146,8 +156,32 @@ public class SturdyFoolAI : EnemyBase
                 wallCheckYOffset
             );
         }
+
+        // flip the attack box 
+        slashHitbox.transform.localPosition = new Vector2(
+            Mathf.Abs(slashHitbox.transform.localPosition.x) * FacingDirection,
+            slashHitbox.transform.localPosition.y
+        );
+    }
+    public void SetThrowTarget(Vector2 targetPosition)
+    {
+        cachedThrowTarget = targetPosition;
     }
 
+    public void SpawnProjectile()
+    {
+        Debug.LogWarning("projectile should be spawned");
+        GameObject proj = Instantiate(
+            projectilePrefab,
+            transform.position,
+            Quaternion.identity
+        );
+
+        SturdyFoolProjectile projectile = proj.GetComponent<SturdyFoolProjectile>();
+        projectile.LaunchArc(cachedThrowTarget);
+    }
+
+    // animation events
     public void ApplyForce()
     {
         applyforce = true;
@@ -156,6 +190,16 @@ public class SturdyFoolAI : EnemyBase
     public void StopForce()
     {
         applyforce = false;
+    }
+
+    public void ActivateSlashHitbox()
+    {
+        slashHitbox.Activate();
+    }
+
+    public void DeactivateSlashHitbox()
+    {
+        slashHitbox.Deactivate();
     }
 
     public void ResetAnimationFinished()
@@ -168,6 +212,7 @@ public class SturdyFoolAI : EnemyBase
         animationFinished = true;
     }
 
+    // visuals for editor
     private void OnDrawGizmosSelected()
     {
         Transform gc = transform.Find("GroundCheck");

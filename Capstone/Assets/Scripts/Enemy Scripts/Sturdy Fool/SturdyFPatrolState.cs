@@ -23,7 +23,7 @@ public class SturdyFPatrolState : EnemyState
     {
         base.Update();
 
-        bool noGroundAhead = !sturdyFool.IsGroundAhead();
+        bool noGroundAhead = !sturdyFool.IsLedgeAhead();
         bool hitWall = sturdyFool.IsWallAhead();
 
         if (!sturdyFool.IsGrounded())
@@ -40,7 +40,7 @@ public class SturdyFPatrolState : EnemyState
 
         playerY = enemy.detection.PlayerRelativeHeight();
         // Player detection
-        if (enemy.detection.PlayerEnteredSight() && Time.time >= sturdyFool.LastAttackTime + sturdyFool.AttackCooldown)
+        if (enemy.detection.PlayerEnteredSight() && Time.time >= sturdyFool.NextAttackTime)
         {
             float distance = enemy.detection.DistanceToPlayer();
             float rand = Random.value;

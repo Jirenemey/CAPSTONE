@@ -100,16 +100,26 @@ public class VolatileGruzzerAI : MonoBehaviour, IDamageable
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        direction = Vector2.Reflect(direction, collision.GetContact(0).normal);
+        if (isDead || isKnockedBack) return;
 
-        if (direction.x < 0)
+        Vector2 normal = collision.GetContact(0).normal;
+
+        // Flip based on surface hit
+        if (Mathf.Abs(normal.x) > 0.5f)
         {
-            spriteRenderer.flipX = false;
+            direction.x *= -1;
         }
-        else
+
+        if (Mathf.Abs(normal.y) > 0.5f)
         {
-            spriteRenderer.flipX = true;
+            direction.y *= -1;
         }
+
+        // Re-normalize to keep perfect 45°
+        direction = direction.normalized;
+
+        // Flip sprite
+        spriteRenderer.flipX = direction.x > 0;
 
         rb.linearVelocity = direction * moveSpeed;
     }
@@ -164,7 +174,9 @@ public class VolatileGruzzerAI : MonoBehaviour, IDamageable
         yield return new WaitForSeconds(knockbackTime);
 
         isKnockedBack = false;
-        rb.linearVelocity = Vector2.zero;
+        //rb.linearVelocity = Vector2.zero;
+
+        rb.linearVelocity = direction * moveSpeed;
     }
 
     private IEnumerator HitFlash()
