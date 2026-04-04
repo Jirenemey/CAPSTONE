@@ -5,7 +5,7 @@ public class AttackHitbox : MonoBehaviour {
 	[SerializeField] float damage = 10f;
     private bool active = false;
 
-    public void Activate()
+	public void Activate()
     {
         active = true;
         gameObject.SetActive(true);

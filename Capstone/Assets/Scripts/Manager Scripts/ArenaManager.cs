@@ -72,9 +72,11 @@ public class ArenaManager : MonoBehaviour
 	}
 
     void StartArena() {
-        if(NetworkManager.Singleton)
-            waveManager.StartNextWaveServerRpc();
-        else
+        if(NetworkManager.Singleton){
+            if(NetworkManager.Singleton.IsHost) waveManager.StartNextWaveServerRpc();
+        }
+        else {
             waveManager.StartNextWave();
+        }
     }
 }

@@ -207,6 +207,7 @@ public class NetworkLobyyUI : NetworkBehaviour
 
     public async Task<bool> StartHostWithRelay(int maxConnections, string connectionType) {
         try {
+        m_StartHostButton.interactable = false;
         await UnityServices.InitializeAsync();
         if (!AuthenticationService.Instance.IsSignedIn)
         {
@@ -227,6 +228,7 @@ public class NetworkLobyyUI : NetworkBehaviour
             OnHostCreated();
         }
         else {
+            m_StartHostButton.interactable = true;
             Debug.LogError("Host failed to start.");
         }
 
@@ -249,6 +251,7 @@ public class NetworkLobyyUI : NetworkBehaviour
     private void OnHostCreated() {
         Debug.Log("Successfully created server!");
         HostScreen();
+        m_StartHostButton.interactable = true;
         readySystem.SetActive(true);
         OnNetworkSpawn();
 
@@ -256,6 +259,7 @@ public class NetworkLobyyUI : NetworkBehaviour
 
     public async Task<bool> StartClientWithRelay(string joinCode, string connectionType) {
         try {
+        m_StartClientButton.interactable = false;
         if (string.IsNullOrEmpty(joinCode)) {
             Debug.LogError("Join code is empty!");
             return false;
@@ -279,14 +283,17 @@ public class NetworkLobyyUI : NetworkBehaviour
         catch (RelayServiceException ex) {
             Debug.LogError("Failed to join relay. The join code may be incorrect: " + ex.Message);
             JoinFailed();
+            m_StartClientButton.interactable = true;
             return false;
         }
         catch (AuthenticationException ex) {
             Debug.LogError("Authentication failed: " + ex.Message);
+            m_StartClientButton.interactable = true;
             return false;
         }
         catch (System.Exception ex) {
             Debug.LogError("Unexpected error joining server: " + ex.Message);
+            m_StartClientButton.interactable = true;
             return false;
         }
     }
@@ -294,6 +301,7 @@ public class NetworkLobyyUI : NetworkBehaviour
     private void OnClientConnected(ulong clientId) {
         Debug.Log("Successfully connected to server! Client ID: " + clientId);
         JoinComplete();
+        m_StartClientButton.interactable = true;
         readySystem.SetActive(true);
 
     }
