@@ -4,6 +4,8 @@ using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.Windows;
 using Unity.Netcode;
+using System.Collections.Generic;
+using System;
 
 [RequireComponent(typeof(Rigidbody2D))]
 [RequireComponent(typeof(Collider2D))]
@@ -48,10 +50,11 @@ public class Player : NetworkBehaviour {
 	private Transform groundCheck;
 	[SerializeField] private LayerMask groundLayer;
 
-	[Header("Attck settings")]
+	//[Header("Attck settings")]
+	public enum AttackDirection { Left, Right, Up, Down }
+	Dictionary<AttackDirection, Vector2> attackPointLocations;
 	GameObject attackPoint; // this is the owner of the attack graphics and colliders
 	[SerializeField] Vector2 attackOffset = new Vector2(0.844f, 0.826f);
-	public enum AttackDirection { Left, Right, Up, Down }
 	AttackDirection currentAttackDir;
 	bool isAttacking = false;
 	bool canAttack = true;
@@ -91,6 +94,26 @@ public class Player : NetworkBehaviour {
 		groundLayer = LayerMask.GetMask("Ground");
 		oldDirection = playerDirection;
 		originalWalkSpeed = walkSpeed;
+
+		attackPointLocations = new Dictionary<AttackDirection, Vector2>(){
+			{
+				AttackDirection.Left,
+				new Vector3(-2.60479999f,-0.180000007f)
+			},
+			{
+				AttackDirection.Right,
+				new Vector3(1.16999996f,-0.180000007f)
+			},
+			{
+				AttackDirection.Up,
+				new Vector3(0.0900000036f,1.01999998f)
+			},
+			{
+				AttackDirection.Down,
+				new Vector3(0.0900000036f,-2.76999998f)
+			}
+
+		};
 
 		//playerStats.
 	}
@@ -259,22 +282,32 @@ public class Player : NetworkBehaviour {
 
 		bool grounded = IsGrounded();
 
+		SpriteRenderer sprite = attackPoint.transform.Find("Sprite").GetComponent<SpriteRenderer>();
 		if (verticalInput.y > 0.5f) {
 			// UP attack
 			currentAttackDir = AttackDirection.Up;
-			localPos = new Vector2(0f, attackOffset.y);
+			sprite.flipX = true;
+			//localPos = attackPointLocations[AttackDirection.Up];
 			localRot = Quaternion.Euler(0, 0, 90f);
 		} else if (!grounded && verticalInput.y < -0.5f) {// down attacks only allowed in the air
 														  // DOWN attack
 			currentAttackDir = AttackDirection.Down;
-			localPos = new Vector2(0f, -attackOffset.y);
-			localRot = Quaternion.Euler(0, 0, -90f);
+			//localPos = attackPointLocations[AttackDirection.Down];
+			sprite.flipX = false;
+			localRot = Quaternion.Euler(0, 0, 90f);
 		} else {
 			// LEFT / RIGHT attack (always available)
 			currentAttackDir = playerDirection > 0 ? AttackDirection.Right : AttackDirection.Left;
-			localPos = new Vector2(attackOffset.x * playerDirection, 0f);
+			switch (currentAttackDir) {
+			case AttackDirection.Left:
+				sprite.flipX = false;	break;
+			case AttackDirection.Right:
+				sprite.flipX = true; break;
+			}
+			//localPos = new Vector2(attackOffset.x * playerDirection, 0f);
 			localRot = Quaternion.identity; // hitbox already faces right by default
 		}
+		localPos = attackPointLocations[currentAttackDir];
 
 		attackPoint.transform.localPosition = localPos;
 		attackPoint.transform.localRotation = localRot;
