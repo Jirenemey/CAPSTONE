@@ -5,19 +5,19 @@ using Unity.Netcode;
 
 
 [Serializable]
-class EnemyData {
+public class EnemyData {
 	public Transform spawnPoint;
 	public GameObject enemie;
 }
 [Serializable]
-class WaveData {
+public class WaveData {
 	public EnemyData[] enemies;
 	public GameObject waveParentGameObject;
 }
 
 public class WaveManager : MonoBehaviour {
     [Header("Arena Wave Variables")]
-    [SerializeField] int currentWaveIndex = 0;
+    [SerializeField] public int currentWaveIndex = 0;
     [SerializeField] int maxWaves = 10;
     [Header("Enemy Prefabs")]
     // can rename enemy names
@@ -25,7 +25,7 @@ public class WaveManager : MonoBehaviour {
     int enemyCount = 0;
     bool endlessMode = false;
 
-    [SerializeField] WaveData[] waves;
+    [SerializeField] public WaveData[] waves;
 
     void Start() {
         //StartCoroutine(StartNextWave());
@@ -57,7 +57,6 @@ public class WaveManager : MonoBehaviour {
         WaveData currentWave = waves[currentWaveIndex];
 
         currentWave.waveParentGameObject.SetActive(true);
-        DisplayWaveObjectsClientRpc(currentWave);
         foreach(EnemyData enemyData in currentWave.enemies) {
 			GameObject spawnedEnemy = Instantiate(enemyData.enemie, enemyData.spawnPoint);
 
@@ -77,7 +76,7 @@ public class WaveManager : MonoBehaviour {
     }
 
     [ClientRpc]
-    void DisplayWaveObjectsClientRpc(WaveData currentWave)
+    public void DisplayWaveObjectsClientRpc(WaveData currentWave)
     {
         currentWave.waveParentGameObject.SetActive(true);
     }
@@ -123,12 +122,12 @@ public class WaveManager : MonoBehaviour {
 
 		if (enemyCount <= 0) {
 			Debug.Log("Wave Cleared!");
-			currentWaveIndex++;
             // Logic to trigger next wave or show victory UI
             currentWaveIndex++;
             if (NetworkManager.Singleton)
             {
                 if(NetworkManager.Singleton.IsHost) StartNextWaveServerRpc();
+                if(NetworkManager.Singleton.IsClient) DisplayWaveObjectsClientRpc(waves[currentWaveIndex]);
             } else {
                 StartNextWave();
             }
