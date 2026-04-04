@@ -235,14 +235,17 @@ public class NetworkLobyyUI : NetworkBehaviour
         return started;
         }
         catch (RelayServiceException ex) {
+            m_StartHostButton.interactable = true;
             Debug.LogError("Failed to create relay. " + ex.Message);
             return false;
         }
         catch (AuthenticationException ex) {
+            m_StartHostButton.interactable = true;
             Debug.LogError("Authentication failed: " + ex.Message);
             return false;
         }
         catch (System.Exception ex) {
+            m_StartHostButton.interactable = true;
             Debug.LogError("Unexpected error creating server: " + ex.Message);
             return false;
         }
@@ -283,16 +286,19 @@ public class NetworkLobyyUI : NetworkBehaviour
         catch (RelayServiceException ex) {
             Debug.LogError("Failed to join relay. The join code may be incorrect: " + ex.Message);
             JoinFailed();
+            invalidCodeText.GetComponent<TMP_Text>().text = "Invalid code. Try again.";
             m_StartClientButton.interactable = true;
             return false;
         }
         catch (AuthenticationException ex) {
             Debug.LogError("Authentication failed: " + ex.Message);
+            invalidCodeText.GetComponent<TMP_Text>().text = "Authentication failed. Try again.";
             m_StartClientButton.interactable = true;
             return false;
         }
         catch (System.Exception ex) {
             Debug.LogError("Unexpected error joining server: " + ex.Message);
+            invalidCodeText.GetComponent<TMP_Text>().text = "Unknown error occured. Try again.";
             m_StartClientButton.interactable = true;
             return false;
         }
