@@ -54,7 +54,25 @@ public class WaveManager : MonoBehaviour {
     [ServerRpc]
     public void StartNextWaveServerRpc()
     {
-        StartNextWave();
+        WaveData currentWave = waves[currentWaveIndex];
+
+        currentWave.waveParentGameObject.SetActive(true);
+        foreach(EnemyData enemyData in currentWave.enemies) {
+			GameObject spawnedEnemy = Instantiate(enemyData.enemie, enemyData.spawnPoint);
+
+			IDamageable damageable = spawnedEnemy.GetComponent<IDamageable>();
+
+			if (damageable != null) {
+				enemyCount++;
+				damageable.OnDeath += EnemyDied;
+				EnemyBase aiScript = spawnedEnemy.GetComponent<EnemyBase>();
+                if(aiScript != null) {
+					aiScript.enabled = true;
+				}
+			}
+
+            spawnedEnemy.GetComponent<NetworkObject>().Spawn();
+		}
     }
     
 
@@ -101,7 +119,12 @@ public class WaveManager : MonoBehaviour {
 			currentWaveIndex++;
             // Logic to trigger next wave or show victory UI
             currentWaveIndex++;
-            StartNextWave();
+            if (NetworkManager.Singleton)
+            {
+                if(NetworkManager.Singleton.IsHost) StartNextWaveServerRpc();
+            } else {
+                StartNextWave();
+            }
 		}
 	}
 

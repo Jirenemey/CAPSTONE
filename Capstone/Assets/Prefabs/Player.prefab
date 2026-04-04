@@ -53,7 +53,7 @@ GameObject:
   - component: {fileID: -3887516623540475071}
   - component: {fileID: -4699259820456412801}
   - component: {fileID: 3249721183121365453}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Player
   m_TagString: Player
   m_Icon: {fileID: 0}
@@ -428,6 +428,8 @@ MonoBehaviour:
   attackOffset: {x: 0.844, y: 0.826}
   attackCooldown: 0.5
   meleeDuration: 0.3
+  pushbackScale: 8
+  bounceDuration: 0.2
   VengefulSpiritProjectilePrefab: {fileID: 1593186060132558545, guid: c7ad0da478dc60540bc1061854872ba0, type: 3}
   projectileSpawnPoint: {fileID: 7330531380822282525}
   HowlingWraithsPrefab: {fileID: 5494110075115208127, guid: e3b245f85ca887341a989cc2bfb5c47a, type: 3}
