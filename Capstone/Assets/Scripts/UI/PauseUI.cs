@@ -3,6 +3,7 @@ using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 using TMPro;
 using UnityEngine.InputSystem;
+using Unity.Netcode;
 
 public class PauseUI : MonoBehaviour
 {
@@ -17,7 +18,7 @@ public class PauseUI : MonoBehaviour
     [SerializeField] Button quitYes;
     [SerializeField] Button quitNo;
     public bool paused = false;
-    [SerializeField] PlayerInput playerInput;
+    [SerializeField] public PlayerInput playerInput;
     
     void Start()
     {
@@ -45,13 +46,16 @@ public class PauseUI : MonoBehaviour
         quitYes.onClick.AddListener(() => ConfirmQuit());
         quitNo.onClick.AddListener(() => Back());
 
-        Resume();
+        pauseMenu.SetActive(false);
+        pauseScreen.SetActive(false);
+        settings.settingsScrn.SetActive(false);
+        confirmLeavePrompt.SetActive(false);
+        paused = false;
+        
     }
 
     public void Update()
     {
-        Debug.Log(Keyboard.current == null ? "KEYBOARD NULL" : "KEYBOARD OK");
-
         if (pauseKey.action.WasPressedThisFrame())
         {
             Debug.Log("PAUSE KEY PRESSED");
@@ -98,7 +102,18 @@ public class PauseUI : MonoBehaviour
 
     public void ConfirmQuit()
     {
+        if(NetworkManager.Singleton) {
+            NetworkManager.Singleton.SceneManager.LoadScene(
+            "MainMenu",
+            LoadSceneMode.Single
+        );
+            NetworkManager.Singleton.Shutdown();
+            Destroy(GameObject.Find("NetworkManager"));
+
+        } else {
         SceneManager.LoadScene("MainMenu");
+        }
+
         SceneManager.UnloadSceneAsync("Arena");
     }
 

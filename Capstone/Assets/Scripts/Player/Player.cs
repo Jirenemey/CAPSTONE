@@ -13,7 +13,7 @@ public class Player : NetworkBehaviour {
 	Animator anim;
 	SpriteRenderer spriteRenderer;
 	PlayerInputHandler inputHandler;
-	PlayerStats playerStats;
+	public PlayerStats playerStats;
 
 	[Header("Movement Settings")]
 	[SerializeField] private float walkSpeed = 5.0f;
@@ -93,7 +93,12 @@ public class Player : NetworkBehaviour {
 	}
 
 	void Update() {
-		if(NetworkManager.Singleton && !IsOwner) return;
+		if (NetworkManager.Singleton && !IsOwner) return;
+		if (!GetComponent<PlayerInput>().enabled){
+			walkSpeed = 0.0f;
+			Move();
+			return;
+		};
 
 		horizontalAxis = inputHandler.MovementInput.x;
 		SetPlayerDirection();
@@ -124,6 +129,7 @@ public class Player : NetworkBehaviour {
 	}
 
 	void FixedUpdate() {
+
 		Move();
 		// if player is falling, add gravity
 		if (rb.linearVelocity.y < -0.4f) {
