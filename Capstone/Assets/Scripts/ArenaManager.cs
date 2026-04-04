@@ -1,10 +1,17 @@
 using NUnit.Framework;
 using Unity.Netcode;
 using UnityEngine;
+using Unity.Cinemachine;
+using UnityEngine.InputSystem;
+
 
 public class ArenaManager : MonoBehaviour
 {
     [SerializeField] AudioManager audioManager;
+    [SerializeField] CinemachineCamera camera;
+    [SerializeField] GameObject playerPrefab;
+    [SerializeField] Transform spawnPoint;
+    [SerializeField] PauseUI pauseUI;
 	GameObject doorTrigger;
     GameObject door;
     int numberOfPlayersinArena = 0;
@@ -13,7 +20,26 @@ public class ArenaManager : MonoBehaviour
     WaveManager waveManager;
 
 	void Start(){
-		if (!audioManager) audioManager = GameObject.Find("AudioManager").GetComponent<AudioManager>();
+        if(!pauseUI) pauseUI = GameObject.Find("PauseContainer").GetComponent<PauseUI>();
+        if (NetworkManager.Singleton)
+        {
+            GameObject[] players = GameObject.FindGameObjectsWithTag("Player");
+            foreach(GameObject player in players)
+            {
+                if (player.GetComponent<Player>().IsOwner)
+                {
+                    camera.Target.TrackingTarget = player.transform;
+                     pauseUI.playerInput = player.GetComponent<PlayerInput>();
+                }
+                player.transform.position = spawnPoint.position;
+                player.GetComponent<Player>().playerStats.SetPlayerStats();
+            }
+        } else
+        {
+            var player = Instantiate(playerPrefab, spawnPoint.position, Quaternion.identity);
+            camera.Target.TrackingTarget = player.transform;
+            pauseUI.playerInput = player.GetComponent<PlayerInput>();
+        }
 
 		doorTrigger = GameObject.Find("DoorTrigger");
         var triggerProxy = doorTrigger.GetComponent<TriggerProxy>();//.OnTrigger += CloseDoor;
@@ -37,6 +63,7 @@ public class ArenaManager : MonoBehaviour
             // close door
             door.GetComponent<Animator>().SetTrigger("CloseNow");
             door.GetComponent<BoxCollider2D>().enabled = true;
+            if (!audioManager) audioManager = GameObject.Find("AudioManager").GetComponent<AudioManager>();
 			audioManager.PlaySFX("GateClose");
 
 			doorTrigger.GetComponent<BoxCollider2D>().enabled = false;
@@ -45,6 +72,9 @@ public class ArenaManager : MonoBehaviour
 	}
 
     void StartArena() {
-        waveManager.StartNextWave();
+        if(NetworkManager.Singleton)
+            waveManager.StartNextWaveServerRpc();
+        else
+            waveManager.StartNextWave();
     }
 }

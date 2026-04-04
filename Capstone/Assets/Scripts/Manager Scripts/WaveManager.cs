@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using UnityEngine;
+using Unity.Netcode;
 
 
 [Serializable]
@@ -43,6 +44,19 @@ public class WaveManager : MonoBehaviour {
             Instantiate(enemies[UnityEngine.Random.Range(0, enemies.Length)], Vector3.zero, Quaternion.identity); // replace Vector3.zero with a fixed position or rand pos
         }
     }
+
+    [ServerRpc]
+    public void SpawnEnemiesServerRpc()
+    {
+        SpawnEnemies();
+    }
+
+    [ServerRpc]
+    public void StartNextWaveServerRpc()
+    {
+        StartNextWave();
+    }
+    
 
     public void StartNextWave(){
 
