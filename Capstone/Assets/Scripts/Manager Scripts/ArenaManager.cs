@@ -18,12 +18,15 @@ public class ArenaManager : MonoBehaviour
     int numberOfPlayerInLobby = 1;
 
     WaveManager waveManager;
+    GameObject otherPlayer;
     bool init = false;
 
 	void Start(){
         if(!pauseUI) pauseUI = GameObject.Find("PauseContainer").GetComponent<PauseUI>();
         if (NetworkManager.Singleton)
         {
+            // gets called right when the arena starts so
+            // otherPlayer variable is set before spectating occurs
             SetCameraToOwner(false);
         } else
         {
@@ -46,7 +49,6 @@ public class ArenaManager : MonoBehaviour
 
     public void SetCameraToOwner(bool spectate)
     {
-        GameObject otherPlayer;
         if (NetworkManager.Singleton)
         {
             GameObject[] players = GameObject.FindGameObjectsWithTag("Player");
