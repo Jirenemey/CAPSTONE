@@ -84,6 +84,10 @@ public class WaveManager : MonoBehaviour {
 
     public void StartNextWave(){
 
+        if(currentWaveIndex >= waves.Length) {
+            // game over
+
+        }
         WaveData currentWave = waves[currentWaveIndex];
 
         currentWave.waveParentGameObject.SetActive(true);
