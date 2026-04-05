@@ -284,6 +284,28 @@ public class Player : NetworkBehaviour, IDamageable {
 		if (Time.time < lastAttackTime + attackCooldown) return;
 		lastAttackTime = Time.time;
 		if (isAttacking) return; // prevent coroutine stacking
+		if(NetworkManager.Singleton){
+			if(NetworkManager.Singleton.IsHost) MeleeAttackClientRpc();
+			if(NetworkManager.Singleton.IsClient) MeleeAttackServerRpc();
+		}
+		else {
+			StartCoroutine(EnableAttack());
+		}
+	}
+
+	[ServerRpc(RequireOwnership = false)]
+	void MeleeAttackServerRpc()
+	{
+		if (Time.time < lastAttackTime + attackCooldown) return;
+
+		lastAttackTime = Time.time;
+		MeleeAttackClientRpc();
+	}
+
+	[ClientRpc]
+	void MeleeAttackClientRpc()
+	{
+		if (isAttacking) return;
 		StartCoroutine(EnableAttack());
 	}
 
