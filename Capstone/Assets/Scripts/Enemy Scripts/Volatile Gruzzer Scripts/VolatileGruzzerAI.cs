@@ -9,7 +9,8 @@ public class VolatileGruzzerAI : MonoBehaviour, IDamageable
     Animator anim;
     SpriteRenderer spriteRenderer;
 
-    AudioManager audio;
+    public AudioManager audioManager;
+    private AudioSource loopSource;
 
     [SerializeField] GameObject projectilePrefab;
     [SerializeField] GameObject explosionPrefab;
@@ -58,8 +59,14 @@ public class VolatileGruzzerAI : MonoBehaviour, IDamageable
 
         rb.linearVelocity = direction * moveSpeed;
 
+        if (loopSource == null)
+        {
+            loopSource = AudioManager.instance.PlayLoopSFXAtObject("VG Fly Loop", transform);
+        }
+
         if (!groundCheck) groundCheck = transform.Find("GroundCheck");
         groundLayer = LayerMask.GetMask("Ground");
+
     }
 
     private void Update()
@@ -74,6 +81,9 @@ public class VolatileGruzzerAI : MonoBehaviour, IDamageable
         if (!explosionCountdownStarted && IsGrounded())
         {
             anim.SetBool("isGrounded", true);
+
+            //AudioManager.instance.PlaySFX("VG Death Gurgle");
+
             explosionCountdownStarted = true;
             StartCoroutine(ExplosionCountdown());
             //audio.PlaySFX("");
@@ -201,19 +211,29 @@ public class VolatileGruzzerAI : MonoBehaviour, IDamageable
 
         isDead = true;
 
+        direction = Vector2.zero;
         rb.linearVelocity = Vector2.zero;
         rb.gravityScale = 1;
 
         anim.SetTrigger("Died");
 
-		OnDeath?.Invoke();
+        if (loopSource != null)
+        {
+            Destroy(loopSource);
+            loopSource = null;
+        }
+
+
+        OnDeath?.Invoke();
 
 		//Destroy(gameObject, 10);
 	}
 
     private IEnumerator ExplosionCountdown()
     {
-        yield return new WaitForSeconds(explosionTimer);
+        yield return new WaitForSeconds(explosionTimer / 2);
+        AudioManager.instance.PlaySFX("VG Death Gurgle");
+        yield return new WaitForSeconds(explosionTimer / 2);
 
         Explode();
     }

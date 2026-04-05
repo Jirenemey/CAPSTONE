@@ -12,7 +12,6 @@ public class SBIdleState : EnemyState
     public override void Enter()
     {
         base.Enter();
-        Debug.Log("ENTERED SB IDLE STATE");
 
         enemy.movement.Stop();
     }

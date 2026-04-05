@@ -5,15 +5,8 @@ using static UnityEngine.PlayerLoop.PreUpdate;
 
 public class EnemyAI : EnemyBase
 {
-    [Header("Enemy Specific")]
-    public float attackRadius = 2;
-    public float windupTime = 0.5f;
-    public float recoveryTime = 0.5f;
-    public float attackCooldown = 2.0f;
+    //[Header("Enemy Specific")]
 
-    private float lastAttackTime;
-
-    public static readonly int DiedHash = Animator.StringToHash("Died");
     public static readonly int IsChasingHash = Animator.StringToHash("isChasing");
 
     protected override void Awake()
@@ -21,9 +14,11 @@ public class EnemyAI : EnemyBase
         base.Awake();
     }
 
-    protected override void Update()
+    protected override void Start()
     {
-        base.Update();
+        base.Start();
+
+        StartLoopSFX("Vengefly Fly Loop");
     }
 
     protected override void RegisterStates()
@@ -37,8 +32,8 @@ public class EnemyAI : EnemyBase
 
     protected override void Die()
     {
+        StopLoopSFX();
+
         base.Die();
-
-
     }
 }

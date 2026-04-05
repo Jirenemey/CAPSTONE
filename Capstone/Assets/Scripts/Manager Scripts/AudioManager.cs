@@ -11,6 +11,8 @@ public class AudioManager : MonoBehaviour
     public Sound[] musicSounds, sfxSounds;
     public AudioSource musicSource, sfxSource;
 
+    public AudioSource loopSFXSource;
+
     void Awake() {
         if (instance != null && instance != this)
         {
@@ -20,12 +22,11 @@ public class AudioManager : MonoBehaviour
 
         instance = this;
         DontDestroyOnLoad(gameObject);
-    }
 
-    void Start()
-    {
-        if(!musicSource) musicSource = GameObject.Find("Music").GetComponent<AudioSource>();
-        if(!sfxSource) sfxSource = GameObject.Find("SFX").GetComponent<AudioSource>();
+        if (!musicSource) musicSource = GameObject.Find("Music").GetComponent<AudioSource>();
+        if (!sfxSource) sfxSource = GameObject.Find("SFX").GetComponent<AudioSource>();
+
+        if (!loopSFXSource) loopSFXSource = GameObject.Find("LoopSFX").GetComponent<AudioSource>();
     }
 
     public void PlayMusic(string name){
@@ -58,7 +59,47 @@ public class AudioManager : MonoBehaviour
             sfxSource.PlayOneShot(s.clip);
         }
     }
-    
+
+    public void PlayLoopSFX(string name)
+    {
+        Sound s = Array.Find(sfxSounds, x => x.name == name);
+
+        if (s == null)
+        {
+            Debug.Log("Loop SFX Not Found");
+        }
+        else
+        {
+            loopSFXSource.clip = s.clip;
+            loopSFXSource.loop = true;
+            loopSFXSource.Play();
+        }
+    }
+
+    public void StopLoopSFX()
+    {
+        loopSFXSource.Stop();
+        loopSFXSource.loop = false;
+    }
+
+    public AudioSource PlayLoopSFXAtObject(string name, Transform target)
+    {
+        Sound s = Array.Find(sfxSounds, x => x.name == name);
+
+        if (s == null)
+        {
+            Debug.Log("Loop SFX Not Found");
+            return null;
+        }
+
+        AudioSource source = target.gameObject.AddComponent<AudioSource>();
+        source.clip = s.clip;
+        source.loop = true;
+        source.Play();
+
+        return source;
+    }
+
     public void MusicVolume(float volume){
         musicSource.volume = volume;
     }

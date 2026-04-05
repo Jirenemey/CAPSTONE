@@ -10,12 +10,15 @@ public class VGruzzerProjectile : MonoBehaviour
     Animator anim;
     SpriteRenderer spriteRenderer;
 
+    //public AudioManager audioManager;
+
     private void Start()
     {
         if (!rb) rb = GetComponent<Rigidbody2D>();
         if (!col) col = GetComponent<Collider2D>();
         if (!anim) anim = GetComponent<Animator>();
         if (!spriteRenderer) spriteRenderer = GetComponent<SpriteRenderer>();
+        //if (!audioManager) audioManager = GameObject.Find("AudioManager").GetComponent<AudioManager>();
 
         Destroy(gameObject, lifetime);
     }
@@ -26,6 +29,7 @@ public class VGruzzerProjectile : MonoBehaviour
         if (other.gameObject.layer == LayerMask.NameToLayer("Ground"))
         {
             anim.SetTrigger("Hit");
+            AudioManager.instance.PlaySFX("VG Projectile Break");
             rb.gravityScale = 0f;
             rb.linearVelocity = Vector2.zero;
             col.enabled = false;

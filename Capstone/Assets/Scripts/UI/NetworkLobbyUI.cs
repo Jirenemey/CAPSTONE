@@ -190,7 +190,7 @@ public class NetworkLobyyUI : NetworkBehaviour
             return;
         }
         NetworkManager.Singleton.SceneManager.LoadScene(
-            "Arena",
+            "Josh's Level",
             LoadSceneMode.Single
         );
         

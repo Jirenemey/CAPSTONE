@@ -19,7 +19,6 @@ public class SharpBaldurAI : EnemyBase
     public bool AnimationFinished => animationFinished;
 
     //Animation Hashes
-    public static readonly int DiedHash = Animator.StringToHash("Died");
     public static readonly int StartRollHash = Animator.StringToHash("StartRoll");
     public static readonly int RollHash = Animator.StringToHash("Roll");
 

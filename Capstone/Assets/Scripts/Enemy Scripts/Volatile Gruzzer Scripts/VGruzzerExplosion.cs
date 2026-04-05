@@ -2,6 +2,8 @@ using UnityEngine;
 
 public class VGruzzerExplosion : MonoBehaviour
 {
+    //public AudioManager audioManager;
+
     [SerializeField] private float radius = 2f;
     [SerializeField] private float damage = 25f;
     [SerializeField] private LayerMask hitLayers;
@@ -9,6 +11,7 @@ public class VGruzzerExplosion : MonoBehaviour
 
     private void Start()
     {
+        AudioManager.instance.PlaySFX("VG Death Explosion");
         Collider2D[] hits = Physics2D.OverlapCircleAll(transform.position, radius, hitLayers);
 
         foreach (Collider2D hit in hits)

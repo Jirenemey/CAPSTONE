@@ -7,10 +7,10 @@ public class SturdyFoolProjectile : MonoBehaviour
     Collider2D col;
     Animator anim;
     SpriteRenderer spriteRenderer;
+    private AudioSource loopSource;
 
     [Header("Settings")]
     [SerializeField] private float arcHeight = 2f;
-    [SerializeField] private float travelTime = 0.8f;
     [SerializeField] private float damage = 10f;
     [SerializeField] private float lifetime = 5f; // destroy if it never hits a wall
     [SerializeField] private LayerMask targetLayers;
@@ -30,6 +30,7 @@ public class SturdyFoolProjectile : MonoBehaviour
     void Start()
     {
         Destroy(gameObject, lifetime);
+        
     }
 
     void Update()
@@ -60,6 +61,11 @@ public class SturdyFoolProjectile : MonoBehaviour
 
         // Apply velocity (note: Unity gravity is negative)
         rb.linearVelocity = new Vector2(vx, vy);
+
+        if (loopSource == null)
+        {
+            loopSource = AudioManager.instance.PlayLoopSFXAtObject("SF Projectile", transform);
+        }
     }
 
     private void OnTriggerEnter2D(Collider2D other)
@@ -90,8 +96,13 @@ public class SturdyFoolProjectile : MonoBehaviour
         isDead = true;
         rb.gravityScale = 0f;
         rb.linearVelocity = Vector2.zero;
-        // Optional: spawn effect here
         anim.SetTrigger("Break");
+        if (loopSource != null)
+        {
+            Destroy(loopSource);
+            loopSource = null;
+        }
+        AudioManager.instance.PlaySFX("SF Projectile Break");
 
         Destroy(gameObject, 0.5f);
     }

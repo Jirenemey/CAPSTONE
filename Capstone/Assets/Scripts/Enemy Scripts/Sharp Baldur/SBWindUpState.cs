@@ -13,10 +13,10 @@ public class SBWindUpState : EnemyState
     {
         base.Enter();
 
+        enemy.FacePlayer();
         sharpBaldur.ResetAnimationFinished();
         enemy.Anim.SetTrigger(SharpBaldurAI.StartRollHash);
-
-        enemy.FacePlayer();
+        AudioManager.instance.PlaySFX("SB Curl");
     }
 
     public override void Update()

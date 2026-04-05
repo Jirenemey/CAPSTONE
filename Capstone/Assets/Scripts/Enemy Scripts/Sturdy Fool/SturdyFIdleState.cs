@@ -12,7 +12,6 @@ public class SturdyFIdleState : EnemyState
     public override void Enter()
     {
         base.Enter();
-        Debug.Log("ENTERED SF IDLE STATE");
 
         enemy.movement.Stop();
     }

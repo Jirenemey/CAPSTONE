@@ -12,7 +12,6 @@ public class SturdyFThrowState : EnemyState
     public override void Enter()
     {
         base.Enter();
-        Debug.Log("ENTERED SF THROW STATE");
 
         sturdyFool.ResetAnimationFinished();
         enemy.movement.Stop();
@@ -21,6 +20,7 @@ public class SturdyFThrowState : EnemyState
         sturdyFool.SetThrowTarget(sturdyFool.detection.FindClosestPlayer().position);
 
         enemy.Anim.SetTrigger(SturdyFoolAI.ProjectileHash);
+        AudioManager.instance.PlaySFX("SF Throw");
     }
 
     public override void Update()

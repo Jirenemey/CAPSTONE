@@ -15,8 +15,9 @@ public class SturdyFPatrolState : EnemyState
     public override void Enter()
     {
         base.Enter();
-        Debug.Log("ENTERED SF PATROL STATE");
+
         enemy.Anim.SetBool(SturdyFoolAI.IsMovingHash, true);
+        enemy.StartLoopSFX("SF Walk");
     }
 
     public override void Update()
@@ -80,5 +81,6 @@ public class SturdyFPatrolState : EnemyState
         base.Exit();
 
         enemy.Anim.SetBool(SturdyFoolAI.IsMovingHash, false);
+        enemy.StopLoopSFX();
     }
 }

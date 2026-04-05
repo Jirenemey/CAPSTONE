@@ -13,7 +13,6 @@ public class SturdyFEvadeState : EnemyState
     public override void Enter()
     {
         base.Enter();
-        Debug.Log("ENTERED SF EVADE STATE");
 
         sturdyFool.ResetAnimationFinished();
         enemy.movement.Stop();
@@ -22,6 +21,7 @@ public class SturdyFEvadeState : EnemyState
         evadeDir = -enemy.detection.PlayerLeftOrRight();
 
         enemy.Anim.SetTrigger(SturdyFoolAI.EvadeHash);
+        AudioManager.instance.PlaySFX("SF Evade");
     }
 
     public override void Update()

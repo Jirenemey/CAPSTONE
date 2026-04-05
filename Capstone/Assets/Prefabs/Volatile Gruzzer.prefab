@@ -224,6 +224,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4cb66b0d0632614468d0097abc866f44, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  audioManager: {fileID: 0}
   projectilePrefab: {fileID: 2889882060500556523, guid: a1d26df1d58f2494197aa56ae05918bf, type: 3}
   explosionPrefab: {fileID: 3428354734999935863, guid: a46aade33ed2ae24680a9a0fbe13285e, type: 3}
   health: 100
@@ -259,14 +260,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d5a57f767e5e46a458fc5d3c628d0cbb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  GlobalObjectIdHash: 1324946626
-  InScenePlacedSourceGlobalObjectIdHash: 0
+  GlobalObjectIdHash: 2769590856
+  InScenePlacedSourceGlobalObjectIdHash: 1324946626
   DeferredDespawnTick: 0
   Ownership: 1
   AlwaysReplicateAsRoot: 0
   SynchronizeTransform: 1
   ActiveSceneSynchronization: 0
-  SceneMigrationSynchronization: 1
+  SceneMigrationSynchronization: 0
   SpawnWithObservers: 1
   DontDestroyWithOwner: 0
   AutoObjectParentSync: 1

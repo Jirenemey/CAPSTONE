@@ -11,7 +11,6 @@ public class ChaseState : EnemyState
     public override void Enter()
     {
         base.Enter();
-        Debug.Log("ENTERED CHASE STATE");
 
         enemy.Anim.SetBool(EnemyAI.IsChasingHash, true);
     }

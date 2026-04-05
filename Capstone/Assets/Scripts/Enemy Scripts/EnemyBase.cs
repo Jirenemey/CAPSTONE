@@ -1,9 +1,10 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using Unity.Netcode;
 using UnityEngine;
 using UnityEngine.Events;
-using Unity.Netcode;
+using static UnityEngine.EventSystems.EventTrigger;
 
 [RequireComponent(typeof(Rigidbody2D))]
 [RequireComponent(typeof(Collider2D))]
@@ -45,12 +46,14 @@ public abstract class EnemyBase : NetworkBehaviour, IDamageable
     protected Animator anim;
     protected SpriteRenderer spriteRenderer;
 
+    protected AudioSource loopSource;
+
     public Rigidbody2D RB => rb;
     public Collider2D Col => col;
     public Animator Anim => anim;
     public SpriteRenderer SpriteRenderer => spriteRenderer;
+    public AudioSource LoopSource => loopSource;
 
-    public AudioManager audioManager;
 
     public int FacingDirection { get; private set; } = 1;
 
@@ -63,12 +66,14 @@ public abstract class EnemyBase : NetworkBehaviour, IDamageable
     public EnemyStateMachine fsm { get; private set; }
     private Dictionary<Type, EnemyState> states = new();
 
+    //Default functions
     protected virtual void Awake()
     {
         if (!rb) rb = GetComponent<Rigidbody2D>();
         if (!col) col = GetComponent<Collider2D>();
         if (!anim) anim = GetComponent<Animator>();
         if (!spriteRenderer) spriteRenderer = GetComponent<SpriteRenderer>();
+        //if (!audioManager) audioManager = GameObject.
 
         if (!detection) detection = GetComponent<DetectionComponent>();
         if (!movement) movement = GetComponent<MovementComponent>();
@@ -76,13 +81,12 @@ public abstract class EnemyBase : NetworkBehaviour, IDamageable
         currentHealth = maxHealth;
 
         fsm = new EnemyStateMachine();
-        RegisterStates();
     }
 
     protected virtual void Start()
     {
+        RegisterStates();
         originalColor = spriteRenderer.color;
-        //originalMaterial = spriteRenderer.material;
     }
 
     protected virtual void Update()
@@ -105,6 +109,8 @@ public abstract class EnemyBase : NetworkBehaviour, IDamageable
         fsm.FixedUpdateState();
     }
 
+    //State related functions
+
     // Each enemy defines its own states
     protected abstract void RegisterStates();
 
@@ -123,6 +129,7 @@ public abstract class EnemyBase : NetworkBehaviour, IDamageable
         return null;
     }
 
+    //Sprite related Functions
     public virtual void FaceDirection(float xDirection)
     {
         const float flipDeadZone = 0.5f;
@@ -187,6 +194,7 @@ public abstract class EnemyBase : NetworkBehaviour, IDamageable
         spriteRenderer.flipX = (FacingDirection * spriteFacing) == -1;
     }
 
+    //Damage related functions
     public virtual void TakeDamage(float damage)
     {
         if (isDead) return;
@@ -243,27 +251,23 @@ public abstract class EnemyBase : NetworkBehaviour, IDamageable
         spriteRenderer.color = originalColor;
     }
 
-    //private IEnumerator HitFlash()
-    //{
-    //    if (flashRoutine != null)
-    //        StopCoroutine(flashRoutine);
+    //Audio functions
+    public void StartLoopSFX(string name)
+    {
+        if (loopSource == null)
+        {
+            loopSource = AudioManager.instance.PlayLoopSFXAtObject(name, transform);
+        }
+    }
 
-    //    flashRoutine = StartCoroutine(FlashRoutine());
-    //    yield return flashRoutine;
-    //}
-
-    //private IEnumerator FlashRoutine()
-    //{
-    //    spriteRenderer.material = flashMaterial;
-
-    //    flashMaterial.SetFloat("_FlashAmount", 1f);
-
-    //    yield return new WaitForSeconds(flashDuration);
-
-    //    flashMaterial.SetFloat("_FlashAmount", 0f);
-
-    //    spriteRenderer.material = originalMaterial;
-    //}
+    public void StopLoopSFX()
+    {
+        if (loopSource != null)
+        {
+            Destroy(loopSource);
+            loopSource = null;
+        }
+    }
 
     private void OnCollideEnter2D(Collider2D collision)
     {

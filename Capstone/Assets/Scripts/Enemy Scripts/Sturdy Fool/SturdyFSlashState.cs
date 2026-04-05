@@ -12,12 +12,12 @@ public class SturdyFSlashState : EnemyState
     public override void Enter()
     {
         base.Enter();
-        Debug.Log("ENTERED SF SLASH STATE");
 
         sturdyFool.ResetAnimationFinished();
         enemy.movement.Stop();
         enemy.FacePlayer();
         enemy.Anim.SetTrigger(SturdyFoolAI.SlashHash);
+        AudioManager.instance.PlaySFX("SF Slash");
     }
 
     public override void Update()

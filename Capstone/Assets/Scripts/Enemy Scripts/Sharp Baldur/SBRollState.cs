@@ -16,6 +16,8 @@ public class SBRollState : EnemyState
 
         enemy.Anim.SetBool(SharpBaldurAI.RollHash, true);
 
+        enemy.StartLoopSFX("SB Rolling");
+
         rollDir = enemy.detection.DirectionToPlayer().normalized;
 
         rollDir.y = 0;
@@ -36,7 +38,7 @@ public class SBRollState : EnemyState
         {
             rollDir.x *= -1f;
             enemy.FaceDirection(rollDir.x);
-
+            AudioManager.instance.PlaySFX("SB Hit Wall");
             enemy.RB.linearVelocity = new Vector2(rollDir.x * sharpBaldur.RollSpeed, sharpBaldur.BounceForce);
             sharpBaldur.ResetWallHit();
         }
@@ -53,7 +55,7 @@ public class SBRollState : EnemyState
     public override void Exit()
     {
         enemy.Anim.SetBool(SharpBaldurAI.RollHash, false);
-
+        enemy.StopLoopSFX();
         enemy.RB.linearVelocity = new Vector2(0f, enemy.RB.linearVelocity.y);
     }
 }

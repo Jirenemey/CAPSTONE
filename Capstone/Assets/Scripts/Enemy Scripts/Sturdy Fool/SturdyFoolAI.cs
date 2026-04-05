@@ -30,7 +30,6 @@ public class SturdyFoolAI : EnemyBase
     private bool applyforce;
     private bool animationFinished;
 
-    public GameObject ProjectilePrefab => projectilePrefab;
     public float NextAttackTime => nextAttackTime;
     public float MeleeRange => meleeRange;
     public float MeleeHeight => meleeHeight;
@@ -41,7 +40,6 @@ public class SturdyFoolAI : EnemyBase
 
     //Animation Hashes
     //trigger
-    public static readonly int DiedHash = Animator.StringToHash("Died");
     public static readonly int SlashHash = Animator.StringToHash("Slash");
     public static readonly int ProjectileHash = Animator.StringToHash("Attack");
     public static readonly int EvadeHash = Animator.StringToHash("Evade");
@@ -175,7 +173,6 @@ public class SturdyFoolAI : EnemyBase
 
     public void SpawnProjectile()
     {
-        Debug.LogWarning("projectile should be spawned");
         GameObject proj = Instantiate(
             projectilePrefab,
             transform.position,
@@ -215,6 +212,12 @@ public class SturdyFoolAI : EnemyBase
     public void OnAnimationFinished()
     {
         animationFinished = true;
+    }
+
+    protected override void Die()
+    {
+        AudioManager.instance.PlaySFX("SF Death");
+        base.Die();
     }
 
     // visuals for editor
