@@ -1,8 +1,9 @@
 using System;
 using System.Collections;
-using UnityEngine;
 using Unity.Netcode;
-using UnityEngine.InputSystem;
+using UnityEngine;
+using UnityEngine.SceneManagement;
+
 
 [Serializable]
 public class EnemyData {
@@ -88,9 +89,19 @@ public class WaveManager : MonoBehaviour {
     public void StartNextWave(){
 
         if(currentWaveIndex >= waves.Length) {
-            // game over
-
-        }
+            // game over TODO: make this point to the win screen
+            if (NetworkManager.Singleton) {
+			    NetworkManager.Singleton.SceneManager.LoadScene(
+				    "MainMenu",
+			        LoadSceneMode.Single
+		        );
+            } else {
+                SceneManager.LoadScene(
+					"MainMenu",
+					LoadSceneMode.Single
+                );
+            }
+		}
         WaveData currentWave = waves[currentWaveIndex];
 
         currentWave.waveParentGameObject.SetActive(true);

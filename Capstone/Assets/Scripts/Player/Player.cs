@@ -9,13 +9,15 @@ using System;
 
 [RequireComponent(typeof(Rigidbody2D))]
 [RequireComponent(typeof(Collider2D))]
-public class Player : NetworkBehaviour {
+public class Player : NetworkBehaviour, IDamageable {
 	Rigidbody2D rb;
 	Collider2D col;
 	Animator anim;
 	SpriteRenderer spriteRenderer;
 	PlayerInputHandler inputHandler;
 	public PlayerStats playerStats;
+	public event System.Action OnDeath;
+
 
 	[Header("Movement Settings")]
 	[SerializeField] private float walkSpeed = 5.0f;
@@ -73,6 +75,11 @@ public class Player : NetworkBehaviour {
 	[SerializeField] GameObject HowlingWraithsPrefab;
 	[SerializeField] Transform HowlingWraithsSpawnPoint;
 
+	[Header("Damage Settings")]
+	[SerializeField] float invincibilityDuration = 1.0f;
+	[SerializeField] AudioClip damageSound;
+	private AudioSource audioSource;
+	private bool isInvincible = false;
 
 	void Start() {
 		if (!rb) rb = GetComponent<Rigidbody2D>();
@@ -94,6 +101,13 @@ public class Player : NetworkBehaviour {
 		groundLayer = LayerMask.GetMask("Ground");
 		oldDirection = playerDirection;
 		originalWalkSpeed = walkSpeed;
+
+		audioSource = GetComponent<AudioSource>();
+		if (!audioSource) {
+			audioSource = gameObject.AddComponent<AudioSource>();
+		}
+
+		playerStats.OnPlayerDeath += () => OnDeath?.Invoke();
 
 		attackPointLocations = new Dictionary<AttackDirection, Vector2>(){
 			{
@@ -121,12 +135,14 @@ public class Player : NetworkBehaviour {
 	void Update() {
 		if (NetworkManager.Singleton && !IsOwner) return;
 		if (!GetComponent<PlayerInput>().enabled){
+			horizontalAxis = 0f;
 			walkSpeed = 0.0f;
 			Move();
 			return;
 		};
 
-		horizontalAxis = inputHandler.MovementInput.x;
+		float rawHorizontal = inputHandler.MovementInput.x;
+		horizontalAxis = Mathf.Abs(rawHorizontal) > 0.01f ? rawHorizontal : 0f;
 		SetPlayerDirection();
 
 		if (inputHandler.JumpTriggered) HandleJumpPress();
@@ -168,6 +184,9 @@ public class Player : NetworkBehaviour {
 
 	private void Move() {
 		if (isDashing || isBouncing) return;
+		if (Mathf.Abs(horizontalAxis) < 0.01f) {
+			horizontalAxis = 0f;
+		}
 		Vector2 movement = new Vector2(horizontalAxis * walkSpeed, rb.linearVelocity.y);
 
 		rb.linearVelocity = movement;
@@ -217,7 +236,7 @@ public class Player : NetworkBehaviour {
 	}
 	private void HandleJumpRelease() {
 		if (rb.linearVelocity.y > 0) {
-			rb.linearVelocity = new Vector2(rb.linearVelocity.x, rb.linearVelocity.x * 0.1f);
+			rb.linearVelocity = new Vector2(rb.linearVelocity.x, rb.linearVelocity.y * 0.1f);
 			rb.gravityScale = defaultGravity * fallingGravityMultiplier;
 		}
 	}
@@ -276,20 +295,21 @@ public class Player : NetworkBehaviour {
 		isAttacking = true;
 		attackPoint.SetActive(true);
 
-		Vector2 verticalInput = inputHandler.MovementInput;
+		Vector2 attackInput = inputHandler.MovementInput;
 		var localPos = attackPoint.transform.localPosition;
 		Quaternion localRot = Quaternion.identity;
 
 		bool grounded = IsGrounded();
+		float attackVerticalThreshold = 0.6f;
 
 		SpriteRenderer sprite = attackPoint.transform.Find("Sprite").GetComponent<SpriteRenderer>();
-		if (verticalInput.y > 0.5f) {
+		if (attackInput.y > attackVerticalThreshold) {
 			// UP attack
 			currentAttackDir = AttackDirection.Up;
 			sprite.flipX = true;
 			//localPos = attackPointLocations[AttackDirection.Up];
 			localRot = Quaternion.Euler(0, 0, 90f);
-		} else if (!grounded && verticalInput.y < -0.5f) {// down attacks only allowed in the air
+		} else if (!grounded && attackInput.y < -attackVerticalThreshold) {
 														  // DOWN attack
 			currentAttackDir = AttackDirection.Down;
 			//localPos = attackPointLocations[AttackDirection.Down];
@@ -465,6 +485,34 @@ public class Player : NetworkBehaviour {
 		yield return new WaitForSeconds(bounceDuration);
 
 		isBouncing = false;
+	}
+
+	public void TakeDamage(float amount) {
+		print("Player got hit");
+		if (isInvincible) return;
+
+		playerStats.TakeDamage(1);
+
+		// Play sound
+		if (damageSound && audioSource) {
+			audioSource.PlayOneShot(damageSound);
+		}
+
+		// Start invincibility
+		StartCoroutine(InvincibilityRoutine());
+	}
+
+	private System.Collections.IEnumerator InvincibilityRoutine() {
+		isInvincible = true;
+
+		// Optional: Make player flash or something for visual feedback
+		// For now, just disable collider to prevent further damage
+		col.enabled = false;//bug?splayer could fall
+
+		yield return new WaitForSeconds(invincibilityDuration);
+
+		col.enabled = true;
+		isInvincible = false;
 	}
 
 }
