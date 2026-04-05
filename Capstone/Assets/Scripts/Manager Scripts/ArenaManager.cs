@@ -74,6 +74,7 @@ public class ArenaManager : MonoBehaviour
     void StartArena() {
         if(NetworkManager.Singleton){
             if(NetworkManager.Singleton.IsHost) waveManager.StartNextWaveServerRpc();
+            if(NetworkManager.Singleton.IsClient) waveManager.DisplayWaveObjectsClientRpc(waveManager.waves[waveManager.currentWaveIndex]);
         }
         else {
             waveManager.StartNextWave();
