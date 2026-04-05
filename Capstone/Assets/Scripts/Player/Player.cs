@@ -135,12 +135,14 @@ public class Player : NetworkBehaviour, IDamageable {
 	void Update() {
 		if (NetworkManager.Singleton && !IsOwner) return;
 		if (!GetComponent<PlayerInput>().enabled){
+			horizontalAxis = 0f;
 			walkSpeed = 0.0f;
 			Move();
 			return;
 		};
 
-		horizontalAxis = inputHandler.MovementInput.x;
+		float rawHorizontal = inputHandler.MovementInput.x;
+		horizontalAxis = Mathf.Abs(rawHorizontal) > 0.01f ? rawHorizontal : 0f;
 		SetPlayerDirection();
 
 		if (inputHandler.JumpTriggered) HandleJumpPress();
@@ -182,6 +184,9 @@ public class Player : NetworkBehaviour, IDamageable {
 
 	private void Move() {
 		if (isDashing || isBouncing) return;
+		if (Mathf.Abs(horizontalAxis) < 0.01f) {
+			horizontalAxis = 0f;
+		}
 		Vector2 movement = new Vector2(horizontalAxis * walkSpeed, rb.linearVelocity.y);
 
 		rb.linearVelocity = movement;
@@ -231,7 +236,7 @@ public class Player : NetworkBehaviour, IDamageable {
 	}
 	private void HandleJumpRelease() {
 		if (rb.linearVelocity.y > 0) {
-			rb.linearVelocity = new Vector2(rb.linearVelocity.x, rb.linearVelocity.x * 0.1f);
+			rb.linearVelocity = new Vector2(rb.linearVelocity.x, rb.linearVelocity.y * 0.1f);
 			rb.gravityScale = defaultGravity * fallingGravityMultiplier;
 		}
 	}
@@ -290,20 +295,21 @@ public class Player : NetworkBehaviour, IDamageable {
 		isAttacking = true;
 		attackPoint.SetActive(true);
 
-		Vector2 verticalInput = inputHandler.MovementInput;
+		Vector2 attackInput = inputHandler.MovementInput;
 		var localPos = attackPoint.transform.localPosition;
 		Quaternion localRot = Quaternion.identity;
 
 		bool grounded = IsGrounded();
+		float attackVerticalThreshold = 0.6f;
 
 		SpriteRenderer sprite = attackPoint.transform.Find("Sprite").GetComponent<SpriteRenderer>();
-		if (verticalInput.y > 0.5f) {
+		if (attackInput.y > attackVerticalThreshold) {
 			// UP attack
 			currentAttackDir = AttackDirection.Up;
 			sprite.flipX = true;
 			//localPos = attackPointLocations[AttackDirection.Up];
 			localRot = Quaternion.Euler(0, 0, 90f);
-		} else if (!grounded && verticalInput.y < -0.5f) {// down attacks only allowed in the air
+		} else if (!grounded && attackInput.y < -attackVerticalThreshold) {
 														  // DOWN attack
 			currentAttackDir = AttackDirection.Down;
 			//localPos = attackPointLocations[AttackDirection.Down];

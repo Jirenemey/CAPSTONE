@@ -9,6 +9,9 @@ public class PlayerInputHandler : MonoBehaviour {
 	[SerializeField] InputActionReference attackAction;
 	[SerializeField] InputActionReference quickCastAction;
 
+	[Header("Input Settings")]
+	[SerializeField, Range(0f, 0.5f)] private float moveDeadZone = 0.25f;
+
 	// Public properties for other scripts to read
 	public Vector2 MovementInput { get; private set; }
 	public bool JumpTriggered { get; private set; }
@@ -43,7 +46,11 @@ public class PlayerInputHandler : MonoBehaviour {
 	}
 
 	private void Update() {
-		MovementInput = moveAction.action.ReadValue<Vector2>();
+		Vector2 rawInput = moveAction.action.ReadValue<Vector2>();
+		MovementInput = new Vector2(
+			Mathf.Abs(rawInput.x) < moveDeadZone ? 0f : rawInput.x,
+			Mathf.Abs(rawInput.y) < moveDeadZone ? 0f : rawInput.y
+		);
 	}
 
 	// Call this at the end of the frame in your main controller to reset triggers
