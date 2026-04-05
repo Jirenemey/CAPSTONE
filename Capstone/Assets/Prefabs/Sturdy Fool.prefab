@@ -17,8 +17,10 @@ GameObject:
   - component: {fileID: 2092055667165396921}
   - component: {fileID: 7603192525994958002}
   - component: {fileID: 8669268490125214917}
+  - component: {fileID: 7361644760430538908}
+  - component: {fileID: -7883099664552992725}
   - component: {fileID: 2508346823640543291}
-  - component: {fileID: 1069817304971278137}
+  - component: {fileID: -6102865228166610648}
   m_Layer: 10
   m_Name: Sturdy Fool
   m_TagString: Untagged
@@ -281,6 +283,30 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   moveSpeed: 2
+--- !u!114 &7361644760430538908
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 847159335854906198}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b2920df4af30de4498915257eb28b51f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &-7883099664552992725
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 847159335854906198}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 59e04e05027f93a479dedb0c991f9ada, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &2508346823640543291
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -396,7 +422,7 @@ MonoBehaviour:
       Synchronize: 1
       ParameterType: 9
   AnimatorParametersExpanded: 0
---- !u!114 &1069817304971278137
+--- !u!114 &-6102865228166610648
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -405,7 +431,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 847159335854906198}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e96cb6065543e43c4a752faaa1468eb1, type: 3}
+  m_Script: {fileID: 11500000, guid: da52bf8bbc1de48cfb221a6ff30f7972, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   ShowTopMostFoldoutHeaderGroup: 1
@@ -452,7 +478,6 @@ GameObject:
   m_Component:
   - component: {fileID: 1585627330594441119}
   - component: {fileID: 1767457414415733745}
-  - component: {fileID: 8502578680996133095}
   m_Layer: 10
   m_Name: Bouncable
   m_TagString: Untagged
@@ -521,18 +546,6 @@ BoxCollider2D:
   m_AutoTiling: 0
   m_Size: {x: 0.85987175, y: 0.34139657}
   m_EdgeRadius: 0
---- !u!114 &8502578680996133095
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3371949594673157240}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 59e04e05027f93a479dedb0c991f9ada, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &6888698214007216579
 GameObject:
   m_ObjectHideFlags: 0
