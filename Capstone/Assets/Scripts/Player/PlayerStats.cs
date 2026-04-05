@@ -77,5 +77,10 @@ public class PlayerStats : MonoBehaviour {
 	private void Die() {
 		OnPlayerDeath?.Invoke();
 		// Handle death logic (animations, respawn, etc.)
+		if (NetworkManager.Singleton)
+		{
+			var arenaManager = GameObject.Find("ArenaManager").GetComponent<ArenaManager>();
+			arenaManager.SetCameraToOwner(true);
+		}
 	}
 }
