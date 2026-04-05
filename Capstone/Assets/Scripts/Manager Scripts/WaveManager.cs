@@ -2,7 +2,7 @@ using System;
 using System.Collections;
 using UnityEngine;
 using Unity.Netcode;
-
+using UnityEngine.InputSystem;
 
 [Serializable]
 public class EnemyData {
@@ -26,9 +26,12 @@ public class WaveManager : MonoBehaviour {
     bool endlessMode = false;
 
     [SerializeField] public WaveData[] waves;
+    [SerializeField] Transform respawnAnchor;
+    [SerializeField] ArenaManager arenaManager;
 
     void Start() {
         //StartCoroutine(StartNextWave());
+        arenaManager = GetComponent<ArenaManager>();
     }
 
     void CalculateEnemyCount()
@@ -132,6 +135,21 @@ public class WaveManager : MonoBehaviour {
             {
                 if(NetworkManager.Singleton.IsHost) StartNextWaveServerRpc();
                 if(NetworkManager.Singleton.IsClient) DisplayWaveObjectsClientRpc(waves[currentWaveIndex]);
+
+                GameObject[] players = GameObject.FindGameObjectsWithTag("Player");
+                foreach(GameObject player in players)
+                {
+                    var stats = player.GetComponent<PlayerStats>();
+                    if (stats.GetCurrentHp() > 0) return;
+                    else
+                    {
+                        stats.Heal(stats.GetMaxHp()/2); // set to half
+                        player.transform.position = respawnAnchor.position;
+                        player.GetComponent<PlayerInput>().enabled = true;
+                        arenaManager.SetCameraToOwner(true);
+                    }
+                    
+                }
             } else {
                 StartNextWave();
             }
