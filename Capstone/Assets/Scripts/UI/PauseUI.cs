@@ -68,6 +68,7 @@ public class PauseUI : MonoBehaviour
 
     public void Pause()
     {
+        if(!NetworkManager.Singleton) Time.timeScale = 0.0f;
         pauseMenu.SetActive(true);
         pauseScreen.SetActive(true);
         settings.settingsScrn.SetActive(false);
@@ -78,12 +79,14 @@ public class PauseUI : MonoBehaviour
 
     public void Resume()
     {
+        if(!NetworkManager.Singleton) Time.timeScale = 1.0f;
         pauseMenu.SetActive(false);
         pauseScreen.SetActive(false);
         settings.settingsScrn.SetActive(false);
         confirmLeavePrompt.SetActive(false);
         paused = false;
-        playerInput.enabled = true;
+        if(playerInput.gameObject.GetComponent<PlayerStats>().isDead.Value == false)
+            playerInput.enabled = true;
     }
 
     public void Settings()
@@ -111,7 +114,8 @@ public class PauseUI : MonoBehaviour
             Destroy(GameObject.Find("NetworkManager"));
 
         } else {
-        SceneManager.LoadScene("MainMenu");
+            Time.timeScale = 1.0f;
+            SceneManager.LoadScene("MainMenu");
         }
 
         SceneManager.UnloadSceneAsync("Arena");

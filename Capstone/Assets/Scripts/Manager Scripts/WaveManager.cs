@@ -17,7 +17,7 @@ public class WaveData {
 	public GameObject waveParentGameObject;
 }
 
-public class WaveManager : MonoBehaviour {
+public class WaveManager : NetworkBehaviour {
     [Header("Arena Wave Variables")]
     [SerializeField] public int currentWaveIndex = 0;
     [SerializeField] int maxWaves = 10;
@@ -25,88 +25,34 @@ public class WaveManager : MonoBehaviour {
     // can rename enemy names
     [SerializeField] GameObject[] enemies;
     int enemyCount = 0;
-    bool endlessMode = false;
-
     [SerializeField] public WaveData[] waves;
     [SerializeField] public Transform respawnAnchor;
     [SerializeField] public Transform deathAnchor;
     [SerializeField] ArenaManager arenaManager;
 
+    [SerializeField] GameOver gameOver;
+
+    public NetworkVariable<int> networkWaveIndex = new NetworkVariable<int>(0);
+
+    bool spawned = false;
+
+
     void Start() {
-        //StartCoroutine(StartNextWave());
         arenaManager = GetComponent<ArenaManager>();
+        if(!gameOver) gameOver = GameObject.Find("GameOverContainer").GetComponent<GameOver>();
+        if(NetworkManager.Singleton) OnNetworkSpawn();
     }
-
-    void CalculateEnemyCount()
-    {
-        enemyCount = currentWaveIndex + 2; // waveCount + metric ...
-        Debug.Log("Enemy Count: " + enemyCount);
-    }
-
-// Can change the params to wave # and use a switch case to have manual spawns based on the wave
-    void SpawnEnemies()
-    {   
-        for(int i = 0; i < enemyCount; ++i) {
-            Instantiate(enemies[UnityEngine.Random.Range(0, enemies.Length)], Vector3.zero, Quaternion.identity); // replace Vector3.zero with a fixed position or rand pos
-        }
-    }
-
-    [ServerRpc]
-    public void SpawnEnemiesServerRpc()
-    {
-        SpawnEnemies();
-    }
-
-    [ServerRpc]
-    public void StartNextWaveServerRpc()
-    {
-        WaveData currentWave = waves[currentWaveIndex];
-
-        currentWave.waveParentGameObject.SetActive(true);
-        foreach(EnemyData enemyData in currentWave.enemies) {
-			GameObject spawnedEnemy = Instantiate(enemyData.enemie, enemyData.spawnPoint);
-
-			IDamageable damageable = spawnedEnemy.GetComponent<IDamageable>();
-
-			if (damageable != null) {
-				enemyCount++;
-				damageable.OnDeath += EnemyDied;
-				EnemyBase aiScript = spawnedEnemy.GetComponent<EnemyBase>();
-                if(aiScript != null) {
-					aiScript.enabled = true;
-				}
-			}
-
-            spawnedEnemy.GetComponent<NetworkObject>().Spawn();
-		}
-    }
-
-    [ClientRpc]
-    public void DisplayWaveObjectsClientRpc(WaveData currentWave)
-    {
-        currentWave.waveParentGameObject.SetActive(true);
-    }
-    
 
     public void StartNextWave(){
 
         if(currentWaveIndex >= waves.Length) {
-            // game over TODO: make this point to the win screen
-            if (NetworkManager.Singleton) {
-			    NetworkManager.Singleton.SceneManager.LoadScene(
-				    "MainMenu",
-			        LoadSceneMode.Single
-		        );
-            } else {
-                SceneManager.LoadScene(
-					"MainMenu",
-					LoadSceneMode.Single
-                );
-            }
+            gameOver.SetVictory();
 		}
-        WaveData currentWave = waves[currentWaveIndex];
 
+        WaveData currentWave = waves[currentWaveIndex];
+        if(currentWaveIndex != 0) waves[currentWaveIndex-1].waveParentGameObject.SetActive(false);
         currentWave.waveParentGameObject.SetActive(true);
+
         foreach(EnemyData enemyData in currentWave.enemies) {
 			GameObject spawnedEnemy = Instantiate(enemyData.enemie, enemyData.spawnPoint);
 
@@ -124,18 +70,6 @@ public class WaveManager : MonoBehaviour {
 		}
     }
 
-    // Button cmds for testing purposes
-    public void RemoveEnemy()
-    {
-        enemyCount--;
-        Debug.Log("Enemy Count: " + enemyCount);
-    }
-
-    public void AddEnemy()
-    {
-        enemyCount++;
-        Debug.Log("Enemy Count: " + enemyCount);
-    }
     public void EnemyDied() {
 		enemyCount--;
 		Debug.Log("Enemy Count: " + enemyCount);
@@ -144,54 +78,104 @@ public class WaveManager : MonoBehaviour {
 			Debug.Log("Wave Cleared!");
             // Logic to trigger next wave or show victory UI
             currentWaveIndex++;
-            if (NetworkManager.Singleton)
-            {
-                ReviveServerRpc();
-                if(NetworkManager.Singleton.IsHost){ 
-                    StartNextWaveServerRpc();
-                }
-                if(NetworkManager.Singleton.IsClient){ 
-                    DisplayWaveObjectsClientRpc(waves[currentWaveIndex]);
-                }
-            } else {
-                StartNextWave();
-            }
+            StartNextWave();
+            
 		}
 	}
 
-[ServerRpc(RequireOwnership = false)]
-void ReviveServerRpc()
-{
-    foreach (var client in NetworkManager.Singleton.ConnectedClientsList)
+// Multiplayer related methods
+
+    [ClientRpc]
+    public void SetVictoryClientRpc()
     {
-        var player = client.PlayerObject;
-        var stats = player.GetComponent<PlayerStats>();
-        if(stats.isDead.Value)
-        {
-            // Server moves and heals the player
-            player.transform.position = respawnAnchor.position;
-            stats.Heal(stats.GetMaxHp() / 2);
+        gameOver.SetVictory();
+    }
 
-            // Enable input only on owner
-            if (player.IsOwner)
-                player.GetComponent<PlayerInput>().enabled = true;
+    [ServerRpc(RequireOwnership=false)]
+    public void StartNextWaveServerRpc()
+    {
 
-            // Tell all clients to enable the sprite
-            ReviveClientRpc(player.gameObject);
+        if(networkWaveIndex.Value >= waves.Length) {
+            SetVictoryClientRpc();
+        }
+
+        ReviveAllDeadPlayersClientRpc();     
+        DisplayWaveObjectsClientRpc();
+        
+        // only let server instantiate once
+        if(!spawned){
+            spawned = true;
+            Debug.Log("Network Wave: " + networkWaveIndex);
+            WaveData currentWave = waves[networkWaveIndex.Value];
+            foreach(EnemyData enemyData in currentWave.enemies) {
+                GameObject spawnedEnemy = Instantiate(enemyData.enemie, enemyData.spawnPoint);
+                IDamageable damageable = spawnedEnemy.GetComponent<IDamageable>();
+                spawnedEnemy.GetComponent<NetworkObject>().Spawn();
+
+                if (damageable != null) {
+                    enemyCount++;
+                    damageable.OnDeath += EnemyDeathEventServerRpc;
+                    EnemyBase aiScript = spawnedEnemy.GetComponent<EnemyBase>();
+                    if(aiScript != null) {
+                        aiScript.enabled = true;
+                    }
+                }
+            }
         }
     }
-}
 
-[ClientRpc]
-void ReviveClientRpc(GameObject player)
-{
-    if (player.GetComponent<Player>().IsOwner)
+    [ClientRpc]
+    void DisplayWaveObjectsClientRpc()
     {
-        player.GetComponent<SpriteRenderer>().enabled = true;
-        arenaManager.SetCameraTarget(player.transform);
+        if(networkWaveIndex.Value != 0) waves[networkWaveIndex.Value-1].waveParentGameObject.SetActive(false);
+        waves[networkWaveIndex.Value].waveParentGameObject.SetActive(true);
     }
-}
 
+    [ServerRpc(RequireOwnership=false)]
+    public void EnemyDeathEventServerRpc()
+    {
+        enemyCount--;
+		Debug.Log("Enemy Count: " + enemyCount);
 
+		if (enemyCount <= 0) {
+            spawned = false;
+            networkWaveIndex.Value += 1;
+        }
+		
+    }
 
+    public override void OnNetworkSpawn()
+	{
+		base.OnNetworkSpawn();
+		
+    	networkWaveIndex.OnValueChanged += OnWaveIndexChanged;
+	}
+
+	private void OnWaveIndexChanged(int oldValue, int newValue)
+	{
+		Debug.Log("New wave started!");
+        StartNextWaveServerRpc();
+	}
+
+    [ClientRpc]
+    public void ReviveAllDeadPlayersClientRpc()
+    {
+        foreach (var client in NetworkManager.Singleton.ConnectedClientsList)
+        {
+            var player = client.PlayerObject;
+            var stats = player.GetComponent<PlayerStats>();
+
+            if(stats.isDead.Value == true){
+                stats.isDead.Value = false;
+                stats.Heal(stats.GetMaxHp() / 2);
+                
+                player.GetComponent<PlayerInput>().enabled = true;
+                player.GetComponent<SpriteRenderer>().enabled = true;
+                player.transform.position = respawnAnchor.position;
+
+                if(player.GetComponent<Player>().IsOwner) 
+                    arenaManager.SetCameraTarget(player.transform);
+            }
+        }
+    }
 }

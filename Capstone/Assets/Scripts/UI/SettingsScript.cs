@@ -58,10 +58,18 @@ public class SettingsScript : MonoBehaviour
 
         // Volume
         if(!audioManager) audioManager = GameObject.Find("AudioManager").GetComponent<AudioManager>();
+        
         if(!sfxSlider) sfxSlider = GameObject.Find("SFXSlider").GetComponent<Slider>();
         if(!sfxText) sfxText = GameObject.Find("SFXPercent").GetComponent<TextMeshProUGUI>();
+
+        sfxSlider.value = PlayerPrefs.GetFloat("SFXVolume", 1f);
+        UpdateSFX();
+        
         if(!musicSlider) musicSlider = GameObject.Find("MusicSlider").GetComponent<Slider>();
         if(!musicText) musicText = GameObject.Find("MusicPercent").GetComponent<TextMeshProUGUI>();
+
+        musicSlider.value = PlayerPrefs.GetFloat("MusicVolume", 1f);
+        UpdateMusic();
 
         sfxSlider.onValueChanged.AddListener(delegate { UpdateSFX(); });
         musicSlider.onValueChanged.AddListener(delegate { UpdateMusic(); });
@@ -204,6 +212,7 @@ public class SettingsScript : MonoBehaviour
         if(!audioManager) audioManager = GameObject.Find("AudioManager").GetComponent<AudioManager>();
         audioManager.SFXVolume(sfxSlider.value);
         sfxText.text = (sfxSlider.value * 100).ToString("F0") + "%";
+        
         if (!audioManager.sfxSource.isPlaying)
             audioManager.PlaySFX("Btn");
     }

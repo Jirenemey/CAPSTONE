@@ -1,4 +1,4 @@
-using NUnit.Framework;
+
 using System.Collections;
 using UnityEngine;
 using UnityEngine.InputSystem;
@@ -91,10 +91,10 @@ public class Player : NetworkBehaviour, IDamageable {
 		if (!hurtBox) hurtBox = transform.Find("HurtBox").GetComponent<Collider2D>();
 
 		inputHandler = GetComponent<PlayerInputHandler>();
-		if (!inputHandler) Assert.Fail("Player does not have an input handler, plz fix.");
+		if (!inputHandler) Debug.Log("Player does not have an input handler, plz fix.");
 
 		playerStats = GetComponent<PlayerStats>();
-		if (!playerStats) Assert.Fail("Player does not have PlayerStats object, plz fix.");
+		if (!playerStats) Debug.Log("Player does not have PlayerStats object, plz fix.");
 
 		if (!attackPoint) attackPoint = gameObject.transform.Find("AttackPoint").gameObject;
 		attackPoint.SetActive(false);
