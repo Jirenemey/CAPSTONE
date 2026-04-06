@@ -110,7 +110,7 @@ public class Player : NetworkBehaviour, IDamageable {
 			audioSource = gameObject.AddComponent<AudioSource>();
 		}
 
-		playerStats.OnPlayerDeath += () => OnDeath?.Invoke();
+		PlayerStats.OnPlayerDeath += () => OnDeath?.Invoke();
 
 		attackPointLocations = new Dictionary<AttackDirection, Vector2>(){
 			{
@@ -537,6 +537,10 @@ public class Player : NetworkBehaviour, IDamageable {
 
 		hurtBox.enabled = true;
 		isInvincible = false;
+	}
+
+	private void OnDestroy() {
+		PlayerStats.OnPlayerDeath -= () => OnDeath?.Invoke();
 	}
 
 }

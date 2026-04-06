@@ -14,7 +14,7 @@ public class PlayerStats : MonoBehaviour {
 	// Events that your UI scripts will subscribe to
 	public event Action<int, int> OnHealthChanged; // Sends (currentHp, maxHp)
 	public event Action<int, int> OnSoulChanged;   // Sends (currentSoul, maxSoul)
-	public event System.Action OnPlayerDeath;
+	public static event System.Action OnPlayerDeath;
 
 	private void Start() {
 		currentHp = maxHp;
@@ -75,7 +75,7 @@ public class PlayerStats : MonoBehaviour {
 	}
 
 	private void Die() {
-		OnPlayerDeath?.Invoke();
+		PlayerStats.OnPlayerDeath?.Invoke();
 		// Handle death logic (animations, respawn, etc.)
 		if (NetworkManager.Singleton)
 		{
