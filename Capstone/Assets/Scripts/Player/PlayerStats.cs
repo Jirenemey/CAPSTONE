@@ -5,11 +5,11 @@ using Unity.Netcode;
 public class PlayerStats : MonoBehaviour {
 	[Header("Health")]
 	[SerializeField] private int maxHp = 5;
-	private int currentHp;
+	[SerializeField] private int currentHp;
 
 	[Header("Soul")]
 	[SerializeField] private int maxSoul = 3;
-	private int currentSoul;
+	[SerializeField] private int currentSoul;
 
 	// Events that your UI scripts will subscribe to
 	public event Action<int, int> OnHealthChanged; // Sends (currentHp, maxHp)

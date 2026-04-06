@@ -6,6 +6,7 @@ using UnityEngine.Windows;
 using Unity.Netcode;
 using System.Collections.Generic;
 using System;
+using Unity.VisualScripting;
 
 [RequireComponent(typeof(Rigidbody2D))]
 [RequireComponent(typeof(Collider2D))]
@@ -80,12 +81,14 @@ public class Player : NetworkBehaviour, IDamageable {
 	[SerializeField] AudioClip damageSound;
 	private AudioSource audioSource;
 	private bool isInvincible = false;
+	[SerializeField] Collider2D hurtBox;
 
 	void Start() {
 		if (!rb) rb = GetComponent<Rigidbody2D>();
 		if (!col) col = GetComponent<Collider2D>();
 		if (!anim) anim = GetComponent<Animator>();
 		if (!spriteRenderer) spriteRenderer = GetComponent<SpriteRenderer>();
+		if (!hurtBox) hurtBox = transform.Find("HurtBox").GetComponent<Collider2D>();
 
 		inputHandler = GetComponent<PlayerInputHandler>();
 		if (!inputHandler) Assert.Fail("Player does not have an input handler, plz fix.");
@@ -180,7 +183,6 @@ public class Player : NetworkBehaviour, IDamageable {
 			rb.gravityScale = defaultGravity;
 		}
 	}
-
 
 	private void Move() {
 		if (isDashing || isBouncing) return;
@@ -507,11 +509,11 @@ public class Player : NetworkBehaviour, IDamageable {
 
 		// Optional: Make player flash or something for visual feedback
 		// For now, just disable collider to prevent further damage
-		col.enabled = false;//bug?splayer could fall
+		hurtBox.enabled = false;//bug? player could fall
 
 		yield return new WaitForSeconds(invincibilityDuration);
 
-		col.enabled = true;
+		hurtBox.enabled = true;
 		isInvincible = false;
 	}
 

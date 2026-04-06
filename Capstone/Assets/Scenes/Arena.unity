@@ -7250,6 +7250,8 @@ MonoBehaviour:
     - spawnPoint: {fileID: 1350162266}
       enemie: {fileID: 847159335854906198, guid: 098ac518c27444b49a9010dd82136eb6, type: 3}
     waveParentGameObject: {fileID: 574522430}
+  respawnAnchor: {fileID: 0}
+  arenaManager: {fileID: 0}
 --- !u!1 &1430103920
 GameObject:
   m_ObjectHideFlags: 0
