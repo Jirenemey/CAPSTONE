@@ -29,6 +29,15 @@ public class AudioManager : MonoBehaviour
         if (!loopSFXSource) loopSFXSource = GameObject.Find("LoopSFX").GetComponent<AudioSource>();
     }
 
+    void Start()
+    {
+        float musicVol = PlayerPrefs.GetFloat("MusicVolume", 1f);
+        float sfxVol = PlayerPrefs.GetFloat("SFXVolume", 1f);
+
+        musicSource.volume = musicVol;
+        sfxSource.volume = sfxVol;
+    }
+
     public void PlayMusic(string name){
         Sound s = Array.Find(musicSounds, x=> x.name == name);
         
@@ -111,9 +120,21 @@ public class AudioManager : MonoBehaviour
 
     public void MusicVolume(float volume){
         musicSource.volume = volume;
+
+        PlayerPrefs.SetFloat("MusicVolume", volume);
+        PlayerPrefs.Save();
     }
     
     public void SFXVolume(float volume){
         sfxSource.volume = volume;
+        LoopSFXVolume();
+
+        PlayerPrefs.SetFloat("SFXVolume", volume);
+        PlayerPrefs.Save();
+    }
+
+    public void LoopSFXVolume()
+    {
+        loopSFXSource.volume = sfxSource.volume;
     }
 }

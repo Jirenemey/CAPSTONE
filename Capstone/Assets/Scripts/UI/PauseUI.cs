@@ -68,6 +68,7 @@ public class PauseUI : MonoBehaviour
 
     public void Pause()
     {
+        if(!NetworkManager.Singleton) Time.timeScale = 0.0f;
         pauseMenu.SetActive(true);
         pauseScreen.SetActive(true);
         settings.settingsScrn.SetActive(false);
@@ -78,6 +79,7 @@ public class PauseUI : MonoBehaviour
 
     public void Resume()
     {
+        if(!NetworkManager.Singleton) Time.timeScale = 1.0f;
         pauseMenu.SetActive(false);
         pauseScreen.SetActive(false);
         settings.settingsScrn.SetActive(false);

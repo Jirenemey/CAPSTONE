@@ -49,7 +49,7 @@ public class MenuScript : MonoBehaviour
         if(!menuTitle) menuTitle = GameObject.Find("MenuTitle");
 
         // Settings
-        if(!settings) settings = GameObject.Find("SettingsContainer").GetComponent<SettingsScript>();
+        if(!settings) settings = GetComponent<SettingsScript>();
 
         // Animations
         if(!menuBackground) menuBackground = GameObject.Find("MenuBackground");
