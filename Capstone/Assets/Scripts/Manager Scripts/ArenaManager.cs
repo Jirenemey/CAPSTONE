@@ -17,17 +17,29 @@ public class ArenaManager : MonoBehaviour
     int numberOfPlayersinArena = 0;
     int numberOfPlayerInLobby = 1;
 
-    WaveManager waveManager;
-    GameObject otherPlayer;
-    bool init = false;
+    public WaveManager waveManager;
+    public GameObject otherPlayer;
+    public GameObject ownerPlayer;
 
 	void Start(){
         if(!pauseUI) pauseUI = GameObject.Find("PauseContainer").GetComponent<PauseUI>();
         if (NetworkManager.Singleton)
         {
-            // gets called right when the arena starts so
-            // otherPlayer variable is set before spectating occurs
-            SetCameraToOwner(false);
+            foreach (var client in NetworkManager.Singleton.ConnectedClientsList)
+            {
+                var player = client.PlayerObject;
+                if(player.GetComponent<Player>().IsOwner){
+                    ownerPlayer = player.gameObject;
+                    SetCameraTarget(player.transform);
+                } else
+                {
+                    otherPlayer = player.gameObject;
+                }
+
+                player.transform.position = spawnPoint.transform.position;
+                player.GetComponent<Player>().playerStats.SetPlayerStats();
+                pauseUI.playerInput = player.GetComponent<PlayerInput>();
+            }
         } else
         {
             var player = Instantiate(playerPrefab, spawnPoint.position, Quaternion.identity);
@@ -44,37 +56,13 @@ public class ArenaManager : MonoBehaviour
         waveManager = GetComponent<WaveManager>();
         if (!waveManager) Assert.Fail("WaveManager cannot be accessed by the ArenaManager");
         
-        init = true;
     }
 
-    public void SetCameraToOwner(bool spectate)
+    public void SetCameraTarget(Transform target)
     {
-        if (NetworkManager.Singleton)
-        {
-            GameObject[] players = GameObject.FindGameObjectsWithTag("Player");
-            foreach(GameObject player in players)
-            {
-                if(!player.GetComponent<Player>().IsOwner) otherPlayer = player;
-                if(player.GetComponent<Player>().IsOwner){
-                    camera.Target.TrackingTarget = player.transform;
-                    if (spectate)
-                    {
-                        if(player.GetComponent<Player>().playerStats.GetCurrentHp() <= 0)
-                        {
-                            camera.Target.TrackingTarget = otherPlayer.transform;
-                        }
-                    }
-                    
-                    if(!init){
-                        player.transform.position = spawnPoint.position;
-                        player.GetComponent<Player>().playerStats.SetPlayerStats();
-                        pauseUI.playerInput = player.GetComponent<PlayerInput>();
-
-                    }
-                }
-            }
-        }
+        camera.Target.TrackingTarget = target;
     }
+
 
     void Update(){
         

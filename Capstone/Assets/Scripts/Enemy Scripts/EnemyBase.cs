@@ -278,6 +278,23 @@ public abstract class EnemyBase : NetworkBehaviour, IDamageable
 
     protected virtual void Die()
     {
+        if(!NetworkManager.Singleton){
+            isDead = true;
+            anim.SetTrigger(EnemyBase.DiedHash);
+            rb.gravityScale = 1.0f;
+            Vector2 currentVel = rb.linearVelocity;
+            rb.linearVelocity = new Vector2(currentVel.x, 5f);
+            Destroy(gameObject, 2);
+            OnDeath?.Invoke();
+        } else
+        {
+            HandleDeathServerRpc();
+        }
+	}
+
+    [ServerRpc]
+    void HandleDeathServerRpc()
+    {
         isDead = true;
         anim.SetTrigger(EnemyBase.DiedHash);
         AudioManager.instance.PlaySFX("Enemy Death");
@@ -285,6 +302,6 @@ public abstract class EnemyBase : NetworkBehaviour, IDamageable
         Vector2 currentVel = rb.linearVelocity;
         rb.linearVelocity = new Vector2(currentVel.x, 5f);
         Destroy(gameObject, 2);
-		OnDeath?.Invoke();
-	}
+        OnDeath?.Invoke();
+    }
 }

@@ -49,6 +49,7 @@ public class HealthSoulUI : MonoBehaviour
 		}
 		for (int i = 0; i < spawnedMasks.Count; i++) {
 			Sprite img = i <= currentHp ? filledMask : emptyMask;
+			if(!spawnedMasks[i]) SetupMasks(maxHp);
 			spawnedMasks[i].GetComponent<Image>().sprite = img;
 		}
 	}

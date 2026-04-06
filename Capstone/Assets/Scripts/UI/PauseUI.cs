@@ -30,7 +30,7 @@ public class PauseUI : MonoBehaviour
         if(!resume) resume = GameObject.Find("Resume").GetComponent<Button>();
         
         // Settings
-        if(!settings) settings = GameObject.Find("SettingsContainer").GetComponent<SettingsScript>();
+        if(!settings) settings = GetComponent<SettingsScript>();
         if(!back) back = GameObject.Find("Back").GetComponent<Button>();
 
         // Quit 
