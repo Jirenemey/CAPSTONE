@@ -105,7 +105,6 @@ public class PauseUI : MonoBehaviour
 
     public void ConfirmQuit()
     {
-        playerInput.enabled = true;
         if(NetworkManager.Singleton) {
             NetworkManager.Singleton.SceneManager.LoadScene(
             "MainMenu",
@@ -115,7 +114,8 @@ public class PauseUI : MonoBehaviour
             Destroy(GameObject.Find("NetworkManager"));
 
         } else {
-        SceneManager.LoadScene("MainMenu");
+            Time.timeScale = 1.0f;
+            SceneManager.LoadScene("MainMenu");
         }
 
         SceneManager.UnloadSceneAsync("Arena");
