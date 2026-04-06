@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using Unity.Netcode;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.Events;
 using static UnityEngine.EventSystems.EventTrigger;
@@ -43,6 +44,10 @@ public abstract class EnemyBase : NetworkBehaviour, IDamageable
     private Coroutine flashCoroutine;
     [SerializeField] private float flashDuration = 0.1f;
 
+    [SerializeField] protected Transform groundCheck;
+    [SerializeField] protected float groundCheckRadius = 0.2f;
+    [SerializeField] protected LayerMask groundLayer;
+
     public Rigidbody2D RB => rb;
     public Collider2D Col => col;
     public Animator Anim => anim;
@@ -72,6 +77,9 @@ public abstract class EnemyBase : NetworkBehaviour, IDamageable
         if (!detection) detection = GetComponent<DetectionComponent>();
         if (!movement) movement = GetComponent<MovementComponent>();
 
+        if (!groundCheck) groundCheck = transform.Find("GroundCheck");
+        groundLayer = LayerMask.GetMask("Ground");
+
         currentHealth = maxHealth;
 
         mat = spriteRenderer.material;
@@ -86,7 +94,15 @@ public abstract class EnemyBase : NetworkBehaviour, IDamageable
 
     protected virtual void Update()
     {
-        if (isDead) return;
+        if (isDead)
+        {
+            if (IsGrounded())
+            {
+                rb.gravityScale = 0;
+                rb.linearVelocity = Vector2.zero;
+            }
+            return;
+        }
         if (isKnockedBack) return;
         fsm.UpdateState();
 
@@ -122,6 +138,13 @@ public abstract class EnemyBase : NetworkBehaviour, IDamageable
             return (T)state;
 
         return null;
+    }
+
+    public bool IsGrounded()
+    {
+        if (groundCheck == null) return false;
+
+        return Physics2D.OverlapCircle(groundCheck.position, groundCheckRadius, groundLayer);
     }
 
     //Sprite related Functions
@@ -280,10 +303,11 @@ public abstract class EnemyBase : NetworkBehaviour, IDamageable
     {
         if(!NetworkManager.Singleton){
             isDead = true;
-            anim.SetTrigger(EnemyBase.DiedHash);
+            col.enabled = false;
             rb.gravityScale = 1.0f;
             Vector2 currentVel = rb.linearVelocity;
             rb.linearVelocity = new Vector2(currentVel.x, 5f);
+            anim.SetTrigger(EnemyBase.DiedHash);
             Destroy(gameObject, 2);
             OnDeath?.Invoke();
         } else
@@ -296,12 +320,21 @@ public abstract class EnemyBase : NetworkBehaviour, IDamageable
     void HandleDeathServerRpc()
     {
         isDead = true;
-        anim.SetTrigger(EnemyBase.DiedHash);
-        AudioManager.instance.PlaySFX("Enemy Death");
+        col.enabled = false;
         rb.gravityScale = 1.0f;
         Vector2 currentVel = rb.linearVelocity;
         rb.linearVelocity = new Vector2(currentVel.x, 5f);
+        anim.SetTrigger(EnemyBase.DiedHash);
         Destroy(gameObject, 2);
         OnDeath?.Invoke();
+    }
+
+    protected virtual void OnDrawGizmosSelected()
+    {
+        Transform gc = transform.Find("GroundCheck");
+        if (gc == null) return;
+
+        Gizmos.color = Color.yellow;
+        Gizmos.DrawWireSphere(gc.position, groundCheckRadius);
     }
 }

@@ -152,12 +152,12 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
+  m_SortingLayerID: 415581253
+  m_SortingLayer: 2
   m_SortingOrder: 0
   m_Sprite: {fileID: -2123917165918784490, guid: 20ed41a0d1c22f242871877293533db1, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_FlipX: 1
+  m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
   m_Size: {x: 1.13, y: 1.05}
@@ -200,7 +200,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d5a57f767e5e46a458fc5d3c628d0cbb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  GlobalObjectIdHash: 1583109670
+  GlobalObjectIdHash: 2745364513
   InScenePlacedSourceGlobalObjectIdHash: 1583109670
   DeferredDespawnTick: 0
   Ownership: 1
@@ -231,10 +231,13 @@ MonoBehaviour:
   collisionDMG: 1
   spriteFacing: 1
   flashDuration: 0.1
+  groundCheck: {fileID: 7157081116618753213}
+  groundCheckRadius: 1
+  groundLayer:
+    serializedVersion: 2
+    m_Bits: 64
   slashHitbox: {fileID: 3311009216577586011}
   projectilePrefab: {fileID: 2637100556598761044, guid: f309d97f9f606cd439c6e3c4a52c9379, type: 3}
-  groundCheck: {fileID: 0}
-  groundCheckRadius: 0.5
   ledgeCheck: {fileID: 0}
   ledgeCheckDistance: 0.5
   ledgeCheckXOffset: 1
@@ -243,9 +246,6 @@ MonoBehaviour:
   wallCheckHeight: 2
   wallCheckXOffset: 1.5
   wallCheckYOffset: 1
-  groundLayer:
-    serializedVersion: 2
-    m_Bits: 0
   minAttackCooldown: 0.5
   maxAttackCooldown: 1.5
   meleeRange: 3
@@ -665,7 +665,7 @@ Transform:
   m_GameObject: {fileID: 8048409317547003966}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: -1, z: 0}
+  m_LocalPosition: {x: 0, y: -0.8, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []

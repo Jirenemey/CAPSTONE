@@ -20,7 +20,7 @@ public class SturdyFIdleState : EnemyState
     {
         base.Update();
 
-        if (sturdyFool.IsGrounded() && stateTimer >= 1f)
+        if (enemy.IsGrounded() && stateTimer >= 1f)
         {
             ChangeState<SturdyFPatrolState>();
         }
