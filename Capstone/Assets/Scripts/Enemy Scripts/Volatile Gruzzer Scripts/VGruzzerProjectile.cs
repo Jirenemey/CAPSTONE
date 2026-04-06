@@ -25,7 +25,7 @@ public class VGruzzerProjectile : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D other)
     {
-        // Hit wall — destroy projectile
+        // Hit wall ï¿½ destroy projectile
         if (other.gameObject.layer == LayerMask.NameToLayer("Ground"))
         {
             anim.SetTrigger("Hit");
@@ -37,7 +37,7 @@ public class VGruzzerProjectile : MonoBehaviour
             return;
         }
 
-        // Hit enemy — deal damage but keep going
+        // Hit enemy ï¿½ deal damage but keep going
         if (other.TryGetComponent<IDamageable>(out var target) && other.gameObject.layer == LayerMask.NameToLayer("Player"))
         {
             target.TakeDamage(damage);

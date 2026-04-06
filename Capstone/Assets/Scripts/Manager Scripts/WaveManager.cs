@@ -1,7 +1,9 @@
 using System;
 using System.Collections;
-using UnityEngine;
 using Unity.Netcode;
+using UnityEngine;
+using UnityEngine.InputSystem;
+using UnityEngine.SceneManagement;
 
 
 [Serializable]
@@ -26,9 +28,12 @@ public class WaveManager : MonoBehaviour {
     bool endlessMode = false;
 
     [SerializeField] public WaveData[] waves;
+    [SerializeField] Transform respawnAnchor;
+    [SerializeField] ArenaManager arenaManager;
 
     void Start() {
         //StartCoroutine(StartNextWave());
+        arenaManager = GetComponent<ArenaManager>();
     }
 
     void CalculateEnemyCount()
@@ -85,9 +90,19 @@ public class WaveManager : MonoBehaviour {
     public void StartNextWave(){
 
         if(currentWaveIndex >= waves.Length) {
-            // game over
-
-        }
+            // game over TODO: make this point to the win screen
+            if (NetworkManager.Singleton) {
+			    NetworkManager.Singleton.SceneManager.LoadScene(
+				    "MainMenu",
+			        LoadSceneMode.Single
+		        );
+            } else {
+                SceneManager.LoadScene(
+					"MainMenu",
+					LoadSceneMode.Single
+                );
+            }
+		}
         WaveData currentWave = waves[currentWaveIndex];
 
         currentWave.waveParentGameObject.SetActive(true);
@@ -132,6 +147,21 @@ public class WaveManager : MonoBehaviour {
             {
                 if(NetworkManager.Singleton.IsHost) StartNextWaveServerRpc();
                 if(NetworkManager.Singleton.IsClient) DisplayWaveObjectsClientRpc(waves[currentWaveIndex]);
+
+                GameObject[] players = GameObject.FindGameObjectsWithTag("Player");
+                foreach(GameObject player in players)
+                {
+                    var stats = player.GetComponent<PlayerStats>();
+                    if (stats.GetCurrentHp() > 0) return;
+                    else
+                    {
+                        stats.Heal(stats.GetMaxHp()/2); // set to half
+                        player.transform.position = respawnAnchor.position;
+                        player.GetComponent<PlayerInput>().enabled = true;
+                        arenaManager.SetCameraToOwner(true);
+                    }
+                    
+                }
             } else {
                 StartNextWave();
             }

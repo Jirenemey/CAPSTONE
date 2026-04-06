@@ -25,7 +25,6 @@ public class AttackHitbox : MonoBehaviour {
 		}
 
 		if ((enemyLayer.value & (1 << other.gameObject.layer)) == 0) return;
-		print("hit");
 		// Try to get a health/damageable component and apply damage
 		if (other.TryGetComponent<IDamageable>(out var target)) {
 			target.TakeDamage(damage);
