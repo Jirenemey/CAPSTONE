@@ -2388,6 +2388,7 @@ Transform:
   m_Children:
   - {fileID: 1835544654}
   - {fileID: 1778400344}
+  - {fileID: 1787866869}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &636240570
@@ -7361,6 +7362,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1424854072}
   - component: {fileID: 1424854071}
+  - component: {fileID: 1424854074}
   - component: {fileID: 1424854073}
   m_Layer: 0
   m_Name: ArenaManager
@@ -7385,6 +7387,7 @@ MonoBehaviour:
   camera: {fileID: 866340566}
   playerPrefab: {fileID: 901652932801601688, guid: 33a4a1835edc44144b51368b2e222aa8, type: 3}
   spawnPoint: {fileID: 1835544654}
+  arenaEntrance: {fileID: 1787866869}
   pauseUI: {fileID: 859784242}
   waveManager: {fileID: 0}
   otherPlayer: {fileID: 0}
@@ -7416,6 +7419,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 84591d1933ef5214d9c49d2d253bdc8a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  ShowTopMostFoldoutHeaderGroup: 1
   currentWaveIndex: 0
   maxWaves: 5
   enemies:
@@ -7457,6 +7461,33 @@ MonoBehaviour:
   respawnAnchor: {fileID: 1778400344}
   deathAnchor: {fileID: 1835544654}
   arenaManager: {fileID: 1424854071}
+  networkWaveIndex:
+    m_InternalValue: 0
+--- !u!114 &1424854074
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1424854070}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d5a57f767e5e46a458fc5d3c628d0cbb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  GlobalObjectIdHash: 3742093777
+  InScenePlacedSourceGlobalObjectIdHash: 0
+  DeferredDespawnTick: 0
+  Ownership: 1
+  AlwaysReplicateAsRoot: 0
+  SynchronizeTransform: 1
+  ActiveSceneSynchronization: 0
+  SceneMigrationSynchronization: 0
+  SpawnWithObservers: 1
+  DontDestroyWithOwner: 0
+  AutoObjectParentSync: 1
+  SyncOwnerTransformWhenParented: 1
+  AllowOwnerToParent: 0
 --- !u!1 &1430103920
 GameObject:
   m_ObjectHideFlags: 0
@@ -9396,6 +9427,37 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 32.78, y: 4.76, z: 1.7544798}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 629698083}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1787866868
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1787866869}
+  m_Layer: 0
+  m_Name: ArenaEntrance
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1787866869
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1787866868}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 20.5, y: -5.48, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []

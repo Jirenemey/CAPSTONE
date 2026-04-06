@@ -11,6 +11,7 @@ public class ArenaManager : MonoBehaviour
     [SerializeField] CinemachineCamera camera;
     [SerializeField] GameObject playerPrefab;
     [SerializeField] Transform spawnPoint;
+    [SerializeField] Transform arenaEntrance;
     [SerializeField] PauseUI pauseUI;
 	GameObject doorTrigger;
     GameObject door;
@@ -31,14 +32,13 @@ public class ArenaManager : MonoBehaviour
                 if(player.GetComponent<Player>().IsOwner){
                     ownerPlayer = player.gameObject;
                     SetCameraTarget(player.transform);
+                    player.transform.position = spawnPoint.transform.position;
+                    player.GetComponent<Player>().playerStats.SetPlayerStats();
+                    pauseUI.playerInput = player.GetComponent<PlayerInput>();
                 } else
                 {
                     otherPlayer = player.gameObject;
                 }
-
-                player.transform.position = spawnPoint.transform.position;
-                player.GetComponent<Player>().playerStats.SetPlayerStats();
-                pauseUI.playerInput = player.GetComponent<PlayerInput>();
             }
         } else
         {
@@ -85,8 +85,10 @@ public class ArenaManager : MonoBehaviour
 
     void StartArena() {
         if(NetworkManager.Singleton){
-            if(NetworkManager.Singleton.IsHost) waveManager.StartNextWaveServerRpc();
-            if(NetworkManager.Singleton.IsClient) waveManager.DisplayWaveObjectsClientRpc(waveManager.waves[waveManager.currentWaveIndex]);
+            otherPlayer.transform.position = arenaEntrance.position;
+            ownerPlayer.transform.position = arenaEntrance.position;
+            waveManager.StartNextWaveServerRpc();
+
         }
         else {
             waveManager.StartNextWave();

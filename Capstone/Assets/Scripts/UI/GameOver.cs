@@ -91,7 +91,7 @@ public class GameOver : NetworkBehaviour
         }
     }
 
-    [ServerRpc(RequireOwnership = false)]
+    [ServerRpc]
     void TryRestartServerRpc()
     {
         var enemies = FindObjectsOfType<EnemyTag>();

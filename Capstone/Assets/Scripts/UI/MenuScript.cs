@@ -54,7 +54,7 @@ public class MenuScript : MonoBehaviour
         // Animations
         if(!menuBackground) menuBackground = GameObject.Find("MenuBackground");
 
-        singleplayerBtn.onClick.AddListener(() => LoadSinglePlayer());
+        singleplayerBtn.onClick.AddListener(() => LoadScene("Arena"));
         multiplayerBtn.onClick.AddListener(() => LoadScene("Multiplayer"));
         settings.settingsBtn.onClick.AddListener(() => SettingsPage());
         quitBtn.onClick.AddListener(() => Quit());
@@ -73,16 +73,11 @@ public class MenuScript : MonoBehaviour
 
     // Main Menu Button management
     public void LoadScene(string sceneName) {
+        var networkManager = GameObject.Find("NetworkManager");
+        if(networkManager) Destroy(networkManager);
+        
 		SceneManager.LoadScene(sceneName);
 	}
-
-    public void LoadSinglePlayer()
-    {
-        SceneManager.LoadScene("Arena");
-        var networkManager = GameObject.Find("NetworkManager");
-        if(networkManager)
-            Destroy(networkManager);
-    }
 
     public void SettingsPage()
     {

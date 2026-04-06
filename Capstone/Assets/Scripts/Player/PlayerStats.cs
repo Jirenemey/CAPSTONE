@@ -47,6 +47,8 @@ public class PlayerStats : NetworkBehaviour {
 	public int GetMaxSoul() {  return maxSoul; }
 
 	public void TakeDamage(int damageAmount) {
+		if(!GetComponent<Player>().IsOwner) return;
+
 		currentHp -= damageAmount;
 		currentHp = Mathf.Clamp(currentHp, 0, maxHp);
 
@@ -59,6 +61,8 @@ public class PlayerStats : NetworkBehaviour {
 	}
 
 	public void Heal(int healAmount) {
+		if(!GetComponent<Player>().IsOwner) return;
+		
 		currentHp += healAmount;
 		currentHp = Mathf.Clamp(currentHp, 0, maxHp);
 		OnHealthChanged?.Invoke(currentHp, maxHp);
@@ -71,6 +75,8 @@ public class PlayerStats : NetworkBehaviour {
 	}
 
 	public bool TryConsumeSoul(int amount) {
+		if(!GetComponent<Player>().IsOwner) return false;
+
 		if (currentSoul >= amount) {
 			currentSoul -= amount;
 			OnSoulChanged?.Invoke(currentSoul, maxSoul);
@@ -98,6 +104,26 @@ public class PlayerStats : NetworkBehaviour {
 		}
 	}
 
+	public override void OnNetworkSpawn()
+	{
+		base.OnNetworkSpawn();
+		
+    	isDead.OnValueChanged += OnDeadStateChanged;
+	}
+
+	private void OnDeadStateChanged(bool oldValue, bool newValue)
+	{
+		Debug.Log("Death state: " + newValue);
+		if (!newValue) // revived
+		{
+			var waveManager = GameObject.Find("ArenaManager").GetComponent<WaveManager>();
+			waveManager.ReviveAllDeadPlayersClientRpc();
+		} else
+		{
+			DieServerRpc();
+		}
+	}
+
 	bool CheckAllPlayersAreDead() {
 		foreach (var client in NetworkManager.Singleton.ConnectedClientsList)
 		{
@@ -111,7 +137,7 @@ public class PlayerStats : NetworkBehaviour {
 		return true;
 	}
 
-	[ServerRpc(RequireOwnership = false)]
+	[ServerRpc]
 	void DieServerRpc()
 	{	
 		isDead.Value = true;

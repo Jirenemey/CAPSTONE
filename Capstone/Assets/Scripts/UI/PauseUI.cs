@@ -83,7 +83,8 @@ public class PauseUI : MonoBehaviour
         settings.settingsScrn.SetActive(false);
         confirmLeavePrompt.SetActive(false);
         paused = false;
-        playerInput.enabled = true;
+        if(playerInput.gameObject.GetComponent<PlayerStats>().isDead.Value == false)
+            playerInput.enabled = true;
     }
 
     public void Settings()

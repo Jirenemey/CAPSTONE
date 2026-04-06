@@ -19,6 +19,7 @@ public class DamageTicker : MonoBehaviour {
 	}
 
 	private void OnTriggerEnter2D(Collider2D other) {
+		if(other.tag == "Player") return;
 		if (other.TryGetComponent<IDamageable>(out var target)) {
 			if (!targetsInRange.Contains(target)) {
 				targetsInRange.Add(target);
