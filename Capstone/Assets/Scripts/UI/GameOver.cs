@@ -9,6 +9,8 @@ public class GameOver : NetworkBehaviour
 {
     [SerializeField] AudioManager audioManager;
     [SerializeField] GameObject gameOverScreen;
+    [SerializeField] GameObject gameOverTitle;
+    [SerializeField] GameObject victoryTitle;
     [SerializeField] Button mainMenuBtn;
     [SerializeField] Button restartBtn;
     [SerializeField] GameObject voteRestartContainer;
@@ -29,6 +31,8 @@ public class GameOver : NetworkBehaviour
         if(!audioManager) audioManager = GameObject.Find("AudioManager").GetComponent<AudioManager>();
 
         if(!gameOverScreen) gameOverScreen = GameObject.Find("GameOverScreen");
+        if(!gameOverTitle) gameOverTitle = GameObject.Find("GameOverTitle");
+        if(!victoryTitle) victoryTitle = GameObject.Find("VictoryTitle");
         if(!mainMenuBtn) mainMenuBtn = GameObject.Find("MainMenuBtn").GetComponent<Button>();
 
         if(!restartBtn) restartBtn = GameObject.Find("RestartBtn").GetComponent<Button>();
@@ -57,7 +61,21 @@ public class GameOver : NetworkBehaviour
     public void SetGameOver()
     {
         gameOverScreen.SetActive(true);
+        gameOverTitle.SetActive(true);
+        victoryTitle.SetActive(false);
+        ActivateBtns();
+    }
 
+    public void SetVictory()
+    {
+        gameOverScreen.SetActive(true);
+        gameOverTitle.SetActive(false);
+        victoryTitle.SetActive(true);
+        ActivateBtns();
+    }
+
+    private void ActivateBtns()
+    {
         mainMenuBtn.gameObject.SetActive(true);
         if (NetworkManager.Singleton)
         {

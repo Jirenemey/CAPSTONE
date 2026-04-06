@@ -30,6 +30,8 @@ public class WaveManager : NetworkBehaviour {
     [SerializeField] public Transform deathAnchor;
     [SerializeField] ArenaManager arenaManager;
 
+    [SerializeField] GameOver gameOver;
+
     public NetworkVariable<int> networkWaveIndex = new NetworkVariable<int>(0);
 
     bool spawned = false;
@@ -37,16 +39,14 @@ public class WaveManager : NetworkBehaviour {
 
     void Start() {
         arenaManager = GetComponent<ArenaManager>();
+        if(!gameOver) gameOver = GameObject.Find("GameOverContainer").GetComponent<GameOver>();
         if(NetworkManager.Singleton) OnNetworkSpawn();
     }
 
     public void StartNextWave(){
 
         if(currentWaveIndex >= waves.Length) {
-            SceneManager.LoadScene(
-				"MainMenu",
-				LoadSceneMode.Single
-            );
+            gameOver.SetVictory();
 		}
 
         WaveData currentWave = waves[currentWaveIndex];
@@ -85,15 +85,18 @@ public class WaveManager : NetworkBehaviour {
 
 // Multiplayer related methods
 
+    [ClientRpc]
+    public void SetVictoryClientRpc()
+    {
+        gameOver.SetVictory();
+    }
+
     [ServerRpc(RequireOwnership=false)]
     public void StartNextWaveServerRpc()
     {
 
         if(networkWaveIndex.Value >= waves.Length) {
-            NetworkManager.Singleton.SceneManager.LoadScene(
-                "MainMenu",
-                LoadSceneMode.Single
-            );
+            SetVictoryClientRpc();
         }
 
         ReviveAllDeadPlayersClientRpc();     

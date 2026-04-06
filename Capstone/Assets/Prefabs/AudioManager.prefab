@@ -347,6 +347,8 @@ MonoBehaviour:
     clip: {fileID: 8300000, guid: 7e65083e799b8f4439c222cebeca5bec, type: 3}
   - name: VG Projectile Break
     clip: {fileID: 8300000, guid: fc376c56210120d41bd14b7700b1888e, type: 3}
+  - name: GateClose
+    clip: {fileID: 8300000, guid: f149ca0c92300bc4b814b0fdf6798aa3, type: 3}
   musicSource: {fileID: 5711173373074014846}
   sfxSource: {fileID: 3846720207086971009}
   loopSFXSource: {fileID: 2440980527387176321}
