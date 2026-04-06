@@ -9885,7 +9885,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1923115509}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 0}
+  m_Script: {fileID: 11500000, guid: 69841d8250c61834e9d5b2667ca266ea, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!61 &1923115511
@@ -9932,7 +9932,7 @@ BoxCollider2D:
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
-  m_Size: {x: 43.966568, y: 1.630702}
+  m_Size: {x: 250, y: 1.630702}
   m_EdgeRadius: 0
 --- !u!61 &1923115512
 BoxCollider2D:
