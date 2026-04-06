@@ -77,15 +77,6 @@ public class SettingsScript : MonoBehaviour
         pressKeyScreen.SetActive(false);
     }
 
-    // [RuntimeInitializeOnLoadMethod(RuntimeInitializeLoadType.AfterSceneLoad)]
-    // static void OnAfterSceneLoad()
-    // {
-    //     SettingsScript settings = FindObjectOfType<SettingsScript>();
-    //     if (settings != null)
-    //     {
-    //         settings.Initialize();
-    //     }
-    // }
 
     string GetBindingText(InputAction action) {
         if (Gamepad.current != null) 
