@@ -1,5 +1,6 @@
-using UnityEngine;
 using System.Collections;
+using Unity.Netcode;
+using UnityEngine;
 
 public class VolatileGruzzerAI : MonoBehaviour, IDamageable
 {
@@ -82,15 +83,21 @@ public class VolatileGruzzerAI : MonoBehaviour, IDamageable
 
         if (!isDead) return;
 
-        if (!explosionCountdownStarted && IsGrounded())
+        if (IsGrounded())
         {
-            anim.SetBool("isGrounded", true);
+            col.enabled = false;
+            rb.gravityScale = 0;
+            rb.linearVelocity = Vector2.zero;
 
-            //AudioManager.instance.PlaySFX("VG Death Gurgle");
+            if (!explosionCountdownStarted)
+            {
 
-            explosionCountdownStarted = true;
-            StartCoroutine(ExplosionCountdown());
-            //audio.PlaySFX("");
+                anim.SetBool("isGrounded", true);
+                AudioManager.instance.PlaySFX("VG Death Gurgle");
+
+                explosionCountdownStarted = true;
+                StartCoroutine(ExplosionCountdown());
+            }
         }
     }
     private void FixedUpdate()
@@ -117,7 +124,8 @@ public class VolatileGruzzerAI : MonoBehaviour, IDamageable
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        if (isDead || isKnockedBack) return;
+        if (isDead) return;
+        if (isKnockedBack) return;
 
         Vector2 normal = collision.GetContact(0).normal;
 
@@ -144,6 +152,7 @@ public class VolatileGruzzerAI : MonoBehaviour, IDamageable
         {
             Die();
         }
+
     }
 
     private bool IsGrounded()
@@ -214,8 +223,36 @@ public class VolatileGruzzerAI : MonoBehaviour, IDamageable
     {
         if (isDead) return;
 
-        isDead = true;
+        if (!NetworkManager.Singleton)
+        {
+            isDead = true;
+            col.enabled = false;
+            direction = Vector2.zero;
+            rb.linearVelocity = Vector2.zero;
+            rb.gravityScale = 1;
 
+            anim.SetTrigger("Died");
+            AudioManager.instance.PlaySFX("Enemy Death");
+
+            if (loopSource != null)
+            {
+                Destroy(loopSource);
+                loopSource = null;
+            }
+
+            OnDeath?.Invoke();
+        }
+        else
+        {
+            HandleDeathServerRpc();
+        }
+    }
+
+    [ServerRpc]
+    void HandleDeathServerRpc()
+    {
+        isDead = true;
+        col.enabled = false;
         direction = Vector2.zero;
         rb.linearVelocity = Vector2.zero;
         rb.gravityScale = 1;
@@ -229,11 +266,8 @@ public class VolatileGruzzerAI : MonoBehaviour, IDamageable
             loopSource = null;
         }
 
-
         OnDeath?.Invoke();
-
-		//Destroy(gameObject, 10);
-	}
+    }
 
     private IEnumerator ExplosionCountdown()
     {

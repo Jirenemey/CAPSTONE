@@ -28,7 +28,7 @@ public class SturdyFEvadeState : EnemyState
     {
         base.Update();
 
-        if (!sturdyFool.IsGrounded())
+        if (!enemy.IsGrounded())
         {
             ChangeState<SturdyFIdleState>();
         }
