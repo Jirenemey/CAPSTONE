@@ -76,9 +76,9 @@ GameObject:
   - component: {fileID: -81321523107543937}
   - component: {fileID: 7678926099084498141}
   - component: {fileID: 697960525809708663}
+  - component: {fileID: -2866978521334262893}
   - component: {fileID: 2338194408777348852}
   - component: {fileID: 8116716110664175888}
-  - component: {fileID: -2866978521334262893}
   - component: {fileID: 1919163165415653956}
   - component: {fileID: 1400838923696641267}
   - component: {fileID: -3887516623540475071}
@@ -375,38 +375,6 @@ MonoBehaviour:
   m_DefaultActionMap: Player
   m_SplitScreenIndex: -1
   m_Camera: {fileID: 0}
---- !u!114 &2338194408777348852
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 901652932801601688}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c7199d8ba44bcf248aa55615b208b383, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  maxHp: 5
-  maxSoul: 3
---- !u!114 &8116716110664175888
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 901652932801601688}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 292a2ff4d9b0dd848a9fa32fe43a2848, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  moveAction: {fileID: -1680190386980627800, guid: 2bcd2660ca9b64942af0de543d8d7100, type: 3}
-  jumpAction: {fileID: -2099379676528639254, guid: 2bcd2660ca9b64942af0de543d8d7100, type: 3}
-  dashAction: {fileID: -7619157589409501069, guid: 2bcd2660ca9b64942af0de543d8d7100, type: 3}
-  attackAction: {fileID: 1120369429361536294, guid: 2bcd2660ca9b64942af0de543d8d7100, type: 3}
-  quickCastAction: {fileID: 5325731216392178691, guid: 2bcd2660ca9b64942af0de543d8d7100, type: 3}
-  moveDeadZone: 0.25
 --- !u!114 &-2866978521334262893
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -432,6 +400,43 @@ MonoBehaviour:
   AutoObjectParentSync: 1
   SyncOwnerTransformWhenParented: 1
   AllowOwnerToParent: 0
+--- !u!114 &2338194408777348852
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 901652932801601688}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c7199d8ba44bcf248aa55615b208b383, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ShowTopMostFoldoutHeaderGroup: 1
+  maxHp: 5
+  currentHp: 0
+  maxSoul: 3
+  currentSoul: 0
+  isDead:
+    m_InternalValue: 0
+--- !u!114 &8116716110664175888
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 901652932801601688}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 292a2ff4d9b0dd848a9fa32fe43a2848, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  moveAction: {fileID: -1680190386980627800, guid: 2bcd2660ca9b64942af0de543d8d7100, type: 3}
+  jumpAction: {fileID: -2099379676528639254, guid: 2bcd2660ca9b64942af0de543d8d7100, type: 3}
+  dashAction: {fileID: -7619157589409501069, guid: 2bcd2660ca9b64942af0de543d8d7100, type: 3}
+  attackAction: {fileID: 1120369429361536294, guid: 2bcd2660ca9b64942af0de543d8d7100, type: 3}
+  quickCastAction: {fileID: 5325731216392178691, guid: 2bcd2660ca9b64942af0de543d8d7100, type: 3}
+  moveDeadZone: 0.25
 --- !u!114 &1919163165415653956
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -470,9 +475,7 @@ MonoBehaviour:
   HowlingWraithsSpawnPoint: {fileID: 8209784924459026341}
   invincibilityDuration: 1
   damageSound: {fileID: 8300000, guid: 7c687c181748afe4895baeb32f5c99d0, type: 3}
-  hitLayers:
-    serializedVersion: 2
-    m_Bits: 1024
+  hurtBox: {fileID: 0}
 --- !u!114 &1400838923696641267
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1043,4 +1046,3 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4b2e8430dc75f4243baf0fefdd3a7287, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  player: {fileID: 0}

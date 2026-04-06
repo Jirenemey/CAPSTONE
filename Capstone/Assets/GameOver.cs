@@ -3,6 +3,7 @@ using UnityEngine.UI;
 using Unity.Netcode;
 using UnityEngine.SceneManagement;
 using TMPro;
+using UnityEngine.InputSystem;
 
 public class GameOver : NetworkBehaviour
 {
@@ -16,6 +17,7 @@ public class GameOver : NetworkBehaviour
     [SerializeField] TMP_Text restartText;
     public NetworkVariable<int> restartCount = new NetworkVariable<int>(0, NetworkVariableReadPermission.Everyone, NetworkVariableWritePermission.Server);
 
+    private bool localReady = false;
 
     void Start()
     {
@@ -80,15 +82,46 @@ public class GameOver : NetworkBehaviour
         SceneManager.LoadScene("MainMenu");
     }
     
-    void Restart()
-    {   if(!NetworkManager.Singleton){
+    void Restart(){
+        if(!NetworkManager.Singleton){
             SceneManager.LoadScene("Arena");
         } 
         else {
-            NetworkManager.Singleton.SceneManager.LoadScene(
+            TryRestartServerRpc();
+        }
+    }
+
+    [ServerRpc(RequireOwnership = false)]
+    void TryRestartServerRpc()
+    {
+        var enemies = FindObjectsOfType<EnemyTag>();
+        foreach(var enemy in enemies)
+        {
+            Destroy(enemy.gameObject);
+        }
+        EnablePlayersClientRpc();
+        NetworkManager.Singleton.SceneManager.LoadScene(
             "Arena",
             LoadSceneMode.Single
-            );
+        );
+    }
+
+    [ClientRpc]
+    void EnablePlayersClientRpc()
+    {
+        foreach (var client in NetworkManager.Singleton.ConnectedClientsList)
+        {
+            if (client.PlayerObject == null) continue;
+
+            var player = client.PlayerObject;
+            var stats = player.GetComponent<PlayerStats>();            
+            
+            stats.SetPlayerStats();
+            stats.isDead.Value = false;
+            stats.Heal(stats.GetMaxHp());
+            
+            player.GetComponent<PlayerInput>().enabled = true;
+            player.GetComponent<SpriteRenderer>().enabled = true;
         }
     }
 
@@ -120,23 +153,31 @@ public class GameOver : NetworkBehaviour
 
     public void VoteRestart()
     {
+        voteRestartBtn.interactable = false;
         voteRestartBtn.gameObject.SetActive(false);
+        cancelRestartBtn.interactable = true;
         cancelRestartBtn.gameObject.SetActive(true);
+        if (localReady) return;
+        localReady = true;
 
         if (NetworkManager.Singleton.IsClient)
             VoteRestartServerRpc(1);
-        else if(NetworkManager.Singleton.IsHost)
+        else if (NetworkManager.Singleton.IsHost)
             restartCount.Value += 1;
     }
 
     public void CancelVote()
     {
-        voteRestartBtn.gameObject.SetActive(true);
+        cancelRestartBtn.interactable = false;
         cancelRestartBtn.gameObject.SetActive(false);
+        voteRestartBtn.interactable = true;
+        voteRestartBtn.gameObject.SetActive(true);
+        if (!localReady) return;
+        localReady = false;
 
         if (NetworkManager.Singleton.IsClient)
             VoteRestartServerRpc(-1);
-        else if(NetworkManager.Singleton.IsHost)
+        else if (NetworkManager.Singleton.IsHost)
             restartCount.Value += -1;
     }
 
