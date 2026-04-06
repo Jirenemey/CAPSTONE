@@ -95,6 +95,15 @@ public class AudioManager : MonoBehaviour
         AudioSource source = target.gameObject.AddComponent<AudioSource>();
         source.clip = s.clip;
         source.loop = true;
+
+        source.spatialBlend = 1f; // full 3D
+        source.minDistance = 1f;
+        source.maxDistance = 10f;
+        source.rolloffMode = AudioRolloffMode.Logarithmic;
+
+        source.volume = UnityEngine.Random.Range(0.9f, 1f);
+        source.pitch = UnityEngine.Random.Range(0.95f, 1.05f);
+
         source.Play();
 
         return source;

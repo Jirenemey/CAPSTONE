@@ -13,6 +13,13 @@ using static UnityEngine.EventSystems.EventTrigger;
 
 public abstract class EnemyBase : NetworkBehaviour, IDamageable
 {
+    protected Rigidbody2D rb;
+    protected Collider2D col;
+    protected Animator anim;
+    protected SpriteRenderer spriteRenderer;
+    protected AudioSource loopSource;
+
+
 	public event System.Action OnDeath;
 	[Header("Stats")]
     public float maxHealth = 100f;
@@ -32,28 +39,15 @@ public abstract class EnemyBase : NetworkBehaviour, IDamageable
     // 1 = sprite faces RIGHT by default
     // -1 = sprite faces LEFT by default
 
-    private Color originalColor;
-    [SerializeField] private Color hitColor = Color.red;
+    private Material mat;
+    private Coroutine flashCoroutine;
     [SerializeField] private float flashDuration = 0.1f;
-
-    //[SerializeField] private Material flashMaterial;
-
-    //private Material originalMaterial;
-    //private Coroutine flashRoutine;
-
-    protected Rigidbody2D rb;
-    protected Collider2D col;
-    protected Animator anim;
-    protected SpriteRenderer spriteRenderer;
-
-    protected AudioSource loopSource;
 
     public Rigidbody2D RB => rb;
     public Collider2D Col => col;
     public Animator Anim => anim;
     public SpriteRenderer SpriteRenderer => spriteRenderer;
     public AudioSource LoopSource => loopSource;
-
 
     public int FacingDirection { get; private set; } = 1;
 
@@ -80,13 +74,14 @@ public abstract class EnemyBase : NetworkBehaviour, IDamageable
 
         currentHealth = maxHealth;
 
+        mat = spriteRenderer.material;
+
         fsm = new EnemyStateMachine();
     }
 
     protected virtual void Start()
     {
         RegisterStates();
-        originalColor = spriteRenderer.color;
     }
 
     protected virtual void Update()
@@ -201,7 +196,11 @@ public abstract class EnemyBase : NetworkBehaviour, IDamageable
 
         currentHealth -= damage;
 
-        StartCoroutine(HitFlash());
+        if (flashCoroutine != null) StopCoroutine(flashCoroutine);
+            flashCoroutine = StartCoroutine(FlashRoutine());
+
+        AudioManager.instance.PlaySFX("Enemy Damage");
+
         ApplyKnockback();
 
         if (currentHealth <= 0)
@@ -243,12 +242,12 @@ public abstract class EnemyBase : NetworkBehaviour, IDamageable
         rb.linearVelocity = Vector2.zero;
     }
 
-    private IEnumerator HitFlash()
+    private IEnumerator FlashRoutine()
     {
-        //Color originalColor = Color.white;
-        spriteRenderer.color = hitColor;
+        mat.SetFloat("_FlashAmount", 1f);
         yield return new WaitForSeconds(flashDuration);
-        spriteRenderer.color = originalColor;
+        mat.SetFloat("_FlashAmount", 0f);
+        flashCoroutine = null;
     }
 
     //Audio functions
@@ -281,6 +280,7 @@ public abstract class EnemyBase : NetworkBehaviour, IDamageable
     {
         isDead = true;
         anim.SetTrigger(EnemyBase.DiedHash);
+        AudioManager.instance.PlaySFX("Enemy Death");
         rb.gravityScale = 1.0f;
         Vector2 currentVel = rb.linearVelocity;
         rb.linearVelocity = new Vector2(currentVel.x, 5f);

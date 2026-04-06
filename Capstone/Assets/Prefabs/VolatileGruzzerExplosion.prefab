@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 6722372997201225817}
   - component: {fileID: -356381569428362483}
   - component: {fileID: -3119645879420669398}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: VolatileGruzzerExplosion
   m_TagString: Untagged
   m_Icon: {fileID: 0}
