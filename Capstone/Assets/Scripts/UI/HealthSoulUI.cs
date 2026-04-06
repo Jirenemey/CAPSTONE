@@ -30,28 +30,41 @@ public class HealthSoulUI : MonoBehaviour
 		foreach (var m in spawnedMasks) Destroy(m);
 		spawnedMasks.Clear();
 
+		// setup with all empty masks
 		for (int i = 0; i < maxHp; i++) {
 			GameObject mask = Instantiate(MaskPrefab, maskContainer.transform);
 			spawnedMasks.Add(mask);
+			mask.GetComponent<Image>().sprite = emptyMask;
 		}
 	}
 
 	public void UpdateHealth(int currentHp, int maxHp) {
-		if (spawnedMasks.Count != maxHp) {
-			// recrete all masks
-			spawnedMasks.ForEach(m => Destroy(m));
+		// assume mxHP is the same and was setup before
+		int i = 0;
+		while(i < currentHp) {
+			spawnedMasks[i].GetComponent<Image>().sprite = filledMask;
+			i++;
+		}
+		while(i < maxHp) {
+			spawnedMasks[i].GetComponent<Image>().sprite = emptyMask;
+			i++;
+		}
 
-			for(int i = 0;i < maxHp; i++) {
-				Sprite img = i <= currentHp ? filledMask : emptyMask;
-				GameObject mask = Instantiate(MaskPrefab);
-				mask.GetComponent<Image>().sprite = img;
-			}
-		}
-		for (int i = 0; i < spawnedMasks.Count; i++) {
-			Sprite img = i <= currentHp ? filledMask : emptyMask;
-			if(!spawnedMasks[i]) SetupMasks(maxHp);
-			spawnedMasks[i].GetComponent<Image>().sprite = img;
-		}
+		//if (spawnedMasks.Count != maxHp) {
+		//	// recrete all masks
+		//	spawnedMasks.ForEach(m => Destroy(m));
+
+		//	for(int i = 0;i < maxHp; i++) {
+		//		Sprite img = i <= currentHp ? filledMask : emptyMask;
+		//		GameObject mask = Instantiate(MaskPrefab);
+		//		mask.GetComponent<Image>().sprite = img;
+		//	}
+		//}
+		//for (int i = 0; i < spawnedMasks.Count; i++) {
+		//	Sprite img = i <= currentHp ? filledMask : emptyMask;
+		//	if(!spawnedMasks[i]) SetupMasks(maxHp);
+		//	spawnedMasks[i].GetComponent<Image>().sprite = img;
+		//}
 	}
 
 	public void UpdateSoul(int currentSoul, int maxSoul) {
