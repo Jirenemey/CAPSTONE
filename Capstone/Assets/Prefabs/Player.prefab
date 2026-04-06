@@ -193,7 +193,7 @@ Animator:
   m_GameObject: {fileID: 901652932801601688}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 91fc7bba4417aea40bab2841d0500ae8, type: 2}
+  m_Controller: {fileID: 9100000, guid: f332af1c923b7354a8ce3ca1c81a9be9, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -228,7 +228,7 @@ SpriteRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: a97c105638bdf8b4a8650670310a4cd3, type: 2}
+  - {fileID: -876546973899608171, guid: b0a589fd92ebf184fa887a4d7506b599, type: 3}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -386,7 +386,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d5a57f767e5e46a458fc5d3c628d0cbb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  GlobalObjectIdHash: 580190582
+  GlobalObjectIdHash: 2949389996
   InScenePlacedSourceGlobalObjectIdHash: 2949389996
   DeferredDespawnTick: 0
   Ownership: 1
@@ -475,6 +475,7 @@ MonoBehaviour:
   invincibilityDuration: 1
   damageSound: {fileID: 8300000, guid: 7c687c181748afe4895baeb32f5c99d0, type: 3}
   hurtBox: {fileID: 0}
+  flashDuration: 0.1
 --- !u!114 &-3887516623540475071
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -553,20 +554,6 @@ MonoBehaviour:
   TransitionStateInfoList:
   - IsCrossFadeExit: 0
     Layer: 0
-    OriginatingState: -601574123
-    DestinationState: 538973511
-    TransitionDuration: 0.25
-    TriggerNameHash: -2146256263
-    TransitionIndex: 1
-  - IsCrossFadeExit: 0
-    Layer: 0
-    OriginatingState: -1919845803
-    DestinationState: 538973511
-    TransitionDuration: 0.25
-    TriggerNameHash: -2146256263
-    TransitionIndex: 1
-  - IsCrossFadeExit: 0
-    Layer: 0
     OriginatingState: 1418504410
     DestinationState: -796564351
     TransitionDuration: 0.25
@@ -626,14 +613,6 @@ MonoBehaviour:
       NameHash: 1080829965
       Synchronize: 1
       ParameterType: 9
-    - name: isLookingUp
-      NameHash: -431343905
-      Synchronize: 1
-      ParameterType: 4
-    - name: isLookingDown
-      NameHash: -1117204699
-      Synchronize: 1
-      ParameterType: 4
     - name: Dash
       NameHash: 995914302
       Synchronize: 1
@@ -660,6 +639,10 @@ MonoBehaviour:
       ParameterType: 9
     - name: isDashing
       NameHash: 1756643129
+      Synchronize: 1
+      ParameterType: 4
+    - name: isFalling
+      NameHash: -1829127916
       Synchronize: 1
       ParameterType: 4
   AnimatorParametersExpanded: 0
