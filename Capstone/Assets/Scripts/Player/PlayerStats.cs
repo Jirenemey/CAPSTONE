@@ -47,7 +47,7 @@ public class PlayerStats : NetworkBehaviour {
 	public int GetMaxSoul() {  return maxSoul; }
 
 	public void TakeDamage(int damageAmount) {
-		if(!GetComponent<Player>().IsOwner) return;
+		if(!GetComponent<Player>().IsOwner && NetworkManager.Singleton) return;
 
 		currentHp -= damageAmount;
 		currentHp = Mathf.Clamp(currentHp, 0, maxHp);
@@ -61,7 +61,7 @@ public class PlayerStats : NetworkBehaviour {
 	}
 
 	public void Heal(int healAmount) {
-		if(!GetComponent<Player>().IsOwner) return;
+		if(!GetComponent<Player>().IsOwner && NetworkManager.Singleton) return;
 		
 		currentHp += healAmount;
 		currentHp = Mathf.Clamp(currentHp, 0, maxHp);
@@ -69,13 +69,15 @@ public class PlayerStats : NetworkBehaviour {
 	}
 
 	public void AddSoul(int soulAmount) {
+		if(!GetComponent<Player>().IsOwner && NetworkManager.Singleton) return;
+		
 		currentSoul += soulAmount;
 		currentSoul = Mathf.Clamp(currentSoul, 0, maxSoul);
 		OnSoulChanged?.Invoke(currentSoul, maxSoul);
 	}
 
 	public bool TryConsumeSoul(int amount) {
-		if(!GetComponent<Player>().IsOwner) return false;
+		if(!GetComponent<Player>().IsOwner && NetworkManager.Singleton) return false;
 
 		if (currentSoul >= amount) {
 			currentSoul -= amount;

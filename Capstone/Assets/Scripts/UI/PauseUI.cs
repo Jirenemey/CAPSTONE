@@ -105,6 +105,7 @@ public class PauseUI : MonoBehaviour
 
     public void ConfirmQuit()
     {
+        playerInput.enabled = true;
         if(NetworkManager.Singleton) {
             NetworkManager.Singleton.SceneManager.LoadScene(
             "MainMenu",

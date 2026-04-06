@@ -1,4 +1,4 @@
-using NUnit.Framework;
+
 using Unity.Netcode;
 using UnityEngine;
 using Unity.Cinemachine;
@@ -53,9 +53,7 @@ public class ArenaManager : MonoBehaviour
         triggerProxy.tagName = "Player";
 
         door = GameObject.Find("White_Gate");
-        waveManager = GetComponent<WaveManager>();
-        if (!waveManager) Assert.Fail("WaveManager cannot be accessed by the ArenaManager");
-        
+        waveManager = GetComponent<WaveManager>();        
     }
 
     public void SetCameraTarget(Transform target)
