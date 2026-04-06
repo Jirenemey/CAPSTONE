@@ -164,7 +164,14 @@ public class Player : NetworkBehaviour, IDamageable {
 			ResetSprint();
 		}
 
-		if (walkHeldDuration >= durationBeforeSprint && !isSprinting) {
+		if (rb.linearVelocityY < 0.0f) {
+			anim.SetBool("isFalling", true);
+		} else {
+            anim.SetBool("isFalling", false);
+        }
+
+		if (walkHeldDuration >= durationBeforeSprint && !isSprinting)
+		{
 			isSprinting = true;
 			walkSpeed = originalWalkSpeed * sprintMultiplier;
 		}
@@ -223,14 +230,14 @@ public class Player : NetworkBehaviour, IDamageable {
 	}
 	private void HandleJumpPress() {
 		if (jumps < jumpCount - 1) { // -1 to account for the very next frame where it resets the double jump
-			anim.SetTrigger("Jump");
+			//anim.SetTrigger("Jump");
 			rb.gravityScale = defaultGravity;
 			//Debug.Log("JUMPED");
 			//rb.AddForce(Vector2.up * jumpForce, ForceMode2D.Impulse);
 			rb.linearVelocity = new Vector2(rb.linearVelocity.x, jumpForce);
-			if (jumps == 1) {
+			if (jumps == 0) {
 				anim.SetTrigger("Jump");
-			} else if (jumps == 2) {
+			} else if (jumps == 1) {
 				anim.SetTrigger("Double Jump");
 			}
 			jumps++;
@@ -539,4 +546,12 @@ public class Player : NetworkBehaviour, IDamageable {
 		isInvincible = false;
 	}
 
+    private void OnDrawGizmosSelected()
+    {
+        Transform gc = transform.Find("GroundCheck");
+        if (gc == null) return;
+
+        Gizmos.color = Color.yellow;
+        Gizmos.DrawWireSphere(gc.position, groundCheckRadius);
+    }
 }

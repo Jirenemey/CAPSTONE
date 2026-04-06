@@ -35,7 +35,8 @@ public class VolatileGruzzerAI : MonoBehaviour, IDamageable
     private float knockbackTime = 0.2f;
     private bool isKnockedBack = false;
 
-    [SerializeField] private Color hitColor = Color.red;
+    private Material mat;
+    private Coroutine flashCoroutine;
     [SerializeField] private float flashDuration = 0.1f;
 
     void Start()
@@ -44,6 +45,11 @@ public class VolatileGruzzerAI : MonoBehaviour, IDamageable
         if (!col) col = GetComponent<Collider2D>();
         if (!anim) anim = GetComponent<Animator>();
         if (!spriteRenderer) spriteRenderer = GetComponent<SpriteRenderer>();
+
+        mat = spriteRenderer.material;
+
+        if (!groundCheck) groundCheck = transform.Find("GroundCheck");
+        groundLayer = LayerMask.GetMask("Ground");
 
         GameObject playerObj = GameObject.FindGameObjectWithTag("Player");
         if (playerObj != null)
@@ -64,8 +70,6 @@ public class VolatileGruzzerAI : MonoBehaviour, IDamageable
             loopSource = AudioManager.instance.PlayLoopSFXAtObject("VG Fly Loop", transform);
         }
 
-        if (!groundCheck) groundCheck = transform.Find("GroundCheck");
-        groundLayer = LayerMask.GetMask("Ground");
 
     }
 
@@ -156,7 +160,8 @@ public class VolatileGruzzerAI : MonoBehaviour, IDamageable
         health -= amount;
         Debug.Log($"{gameObject.name} took {amount} damage. HP: {health}");
 
-        StartCoroutine(HitFlash());
+        StartCoroutine(FlashRoutine());
+        AudioManager.instance.PlaySFX("Enemy Damage");
         ApplyKnockback();
 
         if (health <= 0) Die();
@@ -197,12 +202,12 @@ public class VolatileGruzzerAI : MonoBehaviour, IDamageable
         rb.linearVelocity = direction * moveSpeed;
     }
 
-    private IEnumerator HitFlash()
+    private IEnumerator FlashRoutine()
     {
-        Color originalColor = Color.white;
-        spriteRenderer.color = hitColor;
+        mat.SetFloat("_FlashAmount", 1f);
         yield return new WaitForSeconds(flashDuration);
-        spriteRenderer.color = originalColor;
+        mat.SetFloat("_FlashAmount", 0f);
+        flashCoroutine = null;
     }
 
     private void Die()
@@ -216,6 +221,7 @@ public class VolatileGruzzerAI : MonoBehaviour, IDamageable
         rb.gravityScale = 1;
 
         anim.SetTrigger("Died");
+        AudioManager.instance.PlaySFX("Enemy Death");
 
         if (loopSource != null)
         {
