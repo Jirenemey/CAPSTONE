@@ -1,8 +1,10 @@
 using System;
 using UnityEngine;
 using Unity.Netcode;
+using UnityEngine.InputSystem;
 
-public class PlayerStats : MonoBehaviour {
+
+public class PlayerStats : NetworkBehaviour {
 	[Header("Health")]
 	[SerializeField] private int maxHp = 5;
 	[SerializeField] private int currentHp;
@@ -15,6 +17,8 @@ public class PlayerStats : MonoBehaviour {
 	public event Action<int, int> OnHealthChanged; // Sends (currentHp, maxHp)
 	public event Action<int, int> OnSoulChanged;   // Sends (currentSoul, maxSoul)
 	public event System.Action OnPlayerDeath;
+
+	public NetworkVariable<bool> isDead = new NetworkVariable<bool>();
 
 	private void Start() {
 		currentHp = maxHp;
@@ -32,7 +36,8 @@ public class PlayerStats : MonoBehaviour {
 
     public void SetPlayerStats()
     {
-        FindFirstObjectByType<HealthSoulUI>().Initialize(this);
+		if(IsOwner)
+        	FindFirstObjectByType<HealthSoulUI>().Initialize(this);
     }
 
 
@@ -77,10 +82,76 @@ public class PlayerStats : MonoBehaviour {
 	private void Die() {
 		OnPlayerDeath?.Invoke();
 		// Handle death logic (animations, respawn, etc.)
+		var gameOver = GameObject.Find("GameOverContainer").GetComponent<GameOver>();
+		var arenaManager = GameObject.Find("ArenaManager").GetComponent<ArenaManager>();
+
+		GetComponent<SpriteRenderer>().enabled = false;
+		GetComponent<PlayerInput>().enabled = false;
+		transform.position = arenaManager.waveManager.deathAnchor.position;
+		
 		if (NetworkManager.Singleton)
 		{
-			var arenaManager = GameObject.Find("ArenaManager").GetComponent<ArenaManager>();
-			arenaManager.SetCameraToOwner(true);
+			DieServerRpc();
+
+		} else {
+			gameOver.SetGameOver();
 		}
 	}
+
+	bool CheckAllPlayersAreDead() {
+		foreach (var client in NetworkManager.Singleton.ConnectedClientsList)
+		{
+			var player = client.PlayerObject.GetComponent<PlayerStats>();
+
+			if (player.isDead.Value == false)
+				return false;
+		}
+
+		GameOverServerRpc();
+		return true;
+	}
+
+	[ServerRpc(RequireOwnership = false)]
+	void DieServerRpc()
+	{	
+		isDead.Value = true;
+		OnDeathClientRpc();	
+	}
+
+	[ClientRpc]
+	void OnDeathClientRpc()
+	{
+		if (!IsOwner) return;
+		
+		Debug.Log("Died: " + isDead.Value);
+		
+		var arenaManager = GameObject.Find("ArenaManager").GetComponent<ArenaManager>();
+
+		arenaManager.SetCameraTarget(arenaManager.otherPlayer.transform);
+		GetComponent<SpriteRenderer>().enabled = false;
+		GetComponent<PlayerInput>().enabled = false;
+		transform.position = arenaManager.waveManager.deathAnchor.position;
+
+		if (CheckAllPlayersAreDead())
+		{
+			Debug.Log("Game Over. All players dead.");
+		} else {
+			Debug.Log("Player(s) still alive.");
+		}
+		
+	}
+
+	[ServerRpc(RequireOwnership = false)]
+	void GameOverServerRpc()
+	{
+		SendGameOverClientRpc();
+	}
+
+	[ClientRpc]
+	void SendGameOverClientRpc()
+	{
+		var gameOver = GameObject.Find("GameOverContainer").GetComponent<GameOver>();
+		gameOver.SetGameOver();
+	}
+
 }

@@ -28,7 +28,8 @@ public class WaveManager : MonoBehaviour {
     bool endlessMode = false;
 
     [SerializeField] public WaveData[] waves;
-    [SerializeField] Transform respawnAnchor;
+    [SerializeField] public Transform respawnAnchor;
+    [SerializeField] public Transform deathAnchor;
     [SerializeField] ArenaManager arenaManager;
 
     void Start() {
@@ -145,28 +146,51 @@ public class WaveManager : MonoBehaviour {
             currentWaveIndex++;
             if (NetworkManager.Singleton)
             {
-                if(NetworkManager.Singleton.IsHost) StartNextWaveServerRpc();
-                if(NetworkManager.Singleton.IsClient) DisplayWaveObjectsClientRpc(waves[currentWaveIndex]);
-
-                GameObject[] players = GameObject.FindGameObjectsWithTag("Player");
-                foreach(GameObject player in players)
-                {
-                    var stats = player.GetComponent<PlayerStats>();
-                    if (stats.GetCurrentHp() > 0) return;
-                    else
-                    {
-                        stats.Heal(stats.GetMaxHp()/2); // set to half
-                        player.transform.position = respawnAnchor.position;
-                        player.GetComponent<PlayerInput>().enabled = true;
-                        arenaManager.SetCameraToOwner(true);
-                    }
-                    
+                ReviveServerRpc();
+                if(NetworkManager.Singleton.IsHost){ 
+                    StartNextWaveServerRpc();
+                }
+                if(NetworkManager.Singleton.IsClient){ 
+                    DisplayWaveObjectsClientRpc(waves[currentWaveIndex]);
                 }
             } else {
                 StartNextWave();
             }
 		}
 	}
+
+[ServerRpc(RequireOwnership = false)]
+void ReviveServerRpc()
+{
+    foreach (var client in NetworkManager.Singleton.ConnectedClientsList)
+    {
+        var player = client.PlayerObject;
+        var stats = player.GetComponent<PlayerStats>();
+        if(stats.isDead.Value)
+        {
+            // Server moves and heals the player
+            player.transform.position = respawnAnchor.position;
+            stats.Heal(stats.GetMaxHp() / 2);
+
+            // Enable input only on owner
+            if (player.IsOwner)
+                player.GetComponent<PlayerInput>().enabled = true;
+
+            // Tell all clients to enable the sprite
+            ReviveClientRpc(player.gameObject);
+        }
+    }
+}
+
+[ClientRpc]
+void ReviveClientRpc(GameObject player)
+{
+    if (player.GetComponent<Player>().IsOwner)
+    {
+        player.GetComponent<SpriteRenderer>().enabled = true;
+        arenaManager.SetCameraTarget(player.transform);
+    }
+}
 
 
 
