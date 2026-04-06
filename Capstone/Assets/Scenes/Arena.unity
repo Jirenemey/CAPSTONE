@@ -2094,8 +2094,8 @@ MonoBehaviour:
   ShowTopMostFoldoutHeaderGroup: 1
   audioManager: {fileID: 0}
   gameOverScreen: {fileID: 933685773}
-  gameOverTitle: {fileID: 0}
-  victoryTitle: {fileID: 0}
+  gameOverTitle: {fileID: 718349110}
+  victoryTitle: {fileID: 772053032}
   mainMenuBtn: {fileID: 1254108947}
   restartBtn: {fileID: 1035853543}
   voteRestartContainer: {fileID: 2086009393}
