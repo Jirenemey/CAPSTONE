@@ -50,8 +50,9 @@ public class WaveManager : NetworkBehaviour {
 		}
 
         WaveData currentWave = waves[currentWaveIndex];
-
+        if(currentWaveIndex != 0) waves[currentWaveIndex-1].waveParentGameObject.SetActive(false);
         currentWave.waveParentGameObject.SetActive(true);
+
         foreach(EnemyData enemyData in currentWave.enemies) {
 			GameObject spawnedEnemy = Instantiate(enemyData.enemie, enemyData.spawnPoint);
 
