@@ -9,9 +9,7 @@ public class AudioManager : MonoBehaviour
     public static AudioManager instance;
 
     public Sound[] musicSounds, sfxSounds;
-    public AudioSource musicSource, sfxSource;
-
-    public AudioSource loopSFXSource;
+    public AudioSource musicSource, sfxSource, loopSFXSource, playerSource, playerFallingSource, playerHealSource;
 
     void Awake() {
         if (instance != null && instance != this)
@@ -128,9 +126,19 @@ public class AudioManager : MonoBehaviour
     public void SFXVolume(float volume){
         sfxSource.volume = volume;
         LoopSFXVolume();
+        AdjustPlayerVolume();
 
         PlayerPrefs.SetFloat("SFXVolume", volume);
         PlayerPrefs.Save();
+    }
+
+    public void AdjustPlayerVolume()
+    {
+        if(playerSource && playerFallingSource && playerHealSource){
+            playerSource.volume = sfxSource.volume;
+            playerFallingSource.volume = sfxSource.volume * 0.25f;
+            playerHealSource.volume = sfxSource.volume * 0.25f;
+        }
     }
 
     public void LoopSFXVolume()

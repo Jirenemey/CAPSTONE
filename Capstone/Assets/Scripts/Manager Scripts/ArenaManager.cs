@@ -53,7 +53,9 @@ public class ArenaManager : MonoBehaviour
         triggerProxy.tagName = "Player";
 
         door = GameObject.Find("White_Gate");
-        waveManager = GetComponent<WaveManager>();        
+        waveManager = GetComponent<WaveManager>();
+        if (!audioManager) audioManager = GameObject.Find("AudioManager").GetComponent<AudioManager>();
+        audioManager.PlayMusic("ArenaOne");
     }
 
     public void SetCameraTarget(Transform target)

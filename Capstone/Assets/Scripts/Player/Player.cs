@@ -43,7 +43,7 @@ public class Player : NetworkBehaviour, IDamageable {
 
 	[Header("Jump Settings")]
 	public float jumpForce = 2.0f;
-	private int jumpCount = 2; // double jump
+	private int jumpCount = 1; // double jump
 	private int jumps = 0;
 	[SerializeField] private float defaultGravity = 1.0f;
 	[SerializeField] private float fallingGravityMultiplier = 2.0f;
@@ -52,6 +52,27 @@ public class Player : NetworkBehaviour, IDamageable {
 	public float groundCheckRadius = 0.2f;
 	private Transform groundCheck;
 	[SerializeField] private LayerMask groundLayer;
+
+	[Header("Healing Settings")]
+	[SerializeField] private int healAmount = 1;
+	[SerializeField] private float healHoldTime = 1.0f;
+	private float healHoldTimer = 0f;
+	private bool isHealingCharging = false;
+
+	[Header("Audio Settings")]
+	[SerializeField] private AudioClip landingSound;
+	[SerializeField] private AudioClip walkingSound;
+	[SerializeField] private AudioClip attackSound;
+	[SerializeField] private AudioClip dashSound;
+	[SerializeField] private AudioClip jumpSound;
+	[SerializeField] private AudioClip doubleJumpSound;
+	[SerializeField] private AudioClip fallingSound;
+	[SerializeField] private AudioClip healChargeSound;
+	[SerializeField] private AudioClip healCompleteSound;
+
+	private bool wasGrounded = false;
+	private AudioSource fallingAudioSource;
+	private AudioSource healChargeAudioSource;
 
 	//[Header("Attck settings")]
 	public enum AttackDirection { Left, Right, Up, Down }
@@ -91,6 +112,8 @@ public class Player : NetworkBehaviour, IDamageable {
     private Coroutine flashCoroutine;
     [SerializeField] private float flashDuration = 0.1f;
 
+	[SerializeField] AudioManager audioManager;
+
     void Start() {
 		if (!rb) rb = GetComponent<Rigidbody2D>();
 		if (!col) col = GetComponent<Collider2D>();
@@ -110,6 +133,7 @@ public class Player : NetworkBehaviour, IDamageable {
 		rb.gravityScale = defaultGravity;
 		if (!groundCheck) groundCheck = transform.Find("GroundCheck");
 		groundLayer = LayerMask.GetMask("Ground");
+		wasGrounded = IsGrounded();
 		oldDirection = playerDirection;
 		originalWalkSpeed = walkSpeed;
 
@@ -117,6 +141,23 @@ public class Player : NetworkBehaviour, IDamageable {
 		if (!audioSource) {
 			audioSource = gameObject.AddComponent<AudioSource>();
 		}
+
+		fallingAudioSource = gameObject.AddComponent<AudioSource>();
+		fallingAudioSource.loop = true;
+		fallingAudioSource.playOnAwake = false;
+		fallingAudioSource.volume = 0.25f;
+
+		healChargeAudioSource = gameObject.AddComponent<AudioSource>();
+		healChargeAudioSource.loop = true;
+		healChargeAudioSource.playOnAwake = false;
+		healChargeAudioSource.volume = 0.25f;
+
+		if(!audioManager) audioManager = GameObject.Find("AudioManager").GetComponent<AudioManager>();
+
+		audioManager.playerSource = audioSource;
+		audioManager.playerFallingSource = fallingAudioSource;
+		audioManager.playerHealSource = healChargeAudioSource;
+		audioManager.AdjustPlayerVolume();
 
 		mat = spriteRenderer.material;
 
@@ -189,6 +230,7 @@ public class Player : NetworkBehaviour, IDamageable {
 			walkSpeed = originalWalkSpeed * sprintMultiplier;
 		}
 
+		HandleFocusHealing();
 		inputHandler.ConsumeTriggers();
 
 	}
@@ -213,13 +255,24 @@ public class Player : NetworkBehaviour, IDamageable {
 
 		rb.linearVelocity = movement;
 
-		//if(Physics2D.OverlapCircle(groundCheck.position, groundCheckRadius, groundLayer)){
-		if (IsGrounded()) {
+		bool grounded = IsGrounded();
+		if (grounded) {
+			if (!wasGrounded) {
+				PlayLandingSound();
+			}
+			StopFallingSound();
 			jumps = 0; // reset double jump
 			anim.SetBool("isGrounded", true);
 		} else {
+			if (rb.linearVelocity.y < 0f) {
+				PlayFallingSound();
+			} else {
+				StopFallingSound();
+			}
 			anim.SetBool("isGrounded", false);
 		}
+
+		wasGrounded = grounded;
 	}
 
 	void SetPlayerDirection() {
@@ -242,18 +295,17 @@ public class Player : NetworkBehaviour, IDamageable {
 		}
 	}
 	private void HandleJumpPress() {
-		if (jumps < jumpCount - 1) { // -1 to account for the very next frame where it resets the double jump
-			//anim.SetTrigger("Jump");
+		if (jumps < jumpCount) {
 			rb.gravityScale = defaultGravity;
-			//Debug.Log("JUMPED");
-			//rb.AddForce(Vector2.up * jumpForce, ForceMode2D.Impulse);
 			rb.linearVelocity = new Vector2(rb.linearVelocity.x, jumpForce);
+			jumps++;
 			if (jumps == 0) {
+				PlayJumpSound();
 				anim.SetTrigger("Jump");
-			} else if (jumps == 1) {
+			} else {
+				PlayDoubleJumpSound();
 				anim.SetTrigger("Double Jump");
 			}
-			jumps++;
 		}
 	}
 	private void HandleJumpRelease() {
@@ -266,6 +318,7 @@ public class Player : NetworkBehaviour, IDamageable {
 	private void HandleDashPress() {
 		if (isDashing) return; // Prevent double dash
 		anim.SetTrigger("Dash");
+		PlayDashSound();
 		StartCoroutine(DashRoutine());
 	}
 	private System.Collections.IEnumerator DashRoutine() {
@@ -302,10 +355,117 @@ public class Player : NetworkBehaviour, IDamageable {
 		isSprinting = false;
 		walkSpeed = originalWalkSpeed;
 	}
+
+	private void PlayLandingSound() {
+		if (landingSound && audioSource) {
+			audioSource.PlayOneShot(landingSound);
+		}
+	}
+
+	private void PlayAttackSound() {
+		if (attackSound && audioSource) {
+			audioSource.PlayOneShot(attackSound);
+		}
+	}
+
+	private void PlayDashSound() {
+		if (dashSound && audioSource) {
+			audioSource.PlayOneShot(dashSound);
+		}
+	}
+
+	private void PlayJumpSound() {
+		if (jumpSound && audioSource) {
+			audioSource.PlayOneShot(jumpSound);
+		}
+	}
+
+	private void PlayDoubleJumpSound() {
+		if (doubleJumpSound && audioSource) {
+			audioSource.PlayOneShot(doubleJumpSound);
+		}
+	}
+
+	private void PlayFallingSound() {
+		if (fallingSound == null || fallingAudioSource == null) return;
+		if (fallingAudioSource.clip != fallingSound) {
+			fallingAudioSource.clip = fallingSound;
+		}
+		if (!fallingAudioSource.isPlaying) {
+			fallingAudioSource.Play();
+		}
+	}
+
+	private void PlayHealChargeSound() {
+		if (healChargeSound == null || healChargeAudioSource == null) return;
+		if (healChargeAudioSource.clip != healChargeSound) {
+			healChargeAudioSource.clip = healChargeSound;
+		}
+		if (!healChargeAudioSource.isPlaying) {
+			healChargeAudioSource.Play();
+		}
+	}
+
+	private void StopHealChargeSound() {
+		if (healChargeAudioSource == null) return;
+		if (healChargeAudioSource.isPlaying) {
+			healChargeAudioSource.Stop();
+		}
+	}
+
+	private void PlayHealCompleteSound() {
+		if (healCompleteSound == null || audioSource == null) return;
+		audioSource.PlayOneShot(healCompleteSound);
+	}
+
+	private void HandleFocusHealing() {
+		if (inputHandler == null || playerStats == null) {
+			healHoldTimer = 0f;
+			StopHealChargeSound();
+			isHealingCharging = false;
+			return;
+		}
+
+		bool canHeal = playerStats.GetCurrentHp() < playerStats.GetMaxHp();
+		if (inputHandler.FocusHeld && canHeal) {
+			if (!isHealingCharging) {
+				isHealingCharging = true;
+				PlayHealChargeSound();
+			}
+
+			healHoldTimer += Time.deltaTime;
+			if (healHoldTimer >= healHoldTime) {
+				print("heal");
+				if (playerStats.TryConsumeSoul(1)) {
+					playerStats.Heal(healAmount);
+				}
+				playerStats.Heal(healAmount);
+				healHoldTimer = 0f;
+				StopHealChargeSound();
+				isHealingCharging = false;
+				PlayHealCompleteSound();
+			}
+		} else {
+			healHoldTimer = 0f;
+			if (isHealingCharging) {
+				StopHealChargeSound();
+				isHealingCharging = false;
+			}
+		}
+	}
+
+	private void StopFallingSound() {
+		if (fallingAudioSource == null) return;
+		if (fallingAudioSource.isPlaying) {
+			fallingAudioSource.Stop();
+		}
+	}
+
 	private void HandleAttack() {
 		if (Time.time < lastAttackTime + attackCooldown) return;
 		lastAttackTime = Time.time;
 		if (isAttacking) return; // prevent coroutine stacking
+		PlayAttackSound();
 		if(NetworkManager.Singleton){
 			if(NetworkManager.Singleton.IsHost) MeleeAttackClientRpc();
 			if(NetworkManager.Singleton.IsClient) MeleeAttackServerRpc();
@@ -404,6 +564,10 @@ public class Player : NetworkBehaviour, IDamageable {
 			Debug.LogError("Vengeful Spirit: Projectile prefab or projectileSpawnPoint is not set");
 			return;
 		}
+		if (!playerStats.TryConsumeSoul(1)) {
+			Debug.Log("Not enough soul to cast Vengeful Spirit");
+			return;
+		}
 		if(!NetworkManager.Singleton){
 			GameObject proj = Instantiate(
 				VengefulSpiritProjectilePrefab,
@@ -423,6 +587,10 @@ public class Player : NetworkBehaviour, IDamageable {
 	private void CastHowlingWraiths(){
 		if (HowlingWraithsPrefab == null || HowlingWraithsSpawnPoint == null) {
 			Debug.LogError("Howling Wraiths: prefab or SpawnPoint is not set");
+			return;
+		}
+		if (!playerStats.TryConsumeSoul(1)) {
+			Debug.Log("Not enough soul to cast Howling Wraiths");
 			return;
 		}
 		if(!NetworkManager.Singleton){

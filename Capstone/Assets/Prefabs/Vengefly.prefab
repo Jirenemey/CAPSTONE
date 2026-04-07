@@ -111,6 +111,7 @@ GameObject:
   - component: {fileID: 3608738222200683186}
   - component: {fileID: 2466961279281979775}
   - component: {fileID: 470393301279035494}
+  - component: {fileID: -3333985548697702814}
   m_Layer: 10
   m_Name: Vengefly
   m_TagString: Untagged
@@ -287,7 +288,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d5a57f767e5e46a458fc5d3c628d0cbb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  GlobalObjectIdHash: 1127931863
+  GlobalObjectIdHash: 2120359497
   InScenePlacedSourceGlobalObjectIdHash: 2120359497
   DeferredDespawnTick: 0
   Ownership: 1
@@ -461,6 +462,18 @@ MonoBehaviour:
       Synchronize: 1
       ParameterType: 9
   AnimatorParametersExpanded: 0
+--- !u!114 &-3333985548697702814
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8414971049533135686}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 46e8a179b108a834e8b6410d957bbfcd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &8845649631113814234
 GameObject:
   m_ObjectHideFlags: 0

@@ -8,6 +8,7 @@ public class PlayerInputHandler : MonoBehaviour {
 	[SerializeField] InputActionReference dashAction;
 	[SerializeField] InputActionReference attackAction;
 	[SerializeField] InputActionReference quickCastAction;
+	[SerializeField] InputActionReference focusAction;
 
 	[Header("Input Settings")]
 	[SerializeField, Range(0f, 0.5f)] private float moveDeadZone = 0.25f;
@@ -19,6 +20,7 @@ public class PlayerInputHandler : MonoBehaviour {
 	public bool DashTriggered { get; private set; }
 	public bool AttackTriggered { get; private set; }
 	public bool QuickCastTriggered { get; private set; }
+	public bool FocusHeld { get; private set; }
 
 	private void OnEnable() {
 		moveAction.action.Enable();
@@ -35,14 +37,18 @@ public class PlayerInputHandler : MonoBehaviour {
 
 		quickCastAction.action.started += ctx => QuickCastTriggered = true;
 		quickCastAction.action.Enable();
-	}
 
+		focusAction.action.started += ctx => FocusHeld = true;
+		focusAction.action.canceled += ctx => FocusHeld = false;
+		focusAction.action.Enable();
+	}
 	private void OnDisable() {
 		moveAction.action.Disable();
 		jumpAction.action.Disable();
 		dashAction.action.Disable();
 		attackAction.action.Disable();
 		quickCastAction.action.Disable();
+		focusAction.action.Disable();
 	}
 
 	private void Update() {

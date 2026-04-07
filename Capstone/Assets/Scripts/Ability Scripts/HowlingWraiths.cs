@@ -1,5 +1,6 @@
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Audio;
 
 public class HowlingWraiths : MonoBehaviour
 {
@@ -12,7 +13,12 @@ public class HowlingWraiths : MonoBehaviour
 
 		ticker.damage = dmg;
 		ticker.tickInterval = duration / numberOfTicks;
+		PlaySound();
 
 		Destroy(gameObject, duration);
+	}
+
+	private void PlaySound() {
+		AudioManager.instance.PlaySFX("HollowScream");
 	}
 }
