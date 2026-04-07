@@ -435,6 +435,7 @@ MonoBehaviour:
   dashAction: {fileID: -7619157589409501069, guid: 2bcd2660ca9b64942af0de543d8d7100, type: 3}
   attackAction: {fileID: 1120369429361536294, guid: 2bcd2660ca9b64942af0de543d8d7100, type: 3}
   quickCastAction: {fileID: 5325731216392178691, guid: 2bcd2660ca9b64942af0de543d8d7100, type: 3}
+  focusAction: {fileID: 5368557215398398091, guid: 2bcd2660ca9b64942af0de543d8d7100, type: 3}
   moveDeadZone: 0.25
 --- !u!114 &1919163165415653956
 MonoBehaviour:
@@ -485,8 +486,10 @@ MonoBehaviour:
   HowlingWraithsSpawnPoint: {fileID: 8209784924459026341}
   invincibilityDuration: 1
   damageSound: {fileID: 8300000, guid: 7c687c181748afe4895baeb32f5c99d0, type: 3}
+  audioSource: {fileID: 0}
   hurtBox: {fileID: 0}
   flashDuration: 0.1
+  audioManager: {fileID: 2186781158421514749, guid: 1361c50fd7f266949975b773cf4305f3, type: 3}
 --- !u!114 &-3887516623540475071
 MonoBehaviour:
   m_ObjectHideFlags: 0

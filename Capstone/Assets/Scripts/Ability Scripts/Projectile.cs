@@ -14,6 +14,8 @@ public class Projectile : MonoBehaviour {
 		DamageTicker ticker = gameObject.AddComponent<DamageTicker>();
 		ticker.damage = damage;
 		ticker.tickInterval = lifetime / numberOfTicks;
+		AudioManager.instance.PlaySFX("Fireball");
+
 
 		Destroy(gameObject, lifetime);
 	}

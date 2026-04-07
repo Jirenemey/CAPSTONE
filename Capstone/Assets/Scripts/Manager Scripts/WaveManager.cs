@@ -29,8 +29,9 @@ public class WaveManager : NetworkBehaviour {
     [SerializeField] public Transform respawnAnchor;
     [SerializeField] public Transform deathAnchor;
     [SerializeField] ArenaManager arenaManager;
-
     [SerializeField] GameOver gameOver;
+    [SerializeField] AudioManager audioManager;
+
 
     public NetworkVariable<int> networkWaveIndex = new NetworkVariable<int>(0);
 
@@ -39,19 +40,26 @@ public class WaveManager : NetworkBehaviour {
 
     void Start() {
         arenaManager = GetComponent<ArenaManager>();
+        if(!audioManager) audioManager = GameObject.Find("AudioManager").GetComponent<AudioManager>();
         if(!gameOver) gameOver = GameObject.Find("GameOverContainer").GetComponent<GameOver>();
         if(NetworkManager.Singleton) OnNetworkSpawn();
     }
 
-    public void StartNextWave(){
+    public void StartNextWave() {
+
+        if(!audioManager) audioManager = GameObject.Find("AudioManager").GetComponent<AudioManager>();
 
         if(currentWaveIndex >= waves.Length) {
             gameOver.SetVictory();
+            audioManager.PlayMusic("Multiplayer");
 		}
 
         WaveData currentWave = waves[currentWaveIndex];
         if(currentWaveIndex != 0) waves[currentWaveIndex-1].waveParentGameObject.SetActive(false);
         currentWave.waveParentGameObject.SetActive(true);
+
+        if(currentWaveIndex == 1) audioManager.PlayMusic("ArenaTwo");
+        if(currentWaveIndex == 3) audioManager.PlayMusic("ArenaThree");
 
         foreach(EnemyData enemyData in currentWave.enemies) {
 			GameObject spawnedEnemy = Instantiate(enemyData.enemie, enemyData.spawnPoint);
@@ -89,11 +97,13 @@ public class WaveManager : NetworkBehaviour {
     public void SetVictoryClientRpc()
     {
         gameOver.SetVictory();
+        audioManager.PlayMusic("Multiplayer");
     }
 
     [ServerRpc(RequireOwnership=false)]
     public void StartNextWaveServerRpc()
     {
+        if(!audioManager) audioManager = GameObject.Find("AudioManager").GetComponent<AudioManager>();
 
         if(networkWaveIndex.Value >= waves.Length) {
             SetVictoryClientRpc();
@@ -129,6 +139,8 @@ public class WaveManager : NetworkBehaviour {
     {
         if(networkWaveIndex.Value != 0) waves[networkWaveIndex.Value-1].waveParentGameObject.SetActive(false);
         waves[networkWaveIndex.Value].waveParentGameObject.SetActive(true);
+        if(networkWaveIndex.Value == 1) audioManager.PlayMusic("ArenaTwo");
+        if(networkWaveIndex.Value == 3) audioManager.PlayMusic("ArenaThree");
     }
 
     [ServerRpc(RequireOwnership=false)]

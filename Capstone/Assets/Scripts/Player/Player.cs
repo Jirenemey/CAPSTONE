@@ -57,6 +57,7 @@ public class Player : NetworkBehaviour, IDamageable {
 	[SerializeField] private int healAmount = 1;
 	[SerializeField] private float healHoldTime = 1.0f;
 	private float healHoldTimer = 0f;
+	private bool isHealingCharging = false;
 
 	[Header("Audio Settings")]
 	[SerializeField] private AudioClip landingSound;
@@ -107,6 +108,8 @@ public class Player : NetworkBehaviour, IDamageable {
     private Coroutine flashCoroutine;
     [SerializeField] private float flashDuration = 0.1f;
 
+	[SerializeField] AudioManager audioManager;
+
     void Start() {
 		if (!rb) rb = GetComponent<Rigidbody2D>();
 		if (!col) col = GetComponent<Collider2D>();
@@ -144,6 +147,13 @@ public class Player : NetworkBehaviour, IDamageable {
 		healChargeAudioSource.loop = true;
 		healChargeAudioSource.playOnAwake = false;
 		healChargeAudioSource.volume = 0.25f;
+
+		if(!audioManager) audioManager = GameObject.Find("AudioManager").GetComponent<AudioManager>();
+
+		audioManager.playerSource = audioSource;
+		audioManager.playerFallingSource = fallingAudioSource;
+		audioManager.playerHealSource = healChargeAudioSource;
+		audioManager.AdjustPlayerVolume();
 
 		playerStats.OnPlayerDeath += () => OnDeath?.Invoke();
 
@@ -211,6 +221,7 @@ public class Player : NetworkBehaviour, IDamageable {
 			walkSpeed = originalWalkSpeed * sprintMultiplier;
 		}
 
+		HandleFocusHealing();
 		inputHandler.ConsumeTriggers();
 
 	}
@@ -276,23 +287,16 @@ public class Player : NetworkBehaviour, IDamageable {
 	}
 	private void HandleJumpPress() {
 		if (jumps < jumpCount) {
-			//anim.SetTrigger("Jump");
 			rb.gravityScale = defaultGravity;
-			//Debug.Log("JUMPED");
-			//rb.AddForce(Vector2.up * jumpForce, ForceMode2D.Impulse);
 			rb.linearVelocity = new Vector2(rb.linearVelocity.x, jumpForce);
-			print("jumps: "+jumps);
 			jumps++;
 			if (jumps == 0) {
-				print("jump");
 				PlayJumpSound();
 				anim.SetTrigger("Jump");
 			} else {
-				print("Double jump");
 				PlayDoubleJumpSound();
 				anim.SetTrigger("Double Jump");
 			}
-			print("after jumps: "+jumps);
 		}
 	}
 	private void HandleJumpRelease() {
@@ -383,19 +387,61 @@ public class Player : NetworkBehaviour, IDamageable {
 		}
 	}
 
+	private void PlayHealChargeSound() {
+		if (healChargeSound == null || healChargeAudioSource == null) return;
+		if (healChargeAudioSource.clip != healChargeSound) {
+			healChargeAudioSource.clip = healChargeSound;
+		}
+		if (!healChargeAudioSource.isPlaying) {
+			healChargeAudioSource.Play();
+		}
+	}
+
+	private void StopHealChargeSound() {
+		if (healChargeAudioSource == null) return;
+		if (healChargeAudioSource.isPlaying) {
+			healChargeAudioSource.Stop();
+		}
+	}
+
+	private void PlayHealCompleteSound() {
+		if (healCompleteSound == null || audioSource == null) return;
+		audioSource.PlayOneShot(healCompleteSound);
+	}
+
 	private void HandleFocusHealing() {
-		if (inputHandler != null && inputHandler.FocusHeld) {
+		if (inputHandler == null || playerStats == null) {
+			healHoldTimer = 0f;
+			StopHealChargeSound();
+			isHealingCharging = false;
+			return;
+		}
+
+		bool canHeal = playerStats.GetCurrentHp() < playerStats.GetMaxHp();
+		if (inputHandler.FocusHeld && canHeal) {
+			if (!isHealingCharging) {
+				isHealingCharging = true;
+				PlayHealChargeSound();
+			}
+
 			healHoldTimer += Time.deltaTime;
-			print("Healing started");
 			if (healHoldTimer >= healHoldTime) {
 				print("heal");
 				if (playerStats.TryConsumeSoul(1)) {
 					playerStats.Heal(healAmount);
 				}
+				playerStats.Heal(healAmount);
 				healHoldTimer = 0f;
+				StopHealChargeSound();
+				isHealingCharging = false;
+				PlayHealCompleteSound();
 			}
 		} else {
 			healHoldTimer = 0f;
+			if (isHealingCharging) {
+				StopHealChargeSound();
+				isHealingCharging = false;
+			}
 		}
 	}
 
