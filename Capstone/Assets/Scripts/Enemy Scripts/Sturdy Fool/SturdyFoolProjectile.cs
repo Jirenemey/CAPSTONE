@@ -94,6 +94,7 @@ public class SturdyFoolProjectile : MonoBehaviour
         if (isDead) return;
 
         isDead = true;
+        col.enabled = false;
         rb.gravityScale = 0f;
         rb.linearVelocity = Vector2.zero;
         anim.SetTrigger("Break");
