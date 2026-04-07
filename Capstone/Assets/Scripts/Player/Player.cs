@@ -104,6 +104,10 @@ public class Player : NetworkBehaviour, IDamageable {
 	private bool isInvincible = false;
 	[SerializeField] Collider2D hurtBox;
 
+	[SerializeField] float knockbackForce = 5.0f;
+	[SerializeField] float knockbackTime = 0.2f;
+	private bool isKnockedBack = false;
+
     private Material mat;
     private Coroutine flashCoroutine;
     [SerializeField] private float flashDuration = 0.1f;
@@ -155,6 +159,8 @@ public class Player : NetworkBehaviour, IDamageable {
 		audioManager.playerHealSource = healChargeAudioSource;
 		audioManager.AdjustPlayerVolume();
 
+		mat = spriteRenderer.material;
+
 		playerStats.OnPlayerDeath += () => OnDeath?.Invoke();
 
 		attackPointLocations = new Dictionary<AttackDirection, Vector2>(){
@@ -181,6 +187,8 @@ public class Player : NetworkBehaviour, IDamageable {
 	}
 
 	void Update() {
+		if (isKnockedBack == true) return;
+
 		if (NetworkManager.Singleton && !IsOwner) return;
 		if (!GetComponent<PlayerInput>().enabled){
 			horizontalAxis = 0f;
@@ -188,6 +196,7 @@ public class Player : NetworkBehaviour, IDamageable {
 			Move();
 			return;
 		};
+
 
 		float rawHorizontal = inputHandler.MovementInput.x;
 		horizontalAxis = Mathf.Abs(rawHorizontal) > 0.01f ? rawHorizontal : 0f;
@@ -238,7 +247,7 @@ public class Player : NetworkBehaviour, IDamageable {
 	}
 
 	private void Move() {
-		if (isDashing || isBouncing) return;
+		if (isDashing || isBouncing || isKnockedBack) return;
 		if (Mathf.Abs(horizontalAxis) < 0.01f) {
 			horizontalAxis = 0f;
 		}
@@ -696,6 +705,10 @@ public class Player : NetworkBehaviour, IDamageable {
 
 		playerStats.TakeDamage(1);
 
+		anim.SetTrigger("Hit");
+
+        ApplyKnockback();
+
         if (flashCoroutine != null) StopCoroutine(flashCoroutine);
 			flashCoroutine = StartCoroutine(FlashRoutine());
 
@@ -707,6 +720,26 @@ public class Player : NetworkBehaviour, IDamageable {
 		// Start invincibility
 		StartCoroutine(InvincibilityRoutine());
 	}
+
+    private void ApplyKnockback()
+    {
+        Vector2 knockbackDir = new Vector2(-playerDirection * 1, 0.5f);
+
+        StartCoroutine(KnockbackRoutine(knockbackDir));
+    }
+
+    private IEnumerator KnockbackRoutine(Vector2 dir)
+    {
+        isKnockedBack = true;
+
+        rb.linearVelocity = Vector2.zero;
+        rb.AddForce(dir * knockbackForce, ForceMode2D.Impulse);
+
+        yield return new WaitForSeconds(knockbackTime);
+
+        isKnockedBack = false;
+        rb.linearVelocity = Vector2.zero;
+    }
 
     private IEnumerator FlashRoutine()
     {
