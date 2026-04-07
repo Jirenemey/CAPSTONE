@@ -389,7 +389,9 @@ public class Player : NetworkBehaviour, IDamageable {
 			print("Healing started");
 			if (healHoldTimer >= healHoldTime) {
 				print("heal");
-				playerStats.Heal(healAmount);
+				if (playerStats.TryConsumeSoul(1)) {
+					playerStats.Heal(healAmount);
+				}
 				healHoldTimer = 0f;
 			}
 		} else {
@@ -507,6 +509,10 @@ public class Player : NetworkBehaviour, IDamageable {
 			Debug.LogError("Vengeful Spirit: Projectile prefab or projectileSpawnPoint is not set");
 			return;
 		}
+		if (!playerStats.TryConsumeSoul(1)) {
+			Debug.Log("Not enough soul to cast Vengeful Spirit");
+			return;
+		}
 		if(!NetworkManager.Singleton){
 			GameObject proj = Instantiate(
 				VengefulSpiritProjectilePrefab,
@@ -526,6 +532,10 @@ public class Player : NetworkBehaviour, IDamageable {
 	private void CastHowlingWraiths(){
 		if (HowlingWraithsPrefab == null || HowlingWraithsSpawnPoint == null) {
 			Debug.LogError("Howling Wraiths: prefab or SpawnPoint is not set");
+			return;
+		}
+		if (!playerStats.TryConsumeSoul(1)) {
+			Debug.Log("Not enough soul to cast Howling Wraiths");
 			return;
 		}
 		if(!NetworkManager.Singleton){
