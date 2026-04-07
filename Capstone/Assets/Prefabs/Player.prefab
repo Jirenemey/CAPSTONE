@@ -464,6 +464,8 @@ MonoBehaviour:
   groundLayer:
     serializedVersion: 2
     m_Bits: 64
+  healAmount: 1
+  healHoldTime: 1
   landingSound: {fileID: 8300000, guid: 9718f1f620a381745a163d47e1cc2e45, type: 3}
   walkingSound: {fileID: 8300000, guid: 1bda29a9d08745741a82a3a7f5c74525, type: 3}
   attackSound: {fileID: 8300000, guid: 0bda8046e5e3a6947b839ce8e006bb38, type: 3}
@@ -471,6 +473,8 @@ MonoBehaviour:
   jumpSound: {fileID: 8300000, guid: e6390f9aa05eda94aa6e4a865fc8fde0, type: 3}
   doubleJumpSound: {fileID: 8300000, guid: c92e2c3f9a5942c4992783e5dc791c59, type: 3}
   fallingSound: {fileID: 8300000, guid: 85bad07a3b985664cb748cd4e52e2033, type: 3}
+  healChargeSound: {fileID: 8300000, guid: f2e344df66f14684dbacc03e47798184, type: 3}
+  healCompleteSound: {fileID: 8300000, guid: a7b16298c54880040b4ffe7a93443fd0, type: 3}
   attackOffset: {x: 0.844, y: 0.826}
   attackCooldown: 0.5
   meleeDuration: 0.3

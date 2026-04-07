@@ -66,9 +66,12 @@ public class Player : NetworkBehaviour, IDamageable {
 	[SerializeField] private AudioClip jumpSound;
 	[SerializeField] private AudioClip doubleJumpSound;
 	[SerializeField] private AudioClip fallingSound;
+	[SerializeField] private AudioClip healChargeSound;
+	[SerializeField] private AudioClip healCompleteSound;
 
 	private bool wasGrounded = false;
 	private AudioSource fallingAudioSource;
+	private AudioSource healChargeAudioSource;
 
 	//[Header("Attck settings")]
 	public enum AttackDirection { Left, Right, Up, Down }
@@ -136,6 +139,11 @@ public class Player : NetworkBehaviour, IDamageable {
 		fallingAudioSource.loop = true;
 		fallingAudioSource.playOnAwake = false;
 		fallingAudioSource.volume = 0.25f;
+
+		healChargeAudioSource = gameObject.AddComponent<AudioSource>();
+		healChargeAudioSource.loop = true;
+		healChargeAudioSource.playOnAwake = false;
+		healChargeAudioSource.volume = 0.25f;
 
 		playerStats.OnPlayerDeath += () => OnDeath?.Invoke();
 
