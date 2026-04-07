@@ -9,9 +9,9 @@ public class VolatileGruzzerAI : MonoBehaviour, IDamageable
 	Collider2D col;
     Animator anim;
     SpriteRenderer spriteRenderer;
-
-    public AudioManager audioManager;
     private AudioSource loopSource;
+
+    public ParticleSystem damageEffect;
 
     [SerializeField] GameObject projectilePrefab;
     [SerializeField] GameObject explosionPrefab;
@@ -170,6 +170,10 @@ public class VolatileGruzzerAI : MonoBehaviour, IDamageable
         Debug.Log($"{gameObject.name} took {amount} damage. HP: {health}");
 
         StartCoroutine(FlashRoutine());
+
+        if (damageEffect != null)
+            damageEffect.Play();
+
         AudioManager.instance.PlaySFX("Enemy Damage");
         ApplyKnockback();
 
@@ -222,7 +226,7 @@ public class VolatileGruzzerAI : MonoBehaviour, IDamageable
     private void Die()
     {
         if (isDead) return;
-
+        Debug.LogWarning("VG Died");
         if (!NetworkManager.Singleton)
         {
             isDead = true;

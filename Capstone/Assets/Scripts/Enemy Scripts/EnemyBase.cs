@@ -20,8 +20,10 @@ public abstract class EnemyBase : NetworkBehaviour, IDamageable
     protected SpriteRenderer spriteRenderer;
     protected AudioSource loopSource;
 
+    public ParticleSystem damageEffect;
 
-	public event System.Action OnDeath;
+
+    public event System.Action OnDeath;
 	[Header("Stats")]
     public float maxHealth = 100f;
 
@@ -221,6 +223,9 @@ public abstract class EnemyBase : NetworkBehaviour, IDamageable
 
         if (flashCoroutine != null) StopCoroutine(flashCoroutine);
             flashCoroutine = StartCoroutine(FlashRoutine());
+
+        if (damageEffect != null)
+            damageEffect.Play();
 
         AudioManager.instance.PlaySFX("Enemy Damage");
 

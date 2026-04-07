@@ -19,8 +19,9 @@ public class Player : NetworkBehaviour, IDamageable {
 	public PlayerStats playerStats;
 	public event System.Action OnDeath;
 
+    public ParticleSystem damageEffect;
 
-	[Header("Movement Settings")]
+    [Header("Movement Settings")]
 	[SerializeField] private float walkSpeed = 5.0f;
 	float originalWalkSpeed;
 	private float horizontalAxis, verticalAxis;
@@ -259,9 +260,9 @@ public class Player : NetworkBehaviour, IDamageable {
 		if (grounded) {
 			if (!wasGrounded) {
 				PlayLandingSound();
+				jumps = 0; // reset double jump
 			}
 			StopFallingSound();
-			jumps = 0; // reset double jump
 			anim.SetBool("isGrounded", true);
 		} else {
 			if (rb.linearVelocity.y < 0f) {
@@ -295,11 +296,12 @@ public class Player : NetworkBehaviour, IDamageable {
 		}
 	}
 	private void HandleJumpPress() {
-		if (jumps < jumpCount) {
+		if (jumps < jumpCount + 1) {
+			Debug.LogWarning("# of jump: " +jumps);
 			rb.gravityScale = defaultGravity;
 			rb.linearVelocity = new Vector2(rb.linearVelocity.x, jumpForce);
 			jumps++;
-			if (jumps == 0) {
+			if (jumps == 1) {
 				PlayJumpSound();
 				anim.SetTrigger("Jump");
 			} else {
@@ -706,6 +708,8 @@ public class Player : NetworkBehaviour, IDamageable {
 		playerStats.TakeDamage(1);
 
 		anim.SetTrigger("Hit");
+
+		damageEffect.Play();
 
         ApplyKnockback();
 
