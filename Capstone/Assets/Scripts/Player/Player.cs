@@ -53,6 +53,11 @@ public class Player : NetworkBehaviour, IDamageable {
 	private Transform groundCheck;
 	[SerializeField] private LayerMask groundLayer;
 
+	[Header("Healing Settings")]
+	[SerializeField] private int healAmount = 1;
+	[SerializeField] private float healHoldTime = 1.0f;
+	private float healHoldTimer = 0f;
+
 	[Header("Audio Settings")]
 	[SerializeField] private AudioClip landingSound;
 	[SerializeField] private AudioClip walkingSound;
@@ -61,9 +66,12 @@ public class Player : NetworkBehaviour, IDamageable {
 	[SerializeField] private AudioClip jumpSound;
 	[SerializeField] private AudioClip doubleJumpSound;
 	[SerializeField] private AudioClip fallingSound;
+	[SerializeField] private AudioClip healChargeSound;
+	[SerializeField] private AudioClip healCompleteSound;
 
 	private bool wasGrounded = false;
 	private AudioSource fallingAudioSource;
+	private AudioSource healChargeAudioSource;
 
 	//[Header("Attck settings")]
 	public enum AttackDirection { Left, Right, Up, Down }
@@ -131,6 +139,11 @@ public class Player : NetworkBehaviour, IDamageable {
 		fallingAudioSource.loop = true;
 		fallingAudioSource.playOnAwake = false;
 		fallingAudioSource.volume = 0.25f;
+
+		healChargeAudioSource = gameObject.AddComponent<AudioSource>();
+		healChargeAudioSource.loop = true;
+		healChargeAudioSource.playOnAwake = false;
+		healChargeAudioSource.volume = 0.25f;
 
 		playerStats.OnPlayerDeath += () => OnDeath?.Invoke();
 
@@ -367,6 +380,20 @@ public class Player : NetworkBehaviour, IDamageable {
 		}
 		if (!fallingAudioSource.isPlaying) {
 			fallingAudioSource.Play();
+		}
+	}
+
+	private void HandleFocusHealing() {
+		if (inputHandler != null && inputHandler.FocusHeld) {
+			healHoldTimer += Time.deltaTime;
+			print("Healing started");
+			if (healHoldTimer >= healHoldTime) {
+				print("heal");
+				playerStats.Heal(healAmount);
+				healHoldTimer = 0f;
+			}
+		} else {
+			healHoldTimer = 0f;
 		}
 	}
 
