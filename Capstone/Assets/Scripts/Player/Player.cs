@@ -43,7 +43,7 @@ public class Player : NetworkBehaviour, IDamageable {
 
 	[Header("Jump Settings")]
 	public float jumpForce = 2.0f;
-	private int jumpCount = 2; // double jump
+	private int jumpCount = 1; // double jump
 	private int jumps = 0;
 	[SerializeField] private float defaultGravity = 1.0f;
 	[SerializeField] private float fallingGravityMultiplier = 2.0f;
@@ -52,6 +52,18 @@ public class Player : NetworkBehaviour, IDamageable {
 	public float groundCheckRadius = 0.2f;
 	private Transform groundCheck;
 	[SerializeField] private LayerMask groundLayer;
+
+	[Header("Audio Settings")]
+	[SerializeField] private AudioClip landingSound;
+	[SerializeField] private AudioClip walkingSound;
+	[SerializeField] private AudioClip attackSound;
+	[SerializeField] private AudioClip dashSound;
+	[SerializeField] private AudioClip jumpSound;
+	[SerializeField] private AudioClip doubleJumpSound;
+	[SerializeField] private AudioClip fallingSound;
+
+	private bool wasGrounded = false;
+	private AudioSource fallingAudioSource;
 
 	//[Header("Attck settings")]
 	public enum AttackDirection { Left, Right, Up, Down }
@@ -102,6 +114,7 @@ public class Player : NetworkBehaviour, IDamageable {
 		rb.gravityScale = defaultGravity;
 		if (!groundCheck) groundCheck = transform.Find("GroundCheck");
 		groundLayer = LayerMask.GetMask("Ground");
+		wasGrounded = IsGrounded();
 		oldDirection = playerDirection;
 		originalWalkSpeed = walkSpeed;
 
@@ -109,6 +122,11 @@ public class Player : NetworkBehaviour, IDamageable {
 		if (!audioSource) {
 			audioSource = gameObject.AddComponent<AudioSource>();
 		}
+
+		fallingAudioSource = gameObject.AddComponent<AudioSource>();
+		fallingAudioSource.loop = true;
+		fallingAudioSource.playOnAwake = false;
+		fallingAudioSource.volume = 0.25f;
 
 		playerStats.OnPlayerDeath += () => OnDeath?.Invoke();
 
@@ -200,13 +218,24 @@ public class Player : NetworkBehaviour, IDamageable {
 
 		rb.linearVelocity = movement;
 
-		//if(Physics2D.OverlapCircle(groundCheck.position, groundCheckRadius, groundLayer)){
-		if (IsGrounded()) {
+		bool grounded = IsGrounded();
+		if (grounded) {
+			if (!wasGrounded) {
+				PlayLandingSound();
+			}
+			StopFallingSound();
 			jumps = 0; // reset double jump
 			anim.SetBool("isGrounded", true);
 		} else {
+			if (rb.linearVelocity.y < 0f) {
+				PlayFallingSound();
+			} else {
+				StopFallingSound();
+			}
 			anim.SetBool("isGrounded", false);
 		}
+
+		wasGrounded = grounded;
 	}
 
 	void SetPlayerDirection() {
@@ -229,18 +258,24 @@ public class Player : NetworkBehaviour, IDamageable {
 		}
 	}
 	private void HandleJumpPress() {
-		if (jumps < jumpCount - 1) { // -1 to account for the very next frame where it resets the double jump
+		if (jumps < jumpCount) {
 			//anim.SetTrigger("Jump");
 			rb.gravityScale = defaultGravity;
 			//Debug.Log("JUMPED");
 			//rb.AddForce(Vector2.up * jumpForce, ForceMode2D.Impulse);
 			rb.linearVelocity = new Vector2(rb.linearVelocity.x, jumpForce);
+			print("jumps: "+jumps);
+			jumps++;
 			if (jumps == 0) {
+				print("jump");
+				PlayJumpSound();
 				anim.SetTrigger("Jump");
-			} else if (jumps == 1) {
+			} else {
+				print("Double jump");
+				PlayDoubleJumpSound();
 				anim.SetTrigger("Double Jump");
 			}
-			jumps++;
+			print("after jumps: "+jumps);
 		}
 	}
 	private void HandleJumpRelease() {
@@ -253,6 +288,7 @@ public class Player : NetworkBehaviour, IDamageable {
 	private void HandleDashPress() {
 		if (isDashing) return; // Prevent double dash
 		anim.SetTrigger("Dash");
+		PlayDashSound();
 		StartCoroutine(DashRoutine());
 	}
 	private System.Collections.IEnumerator DashRoutine() {
@@ -289,10 +325,59 @@ public class Player : NetworkBehaviour, IDamageable {
 		isSprinting = false;
 		walkSpeed = originalWalkSpeed;
 	}
+
+	private void PlayLandingSound() {
+		if (landingSound && audioSource) {
+			audioSource.PlayOneShot(landingSound);
+		}
+	}
+
+	private void PlayAttackSound() {
+		if (attackSound && audioSource) {
+			audioSource.PlayOneShot(attackSound);
+		}
+	}
+
+	private void PlayDashSound() {
+		if (dashSound && audioSource) {
+			audioSource.PlayOneShot(dashSound);
+		}
+	}
+
+	private void PlayJumpSound() {
+		if (jumpSound && audioSource) {
+			audioSource.PlayOneShot(jumpSound);
+		}
+	}
+
+	private void PlayDoubleJumpSound() {
+		if (doubleJumpSound && audioSource) {
+			audioSource.PlayOneShot(doubleJumpSound);
+		}
+	}
+
+	private void PlayFallingSound() {
+		if (fallingSound == null || fallingAudioSource == null) return;
+		if (fallingAudioSource.clip != fallingSound) {
+			fallingAudioSource.clip = fallingSound;
+		}
+		if (!fallingAudioSource.isPlaying) {
+			fallingAudioSource.Play();
+		}
+	}
+
+	private void StopFallingSound() {
+		if (fallingAudioSource == null) return;
+		if (fallingAudioSource.isPlaying) {
+			fallingAudioSource.Stop();
+		}
+	}
+
 	private void HandleAttack() {
 		if (Time.time < lastAttackTime + attackCooldown) return;
 		lastAttackTime = Time.time;
 		if (isAttacking) return; // prevent coroutine stacking
+		PlayAttackSound();
 		if(NetworkManager.Singleton){
 			if(NetworkManager.Singleton.IsHost) MeleeAttackClientRpc();
 			if(NetworkManager.Singleton.IsClient) MeleeAttackServerRpc();
