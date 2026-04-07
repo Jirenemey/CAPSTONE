@@ -263,23 +263,16 @@ public class Player : NetworkBehaviour, IDamageable {
 	}
 	private void HandleJumpPress() {
 		if (jumps < jumpCount) {
-			//anim.SetTrigger("Jump");
 			rb.gravityScale = defaultGravity;
-			//Debug.Log("JUMPED");
-			//rb.AddForce(Vector2.up * jumpForce, ForceMode2D.Impulse);
 			rb.linearVelocity = new Vector2(rb.linearVelocity.x, jumpForce);
-			print("jumps: "+jumps);
 			jumps++;
 			if (jumps == 0) {
-				print("jump");
 				PlayJumpSound();
 				anim.SetTrigger("Jump");
 			} else {
-				print("Double jump");
 				PlayDoubleJumpSound();
 				anim.SetTrigger("Double Jump");
 			}
-			print("after jumps: "+jumps);
 		}
 	}
 	private void HandleJumpRelease() {
