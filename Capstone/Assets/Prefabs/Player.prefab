@@ -435,6 +435,7 @@ MonoBehaviour:
   dashAction: {fileID: -7619157589409501069, guid: 2bcd2660ca9b64942af0de543d8d7100, type: 3}
   attackAction: {fileID: 1120369429361536294, guid: 2bcd2660ca9b64942af0de543d8d7100, type: 3}
   quickCastAction: {fileID: 5325731216392178691, guid: 2bcd2660ca9b64942af0de543d8d7100, type: 3}
+  focusAction: {fileID: 5368557215398398091, guid: 2bcd2660ca9b64942af0de543d8d7100, type: 3}
   moveDeadZone: 0.25
 --- !u!114 &1919163165415653956
 MonoBehaviour:

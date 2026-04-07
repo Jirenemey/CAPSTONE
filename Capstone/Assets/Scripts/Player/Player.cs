@@ -53,6 +53,11 @@ public class Player : NetworkBehaviour, IDamageable {
 	private Transform groundCheck;
 	[SerializeField] private LayerMask groundLayer;
 
+	[Header("Healing Settings")]
+	[SerializeField] private int healAmount = 1;
+	[SerializeField] private float healHoldTime = 1.0f;
+	private float healHoldTimer = 0f;
+
 	[Header("Audio Settings")]
 	[SerializeField] private AudioClip landingSound;
 	[SerializeField] private AudioClip walkingSound;
@@ -198,6 +203,7 @@ public class Player : NetworkBehaviour, IDamageable {
 			walkSpeed = originalWalkSpeed * sprintMultiplier;
 		}
 
+		HandleFocusHealing();
 		inputHandler.ConsumeTriggers();
 
 	}
@@ -360,6 +366,20 @@ public class Player : NetworkBehaviour, IDamageable {
 		}
 		if (!fallingAudioSource.isPlaying) {
 			fallingAudioSource.Play();
+		}
+	}
+
+	private void HandleFocusHealing() {
+		if (inputHandler != null && inputHandler.FocusHeld) {
+			healHoldTimer += Time.deltaTime;
+			print("Healing started");
+			if (healHoldTimer >= healHoldTime) {
+				print("heal");
+				playerStats.Heal(healAmount);
+				healHoldTimer = 0f;
+			}
+		} else {
+			healHoldTimer = 0f;
 		}
 	}
 
