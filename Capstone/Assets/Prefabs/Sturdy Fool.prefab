@@ -21,6 +21,7 @@ GameObject:
   - component: {fileID: -7883099664552992725}
   - component: {fileID: 2508346823640543291}
   - component: {fileID: -6102865228166610648}
+  - component: {fileID: 1078977492848486689}
   m_Layer: 10
   m_Name: Sturdy Fool
   m_TagString: Untagged
@@ -200,7 +201,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d5a57f767e5e46a458fc5d3c628d0cbb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  GlobalObjectIdHash: 2745364513
+  GlobalObjectIdHash: 1583109670
   InScenePlacedSourceGlobalObjectIdHash: 1583109670
   DeferredDespawnTick: 0
   Ownership: 1
@@ -467,6 +468,18 @@ MonoBehaviour:
   SwitchTransformSpaceWhenParented: 0
   Interpolate: 1
   SlerpPosition: 0
+--- !u!114 &1078977492848486689
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 847159335854906198}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 46e8a179b108a834e8b6410d957bbfcd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &3371949594673157240
 GameObject:
   m_ObjectHideFlags: 0
@@ -640,6 +653,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 256
   damage: 10
+  soulGain: 1
 --- !u!1 &8048409317547003966
 GameObject:
   m_ObjectHideFlags: 0

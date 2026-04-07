@@ -486,10 +486,9 @@ MonoBehaviour:
   HowlingWraithsSpawnPoint: {fileID: 8209784924459026341}
   invincibilityDuration: 1
   damageSound: {fileID: 8300000, guid: 7c687c181748afe4895baeb32f5c99d0, type: 3}
-  audioSource: {fileID: 0}
   hurtBox: {fileID: 0}
   flashDuration: 0.1
-  audioManager: {fileID: 2186781158421514749, guid: 1361c50fd7f266949975b773cf4305f3, type: 3}
+  audioManager: {fileID: 0}
 --- !u!114 &-3887516623540475071
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -770,6 +769,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 1024
   damage: 10
+  soulGain: 1
 --- !u!114 &6528290243755456124
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -111,6 +111,7 @@ GameObject:
   - component: {fileID: 8865926897432860696}
   - component: {fileID: 7495273024599918385}
   - component: {fileID: -5819919368645068471}
+  - component: {fileID: 4843071668845468809}
   m_Layer: 10
   m_Name: sharp Baldur
   m_TagString: Untagged
@@ -287,7 +288,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d5a57f767e5e46a458fc5d3c628d0cbb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  GlobalObjectIdHash: 1256145985
+  GlobalObjectIdHash: 1977528443
   InScenePlacedSourceGlobalObjectIdHash: 1977528443
   DeferredDespawnTick: 0
   Ownership: 1
@@ -454,6 +455,18 @@ MonoBehaviour:
       Synchronize: 1
       ParameterType: 4
   AnimatorParametersExpanded: 0
+--- !u!114 &4843071668845468809
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3417591668451977817}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 46e8a179b108a834e8b6410d957bbfcd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &7376318508323019390
 GameObject:
   m_ObjectHideFlags: 0
