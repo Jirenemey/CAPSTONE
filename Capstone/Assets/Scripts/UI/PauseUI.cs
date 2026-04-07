@@ -105,6 +105,7 @@ public class PauseUI : MonoBehaviour
 
     public void ConfirmQuit()
     {
+        GameObject.Find("AudioManager").GetComponent<AudioManager>().PlayMusic("Menu");
         if(NetworkManager.Singleton) {
             NetworkManager.Singleton.SceneManager.LoadScene(
             "MainMenu",
