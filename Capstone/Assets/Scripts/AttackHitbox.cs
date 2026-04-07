@@ -3,6 +3,7 @@ using UnityEngine;
 public class AttackHitbox : MonoBehaviour {
 	[SerializeField] LayerMask enemyLayer;
 	[SerializeField] float damage = 10f;
+	[SerializeField] int soulGain = 1;
     private bool active = false;
 
 	public void Activate()
@@ -28,6 +29,18 @@ public class AttackHitbox : MonoBehaviour {
 		// Try to get a health/damageable component and apply damage
 		if (other.TryGetComponent<IDamageable>(out var target)) {
 			target.TakeDamage(damage);
+		}
+
+		// Check if the hit object contains soul and grant it to the player
+		if (other.TryGetComponent<ContainsSoul>(out var containsSoul)) {
+			Player player = transform.parent.GetComponent<Player>();
+			if (player != null) {
+				PlayerStats playerStats = player.playerStats;
+				if (playerStats != null) {
+					playerStats.AddSoul(soulGain);
+					Debug.Log($"Player gained {soulGain} soul from {other.gameObject.name}");
+				}
+			}
 		}
 
 		Debug.Log($"Hit: {other.gameObject.name}");

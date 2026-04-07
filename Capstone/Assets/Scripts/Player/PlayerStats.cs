@@ -70,7 +70,8 @@ public class PlayerStats : NetworkBehaviour {
 
 	public void AddSoul(int soulAmount) {
 		if(!GetComponent<Player>().IsOwner && NetworkManager.Singleton) return;
-		
+
+		print("Received soul: curr soul: "+currentSoul);
 		currentSoul += soulAmount;
 		currentSoul = Mathf.Clamp(currentSoul, 0, maxSoul);
 		OnSoulChanged?.Invoke(currentSoul, maxSoul);
