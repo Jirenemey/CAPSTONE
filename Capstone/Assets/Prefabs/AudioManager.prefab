@@ -310,6 +310,12 @@ MonoBehaviour:
     clip: {fileID: 8300000, guid: 166be0aa319a4be44ba3fe1c399cf586, type: 3}
   - name: Menu
     clip: {fileID: 8300000, guid: 8c225dad7e3bc7d439f6a2a612dd0ad0, type: 3}
+  - name: ArenaOne
+    clip: {fileID: 8300000, guid: 09eef2aa8ca3e24429ac25f5066a824d, type: 3}
+  - name: ArenaTwo
+    clip: {fileID: 8300000, guid: 31fcb0804d494c849859260184f66c8c, type: 3}
+  - name: ArenaThree
+    clip: {fileID: 8300000, guid: 126882cbe4fca204cad3c4db27071471, type: 3}
   sfxSounds:
   - name: Btn
     clip: {fileID: 8300000, guid: 9250d3c6087e83a48986f93b9139fabd, type: 3}
@@ -356,6 +362,8 @@ MonoBehaviour:
   musicSource: {fileID: 5711173373074014846}
   sfxSource: {fileID: 3846720207086971009}
   loopSFXSource: {fileID: 2440980527387176321}
+  playerSource: {fileID: 0}
+  playerFallingSource: {fileID: 0}
 --- !u!1 &7055286473943836674
 GameObject:
   m_ObjectHideFlags: 0

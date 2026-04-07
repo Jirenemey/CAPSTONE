@@ -107,6 +107,8 @@ public class Player : NetworkBehaviour, IDamageable {
     private Coroutine flashCoroutine;
     [SerializeField] private float flashDuration = 0.1f;
 
+	[SerializeField] AudioManager audioManager;
+
     void Start() {
 		if (!rb) rb = GetComponent<Rigidbody2D>();
 		if (!col) col = GetComponent<Collider2D>();
@@ -144,6 +146,13 @@ public class Player : NetworkBehaviour, IDamageable {
 		healChargeAudioSource.loop = true;
 		healChargeAudioSource.playOnAwake = false;
 		healChargeAudioSource.volume = 0.25f;
+
+		if(!audioManager) audioManager = GameObject.Find("AudioManager").GetComponent<AudioManager>();
+
+		audioManager.playerSource = audioSource;
+		audioManager.playerFallingSource = fallingAudioSource;
+		audioManager.playerHealSource = healChargeAudioSource;
+		audioManager.AdjustPlayerVolume();
 
 		playerStats.OnPlayerDeath += () => OnDeath?.Invoke();
 
