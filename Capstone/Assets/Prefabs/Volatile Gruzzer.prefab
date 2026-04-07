@@ -4943,6 +4943,7 @@ GameObject:
   - component: {fileID: 3429527091910375493}
   - component: {fileID: -1595389812923841245}
   - component: {fileID: -1566967612320190785}
+  - component: {fileID: 5263748472173406668}
   m_Layer: 10
   m_Name: Volatile Gruzzer
   m_TagString: Untagged
@@ -5155,7 +5156,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d5a57f767e5e46a458fc5d3c628d0cbb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  GlobalObjectIdHash: 2769590856
+  GlobalObjectIdHash: 1324946626
   InScenePlacedSourceGlobalObjectIdHash: 1324946626
   DeferredDespawnTick: 0
   Ownership: 1
@@ -5253,6 +5254,18 @@ MonoBehaviour:
       Synchronize: 1
       ParameterType: 4
   AnimatorParametersExpanded: 0
+--- !u!114 &5263748472173406668
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5136342113278747969}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 46e8a179b108a834e8b6410d957bbfcd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &6067492107716044901
 GameObject:
   m_ObjectHideFlags: 0

@@ -93,6 +93,7 @@ public class GameOver : NetworkBehaviour
 
     void MainMenu()
     {
+        GameObject.Find("AudioManager").GetComponent<AudioManager>().PlayMusic("Menu");
         if(NetworkManager.Singleton){
             NetworkManager.Singleton.Shutdown();
             Destroy(GameObject.Find("NetworkManager"));

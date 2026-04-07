@@ -492,7 +492,7 @@ MonoBehaviour:
   knockbackForce: 5
   knockbackTime: 0.2
   flashDuration: 0.1
-  audioManager: {fileID: 2186781158421514749, guid: 1361c50fd7f266949975b773cf4305f3, type: 3}
+  audioManager: {fileID: 0}
 --- !u!114 &-3887516623540475071
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -13,6 +13,7 @@ public class SettingsScript : MonoBehaviour
 	[SerializeField] InputActionReference dashAction;
 	[SerializeField] InputActionReference attackAction;
 	[SerializeField] InputActionReference quickCastAction;
+    [SerializeField] InputActionReference healAction;
     [SerializeField] GameObject[] bindBtns;
     [SerializeField] Button resetBindings;
     public PlayerInput playerInput;
@@ -53,6 +54,7 @@ public class SettingsScript : MonoBehaviour
         bindBtns[1].GetComponent<Button>().onClick.AddListener(() => RebindDashAction());
         bindBtns[2].GetComponent<Button>().onClick.AddListener(() => RebindAttackAction());
         bindBtns[3].GetComponent<Button>().onClick.AddListener(() => RebindQuickCastAction());
+        bindBtns[4].GetComponent<Button>().onClick.AddListener(() => RebindHealAction());
         
         ListBindingText();
 
@@ -88,10 +90,11 @@ public class SettingsScript : MonoBehaviour
 
     void ListBindingText()
     {
-        bindBtns[0].transform.GetChild(0).GetComponent<TextMeshProUGUI>().text = GetBindingText(jumpAction);
-        bindBtns[1].transform.GetChild(0).GetComponent<TextMeshProUGUI>().text = GetBindingText(dashAction);
-        bindBtns[2].transform.GetChild(0).GetComponent<TextMeshProUGUI>().text = GetBindingText(attackAction);
-        bindBtns[3].transform.GetChild(0).GetComponent<TextMeshProUGUI>().text = GetBindingText(quickCastAction);
+        bindBtns[0].transform.GetChild(0).GetComponent<TextMeshProUGUI>().text = "Jump: " + GetBindingText(jumpAction);
+        bindBtns[1].transform.GetChild(0).GetComponent<TextMeshProUGUI>().text = "Dash: " + GetBindingText(dashAction);
+        bindBtns[2].transform.GetChild(0).GetComponent<TextMeshProUGUI>().text = "Attack: " + GetBindingText(attackAction);
+        bindBtns[3].transform.GetChild(0).GetComponent<TextMeshProUGUI>().text = "Soul Attack: " + GetBindingText(quickCastAction);
+        bindBtns[4].transform.GetChild(0).GetComponent<TextMeshProUGUI>().text = "Heal: " + GetBindingText(healAction);
     }
 
     void SaveBindings()
@@ -196,6 +199,12 @@ public class SettingsScript : MonoBehaviour
         if(!audioManager) audioManager = GameObject.Find("AudioManager").GetComponent<AudioManager>();
         audioManager.PlaySFX("BindingBtn");
         RebindAction(dashAction.action);
+    }
+
+    public void RebindHealAction() {
+        if(!audioManager) audioManager = GameObject.Find("AudioManager").GetComponent<AudioManager>();
+        audioManager.PlaySFX("BindingBtn");
+        RebindAction(healAction.action);
     }
 
     // Volume
