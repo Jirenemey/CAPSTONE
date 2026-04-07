@@ -131,13 +131,13 @@ PrefabInstance:
       propertyPath: GlobalObjectIdHash
       value: 462727013
       objectReference: {fileID: 0}
-    - target: {fileID: -81321523107543937, guid: 33a4a1835edc44144b51368b2e222aa8, type: 3}
-      propertyPath: m_Controller
-      value: 
-      objectReference: {fileID: 9100000, guid: f332af1c923b7354a8ce3ca1c81a9be9, type: 2}
     - target: {fileID: 901652932801601688, guid: 33a4a1835edc44144b51368b2e222aa8, type: 3}
       propertyPath: m_Name
       value: Player
+      objectReference: {fileID: 0}
+    - target: {fileID: 5947547991462882177, guid: 33a4a1835edc44144b51368b2e222aa8, type: 3}
+      propertyPath: m_Size.y
+      value: 0.8
       objectReference: {fileID: 0}
     - target: {fileID: 7330531380822282525, guid: 33a4a1835edc44144b51368b2e222aa8, type: 3}
       propertyPath: m_LocalPosition.x
@@ -1046,6 +1046,23 @@ MonoBehaviour:
   chaseRange: 8
   attackRange: 1.4
   player: {fileID: 0}
+--- !u!1 &878692346 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6888698214007216579, guid: 098ac518c27444b49a9010dd82136eb6, type: 3}
+  m_PrefabInstance: {fileID: 106783951282925059}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &878692350
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 878692346}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b2920df4af30de4498915257eb28b51f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &990042866
 GameObject:
   m_ObjectHideFlags: 0
@@ -2516,6 +2533,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: sharp Baldur
       objectReference: {fileID: 0}
+    - target: {fileID: 3417591668451977817, guid: 2d6c354e28b046f4096fdf5f939c422e, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6153310976648274172, guid: 2d6c354e28b046f4096fdf5f939c422e, type: 3}
       propertyPath: m_LocalPosition.x
       value: 7.71
@@ -2621,10 +2642,33 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6888698214007216579, guid: 098ac518c27444b49a9010dd82136eb6, type: 3}
+      propertyPath: m_Layer
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 6888698214007216579, guid: 098ac518c27444b49a9010dd82136eb6, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6918694825079382795, guid: 098ac518c27444b49a9010dd82136eb6, type: 3}
+      propertyPath: m_Size.y
+      value: 1.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 6918694825079382795, guid: 098ac518c27444b49a9010dd82136eb6, type: 3}
+      propertyPath: m_Offset.y
+      value: -0.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 6918694825079382795, guid: 098ac518c27444b49a9010dd82136eb6, type: 3}
+      propertyPath: m_IsTrigger
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 6888698214007216579, guid: 098ac518c27444b49a9010dd82136eb6, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 878692350}
   m_SourcePrefab: {fileID: 100100000, guid: 098ac518c27444b49a9010dd82136eb6, type: 3}
 --- !u!1001 &2500797007731172833
 PrefabInstance:
@@ -2681,6 +2725,10 @@ PrefabInstance:
     - target: {fileID: 5136342113278747969, guid: bb8bfdf606e97104eaf7dd8b7c1ad58b, type: 3}
       propertyPath: m_Name
       value: Volatile Gruzzer
+      objectReference: {fileID: 0}
+    - target: {fileID: 5136342113278747969, guid: bb8bfdf606e97104eaf7dd8b7c1ad58b, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -2742,6 +2790,10 @@ PrefabInstance:
     - target: {fileID: 8414971049533135686, guid: cd81cb062295a2649acd5a0b50f36874, type: 3}
       propertyPath: m_Name
       value: Vengefly
+      objectReference: {fileID: 0}
+    - target: {fileID: 8414971049533135686, guid: cd81cb062295a2649acd5a0b50f36874, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

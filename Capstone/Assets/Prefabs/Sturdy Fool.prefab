@@ -556,7 +556,8 @@ GameObject:
   - component: {fileID: 3726747466882256135}
   - component: {fileID: 6918694825079382795}
   - component: {fileID: 3311009216577586011}
-  m_Layer: 0
+  - component: {fileID: 5266106497341675956}
+  m_Layer: 10
   m_Name: SlashHitBox
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -608,11 +609,11 @@ BoxCollider2D:
   m_CallbackLayers:
     serializedVersion: 2
     m_Bits: 4294967295
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: 0, y: -0.2}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -622,7 +623,7 @@ BoxCollider2D:
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
-  m_Size: {x: 3, y: 1}
+  m_Size: {x: 3, y: 1.5}
   m_EdgeRadius: 0
 --- !u!114 &3311009216577586011
 MonoBehaviour:
@@ -640,6 +641,18 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 256
   damage: 10
+--- !u!114 &5266106497341675956
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6888698214007216579}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b2920df4af30de4498915257eb28b51f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &8048409317547003966
 GameObject:
   m_ObjectHideFlags: 0
