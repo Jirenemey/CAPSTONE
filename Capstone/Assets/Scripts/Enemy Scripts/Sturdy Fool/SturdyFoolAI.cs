@@ -7,8 +7,6 @@ public class SturdyFoolAI : EnemyBase
     [SerializeField] private GameObject projectilePrefab;
     private Vector2 cachedThrowTarget;
 
-    [SerializeField] private Transform groundCheck;
-    [SerializeField] private float groundCheckRadius = 0.2f;
     [SerializeField] private Transform ledgeCheck;
     [SerializeField] private float ledgeCheckDistance = 0.5f;
     [SerializeField] private float ledgeCheckXOffset = 1.3f;
@@ -17,7 +15,6 @@ public class SturdyFoolAI : EnemyBase
     [SerializeField] private float wallCheckHeight = 0.5f;
     [SerializeField] private float wallCheckXOffset = 0.5f;
     [SerializeField] private float wallCheckYOffset = 0.5f;
-    [SerializeField] private LayerMask groundLayer;
 
     [SerializeField] private float minAttackCooldown = 0.5f;
     [SerializeField] private float maxAttackCooldown = 1.5f;
@@ -51,10 +48,8 @@ public class SturdyFoolAI : EnemyBase
     {
         base.Awake();
 
-        if (!groundCheck) groundCheck = transform.Find("GroundCheck");
         if (!ledgeCheck) ledgeCheck = transform.Find("LedgeCheck");
         if (!wallCheck) wallCheck = transform.Find("WallCheck");
-        groundLayer = LayerMask.GetMask("Ground");
     }
 
     protected override void Start()
@@ -87,13 +82,6 @@ public class SturdyFoolAI : EnemyBase
         base.Update();
 
         IsLedgeAhead();
-    }
-
-    public bool IsGrounded()
-    {
-        if (groundCheck == null) return false;
-
-        return Physics2D.OverlapCircle(groundCheck.position, groundCheckRadius, groundLayer);
     }
 
     public bool IsLedgeAhead()
@@ -221,14 +209,8 @@ public class SturdyFoolAI : EnemyBase
     }
 
     // visuals for editor
-    private void OnDrawGizmosSelected()
+    protected override void OnDrawGizmosSelected()
     {
-        Transform gc = transform.Find("GroundCheck");
-        if (gc == null) return;
-
-        Gizmos.color = Color.yellow;
-        Gizmos.DrawWireSphere(gc.position, groundCheckRadius);
-
         Gizmos.color = new Color(0.5f, 0.1f, 0.2f, 1.0f);
         Gizmos.DrawWireSphere(transform.position, meleeRange);
 

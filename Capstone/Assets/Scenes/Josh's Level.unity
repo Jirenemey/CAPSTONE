@@ -131,45 +131,21 @@ PrefabInstance:
       propertyPath: GlobalObjectIdHash
       value: 462727013
       objectReference: {fileID: 0}
-    - target: {fileID: -2866978521334262893, guid: 33a4a1835edc44144b51368b2e222aa8, type: 3}
-      propertyPath: SceneMigrationSynchronization
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: -2866978521334262893, guid: 33a4a1835edc44144b51368b2e222aa8, type: 3}
-      propertyPath: InScenePlacedSourceGlobalObjectIdHash
-      value: 2949389996
-      objectReference: {fileID: 0}
     - target: {fileID: -81321523107543937, guid: 33a4a1835edc44144b51368b2e222aa8, type: 3}
       propertyPath: m_Controller
       value: 
       objectReference: {fileID: 9100000, guid: f332af1c923b7354a8ce3ca1c81a9be9, type: 2}
-    - target: {fileID: 155722702718343512, guid: 33a4a1835edc44144b51368b2e222aa8, type: 3}
-      propertyPath: m_Size.y
-      value: 0.7730619
-      objectReference: {fileID: 0}
-    - target: {fileID: 155722702718343512, guid: 33a4a1835edc44144b51368b2e222aa8, type: 3}
-      propertyPath: m_Offset.y
-      value: -0.23133725
-      objectReference: {fileID: 0}
     - target: {fileID: 901652932801601688, guid: 33a4a1835edc44144b51368b2e222aa8, type: 3}
       propertyPath: m_Name
       value: Player
       objectReference: {fileID: 0}
-    - target: {fileID: 1919163165415653956, guid: 33a4a1835edc44144b51368b2e222aa8, type: 3}
-      propertyPath: groundCheckRadius
-      value: 0.15
-      objectReference: {fileID: 0}
-    - target: {fileID: 4627096516274145445, guid: 33a4a1835edc44144b51368b2e222aa8, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: -0.7
-      objectReference: {fileID: 0}
     - target: {fileID: 7330531380822282525, guid: 33a4a1835edc44144b51368b2e222aa8, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0
+      value: -3.92
       objectReference: {fileID: 0}
     - target: {fileID: 7330531380822282525, guid: 33a4a1835edc44144b51368b2e222aa8, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -2
+      value: -1.88
       objectReference: {fileID: 0}
     - target: {fileID: 7330531380822282525, guid: 33a4a1835edc44144b51368b2e222aa8, type: 3}
       propertyPath: m_LocalPosition.z
@@ -2540,17 +2516,13 @@ PrefabInstance:
       propertyPath: m_Name
       value: sharp Baldur
       objectReference: {fileID: 0}
-    - target: {fileID: 3417591668451977817, guid: 2d6c354e28b046f4096fdf5f939c422e, type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 6153310976648274172, guid: 2d6c354e28b046f4096fdf5f939c422e, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 7.79
+      value: 7.71
       objectReference: {fileID: 0}
     - target: {fileID: 6153310976648274172, guid: 2d6c354e28b046f4096fdf5f939c422e, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -0.8
+      value: -1.1
       objectReference: {fileID: 0}
     - target: {fileID: 6153310976648274172, guid: 2d6c354e28b046f4096fdf5f939c422e, type: 3}
       propertyPath: m_LocalPosition.z
@@ -2605,21 +2577,17 @@ PrefabInstance:
       propertyPath: m_Name
       value: Sturdy Fool
       objectReference: {fileID: 0}
-    - target: {fileID: 847159335854906198, guid: 098ac518c27444b49a9010dd82136eb6, type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 2564129896114819252, guid: 098ac518c27444b49a9010dd82136eb6, type: 3}
       propertyPath: GlobalObjectIdHash
       value: 2745364513
       objectReference: {fileID: 0}
     - target: {fileID: 3031708426278545399, guid: 098ac518c27444b49a9010dd82136eb6, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -0.91
+      value: -0.64
       objectReference: {fileID: 0}
     - target: {fileID: 3031708426278545399, guid: 098ac518c27444b49a9010dd82136eb6, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -1.65
+      value: -1.54
       objectReference: {fileID: 0}
     - target: {fileID: 3031708426278545399, guid: 098ac518c27444b49a9010dd82136eb6, type: 3}
       propertyPath: m_LocalPosition.z
@@ -2672,11 +2640,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4937116342610955899, guid: bb8bfdf606e97104eaf7dd8b7c1ad58b, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -0.83
+      value: -3.3
       objectReference: {fileID: 0}
     - target: {fileID: 4937116342610955899, guid: bb8bfdf606e97104eaf7dd8b7c1ad58b, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 1.21
+      value: 1.6
       objectReference: {fileID: 0}
     - target: {fileID: 4937116342610955899, guid: bb8bfdf606e97104eaf7dd8b7c1ad58b, type: 3}
       propertyPath: m_LocalPosition.z
@@ -2714,10 +2682,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Volatile Gruzzer
       objectReference: {fileID: 0}
-    - target: {fileID: 5136342113278747969, guid: bb8bfdf606e97104eaf7dd8b7c1ad58b, type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -2737,11 +2701,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 79898377011106583, guid: cd81cb062295a2649acd5a0b50f36874, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 3
+      value: 3.12
       objectReference: {fileID: 0}
     - target: {fileID: 79898377011106583, guid: cd81cb062295a2649acd5a0b50f36874, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -0.79199606
+      value: -0.62
       objectReference: {fileID: 0}
     - target: {fileID: 79898377011106583, guid: cd81cb062295a2649acd5a0b50f36874, type: 3}
       propertyPath: m_LocalPosition.z
@@ -2778,10 +2742,6 @@ PrefabInstance:
     - target: {fileID: 8414971049533135686, guid: cd81cb062295a2649acd5a0b50f36874, type: 3}
       propertyPath: m_Name
       value: Vengefly
-      objectReference: {fileID: 0}
-    - target: {fileID: 8414971049533135686, guid: cd81cb062295a2649acd5a0b50f36874, type: 3}
-      propertyPath: m_IsActive
-      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

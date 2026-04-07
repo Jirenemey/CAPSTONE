@@ -105,10 +105,10 @@ public class AudioManager : MonoBehaviour
         source.clip = s.clip;
         source.loop = true;
 
-        source.spatialBlend = 1f; // full 3D
-        source.minDistance = 1f;
-        source.maxDistance = 10f;
-        source.rolloffMode = AudioRolloffMode.Logarithmic;
+        //source.spatialBlend = 1f; // full 3D
+        //source.minDistance = 1f;
+        //source.maxDistance = 10f;
+        //source.rolloffMode = AudioRolloffMode.Logarithmic;
 
         source.volume = UnityEngine.Random.Range(0.9f, 1f);
         source.pitch = UnityEngine.Random.Range(0.95f, 1.05f);

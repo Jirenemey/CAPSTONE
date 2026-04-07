@@ -95,7 +95,11 @@ public class Player : NetworkBehaviour, IDamageable {
 	private bool isInvincible = false;
 	[SerializeField] Collider2D hurtBox;
 
-	void Start() {
+    private Material mat;
+    private Coroutine flashCoroutine;
+    [SerializeField] private float flashDuration = 0.1f;
+
+    void Start() {
 		if (!rb) rb = GetComponent<Rigidbody2D>();
 		if (!col) col = GetComponent<Collider2D>();
 		if (!anim) anim = GetComponent<Animator>();
@@ -609,8 +613,11 @@ public class Player : NetworkBehaviour, IDamageable {
 
 		playerStats.TakeDamage(1);
 
-		// Play sound
-		if (damageSound && audioSource) {
+        if (flashCoroutine != null) StopCoroutine(flashCoroutine);
+			flashCoroutine = StartCoroutine(FlashRoutine());
+
+        // Play sound
+        if (damageSound && audioSource) {
 			audioSource.PlayOneShot(damageSound);
 		}
 
@@ -618,7 +625,15 @@ public class Player : NetworkBehaviour, IDamageable {
 		StartCoroutine(InvincibilityRoutine());
 	}
 
-	private System.Collections.IEnumerator InvincibilityRoutine() {
+    private IEnumerator FlashRoutine()
+    {
+        mat.SetFloat("_FlashAmount", 1f);
+        yield return new WaitForSeconds(flashDuration);
+        mat.SetFloat("_FlashAmount", 0f);
+        flashCoroutine = null;
+    }
+
+    private System.Collections.IEnumerator InvincibilityRoutine() {
 		isInvincible = true;
 
 		// Optional: Make player flash or something for visual feedback

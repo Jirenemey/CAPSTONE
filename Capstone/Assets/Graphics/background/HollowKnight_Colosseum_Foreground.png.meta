@@ -1,13 +1,10 @@
 fileFormatVersion: 2
-guid: 2bb39546066944361abaca61a3232de4
+guid: 7eac4659da805984fa7a3daf5c0fb2c7
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 21300000
-    second: figure_0
-  - first:
-      213: 21300002
-    second: figure_1
+      213: -7234092779088407039
+    second: HollowKnight_Colosseum_Foreground_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -40,7 +37,7 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
-    filterMode: 0
+    filterMode: 1
     aniso: 1
     mipBias: 0
     wrapU: 1
@@ -69,16 +66,16 @@ TextureImporter:
   compressionQualitySet: 0
   textureFormatSet: 0
   ignorePngGamma: 0
-  applyGammaDecoding: 1
+  applyGammaDecoding: 0
   swizzle: 50462976
-  cookieLightType: 1
+  cookieLightType: 0
   platformSettings:
   - serializedVersion: 4
     buildTarget: DefaultTexturePlatform
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 0
+    textureCompression: 1
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -103,67 +100,23 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: figure_0
+      name: HollowKnight_Colosseum_Foreground_0
       rect:
         serializedVersion: 2
-        x: 5
+        x: 0
         y: 0
-        width: 264
-        height: 689
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 1862864be90d14c2c9feae9ca352e02e
-      internalID: 21300000
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: figure_1
-      rect:
-        serializedVersion: 2
-        x: 0
-        y: 520
-        width: 1024
-        height: 504
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 56ec0534d84284a42a15e36030ad8ad6
-      internalID: 21300002
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: figure_2
-      rect:
-        serializedVersion: 2
-        x: 0
-        y: 696
-        width: 921
-        height: 163
+        width: 1920
+        height: 311
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: 0
+      tessellationDetail: -1
       bones: []
-      spriteID: 250b455a8076ea0468fedb5af1baa287
-      internalID: 840572691
+      spriteID: 106973ef1f65b9b90800000000000000
+      internalID: -7234092779088407039
       vertices: []
       indices: 
       edges: []
@@ -172,7 +125,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: b447545876b114aa1bacb1116ed04071
+    spriteID: 
     internalID: 0
     vertices: []
     indices: 
@@ -182,9 +135,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      figure_0: 21300000
-      figure_1: 21300002
-      figure_2: 840572691
+      HollowKnight_Colosseum_Foreground_0: -7234092779088407039
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

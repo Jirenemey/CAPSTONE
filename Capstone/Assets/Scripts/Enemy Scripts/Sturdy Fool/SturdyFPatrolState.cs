@@ -27,7 +27,7 @@ public class SturdyFPatrolState : EnemyState
         bool noGroundAhead = !sturdyFool.IsLedgeAhead();
         bool hitWall = sturdyFool.IsWallAhead();
 
-        if (!sturdyFool.IsGrounded())
+        if (!enemy.IsGrounded())
         {
             ChangeState<SturdyFIdleState>();
         }
