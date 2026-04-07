@@ -57,6 +57,7 @@ public class Player : NetworkBehaviour, IDamageable {
 	[SerializeField] private int healAmount = 1;
 	[SerializeField] private float healHoldTime = 1.0f;
 	private float healHoldTimer = 0f;
+	private bool isHealingCharging = false;
 
 	[Header("Audio Settings")]
 	[SerializeField] private AudioClip landingSound;
@@ -386,17 +387,57 @@ public class Player : NetworkBehaviour, IDamageable {
 		}
 	}
 
+	private void PlayHealChargeSound() {
+		if (healChargeSound == null || healChargeAudioSource == null) return;
+		if (healChargeAudioSource.clip != healChargeSound) {
+			healChargeAudioSource.clip = healChargeSound;
+		}
+		if (!healChargeAudioSource.isPlaying) {
+			healChargeAudioSource.Play();
+		}
+	}
+
+	private void StopHealChargeSound() {
+		if (healChargeAudioSource == null) return;
+		if (healChargeAudioSource.isPlaying) {
+			healChargeAudioSource.Stop();
+		}
+	}
+
+	private void PlayHealCompleteSound() {
+		if (healCompleteSound == null || audioSource == null) return;
+		audioSource.PlayOneShot(healCompleteSound);
+	}
+
 	private void HandleFocusHealing() {
-		if (inputHandler != null && inputHandler.FocusHeld) {
+		if (inputHandler == null || playerStats == null) {
+			healHoldTimer = 0f;
+			StopHealChargeSound();
+			isHealingCharging = false;
+			return;
+		}
+
+		bool canHeal = playerStats.GetCurrentHp() < playerStats.GetMaxHp();
+		if (inputHandler.FocusHeld && canHeal) {
+			if (!isHealingCharging) {
+				isHealingCharging = true;
+				PlayHealChargeSound();
+			}
+
 			healHoldTimer += Time.deltaTime;
-			print("Healing started");
 			if (healHoldTimer >= healHoldTime) {
-				print("heal");
 				playerStats.Heal(healAmount);
 				healHoldTimer = 0f;
+				StopHealChargeSound();
+				isHealingCharging = false;
+				PlayHealCompleteSound();
 			}
 		} else {
 			healHoldTimer = 0f;
+			if (isHealingCharging) {
+				StopHealChargeSound();
+				isHealingCharging = false;
+			}
 		}
 	}
 
