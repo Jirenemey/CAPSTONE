@@ -3501,7 +3501,7 @@ GameObject:
   - component: {fileID: 704310049}
   - component: {fileID: 704310051}
   - component: {fileID: 704310050}
-  m_Layer: 7
+  m_Layer: 6
   m_Name: Cave -Wall_2 (6)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6050,7 +6050,7 @@ GameObject:
   - component: {fileID: 1129673645}
   - component: {fileID: 1129673647}
   - component: {fileID: 1129673646}
-  m_Layer: 7
+  m_Layer: 6
   m_Name: Cave -Wall_2 (28)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -7004,7 +7004,7 @@ GameObject:
   - component: {fileID: 1367703701}
   - component: {fileID: 1367703700}
   - component: {fileID: 1367703703}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: White_Gate
   m_TagString: Untagged
   m_Icon: {fileID: 0}
